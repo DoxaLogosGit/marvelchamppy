@@ -36,6 +36,30 @@
     "Villain": "Ultron"
   },
   {
+    "Date": "2021-03-18",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Ant Man",
+        "Win": 0
+      }
+    ],
+    "Villain": "Green Goblin"
+  },
+  {
+    "Date": "2021-03-18",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Ant Man",
+        "Win": 1
+      }
+    ],
+    "Villain": "Green Goblin"
+  },
+  {
     "Date": "2021-03-17",
     "Difficulty": "Expert",
     "Heroes": [

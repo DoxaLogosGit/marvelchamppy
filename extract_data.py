@@ -140,7 +140,6 @@ def extract_marvel_champions_play_data(xml_play_data, user):
     play_data["Villain"] = extract_villain(play_comment)
     play_data["Difficulty"] = extract_difficulty(play_comment)
 
-    print(play_data)
     return play_data
 
 

@@ -299,8 +299,8 @@ class Statistics:
         self.overall_data = OverallData(all_plays)
         self.hero_data = HERO_INIT_DATA
         self.villain_data = VILLAIN_INIT_DATA
-        self.villain_h_index = 1
-        self.hero_h_index = 1
+        self.villain_h_index = 0
+        self.hero_h_index = 0
 
     def analyze_hero_data(self):
         for play in self.all_plays:
