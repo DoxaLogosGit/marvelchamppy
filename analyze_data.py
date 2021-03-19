@@ -82,7 +82,7 @@ class HeroData:
 
 class VillainData:
     def __init__(self, villain):
-        self.villain = villain
+        self.villain_name = villain
         self.total_plays = 0
         self.total_wins = 0
         self.win_percentage = 0
@@ -333,14 +333,21 @@ class Statistics:
         return None
 
     def __repr__(self):
-        repr_string = self.overall_data.__repr__() + "\n"
+        repr_string = "===========================================================\n"
+        repr_string += self.overall_data.__repr__() + "\n"
+        repr_string += "===========================================================\n"
         repr_string += "Hero-H Index: {0}   Villain H-Index: {1}\n".format(self.hero_h_index, self.villain_h_index)
-        for hero in self.hero_data:
-            repr_string += hero + "\n"
-            repr_string += self.hero_data[hero].__repr__() + "\n"
-        for villain in self.villain_data:
-            repr_string += villain + "\n"
-            repr_string += self.villain_data[villain].__repr__() + "\n"
+        repr_string += "===========================================================\n"
+        sorted_heroes = sorted(self.hero_data.items(), key=lambda x: x[1].total_plays, reverse=True)
+        for hero in sorted_heroes:
+            repr_string += hero[1].hero_name + "\n"
+            repr_string += hero[1].__repr__() + "\n"
+            repr_string += "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"
+        sorted_villains = sorted(self.villain_data.items(), key=lambda x: x[1].total_plays, reverse=True)
+        for villain in sorted_villains:
+            repr_string += villain[1].villain_name + "\n"
+            repr_string += villain[1].__repr__() + "\n"
+            repr_string += "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"
         return repr_string
 
 
