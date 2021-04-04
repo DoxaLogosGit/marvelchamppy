@@ -105,9 +105,9 @@ def clean_up_hero_name(hero_name):
         "hawkeye":"Hawkeye",
         "hawk eye":"Hawkeye",
         "hawk-eye":"Hawkeye",
-        "rocket":"Rocket",
-        "rocket raccoon":"Rocket",
-        "rocket racoon":"Rocket",
+        "rocket":"Rocket Raccoon",
+        "rocket raccoon":"Rocket Raccoon",
+        "rocket racoon":"Rocket Raccoon",
         "groot":"Groot",
         "drax":"Drax",
         "gamora":"Gamora",
@@ -124,7 +124,7 @@ def clean_up_hero_name(hero_name):
 
 
 
-#walk the list of pages and return a list of all the marvel champions play data for the user
+#walk the list of pages and return a list of all the marvel champions play data
 #return the list of plays
 def extract_marvel_champions_play_data(xml_play_data, user):
     play_data = {}

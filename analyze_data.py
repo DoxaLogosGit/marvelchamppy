@@ -277,6 +277,8 @@ HERO_INIT_DATA  = {
     "Thor" : HeroData("Thor"),
     "Black Widow" : HeroData("Black Widow"),
     "Hawkeye" : HeroData("Hawkeye"),
+    "Rocket Raccoon" : HeroData("Rocket Raccoon"),
+    "Groot" : HeroData("Groot"),
 }
 VILLAIN_INIT_DATA = {
     "Ultron": VillainData("Ultron"),
@@ -290,6 +292,10 @@ VILLAIN_INIT_DATA = {
     "Amin Zola": VillainData("Amin Zola"),
     "Red Skull": VillainData("Red Skull"),
     "Kang": VillainData("Kang"),
+    "Drang": VillainData("Drang"),
+    "Nebula": VillainData("Nebula"),
+    "Ronan": VillainData("Ronan"),
+    "Collector": VillainData("Collector"),
 
 }
 
@@ -340,14 +346,16 @@ class Statistics:
         repr_string += "===========================================================\n"
         sorted_heroes = sorted(self.hero_data.items(), key=lambda x: x[1].total_plays, reverse=True)
         for hero in sorted_heroes:
-            repr_string += hero[1].hero_name + "\n"
-            repr_string += hero[1].__repr__() + "\n"
-            repr_string += "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"
+            if hero[1].total_plays > 0:
+                repr_string += hero[1].hero_name + "\n"
+                repr_string += hero[1].__repr__() + "\n"
+                repr_string += "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"
         sorted_villains = sorted(self.villain_data.items(), key=lambda x: x[1].total_plays, reverse=True)
         for villain in sorted_villains:
-            repr_string += villain[1].villain_name + "\n"
-            repr_string += villain[1].__repr__() + "\n"
-            repr_string += "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"
+            if villain[1].total_plays > 0:
+                repr_string += villain[1].villain_name + "\n"
+                repr_string += villain[1].__repr__() + "\n"
+                repr_string += "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"
         return repr_string
 
 

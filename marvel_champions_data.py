@@ -19,6 +19,9 @@ def main():
     xml_data = retrieve_play_data_from_bgg(USER)
     print("Done collecting data")
 
+    with open("play_data.xml","w") as xml_play_data:
+        xml_play_data.writelines(xml_data)
+
 
     print("Extracting data")
     marvel_plays = find_the_marvel_champion_plays(xml_data, USER)
