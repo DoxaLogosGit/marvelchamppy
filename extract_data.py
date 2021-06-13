@@ -23,7 +23,10 @@ def extract_villain(play_comment):
     if("kang" in play_comment.lower()):
         return "Kang"
     if("green goblin" in play_comment.lower()):
-        return "Green Goblin"
+        if("risky" in play_comment.lower()):
+            return "Green Goblin - Risky Business"
+        else:
+            return "Green Goblin - Mutagen Formula"
     if("crossbones" in play_comment.lower()):
         return "Crossbones"
     if("taskmaster" in play_comment.lower()):
@@ -34,6 +37,17 @@ def extract_villain(play_comment):
         return "Red Skull"
     if("wrecking crew" in play_comment.lower()):
         return "Wrecking Crew"
+    if("nebula" in play_comment.lower()):
+        return "Nebula"
+    if("drang" in play_comment.lower()):
+        return "Drang"
+    if("ronan" in play_comment.lower()):
+        return "Ronan"
+    if("collector" in play_comment.lower()):
+        if("infiltrate" in play_comment.lower()):
+            return "The Collector - Infiltrate the Museum"
+        else:
+            return "The Collector - Escape the Museum"
 
     return "UNKNOWN"
 
@@ -114,6 +128,7 @@ def clean_up_hero_name(hero_name):
         "starlord":"Star Lord",
         "star lord":"Star Lord",
         "star-lord":"Star Lord",
+        "venom":"Venom",
     }
     try:
         return hero_name_replace[hero_name]

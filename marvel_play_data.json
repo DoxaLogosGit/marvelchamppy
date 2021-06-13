@@ -1,5 +1,1169 @@
 [
   {
+    "Date": "2021-06-11",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Ms. Marvel",
+        "Win": 1
+      }
+    ],
+    "Villain": "Kang"
+  },
+  {
+    "Date": "2021-06-02",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Scarlet Witch",
+        "Win": 1
+      }
+    ],
+    "Villain": "Kang"
+  },
+  {
+    "Date": "2021-05-30",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Star Lord",
+        "Win": 1
+      }
+    ],
+    "Villain": "Red Skull"
+  },
+  {
+    "Date": "2021-05-29",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Star Lord",
+        "Win": 1
+      }
+    ],
+    "Villain": "Taskmaster"
+  },
+  {
+    "Date": "2021-05-29",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Star Lord",
+        "Win": 0
+      }
+    ],
+    "Villain": "Red Skull"
+  },
+  {
+    "Date": "2021-05-29",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Star Lord",
+        "Win": 0
+      }
+    ],
+    "Villain": "Red Skull"
+  },
+  {
+    "Date": "2021-05-28",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Star Lord",
+        "Win": 1
+      }
+    ],
+    "Villain": "Taskmaster"
+  },
+  {
+    "Date": "2021-05-27",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Star Lord",
+        "Win": 1
+      }
+    ],
+    "Villain": "Taskmaster"
+  },
+  {
+    "Date": "2021-05-25",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Gamora",
+        "Win": 0
+      }
+    ],
+    "Villain": "Nebula"
+  },
+  {
+    "Date": "2021-05-25",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Gamora",
+        "Win": 1
+      }
+    ],
+    "Villain": "Nebula"
+  },
+  {
+    "Date": "2021-05-25",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Gamora",
+        "Win": 0
+      }
+    ],
+    "Villain": "Ronan"
+  },
+  {
+    "Date": "2021-05-25",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Gamora",
+        "Win": 1
+      }
+    ],
+    "Villain": "Ronan"
+  },
+  {
+    "Date": "2021-05-25",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Gamora",
+        "Win": 1
+      }
+    ],
+    "Villain": "Ronan"
+  },
+  {
+    "Date": "2021-05-23",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Gamora",
+        "Win": 0
+      }
+    ],
+    "Villain": "Nebula"
+  },
+  {
+    "Date": "2021-05-23",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Gamora",
+        "Win": 0
+      }
+    ],
+    "Villain": "Nebula"
+  },
+  {
+    "Date": "2021-05-23",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Gamora",
+        "Win": 0
+      }
+    ],
+    "Villain": "Nebula"
+  },
+  {
+    "Date": "2021-05-23",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Gamora",
+        "Win": 0
+      }
+    ],
+    "Villain": "Nebula"
+  },
+  {
+    "Date": "2021-05-21",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Gamora",
+        "Win": 0
+      }
+    ],
+    "Villain": "Nebula"
+  },
+  {
+    "Date": "2021-05-19",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Gamora",
+        "Win": 1
+      }
+    ],
+    "Villain": "Absorbing Man"
+  },
+  {
+    "Date": "2021-05-19",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Aggressio",
+        "Hero": "Gamora",
+        "Win": 1
+      }
+    ],
+    "Villain": "Drang"
+  },
+  {
+    "Date": "2021-05-19",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Gamora",
+        "Win": 1
+      }
+    ],
+    "Villain": "The Collector - Infiltrate the Museum"
+  },
+  {
+    "Date": "2021-05-19",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Gamora",
+        "Win": 1
+      }
+    ],
+    "Villain": "The Collector - Escape the Museum"
+  },
+  {
+    "Date": "2021-05-18",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Star Lord",
+        "Win": 1
+      }
+    ],
+    "Villain": "Absorbing Man"
+  },
+  {
+    "Date": "2021-05-18",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Star Lord",
+        "Win": 0
+      }
+    ],
+    "Villain": "Absorbing Man"
+  },
+  {
+    "Date": "2021-05-18",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Star Lord",
+        "Win": 0
+      }
+    ],
+    "Villain": "Absorbing Man"
+  },
+  {
+    "Date": "2021-05-18",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Star Lord",
+        "Win": 0
+      }
+    ],
+    "Villain": "Absorbing Man"
+  },
+  {
+    "Date": "2021-05-16",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Gamora",
+        "Win": 0
+      }
+    ],
+    "Villain": "Ultron"
+  },
+  {
+    "Date": "2021-05-16",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Gamora",
+        "Win": 1
+      }
+    ],
+    "Villain": "Ultron"
+  },
+  {
+    "Date": "2021-05-16",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Gamora",
+        "Win": 1
+      }
+    ],
+    "Villain": "Ultron"
+  },
+  {
+    "Date": "2021-05-16",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Gamora",
+        "Win": 0
+      }
+    ],
+    "Villain": "Ultron"
+  },
+  {
+    "Date": "2021-05-16",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Gamora",
+        "Win": 1
+      }
+    ],
+    "Villain": "Rhino"
+  },
+  {
+    "Date": "2021-05-16",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Gamora",
+        "Win": 0
+      }
+    ],
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2021-05-16",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Gamora",
+        "Win": 1
+      }
+    ],
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2021-05-15",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Gamora",
+        "Win": 1
+      }
+    ],
+    "Villain": "The Collector - Escape the Museum"
+  },
+  {
+    "Date": "2021-05-15",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Gamora",
+        "Win": 1
+      }
+    ],
+    "Villain": "The Collector - Escape the Museum"
+  },
+  {
+    "Date": "2021-05-13",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Captain Marvel",
+        "Win": 1
+      }
+    ],
+    "Villain": "The Collector - Escape the Museum"
+  },
+  {
+    "Date": "2021-05-13",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Captain Marvel",
+        "Win": 1
+      }
+    ],
+    "Villain": "The Collector - Escape the Museum"
+  },
+  {
+    "Date": "2021-05-11",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Quicksilver",
+        "Win": 0
+      }
+    ],
+    "Villain": "The Collector - Escape the Museum"
+  },
+  {
+    "Date": "2021-05-11",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Quicksilver",
+        "Win": 0
+      }
+    ],
+    "Villain": "The Collector - Escape the Museum"
+  },
+  {
+    "Date": "2021-05-11",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Quicksilver",
+        "Win": 1
+      }
+    ],
+    "Villain": "The Collector - Escape the Museum"
+  },
+  {
+    "Date": "2021-05-09",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Quicksilver",
+        "Win": 1
+      }
+    ],
+    "Villain": "The Collector - Escape the Museum"
+  },
+  {
+    "Date": "2021-05-05",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Quicksilver",
+        "Win": 0
+      }
+    ],
+    "Villain": "The Collector - Escape the Museum"
+  },
+  {
+    "Date": "2021-05-04",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Hawkeye",
+        "Win": 0
+      }
+    ],
+    "Villain": "Amin Zola"
+  },
+  {
+    "Date": "2021-05-04",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Hawkeye",
+        "Win": 0
+      }
+    ],
+    "Villain": "Amin Zola"
+  },
+  {
+    "Date": "2021-05-01",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Spider Man",
+        "Win": 1
+      }
+    ],
+    "Villain": "Amin Zola"
+  },
+  {
+    "Date": "2021-04-30",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Hawkeye",
+        "Win": 1
+      }
+    ],
+    "Villain": "Amin Zola"
+  },
+  {
+    "Date": "2021-04-26",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Wasp",
+        "Win": 0
+      }
+    ],
+    "Villain": "Amin Zola"
+  },
+  {
+    "Date": "2021-04-26",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Wasp",
+        "Win": 1
+      }
+    ],
+    "Villain": "Amin Zola"
+  },
+  {
+    "Date": "2021-04-25",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Ant Man",
+        "Win": 0
+      }
+    ],
+    "Villain": "Ronan"
+  },
+  {
+    "Date": "2021-04-25",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Ant Man",
+        "Win": 0
+      }
+    ],
+    "Villain": "Ronan"
+  },
+  {
+    "Date": "2021-04-25",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Ant Man",
+        "Win": 0
+      }
+    ],
+    "Villain": "Ronan"
+  },
+  {
+    "Date": "2021-04-25",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Ant Man",
+        "Win": 0
+      }
+    ],
+    "Villain": "Ronan"
+  },
+  {
+    "Date": "2021-04-25",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Ant Man",
+        "Win": 1
+      }
+    ],
+    "Villain": "Ronan"
+  },
+  {
+    "Date": "2021-04-19",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Groot",
+        "Win": 0
+      }
+    ],
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2021-04-19",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Groot",
+        "Win": 1
+      }
+    ],
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2021-04-17",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Captain Marvel",
+        "Win": 1
+      }
+    ],
+    "Villain": "Green Goblin - Mutagen Formula"
+  },
+  {
+    "Date": "2021-04-17",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Aggressio",
+        "Hero": "Rocket Raccoon",
+        "Win": 1
+      }
+    ],
+    "Villain": "Crossbones"
+  },
+  {
+    "Date": "2021-04-16",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Rocket Raccoon",
+        "Win": 1
+      }
+    ],
+    "Villain": "Kang"
+  },
+  {
+    "Date": "2021-04-15",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Rocket Raccoon",
+        "Win": 1
+      }
+    ],
+    "Villain": "Ultron"
+  },
+  {
+    "Date": "2021-04-14",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Rocket Raccoon",
+        "Win": 1
+      }
+    ],
+    "Villain": "Ultron"
+  },
+  {
+    "Date": "2021-04-10",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Ant Man",
+        "Win": 0
+      }
+    ],
+    "Villain": "Ronan"
+  },
+  {
+    "Date": "2021-04-10",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Black Widow",
+        "Win": 0
+      }
+    ],
+    "Villain": "The Collector - Infiltrate the Museum"
+  },
+  {
+    "Date": "2021-04-10",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Black Widow",
+        "Win": 0
+      }
+    ],
+    "Villain": "The Collector - Infiltrate the Museum"
+  },
+  {
+    "Date": "2021-04-10",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Black Widow",
+        "Win": 0
+      }
+    ],
+    "Villain": "The Collector - Infiltrate the Museum"
+  },
+  {
+    "Date": "2021-04-10",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Black Widow",
+        "Win": 0
+      }
+    ],
+    "Villain": "The Collector - Infiltrate the Museum"
+  },
+  {
+    "Date": "2021-04-10",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Black Widow",
+        "Win": 0
+      }
+    ],
+    "Villain": "The Collector - Infiltrate the Museum"
+  },
+  {
+    "Date": "2021-04-09",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Ant Man",
+        "Win": 0
+      }
+    ],
+    "Villain": "Ronan"
+  },
+  {
+    "Date": "2021-04-08",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Ant Man",
+        "Win": 1
+      }
+    ],
+    "Villain": "Ronan"
+  },
+  {
+    "Date": "2021-04-08",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Ant Man",
+        "Win": 0
+      }
+    ],
+    "Villain": "Ronan"
+  },
+  {
+    "Date": "2021-04-07",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Ant Man",
+        "Win": 1
+      }
+    ],
+    "Villain": "Nebula"
+  },
+  {
+    "Date": "2021-04-07",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Ant Man",
+        "Win": 0
+      }
+    ],
+    "Villain": "Ronan"
+  },
+  {
+    "Date": "2021-04-05",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Ant Man",
+        "Win": 0
+      }
+    ],
+    "Villain": "The Collector - Escape the Museum"
+  },
+  {
+    "Date": "2021-04-05",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Ant Man",
+        "Win": 1
+      }
+    ],
+    "Villain": "The Collector - Escape the Museum"
+  },
+  {
+    "Date": "2021-04-05",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Ant Man",
+        "Win": 0
+      }
+    ],
+    "Villain": "Nebula"
+  },
+  {
+    "Date": "2021-04-04",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Ant Man",
+        "Win": 1
+      }
+    ],
+    "Villain": "Drang"
+  },
+  {
+    "Date": "2021-04-04",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Ant Man",
+        "Win": 1
+      }
+    ],
+    "Villain": "The Collector - Infiltrate the Museum"
+  },
+  {
+    "Date": "2021-04-03",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Rocket Raccoon",
+        "Win": 1
+      }
+    ],
+    "Villain": "Green Goblin - Mutagen Formula"
+  },
+  {
+    "Date": "2021-04-03",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Groot",
+        "Win": 0
+      }
+    ],
+    "Villain": "Green Goblin - Mutagen Formula"
+  },
+  {
+    "Date": "2021-03-27",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Thor",
+        "Win": 1
+      }
+    ],
+    "Villain": "Green Goblin - Mutagen Formula"
+  },
+  {
+    "Date": "2021-03-26",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Thor",
+        "Win": 1
+      }
+    ],
+    "Villain": "Ultron"
+  },
+  {
+    "Date": "2021-03-26",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Thor",
+        "Win": 0
+      }
+    ],
+    "Villain": "Ultron"
+  },
+  {
+    "Date": "2021-03-25",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Hawkeye",
+        "Win": 0
+      }
+    ],
+    "Villain": "Ultron"
+  },
+  {
+    "Date": "2021-03-25",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Hawkeye",
+        "Win": 0
+      }
+    ],
+    "Villain": "Ultron"
+  },
+  {
+    "Date": "2021-03-25",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Hawkeye",
+        "Win": 0
+      }
+    ],
+    "Villain": "Ultron"
+  },
+  {
+    "Date": "2021-03-25",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Hawkeye",
+        "Win": 0
+      }
+    ],
+    "Villain": "Ultron"
+  },
+  {
+    "Date": "2021-03-25",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Hawkeye",
+        "Win": 1
+      }
+    ],
+    "Villain": "Ultron"
+  },
+  {
+    "Date": "2021-03-24",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Hawkeye",
+        "Win": 0
+      }
+    ],
+    "Villain": "Ultron"
+  },
+  {
+    "Date": "2021-03-23",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Justice Aggression",
+        "Hero": "Spider Woman",
+        "Win": 1
+      }
+    ],
+    "Villain": "Kang"
+  },
+  {
+    "Date": "2021-03-22",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Wasp",
+        "Win": 1
+      }
+    ],
+    "Villain": "Kang"
+  },
+  {
+    "Date": "2021-03-21",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Scarlet Witch",
+        "Win": 0
+      }
+    ],
+    "Villain": "Amin Zola"
+  },
+  {
+    "Date": "2021-03-21",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Scarlet Witch",
+        "Win": 0
+      }
+    ],
+    "Villain": "Amin Zola"
+  },
+  {
+    "Date": "2021-03-21",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Scarlet Witch",
+        "Win": 1
+      }
+    ],
+    "Villain": "Amin Zola"
+  },
+  {
+    "Date": "2021-03-20",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Scarlet Witch",
+        "Win": 0
+      }
+    ],
+    "Villain": "Amin Zola"
+  },
+  {
+    "Date": "2021-03-20",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Scarlet Witch",
+        "Win": 0
+      }
+    ],
+    "Villain": "Amin Zola"
+  },
+  {
+    "Date": "2021-03-20",
+    "Difficulty": "Expert",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Scarlet Witch",
+        "Win": 1
+      }
+    ],
+    "Villain": "Amin Zola"
+  },
+  {
+    "Date": "2021-03-19",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Ant Man",
+        "Win": 1
+      }
+    ],
+    "Villain": "Green Goblin - Mutagen Formula"
+  },
+  {
+    "Date": "2021-03-19",
+    "Difficulty": "Standard",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Ant Man",
+        "Win": 1
+      }
+    ],
+    "Villain": "Green Goblin - Mutagen Formula"
+  },
+  {
     "Date": "2021-03-18",
     "Difficulty": "Expert",
     "Heroes": [
@@ -45,7 +1209,7 @@
         "Win": 0
       }
     ],
-    "Villain": "Green Goblin"
+    "Villain": "Green Goblin - Mutagen Formula"
   },
   {
     "Date": "2021-03-18",
@@ -57,7 +1221,7 @@
         "Win": 1
       }
     ],
-    "Villain": "Green Goblin"
+    "Villain": "Green Goblin - Mutagen Formula"
   },
   {
     "Date": "2021-03-17",
@@ -302,7 +1466,7 @@
         "Win": 1
       }
     ],
-    "Villain": "Green Goblin"
+    "Villain": "Green Goblin - Mutagen Formula"
   },
   {
     "Date": "2021-03-07",
@@ -2930,7 +4094,7 @@
         "Win": 0
       }
     ],
-    "Villain": "Green Goblin"
+    "Villain": "Green Goblin - Mutagen Formula"
   },
   {
     "Date": "2020-08-10",
@@ -2942,7 +4106,7 @@
         "Win": 0
       }
     ],
-    "Villain": "Green Goblin"
+    "Villain": "Green Goblin - Mutagen Formula"
   },
   {
     "Date": "2020-08-09",
@@ -3014,7 +4178,7 @@
         "Win": 0
       }
     ],
-    "Villain": "Green Goblin"
+    "Villain": "Green Goblin - Risky Business"
   },
   {
     "Date": "2020-08-01",
@@ -3026,7 +4190,7 @@
         "Win": 1
       }
     ],
-    "Villain": "Green Goblin"
+    "Villain": "Green Goblin - Risky Business"
   },
   {
     "Date": "2020-07-29",
@@ -3062,7 +4226,7 @@
         "Win": 1
       }
     ],
-    "Villain": "Green Goblin"
+    "Villain": "Green Goblin - Risky Business"
   },
   {
     "Date": "2020-07-23",
@@ -3122,7 +4286,7 @@
         "Win": 1
       }
     ],
-    "Villain": "Green Goblin"
+    "Villain": "Green Goblin - Mutagen Formula"
   },
   {
     "Date": "2020-07-11",
@@ -3158,7 +4322,7 @@
         "Win": 1
       }
     ],
-    "Villain": "Green Goblin"
+    "Villain": "Green Goblin - Mutagen Formula"
   },
   {
     "Date": "2020-07-01",
@@ -3170,7 +4334,7 @@
         "Win": 0
       }
     ],
-    "Villain": "Green Goblin"
+    "Villain": "Green Goblin - Risky Business"
   },
   {
     "Date": "2020-07-01",
@@ -3182,7 +4346,7 @@
         "Win": 1
       }
     ],
-    "Villain": "Green Goblin"
+    "Villain": "Green Goblin - Risky Business"
   },
   {
     "Date": "2020-06-30",
@@ -3211,7 +4375,7 @@
         "Win": 1
       }
     ],
-    "Villain": "Green Goblin"
+    "Villain": "Green Goblin - Mutagen Formula"
   },
   {
     "Date": "2020-06-20",
@@ -3355,7 +4519,7 @@
         "Win": 0
       }
     ],
-    "Villain": "Green Goblin"
+    "Villain": "Green Goblin - Mutagen Formula"
   },
   {
     "Date": "2020-05-31",
@@ -3372,7 +4536,7 @@
         "Win": 0
       }
     ],
-    "Villain": "Green Goblin"
+    "Villain": "Green Goblin - Mutagen Formula"
   },
   {
     "Date": "2020-05-08",

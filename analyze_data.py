@@ -44,24 +44,31 @@ class HeroData:
             self.basic_wins += this_was_a_win
 
     def __repr__(self):
-        return ("Total Plays: {}".format(self.total_plays) +
+        return ("[b]Overall Data[/b][b]" +
+        "\nTotal Plays: {}".format(self.total_plays) +
         "\nTotal Wins: {}".format(self.total_wins) +
         "\nTotal Win  %: {}%".format(self.win_percentage) +
+        "\n[COLOR=#00CCCC]" +
         "\nLeadership Plays: {}".format(self.leadership_plays) +
         "\nLeadership Wins: {}".format(self.leadership_wins) +
         "\nLeadership Wins %: {}%".format(self.leadership_win_percentage) +
+        "\n[/COLOR] [COLOR=#FF0000]" +
         "\nAggression Plays: {}".format(self.aggression_plays) +
         "\nAggression Wins: {}".format(self.aggression_wins) +
         "\nAggression Wins %: {}%".format(self.aggression_win_percentage) +
+        "\n[/COLOR] [COLOR=#FFFF00]" +
         "\nJustice Plays: {}".format(self.justice_plays) +
         "\nJustice Wins: {}".format(self.justice_wins) +
         "\nJustice Wins %: {}%".format(self.justice_win_percentage) +
+        "\n[/COLOR] [COLOR=#00FF33]" +
         "\nProtection Plays: {}".format(self.protection_plays) +
         "\nProtection Wins: {}".format(self.protection_wins) +
         "\nProtection Wins %: {}%".format(self.protection_win_percentage) +
+        "\n[/COLOR] [COLOR=#808080]" +
         "\nBasic Plays: {}".format(self.basic_plays) +
         "\nBasic Wins: {}".format(self.basic_wins) +
-        "\nBasic Wins %: {}%".format(self.basic_win_percentage))
+        "\nBasic Wins %: {}%".format(self.basic_win_percentage) +
+        "\n[/COLOR][/b]")
 
 
     def calculate_percentages(self):
@@ -191,9 +198,11 @@ class OverallData:
         return None
 
     def __repr__(self):
-        return ("Total Plays: {}".format(self.overall_plays) +
+        return ("[b]Overall Data[/b][b]" +
+        "\nTotal Plays: {}".format(self.overall_plays) +
         "\nTotal Wins: {}".format(self.overall_wins) +
         "\nTotal Win  %: {}%".format(self.overall_win_percentage) +
+        "\n[b]Difficulty Data:[/b]" +
         "\nExpert Plays: {}".format(self.expert_plays) +
         "\nExpert Wins: {}".format(self.expert_wins) +
         "\nExpert Wins %: {}%".format(self.expert_win_percentage) +
@@ -203,21 +212,28 @@ class OverallData:
         "\nHeroic Plays: {}".format(self.heroic_plays) +
         "\nHeroic Wins: {}".format(self.heroic_wins) +
         "\nHeroic Wins %: {}%".format(self.heroic_win_percentage) +
+        "\n[b]Aspect Data:[/b]" +
+        "\n[b][COLOR=#00CCCC]" +
         "\nLeadership Plays: {}".format(self.leadership_plays) +
         "\nLeadership Wins: {}".format(self.leadership_wins) +
         "\nLeadership Wins %: {}%".format(self.leadership_win_percentage) +
+        "\n[/COLOR] [COLOR=#FF0000]" +
         "\nAggression Plays: {}".format(self.aggression_plays) +
         "\nAggression Wins: {}".format(self.aggression_wins) +
         "\nAggression Wins %: {}%".format(self.aggression_win_percentage) +
+        "\n[/COLOR] [COLOR=#FFFF00]" +
         "\nJustice Plays: {}".format(self.justice_plays) +
         "\nJustice Wins: {}".format(self.justice_wins) +
         "\nJustice Wins %: {}%".format(self.justice_win_percentage) +
+        "\n[/COLOR] [COLOR=#00FF33]" +
         "\nProtection Plays: {}".format(self.protection_plays) +
         "\nProtection Wins: {}".format(self.protection_wins) +
         "\nProtection Wins %: {}%".format(self.protection_win_percentage) +
+        "\n[/COLOR] [COLOR=#808080]" +
         "\nBasic Plays: {}".format(self.basic_plays) +
         "\nBasic Wins: {}".format(self.basic_wins) +
-        "\nBasic Wins %: {}%".format(self.basic_win_percentage))
+        "\nBasic Wins %: {}%".format(self.basic_win_percentage)+
+        "\n[/COLOR][/b]")
 
 
     def analyze_overall_data(self):
@@ -279,12 +295,17 @@ HERO_INIT_DATA  = {
     "Hawkeye" : HeroData("Hawkeye"),
     "Rocket Raccoon" : HeroData("Rocket Raccoon"),
     "Groot" : HeroData("Groot"),
+    "Gamora" : HeroData("Gamora"),
+    "Star Lord" : HeroData("Star Lord"),
+    "Drax" : HeroData("Drax"),
+    "Venom" : HeroData("Venom"),
 }
 VILLAIN_INIT_DATA = {
     "Ultron": VillainData("Ultron"),
     "Klaw": VillainData("Klaw"),
     "Rhino": VillainData("Rhino"),
-    "Green Goblin": VillainData("Green Goblin"),
+    "Green Goblin - Risky Business": VillainData("Green Goblin - Risky Business"),
+    "Green Goblin - Mutagen Formula": VillainData("Green Goblin - Mutagen Formula"),
     "Wrecking Crew": VillainData("Wrecking Crew"),
     "Crossbones": VillainData("Crossbones"),
     "Absorbing Man": VillainData("Absorbing Man"),
@@ -295,7 +316,8 @@ VILLAIN_INIT_DATA = {
     "Drang": VillainData("Drang"),
     "Nebula": VillainData("Nebula"),
     "Ronan": VillainData("Ronan"),
-    "Collector": VillainData("Collector"),
+    "The Collector - Infiltrate the Museum": VillainData("The Collector - Infiltrate the Museum"),
+    "The Collector - Escape the Museum": VillainData("The Collector - Escape the Museum"),
 
 }
 
