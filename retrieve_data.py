@@ -49,7 +49,7 @@ def retrieve_play_data_from_bgg(user):
     xml_data.append(page_data)
     #pages = 2 #iterate fast for now
     for index in range(2, pages+1):
-        time.sleep(5)
+        time.sleep(2)
         print("Retrieving page {} of data".format(index))
         page_data = retrieve_play_page(BASE_URL,user,str(index))
         if page_data != "":
