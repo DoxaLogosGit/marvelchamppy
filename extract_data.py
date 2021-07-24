@@ -43,6 +43,10 @@ def extract_villain(play_comment):
         return "Drang"
     if("ronan" in play_comment.lower()):
         return "Ronan"
+    if("thanos" in play_comment.lower()):
+        return "Thanos"
+    if("loki" in play_comment.lower()):
+        return "Loki"
     if("collector" in play_comment.lower()):
         if("infiltrate" in play_comment.lower()):
             return "The Collector - Infiltrate the Museum"
@@ -129,6 +133,20 @@ def clean_up_hero_name(hero_name):
         "star lord":"Star Lord",
         "star-lord":"Star Lord",
         "venom":"Venom",
+        "Adam Warlock":"Adam Warlock",
+        "AdamWarlock":"Adam Warlock",
+        "adam warlock":"Adam Warlock",
+        "adamwarlock":"Adam Warlock",
+        "Spectrum":"Spectrum",
+        "spectrum":"Spectrum",
+        "Nebula":"Nebula",
+        "nebula":"Nebula",
+        "War Machine":"War Machine",
+        "War-Machine":"War Machine",
+        "WarMachine":"War Machine",
+        "war machine":"War Machine",
+        "war-machine":"War Machine",
+        "Warmachine":"War Machine",
     }
     try:
         return hero_name_replace[hero_name]

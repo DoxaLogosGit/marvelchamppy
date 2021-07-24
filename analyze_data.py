@@ -44,46 +44,46 @@ class HeroData:
             self.basic_wins += this_was_a_win
 
     def __repr__(self):
-        return ("[b]Overall Data[/b][b]" +
+        return ("[b]Overall Data[/b]" +
         "\nTotal Plays: {}".format(self.total_plays) +
         "\nTotal Wins: {}".format(self.total_wins) +
-        "\nTotal Win  %: {}%".format(self.win_percentage) +
-        "\n[COLOR=#00CCCC]" +
+        "\nTotal Win  %: {:.2%}".format(self.win_percentage) +
+        "\n\n[b]Aspect Data[/b][b][COLOR=#00CCCC]" +
         "\nLeadership Plays: {}".format(self.leadership_plays) +
         "\nLeadership Wins: {}".format(self.leadership_wins) +
-        "\nLeadership Wins %: {}%".format(self.leadership_win_percentage) +
+        "\nLeadership Wins %: {:.2%}".format(self.leadership_win_percentage) +
         "\n[/COLOR] [COLOR=#FF0000]" +
         "\nAggression Plays: {}".format(self.aggression_plays) +
         "\nAggression Wins: {}".format(self.aggression_wins) +
-        "\nAggression Wins %: {}%".format(self.aggression_win_percentage) +
-        "\n[/COLOR] [COLOR=#FFFF00]" +
+        "\nAggression Wins %: {:.2%}".format(self.aggression_win_percentage) +
+        "\n[/COLOR] [BGCOLOR=#003399][COLOR=#FFFF00]" +
         "\nJustice Plays: {}".format(self.justice_plays) +
         "\nJustice Wins: {}".format(self.justice_wins) +
-        "\nJustice Wins %: {}%".format(self.justice_win_percentage) +
-        "\n[/COLOR] [COLOR=#00FF33]" +
+        "\nJustice Wins %: {:.2%}".format(self.justice_win_percentage) +
+        "\n[/BGCOLOR][/COLOR] [COLOR=#00FF33]" +
         "\nProtection Plays: {}".format(self.protection_plays) +
         "\nProtection Wins: {}".format(self.protection_wins) +
-        "\nProtection Wins %: {}%".format(self.protection_win_percentage) +
+        "\nProtection Wins %: {:.2%}".format(self.protection_win_percentage) +
         "\n[/COLOR] [COLOR=#808080]" +
         "\nBasic Plays: {}".format(self.basic_plays) +
         "\nBasic Wins: {}".format(self.basic_wins) +
-        "\nBasic Wins %: {}%".format(self.basic_win_percentage) +
+        "\nBasic Wins %: {:.2%}".format(self.basic_win_percentage) +
         "\n[/COLOR][/b]")
 
 
     def calculate_percentages(self):
         if self.total_plays:
-            self.win_percentage = self.total_wins/self.total_plays * 100
+            self.win_percentage = self.total_wins/self.total_plays
         if self.leadership_plays:
-            self.leadership_win_percentage = self.leadership_wins/self.leadership_plays * 100
+            self.leadership_win_percentage = self.leadership_wins/self.leadership_plays
         if self.justice_plays:
-            self.justice_win_percentage = self.justice_wins/self.justice_plays * 100
+            self.justice_win_percentage = self.justice_wins/self.justice_plays
         if self.protection_plays:
-            self.protection_win_percentage = self.protection_wins/self.protection_plays * 100
+            self.protection_win_percentage = self.protection_wins/self.protection_plays
         if self.basic_plays:
-            self.basic_win_percentage = self.basic_wins/self.basic_plays * 100
+            self.basic_win_percentage = self.basic_wins/self.basic_plays
         if self.aggression_plays:
-            self.aggression_win_percentage = self.aggression_wins/self.aggression_plays * 100
+            self.aggression_win_percentage = self.aggression_wins/self.aggression_plays
 
 
 
@@ -121,26 +121,26 @@ class VillainData:
     def __repr__(self):
         return ("Total Plays: {}".format(self.total_plays) +
         "\nTotal Wins: {}".format(self.total_wins) +
-        "\nTotal Win  %: {}%".format(self.win_percentage) +
+        "\nTotal Win  %: {:.2%}".format(self.win_percentage) +
         "\nExpert Plays: {}".format(self.expert_plays) +
         "\nExpert Wins: {}".format(self.expert_wins) +
-        "\nExpert Wins %: {}%".format(self.expert_win_percentage) +
+        "\nExpert Wins %: {:.2%}".format(self.expert_win_percentage) +
         "\nStandard Plays: {}".format(self.standard_plays) +
         "\nStandard Wins: {}".format(self.standard_wins) +
-        "\nStandard Wins %: {}%".format(self.standard_win_percentage) +
+        "\nStandard Wins %: {:.2%}".format(self.standard_win_percentage) +
         "\nHeroic Plays: {}".format(self.heroic_plays) +
         "\nHeroic Wins: {}".format(self.heroic_wins) +
-        "\nHeroic Wins %: {}%".format(self.heroic_win_percentage))
+        "\nHeroic Wins %: {:.2%}".format(self.heroic_win_percentage))
 
     def calculate_percentages(self):
         if self.total_plays:
-            self.win_percentage = self.total_wins/self.total_plays * 100
+            self.win_percentage = self.total_wins/self.total_plays
         if self.expert_plays:
-            self.expert_win_percentage = self.expert_wins/self.expert_plays * 100
+            self.expert_win_percentage = self.expert_wins/self.expert_plays
         if self.standard_plays:
-            self.standard_win_percentage = self.standard_wins/self.standard_plays * 100
+            self.standard_win_percentage = self.standard_wins/self.standard_plays
         if self.heroic_plays:
-            self.heroic_win_percentage = self.heroic_wins/self.heroic_plays * 100
+            self.heroic_win_percentage = self.heroic_wins/self.heroic_plays
 
 
 
@@ -178,61 +178,61 @@ class OverallData:
 
     def calculate_percentages(self):
         if self.overall_plays:
-            self.overall_win_percentage = self.overall_wins/self.overall_plays * 100
+            self.overall_win_percentage = self.overall_wins/self.overall_plays
         if self.expert_plays:
-            self.expert_win_percentage = self.expert_wins/self.expert_plays * 100
+            self.expert_win_percentage = self.expert_wins/self.expert_plays
         if self.standard_plays:
-            self.standard_win_percentage = self.standard_wins/self.standard_plays * 100
+            self.standard_win_percentage = self.standard_wins/self.standard_plays
         if self.heroic_plays:
-            self.heroic_win_percentage = self.heroic_wins/self.heroic_plays * 100
+            self.heroic_win_percentage = self.heroic_wins/self.heroic_plays
         if self.leadership_plays:
-            self.leadership_win_percentage = self.leadership_wins/self.leadership_plays * 100
+            self.leadership_win_percentage = self.leadership_wins/self.leadership_plays
         if self.justice_plays:
-            self.justice_win_percentage = self.justice_wins/self.justice_plays * 100
+            self.justice_win_percentage = self.justice_wins/self.justice_plays
         if self.protection_plays:
-            self.protection_win_percentage = self.protection_wins/self.protection_plays * 100
+            self.protection_win_percentage = self.protection_wins/self.protection_plays
         if self.basic_plays:
-            self.basic_win_percentage = self.basic_wins/self.basic_plays * 100
+            self.basic_win_percentage = self.basic_wins/self.basic_plays
         if self.aggression_plays:
-            self.aggression_win_percentage = self.aggression_wins/self.aggression_plays * 100
+            self.aggression_win_percentage = self.aggression_wins/self.aggression_plays
         return None
 
     def __repr__(self):
         return ("[b]Overall Data[/b][b]" +
         "\nTotal Plays: {}".format(self.overall_plays) +
         "\nTotal Wins: {}".format(self.overall_wins) +
-        "\nTotal Win  %: {}%".format(self.overall_win_percentage) +
+        "\nTotal Win  %: {:.2%}".format(self.overall_win_percentage) +
         "\n[b]Difficulty Data:[/b]" +
         "\nExpert Plays: {}".format(self.expert_plays) +
         "\nExpert Wins: {}".format(self.expert_wins) +
-        "\nExpert Wins %: {}%".format(self.expert_win_percentage) +
+        "\nExpert Wins %: {:.2%}".format(self.expert_win_percentage) +
         "\nStandard Plays: {}".format(self.standard_plays) +
         "\nStandard Wins: {}".format(self.standard_wins) +
-        "\nStandard Wins %: {}%".format(self.standard_win_percentage) +
+        "\nStandard Wins %: {:.2%}".format(self.standard_win_percentage) +
         "\nHeroic Plays: {}".format(self.heroic_plays) +
         "\nHeroic Wins: {}".format(self.heroic_wins) +
-        "\nHeroic Wins %: {}%".format(self.heroic_win_percentage) +
+        "\nHeroic Wins %: {:.2%}".format(self.heroic_win_percentage) +
         "\n[b]Aspect Data:[/b]" +
         "\n[b][COLOR=#00CCCC]" +
         "\nLeadership Plays: {}".format(self.leadership_plays) +
         "\nLeadership Wins: {}".format(self.leadership_wins) +
-        "\nLeadership Wins %: {}%".format(self.leadership_win_percentage) +
+        "\nLeadership Wins %: {:.2%}".format(self.leadership_win_percentage) +
         "\n[/COLOR] [COLOR=#FF0000]" +
         "\nAggression Plays: {}".format(self.aggression_plays) +
         "\nAggression Wins: {}".format(self.aggression_wins) +
-        "\nAggression Wins %: {}%".format(self.aggression_win_percentage) +
-        "\n[/COLOR] [COLOR=#FFFF00]" +
+        "\nAggression Wins %: {:.2%}".format(self.aggression_win_percentage) +
+        "\n[/COLOR] [BGCOLOR=#003399][COLOR=#FFFF00]" +
         "\nJustice Plays: {}".format(self.justice_plays) +
         "\nJustice Wins: {}".format(self.justice_wins) +
-        "\nJustice Wins %: {}%".format(self.justice_win_percentage) +
-        "\n[/COLOR] [COLOR=#00FF33]" +
+        "\nJustice Wins %: {:.2%}".format(self.justice_win_percentage) +
+        "\n[/BGCOLOR][/COLOR] [COLOR=#00FF33]" +
         "\nProtection Plays: {}".format(self.protection_plays) +
         "\nProtection Wins: {}".format(self.protection_wins) +
-        "\nProtection Wins %: {}%".format(self.protection_win_percentage) +
+        "\nProtection Wins %: {:.2%}".format(self.protection_win_percentage) +
         "\n[/COLOR] [COLOR=#808080]" +
         "\nBasic Plays: {}".format(self.basic_plays) +
         "\nBasic Wins: {}".format(self.basic_wins) +
-        "\nBasic Wins %: {}%".format(self.basic_win_percentage)+
+        "\nBasic Wins %: {:.2%}".format(self.basic_win_percentage)+
         "\n[/COLOR][/b]")
 
 
@@ -299,6 +299,10 @@ HERO_INIT_DATA  = {
     "Star Lord" : HeroData("Star Lord"),
     "Drax" : HeroData("Drax"),
     "Venom" : HeroData("Venom"),
+    "Adam Warlock" : HeroData("Adam Warlock"),
+    "Spectrum" : HeroData("Spectrum"),
+    "Nebula" : HeroData("Nebula"),
+    "War Machine" : HeroData("War Machine"),
 }
 VILLAIN_INIT_DATA = {
     "Ultron": VillainData("Ultron"),
@@ -316,6 +320,8 @@ VILLAIN_INIT_DATA = {
     "Drang": VillainData("Drang"),
     "Nebula": VillainData("Nebula"),
     "Ronan": VillainData("Ronan"),
+    "Thanos": VillainData("Thanos"),
+    "Loki": VillainData("Loki"),
     "The Collector - Infiltrate the Museum": VillainData("The Collector - Infiltrate the Museum"),
     "The Collector - Escape the Museum": VillainData("The Collector - Escape the Museum"),
 
