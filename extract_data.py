@@ -45,6 +45,8 @@ def extract_villain(play_comment):
         return "Ronan"
     if("thanos" in play_comment.lower()):
         return "Thanos"
+    if("hood" in play_comment.lower()):
+        return "Loki"
     if("loki" in play_comment.lower()):
         return "Loki"
     if("collector" in play_comment.lower()):
@@ -147,6 +149,8 @@ def clean_up_hero_name(hero_name):
         "war machine":"War Machine",
         "war-machine":"War Machine",
         "Warmachine":"War Machine",
+        "Vision":"Vision",
+        "Valkyrie":"Valkyrie",
     }
     try:
         return hero_name_replace[hero_name]

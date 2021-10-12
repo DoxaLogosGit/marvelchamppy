@@ -303,6 +303,8 @@ HERO_INIT_DATA  = {
     "Spectrum" : HeroData("Spectrum"),
     "Nebula" : HeroData("Nebula"),
     "War Machine" : HeroData("War Machine"),
+    "Vision" : HeroData("Vision"),
+    "Valkyrie" : HeroData("Valkyrie"),
 }
 VILLAIN_INIT_DATA = {
     "Ultron": VillainData("Ultron"),
@@ -322,6 +324,7 @@ VILLAIN_INIT_DATA = {
     "Ronan": VillainData("Ronan"),
     "Thanos": VillainData("Thanos"),
     "Loki": VillainData("Loki"),
+    "Hood": VillainData("Hood"),
     "The Collector - Infiltrate the Museum": VillainData("The Collector - Infiltrate the Museum"),
     "The Collector - Escape the Museum": VillainData("The Collector - Escape the Museum"),
 
