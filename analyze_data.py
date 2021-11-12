@@ -324,6 +324,8 @@ VILLAIN_INIT_DATA = {
     "Ronan": VillainData("Ronan"),
     "Thanos": VillainData("Thanos"),
     "Loki": VillainData("Loki"),
+    "Tower Defense": VillainData("Tower Defense"),
+    "Hela": VillainData("Hela"),
     "Hood": VillainData("Hood"),
     "The Collector - Infiltrate the Museum": VillainData("The Collector - Infiltrate the Museum"),
     "The Collector - Escape the Museum": VillainData("The Collector - Escape the Museum"),

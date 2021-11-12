@@ -47,8 +47,16 @@ def extract_villain(play_comment):
         return "Thanos"
     if("hood" in play_comment.lower()):
         return "Loki"
+    if("tower defense" in play_comment.lower()):
+        return "Tower Defense"
+    if("corvious" in play_comment.lower()):
+        return "Tower Defense"
+    if("proxima" in play_comment.lower()):
+        return "Tower Defense"
     if("loki" in play_comment.lower()):
         return "Loki"
+    if("hela" in play_comment.lower()):
+        return "Hela"
     if("collector" in play_comment.lower()):
         if("infiltrate" in play_comment.lower()):
             return "The Collector - Infiltrate the Museum"
