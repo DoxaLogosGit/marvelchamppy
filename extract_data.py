@@ -43,6 +43,8 @@ def extract_villain(play_comment):
         return "Drang"
     if("ronan" in play_comment.lower()):
         return "Ronan"
+    if("thano" in play_comment.lower()):
+        return "Thanos"
     if("thanos" in play_comment.lower()):
         return "Thanos"
     if("hood" in play_comment.lower()):
