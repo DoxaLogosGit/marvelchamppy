@@ -43,6 +43,8 @@ def extract_villain(play_comment):
         return "Drang"
     if("ronan" in play_comment.lower()):
         return "Ronan"
+    if("ebony maw" in play_comment.lower()):
+        return "Ebony Maw"
     if("thano" in play_comment.lower()):
         return "Thanos"
     if("thanos" in play_comment.lower()):
@@ -177,9 +179,19 @@ def extract_marvel_champions_play_data(xml_play_data, user):
     play_data = {}
     play_data["Date"] = xml_play_data.attrib["date"]
     hero_list = []
+    player_count = 0
+    play_data["Multiplayer"] = False
+    play_data["True_Solo"] = False
     for player in xml_play_data.find("players").findall("./player"):
+        hero_list.append({"Hero":clean_up_hero_name(player.attrib["startposition"].lower().rstrip().strip()), "Aspect":player.attrib["color"], "Win":int(player.attrib["win"])})
         if player.attrib["username"] == user:
-            hero_list.append({"Hero":clean_up_hero_name(player.attrib["startposition"].lower().rstrip().strip()), "Aspect":player.attrib["color"], "Win":int(player.attrib["win"])})
+            if player_count == 0:
+                play_data["True_Solo"] = True
+            else:
+                play_data["True_Solo"] = False
+        else:
+            play_data["Multiplayer"] = True
+        player_count +=1
 
     play_data["Heroes"] = hero_list
 

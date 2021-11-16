@@ -151,6 +151,9 @@ class OverallData:
         self.overall_plays = len(all_plays)
         self.overall_wins = 0
         self.overall_win_percentage = 0
+        self.overall_solo_plays = 0
+        self.overall_true_solo_plays = 0
+        self.overall_multi_plays = 0
         self.leadership_plays = 0
         self.leadership_wins = 0
         self.leadership_win_percentage = 0
@@ -200,6 +203,9 @@ class OverallData:
     def __repr__(self):
         return ("[b]Overall Data[/b][b]" +
         "\nTotal Plays: {}".format(self.overall_plays) +
+        "\nTotal True Solo Plays: {}".format(self.overall_true_solo_plays) +
+        "\nTotal Solo (Multihanded) Plays: {}".format(self.overall_solo_plays) +
+        "\nTotal Multiplayer Plays: {}".format(self.overall_multi_plays) +
         "\nTotal Wins: {}".format(self.overall_wins) +
         "\nTotal Win  %: {:.2%}".format(self.overall_win_percentage) +
         "\n[b]Difficulty Data:[/b]" +
@@ -244,6 +250,12 @@ class OverallData:
             this_was_a_win = play["Heroes"][0]["Win"]
             self.overall_wins += this_was_a_win
 
+            if play["Multiplayer"] == True:
+                self.overall_multi_plays += 1
+            elif play["True_Solo"] == True:
+                self.overall_true_solo_plays += 1
+            else:
+                self.overall_solo_plays += 1
 
             if play["Difficulty"] == "Expert":
                 self.expert_plays += 1
@@ -269,7 +281,6 @@ class OverallData:
                     self.leadership_plays += 1
                     self.leadership_wins += this_was_a_win
                 if "basic" in hero["Aspect"].lower():
-                    self.basic_plays += 1
                     self.basic_wins += this_was_a_win
 
         self.calculate_percentages()
@@ -322,6 +333,7 @@ VILLAIN_INIT_DATA = {
     "Drang": VillainData("Drang"),
     "Nebula": VillainData("Nebula"),
     "Ronan": VillainData("Ronan"),
+    "Ebony Maw": VillainData("Ebony Maw"),
     "Thanos": VillainData("Thanos"),
     "Loki": VillainData("Loki"),
     "Tower Defense": VillainData("Tower Defense"),
