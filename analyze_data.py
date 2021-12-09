@@ -27,21 +27,34 @@ class HeroData:
         self.total_plays += 1
         this_was_a_win = play["Win"]
         self.total_wins += this_was_a_win
-        if "justice" in play["Aspect"].lower():
-            self.justice_plays += 1
-            self.justice_wins += this_was_a_win
-        if "protection" in play["Aspect"].lower():
-            self.protection_plays += 1
-            self.protection_wins += this_was_a_win
-        if "aggression" in play["Aspect"].lower():
-            self.aggression_plays += 1
-            self.aggression_wins += this_was_a_win
-        if "leadership" in play["Aspect"].lower():
-            self.leadership_plays += 1
-            self.leadership_wins += this_was_a_win
-        if "basic" in play["Aspect"].lower():
-            self.basic_plays += 1
-            self.basic_wins += this_was_a_win
+        if self.hero_name == "Adam Warlock":
+            if "basic" in hero["Aspect"].lower():
+                self.basic_plays +=1
+                self.basic_wins += this_was_a_win
+            else:
+                self.justice_plays += 1
+                self.justice_wins += this_was_a_win
+                self.protection_wins += this_was_a_win
+                self.aggression_plays += 1
+                self.aggression_wins += this_was_a_win
+                self.leadership_plays += 1
+                self.leadership_wins += this_was_a_win
+        else:
+            if "justice" in play["Aspect"].lower():
+                self.justice_plays += 1
+                self.justice_wins += this_was_a_win
+            if "protection" in play["Aspect"].lower():
+                self.protection_plays += 1
+                self.protection_wins += this_was_a_win
+            if "aggression" in play["Aspect"].lower():
+                self.aggression_plays += 1
+                self.aggression_wins += this_was_a_win
+            if "leadership" in play["Aspect"].lower():
+                self.leadership_plays += 1
+                self.leadership_wins += this_was_a_win
+            if "basic" in play["Aspect"].lower():
+                self.basic_plays += 1
+                self.basic_wins += this_was_a_win
 
     def __repr__(self):
         return ("[b]Overall Data[/b]" +
@@ -268,20 +281,34 @@ class OverallData:
                 self.heroic_wins += this_was_a_win
 
             for hero in play["Heroes"]:
-                if "justice" in hero["Aspect"].lower():
-                    self.justice_plays += 1
-                    self.justice_wins += this_was_a_win
-                if "protection" in hero["Aspect"].lower():
-                    self.protection_plays += 1
-                    self.protection_wins += this_was_a_win
-                if "aggression" in hero["Aspect"].lower():
-                    self.aggression_plays += 1
-                    self.aggression_wins += this_was_a_win
-                if "leadership" in hero["Aspect"].lower():
-                    self.leadership_plays += 1
-                    self.leadership_wins += this_was_a_win
-                if "basic" in hero["Aspect"].lower():
-                    self.basic_wins += this_was_a_win
+                if hero["Hero"] ==  "Adam Warlock":
+                    if "basic" in hero["Aspect"].lower():
+                        self.basic_plays +=1
+                        self.basic_wins += this_was_a_win
+                    else:
+                        self.justice_plays += 1
+                        self.justice_wins += this_was_a_win
+                        self.protection_plays += 1
+                        self.protection_wins += this_was_a_win
+                        self.aggression_plays += 1
+                        self.aggression_wins += this_was_a_win
+                        self.leadership_plays += 1
+                        self.leadership_wins += this_was_a_win
+                else:
+                    if "justice" in hero["Aspect"].lower():
+                        self.justice_plays += 1
+                        self.justice_wins += this_was_a_win
+                    if "protection" in hero["Aspect"].lower():
+                        self.protection_plays += 1
+                        self.protection_wins += this_was_a_win
+                    if "aggression" in hero["Aspect"].lower():
+                        self.aggression_plays += 1
+                        self.aggression_wins += this_was_a_win
+                    if "leadership" in hero["Aspect"].lower():
+                        self.leadership_plays += 1
+                        self.leadership_wins += this_was_a_win
+                    if "basic" in hero["Aspect"].lower():
+                        self.basic_wins += this_was_a_win
 
         self.calculate_percentages()
 
