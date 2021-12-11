@@ -12,6 +12,8 @@ Data to extract:
 """
 
 def extract_villain(play_comment):
+    if("brotherhood of badoon" in play_comment.lower()):
+        return "Drang"
     if("ultron" in play_comment.lower()):
         return "Ultron"
     if("absorbing" in play_comment.lower()):
@@ -35,8 +37,6 @@ def extract_villain(play_comment):
         return "Amin Zola"
     if("red skull" in play_comment.lower()):
         return "Red Skull"
-    if("wrecking crew" in play_comment.lower()):
-        return "Wrecking Crew"
     if("nebula" in play_comment.lower()):
         return "Nebula"
     if("drang" in play_comment.lower()):
@@ -49,8 +49,10 @@ def extract_villain(play_comment):
         return "Thanos"
     if("thanos" in play_comment.lower()):
         return "Thanos"
+    if("the hood" in play_comment.lower()):
+        return "Hood"
     if("hood" in play_comment.lower()):
-        return "Loki"
+        return "Hood"
     if("tower defense" in play_comment.lower()):
         return "Tower Defense"
     if("corvious" in play_comment.lower()):
@@ -66,18 +68,25 @@ def extract_villain(play_comment):
             return "The Collector - Infiltrate the Museum"
         else:
             return "The Collector - Escape the Museum"
-
+    if("wrecking crew" in play_comment.lower()):
+        return "Wrecking Crew"
     return "UNKNOWN"
 
+def which_standard(play_comment):
+    if("standard 2" in play_comment.lower() or "standard ii" in play_comment.lower()):
+        return "S2"
+    return "S1"
+
 def extract_difficulty(play_comment):
-    if("standard" in play_comment.lower()):
-        return "Standard"
     if("expert" in play_comment.lower()):
-        return "Expert"
+        if("expert 2" in play_comment.lower() or "expert ii" in play_comment.lower()):
+            return (which_standard(play_comment) + "E2")
+        return (which_standard(play_comment) + "E1")
+    if("standard" in play_comment.lower()):
+        return which_standard(play_comment)
     if("heroic" in play_comment.lower()):
         return "Heroic"
-
-    return "Standard"
+    return "S1"
 
 def clean_up_hero_name(hero_name):
     """
@@ -163,6 +172,9 @@ def clean_up_hero_name(hero_name):
         "Warmachine":"War Machine",
         "Vision":"Vision",
         "Valkyrie":"Valkyrie",
+        "Miles Morales":"Miles Morales",
+        "SpiderGwen":"SpiderGwen",
+        "Ghost Spider":"SpiderGwen",
     }
     try:
         return hero_name_replace[hero_name]
