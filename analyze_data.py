@@ -61,25 +61,25 @@ class AspectData:
     def smarter_string(self):
         smart_string = "\n[b]Aspect Data:[/b]"
         if(self.leadership_plays > 0):
-            smart_string += "\n[b][COLOR=#00CCCC]Leadership Plays: {}".format(self.leadership_plays)
-            smart_string += "\nLeadership Wins: {}".format(self.leadership_wins)
-            smart_string += "\nLeadership Win %: {:.1%}[/COLOR][/b]".format(self.leadership_win_percentage)
+            smart_string += f"\n[b][COLOR=#00CCCC]Leadership Plays: {self.leadership_plays}"
+            smart_string += f"\nLeadership Wins: {self.leadership_wins}"
+            smart_string += f"\nLeadership Win %: {self.leadership_win_percentage:.1%}[/COLOR][/b]"
         if(self.aggression_plays > 0):
-            smart_string += "\n[b][COLOR=#FF0000]Aggression Plays: {}".format(self.aggression_plays)
-            smart_string += "\nAggression Wins: {}".format(self.aggression_wins)
-            smart_string += "\nAggression Win %: {:.1%}[/COLOR][/b]".format(self.aggression_win_percentage)
+            smart_string += f"\n[b][COLOR=#FF0000]Aggression Plays: {self.aggression_plays}"
+            smart_string += f"\nAggression Wins: {self.aggression_wins}"
+            smart_string += f"\nAggression Win %: {self.aggression_win_percentage:.1%}[/COLOR][/b]"
         if(self.justice_plays > 0):
-            smart_string += "\n[b][BGCOLOR=#003399][COLOR=#FFFF00]Justice Plays: {}".format(self.justice_plays)
-            smart_string += "\nJustice Wins: {}".format(self.justice_wins)
-            smart_string += "\nJustice Win %: {:.1%}[/COLOR][/BGCOLOR][/b]".format(self.justice_win_percentage)
+            smart_string += f"\n[b][BGCOLOR=#003399][COLOR=#FFFF00]Justice Plays: {self.justice_plays}"
+            smart_string += f"\nJustice Wins: {self.justice_wins}"
+            smart_string += f"\nJustice Win %: {self.justice_win_percentage:.1%}[/COLOR][/BGCOLOR][/b]"
         if(self.protection_plays > 0):
-            smart_string += "\n[b][COLOR=#00FF33]Protection Plays: {}".format(self.protection_plays)
-            smart_string += "\nProtection Wins: {}".format(self.protection_wins)
-            smart_string += "\nProtection Win %: {:.1%}[/COLOR][/b]".format(self.protection_win_percentage)
+            smart_string += f"\n[b][COLOR=#00FF33]Protection Plays: {self.protection_plays}"
+            smart_string += f"\nProtection Wins: {self.protection_wins}"
+            smart_string += f"\nProtection Win %: {self.protection_win_percentage:.1%}[/COLOR][/b]"
         if(self.basic_plays > 0):
-            smart_string += "\n[b][COLOR=#808080]All Basic Plays: {}".format(self.basic_plays)
-            smart_string += "\nAll Basic Wins: {}".format(self.basic_wins)
-            smart_string += "\nAll Basic Win %: {:.1%}[/COLOR][/b]".format(self.basic_win_percentage)
+            smart_string += f"\n[b][COLOR=#808080]All Basic Plays: {self.basic_plays}"
+            smart_string += f"\nAll Basic Wins: {self.basic_wins}"
+            smart_string += f"\nAll Basic Win %: {self.basic_win_percentage:.1%}[/COLOR][/b]"
         return smart_string
 
     def __repr__(self):
@@ -103,9 +103,9 @@ class HeroData:
 
     def smarter_string(self):
         smart_string = ("[b]Overall Data[/b]" +
-                        "\nTotal Plays: {}".format(self.total_plays) +
-                        "\nTotal Wins: {}".format(self.total_wins) +
-                        "\nTotal Win  %: {:.1%}".format(self.win_percentage))
+                        f"\nTotal Plays: {self.total_plays}" +
+                        f"\nTotal Wins: {self.total_wins}" +
+                        f"\nTotal Win  %: {self.win_percentage:.1%}")
         smart_string += self.aspect_data.smarter_string()
         return smart_string
 
@@ -184,33 +184,33 @@ class DifficultyStats:
     def smarter_string(self):
         smart_string = ""
         if(self.expert1_plays > 0):
-            smart_string += "\nS1E1 Plays: {}".format(self.expert1_plays) 
-            smart_string += "\nS1E1 Wins: {}".format(self.expert1_wins) 
-            smart_string += "\nS1E1 Wins %: {:.1%}".format(self.expert1_win_percentage) 
+            smart_string += f"\nS1E1 Plays: {self.expert1_plays}"
+            smart_string += f"\nS1E1 Wins: {self.expert1_wins}"
+            smart_string += f"\nS1E1 Wins %: {self.expert1_win_percentage:.1%}"
         if(self.expert2_plays > 0):
-            smart_string += "\nS1E2 Plays: {}".format(self.expert2_plays) 
-            smart_string += "\nS1E2 Wins: {}".format(self.expert2_wins) 
-            smart_string += "\nS1E2 Wins %: {:.1%}".format(self.expert2_win_percentage) 
+            smart_string += f"\nS1E2 Plays: {self.expert2_plays}"
+            smart_string += f"\nS1E2 Wins: {self.expert2_wins}"
+            smart_string += f"\nS1E2 Wins %: {self.expert2_win_percentage:.1%}"
         if(self.expert3_plays > 0):
-            smart_string += "\nS2E1 Plays: {}".format(self.expert3_plays) 
-            smart_string += "\nS2E1 Wins: {}".format(self.expert3_wins) 
-            smart_string += "\nS2E1 Wins %: {:.1%}".format(self.expert3_win_percentage) 
+            smart_string += f"\nS2E1 Plays: {self.expert3_plays}"
+            smart_string += f"\nS2E1 Wins: {self.expert3_wins}"
+            smart_string += f"\nS2E1 Wins %: {self.expert3_win_percentage:.1%}"
         if(self.expert4_plays > 0):
-            smart_string += "\nS2E2 Plays: {}".format(self.expert4_plays) 
-            smart_string += "\nS2E2 Wins: {}".format(self.expert4_wins) 
-            smart_string += "\nS2E2 Wins %: {:.1%}".format(self.expert4_win_percentage) 
+            smart_string += f"\nS2E2 Plays: {self.expert4_plays}"
+            smart_string += f"\nS2E2 Wins: {self.expert4_wins}"
+            smart_string += f"\nS2E2 Wins %: {self.expert4_win_percentage:.1%}"
         if(self.standard1_plays > 0):
-            smart_string += "\nS1 Plays: {}".format(self.standard1_plays) 
-            smart_string += "\nS1 Wins: {}".format(self.standard1_wins) 
-            smart_string += "\nS1 Wins %: {:.1%}".format(self.standard1_win_percentage) 
+            smart_string += f"\nS1 Plays: {self.standard1_plays}"
+            smart_string += f"\nS1 Wins: {self.standard1_wins}"
+            smart_string += f"\nS1 Wins %: {self.standard1_win_percentage:.1%}"
         if(self.standard2_plays > 0):
-            smart_string += "\nS2 Plays: {}".format(self.standard2_plays) 
-            smart_string += "\nS2 Wins: {}".format(self.standard2_wins) 
-            smart_string += "\nS2 Wins %: {:.1%}".format(self.standard2_win_percentage) 
+            smart_string += f"\nS2 Plays: {self.standard2_plays}"
+            smart_string += f"\nS2 Wins: {self.standard2_wins}"
+            smart_string += f"\nS2 Wins %: {self.standard2_win_percentage:.1%}"
         if(self.heroic_plays > 0):
-            smart_string += "\nHeroic Plays: {}".format(self.heroic_plays) 
-            smart_string += "\nHeroic Wins: {}".format(self.heroic_wins) 
-            smart_string += "\nHeroic Wins %: {:.1%}".format(self.heroic_win_percentage) 
+            smart_string += f"\nHeroic Plays: {self.heroic_plays}"
+            smart_string += f"\nHeroic Wins: {self.heroic_wins}"
+            smart_string += f"\nHeroic Wins %: {self.heroic_win_percentage:.1%}"
         return smart_string
 
     def __repr__(self):
@@ -222,7 +222,7 @@ class VillainData:
         self.total_plays = 0
         self.total_wins = 0
         self.win_percentage = 0
-        self.difficulty_data = DifficultyStats()  
+        self.difficulty_data = DifficultyStats()
 
     def add_play(self, play):
         self.total_plays += 1
@@ -232,9 +232,9 @@ class VillainData:
 
 
     def __repr__(self):
-        return ("Total Plays: {}".format(self.total_plays) +
-        "\nTotal Wins: {}".format(self.total_wins) +
-        "\nTotal Win  %: {:.1%}".format(self.win_percentage) +
+        return (f"Total Plays: {self.total_plays}" +
+        f"\nTotal Wins: {self.total_wins}" +
+        f"\nTotal Win  %: {self.win_percentage:.1%}" +
         self.difficulty_data.__repr__())
 
     def calculate_percentages(self):
@@ -266,12 +266,12 @@ class OverallData:
 
     def __repr__(self):
         return ("[b]Overall Data[/b][b]" +
-        "\nTotal Plays: {}".format(self.overall_plays) +
-        "\nTotal Wins: {}".format(self.overall_wins) +
-        "\nTotal Win  %: {:.1%}".format(self.overall_win_percentage) +
-        "\nTotal True Solo Plays: {}".format(self.overall_true_solo_plays) +
-        "\nTotal Multihanded Solo Plays: {}".format(self.overall_solo_plays) +
-        "\nTotal Multiplayer Plays: {}".format(self.overall_multi_plays) +
+        f"\nTotal Plays: {self.overall_plays}" +
+        f"\nTotal Wins: {self.overall_wins}" +
+        f"\nTotal Win  %: {self.overall_win_percentage:.1%}" +
+        f"\nTotal True Solo Plays: {self.overall_true_solo_plays}" +
+        f"\nTotal Multihanded Solo Plays: {self.overall_solo_plays}" +
+        f"\nTotal Multiplayer Plays: {self.overall_multi_plays}" +
         "\n[b]Difficulty Data:[/b]" +
         self.difficulty_data.__repr__() +
         self.aspect_data.__repr__())
@@ -403,7 +403,7 @@ class Statistics:
         repr_string = "===========================================================\n"
         repr_string += self.overall_data.__repr__() + "\n"
         repr_string += "===========================================================\n"
-        repr_string += "Hero-H Index: {0}   Villain H-Index: {1}\n".format(self.hero_h_index, self.villain_h_index)
+        repr_string += f"Hero-H Index: {self.hero_h_index}   Villain H-Index: {self.villain_h_index}\n"
         repr_string += "===========================================================\n"
         sorted_heroes = sorted(self.hero_data.items(), key=lambda x: x[1].total_plays, reverse=True)
         for hero in sorted_heroes:
