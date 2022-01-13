@@ -78,6 +78,16 @@ def which_standard(play_comment):
     return "S1"
 
 def extract_difficulty(play_comment):
+    if("s1e1" in play_comment.lower()):
+        return "S1E1"
+    if("s2e1" in play_comment.lower()):
+        return "S2E1"
+    if("s2e2" in play_comment.lower()):
+        return "S2E2"
+    if("s1e2" in play_comment.lower()):
+        return "S1E2"
+    if("s2" in play_comment.lower()):
+        return "S2"
     if("expert" in play_comment.lower()):
         if("expert 2" in play_comment.lower() or "expert ii" in play_comment.lower()):
             return (which_standard(play_comment) + "E2")
