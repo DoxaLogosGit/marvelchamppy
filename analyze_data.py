@@ -15,7 +15,7 @@ class AspectData:
         self.basic_plays = 0
         self.basic_wins = 0
         self.basic_win_percentage = 0
-    
+
     def add_play(self, play, this_was_a_win, hero):
         if hero == "Adam Warlock":
             if "basic" in play["Aspect"].lower():
@@ -164,7 +164,7 @@ class DifficultyStats:
         elif play["Difficulty"] == "Heroic":
             self.heroic_plays += 1
             self.heroic_wins += this_was_a_win
-        
+
     def calculate_percentages(self):
         if self.expert1_plays:
             self.expert1_win_percentage = self.expert1_wins/self.expert1_plays
@@ -302,7 +302,9 @@ class OverallData:
 
 HERO_INIT_DATA  = {
     "Spider Man" : HeroData("Spider Man"),
+    "Miles Morales" : HeroData("Miles Morales"),
     "Spider Woman" : HeroData("Spider Woman"),
+    "Spider Gwen" : HeroData("Spider Gwen"),
     "Ms. Marvel" : HeroData("Ms. Marvel"),
     "Iron Man" : HeroData("Iron Man"),
     "Captain Marvel" : HeroData("Captain Marvel"),
@@ -315,6 +317,7 @@ HERO_INIT_DATA  = {
     "Captain America" : HeroData("Captain America"),
     "Doctor Strange" : HeroData("Doctor Strange"),
     "Hulk" : HeroData("Hulk"),
+    "Nova" : HeroData("Nova"),
     "Thor" : HeroData("Thor"),
     "Black Widow" : HeroData("Black Widow"),
     "Hawkeye" : HeroData("Hawkeye"),
@@ -352,6 +355,9 @@ VILLAIN_INIT_DATA = {
     "Ebony Maw": VillainData("Ebony Maw"),
     "Thanos": VillainData("Thanos"),
     "Loki": VillainData("Loki"),
+    "Venom": VillainData("Venom"),
+    "Sandman": VillainData("Sandman"),
+    "Mysterio": VillainData("Mysterio"),
     "Tower Defense": VillainData("Tower Defense"),
     "Hela": VillainData("Hela"),
     "Hood": VillainData("Hood"),

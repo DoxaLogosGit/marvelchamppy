@@ -49,6 +49,10 @@ def extract_villain(play_comment):
         return "Thanos"
     if("thanos" in play_comment.lower()):
         return "Thanos"
+    if("sandman" in play_comment.lower()):
+        return "Sandman"
+    if("mysterio" in play_comment.lower()):
+        return "Mysterio"
     if("the hood" in play_comment.lower()):
         return "Hood"
     if("hood" in play_comment.lower()):
@@ -63,6 +67,8 @@ def extract_villain(play_comment):
         return "Loki"
     if("hela" in play_comment.lower()):
         return "Hela"
+    if("venom villain" in play_comment.lower()):
+        return "Venom"
     if("collector" in play_comment.lower()):
         if("infiltrate" in play_comment.lower()):
             return "The Collector - Infiltrate the Museum"
@@ -109,7 +115,13 @@ def clean_up_hero_name(hero_name):
         "spiderman":"Spider Man",
         "spider man":"Spider Man",
         "spider-man":"Spider Man",
+        "ghostspider":"Spider Gwen",
+        "ghost spider":"Spider Man",
+        "spider gwen":"Spider Gwen",
+        "spider-gwen":"Spider Gwen",
+        "spidergwen":"Spider Gwen",
         "ant man":"Ant Man",
+        "miles morales":"Miles Morales",
         "antman":"Ant Man",
         "scarlet witch":"Scarlet Witch",
         "scarlet-witch":"Scarlet Witch",
@@ -150,6 +162,7 @@ def clean_up_hero_name(hero_name):
         "doctor strange":"Doctor Strange",
         "doctorstrange":"Doctor Strange",
         "hulk":"Hulk",
+        "nova":"Nova",
         "wasp":"Wasp",
         "thor":"Thor",
         "quicksilver":"Quicksilver",
