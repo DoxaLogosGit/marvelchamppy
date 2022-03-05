@@ -49,10 +49,6 @@ def extract_villain(play_comment):
         return "Thanos"
     if("thanos" in play_comment.lower()):
         return "Thanos"
-    if("sandman" in play_comment.lower()):
-        return "Sandman"
-    if("mysterio" in play_comment.lower()):
-        return "Mysterio"
     if("the hood" in play_comment.lower()):
         return "Hood"
     if("hood" in play_comment.lower()):
@@ -69,6 +65,10 @@ def extract_villain(play_comment):
         return "Hela"
     if("venom villain" in play_comment.lower()):
         return "Venom"
+    if("sandman" in play_comment.lower()):
+        return "Sandman"
+    if("mysterio" in play_comment.lower()):
+        return "Mysterio"
     if("collector" in play_comment.lower()):
         if("infiltrate" in play_comment.lower()):
             return "The Collector - Infiltrate the Museum"

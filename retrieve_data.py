@@ -25,9 +25,9 @@ def retrieve_play_page(url, user, page_num='1'):
     Retrieves the play page given the page number
     returns the xml text
     """
-    print("Retrieving page data...")
+    #print("Retrieving page data...")
     res = requests.get(url+PLAYS+"username="+user+"&type=family&page="+page_num)
-    print(res)
+    #print(res)
     if (res.status_code != 200):
         return ""
     else:
@@ -44,13 +44,13 @@ def retrieve_play_data_from_bgg(user):
         return -1
 
     pages = determine_number_of_pages(page_data)
-    print("Pages of data to retrieve {}".format(pages))
+    #print("Pages of data to retrieve {}".format(pages))
 
     xml_data.append(page_data)
     #pages = 2 #iterate fast for now
     for index in range(2, pages+1):
         time.sleep(1)
-        print("Retrieving page {} of data".format(index))
+        #print("Retrieving page {} of data".format(index))
         page_data = retrieve_play_page(BASE_URL,user,str(index))
         if page_data != "":
             xml_data.append(page_data)
