@@ -333,8 +333,8 @@ HERO_INIT_DATA  = {
     "War Machine" : HeroData("War Machine"),
     "Vision" : HeroData("Vision"),
     "Valkyrie" : HeroData("Valkyrie"),
-    #"Miles Morales" : HeroData("Miles Morales"),
-    #"Spider Gwen" : HeroData("Spider Gwen"),
+    "Miles Morales" : HeroData("Miles Morales"),
+    "Spider Gwen" : HeroData("Spider Gwen"),
 }
 VILLAIN_INIT_DATA = {
     "Ultron": VillainData("Ultron"),
@@ -358,6 +358,8 @@ VILLAIN_INIT_DATA = {
     "Venom": VillainData("Venom"),
     "Sandman": VillainData("Sandman"),
     "Mysterio": VillainData("Mysterio"),
+    "Sinister Six": VillainData("Sinister Six"),
+    "Venom Goblin": VillainData("Venom Goblin"),
     "Tower Defense": VillainData("Tower Defense"),
     "Hela": VillainData("Hela"),
     "Hood": VillainData("Hood"),

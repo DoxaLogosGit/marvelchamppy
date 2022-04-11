@@ -65,6 +65,10 @@ def extract_villain(play_comment):
         return "Hela"
     if("venom villain" in play_comment.lower()):
         return "Venom"
+    if("sinister six" in play_comment.lower()):
+        return "Sinister Six"
+    if("vengoblin" in play_comment.lower()):
+        return "Venom Goblin"
     if("sandman" in play_comment.lower()):
         return "Sandman"
     if("mysterio" in play_comment.lower()):
