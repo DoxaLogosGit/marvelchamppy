@@ -11,6 +11,7 @@ from argparse import ArgumentParser
 
 USER='DoxaLogos'
 #OLD_USER='jgatkinsn' #old username
+START_DATE =  (2019, 11, 6)
 
 
 
