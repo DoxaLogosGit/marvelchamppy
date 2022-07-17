@@ -302,6 +302,7 @@ class OverallData:
 
 HERO_INIT_DATA  = {
     "Spider Man" : HeroData("Spider Man"),
+    "Spider Han" : HeroData("Spider Han"),
     "Miles Morales" : HeroData("Miles Morales"),
     "Spider Woman" : HeroData("Spider Woman"),
     "Spider Gwen" : HeroData("Spider Gwen"),
@@ -333,9 +334,10 @@ HERO_INIT_DATA  = {
     "Vision" : HeroData("Vision"),
     "Valkyrie" : HeroData("Valkyrie"),
     "Miles Morales" : HeroData("Miles Morales"),
-    "Spider Gwen" : HeroData("Spider Gwen"),
+    "Ghost Spider" : HeroData("Ghost Spider"),
     "Iron Heart" : HeroData("Iron Heart"),
     "Nova" : HeroData("Nova"),
+    "Sp//der" : HeroData("Sp//der"),
 }
 VILLAIN_INIT_DATA = {
     "Ultron": VillainData("Ultron"),

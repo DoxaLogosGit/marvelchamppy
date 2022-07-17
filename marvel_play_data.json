@@ -1,5 +1,47 @@
 [
   {
+    "Date": "2022-07-08",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "All",
+        "Hero": "Adam Warlock",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Loki"
+  },
+  {
+    "Date": "2022-07-06",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "All",
+        "Hero": "Adam Warlock",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Loki"
+  },
+  {
+    "Date": "2022-07-05",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "All",
+        "Hero": "Adam Warlock",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Loki"
+  },
+  {
     "Date": "2022-07-04",
     "Difficulty": "S1E1",
     "Heroes": [
@@ -7,6 +49,20 @@
         "Aspect": "Leadership",
         "Hero": "Iron Heart",
         "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Thanos"
+  },
+  {
+    "Date": "2022-07-04",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Nova",
+        "Win": 0
       }
     ],
     "Multiplayer": false,
