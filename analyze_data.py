@@ -302,7 +302,7 @@ class OverallData:
 
 HERO_INIT_DATA  = {
     "Spider Man" : HeroData("Spider Man"),
-    "Spider Han" : HeroData("Spider Han"),
+    "Spider Ham" : HeroData("Spider Ham"),
     "Miles Morales" : HeroData("Miles Morales"),
     "Spider Woman" : HeroData("Spider Woman"),
     "Spider Gwen" : HeroData("Spider Gwen"),

@@ -1,5 +1,145 @@
 [
   {
+    "Date": "2022-07-30",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression Protection",
+        "Hero": "Spider Woman",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Red Skull"
+  },
+  {
+    "Date": "2022-07-30",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression Protection",
+        "Hero": "Spider Woman",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Nebula"
+  },
+  {
+    "Date": "2022-07-30",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression Protection",
+        "Hero": "Spider Woman",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Nebula"
+  },
+  {
+    "Date": "2022-07-22",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Sp//der",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Thanos"
+  },
+  {
+    "Date": "2022-07-17",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Spider Ham",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Thanos"
+  },
+  {
+    "Date": "2022-07-17",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Spider Ham",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Thanos"
+  },
+  {
+    "Date": "2022-07-16",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Spider Ham",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Thanos"
+  },
+  {
+    "Date": "2022-07-15",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "All",
+        "Hero": "Adam Warlock",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Loki"
+  },
+  {
+    "Date": "2022-07-15",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "All",
+        "Hero": "Adam Warlock",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Loki"
+  },
+  {
+    "Date": "2022-07-15",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "all",
+        "Hero": "Adam Warlock",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Loki"
+  },
+  {
     "Date": "2022-07-08",
     "Difficulty": "S1E1",
     "Heroes": [
@@ -75,7 +215,7 @@
     "Heroes": [
       {
         "Aspect": "Aggression",
-        "Hero": "Spider Gwen",
+        "Hero": "Ghost Spider",
         "Win": 1
       }
     ],
@@ -117,7 +257,7 @@
     "Heroes": [
       {
         "Aspect": "Aggression",
-        "Hero": "Spider Gwen",
+        "Hero": "Ghost Spider",
         "Win": 1
       }
     ],
@@ -551,7 +691,7 @@
     "Heroes": [
       {
         "Aspect": "Protection",
-        "Hero": "Spider Gwen",
+        "Hero": "Ghost Spider",
         "Win": 1
       }
     ],
@@ -612,7 +752,7 @@
     "Heroes": [
       {
         "Aspect": "Protection",
-        "Hero": "Spider Gwen",
+        "Hero": "Ghost Spider",
         "Win": 0
       }
     ],
@@ -827,7 +967,7 @@
       },
       {
         "Aspect": "Protection",
-        "Hero": "Spider Gwen",
+        "Hero": "Ghost Spider",
         "Win": 1
       }
     ],
@@ -846,7 +986,7 @@
       },
       {
         "Aspect": "Protection",
-        "Hero": "Spider Gwen",
+        "Hero": "Ghost Spider",
         "Win": 1
       }
     ],
@@ -977,7 +1117,7 @@
       },
       {
         "Aspect": "Protection",
-        "Hero": "Spider Gwen",
+        "Hero": "Ghost Spider",
         "Win": 1
       }
     ],
@@ -996,7 +1136,7 @@
       },
       {
         "Aspect": "Protection",
-        "Hero": "Spider Gwen",
+        "Hero": "Ghost Spider",
         "Win": 1
       }
     ],
@@ -1038,7 +1178,7 @@
     "Heroes": [
       {
         "Aspect": "Protection",
-        "Hero": "Spider Gwen",
+        "Hero": "Ghost Spider",
         "Win": 1
       },
       {
