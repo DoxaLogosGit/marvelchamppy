@@ -73,6 +73,18 @@ def extract_villain(play_comment):
         return "Sandman"
     if("mysterio" in play_comment.lower()):
         return "Mysterio"
+    if("sabretooth" in play_comment.lower()):
+        return "Sabretooth"
+    if("magneto" in play_comment.lower()):
+        return "Magneto"
+    if("project wideawake" in play_comment.lower()):
+        return "Project Wideawake"
+    if("mansion attack" in play_comment.lower()):
+        return "Mansion Attack"
+    if("master mold" in play_comment.lower()):
+        return "Master Mold"
+    if("master mold" in play_comment.lower()):
+        return "Master Mold"
     if("collector" in play_comment.lower()):
         if("infiltrate" in play_comment.lower()):
             return "The Collector - Infiltrate the Museum"
@@ -193,6 +205,10 @@ def clean_up_hero_name(hero_name):
         "war machine":"War Machine",
         "war-machine":"War Machine",
         "warmachine":"War Machine",
+        "shadowcat":"Shadowcat",
+        "colossus":"Colossus",
+        "cyclops":"Cyclops",
+        "phoenix":"Phoenix",
         "vision":"Vision",
         "valkyrie":"Valkyrie",
         "miles morales":"Miles Morales",
