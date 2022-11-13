@@ -39,6 +39,8 @@ def extract_villain(play_comment):
         return "Red Skull"
     if("nebula" in play_comment.lower()):
         return "Nebula"
+    if("mojo" in play_comment.lower()):
+        return "Mojo"
     if("drang" in play_comment.lower()):
         return "Drang"
     if("ronan" in play_comment.lower()):
@@ -73,7 +75,7 @@ def extract_villain(play_comment):
         return "Sandman"
     if("mysterio" in play_comment.lower()):
         return "Mysterio"
-    if("sabretooth" in play_comment.lower()):
+    if("sabretooth" in play_comment.lower() or "sabertooth" in play_comment.lower()):
         return "Sabretooth"
     if("magneto" in play_comment.lower()):
         return "Magneto"
@@ -206,9 +208,16 @@ def clean_up_hero_name(hero_name):
         "war-machine":"War Machine",
         "warmachine":"War Machine",
         "shadowcat":"Shadowcat",
+        "shadow cat":"Shadowcat",
+        "shadow-cat":"Shadowcat",
         "colossus":"Colossus",
         "cyclops":"Cyclops",
         "phoenix":"Phoenix",
+        "pheonix":"Phoenix",
+        "storm":"Storm",
+        "wolverine":"Wolverine",
+        "gambit":"Gambit",
+        "rogue":"Rogue",
         "vision":"Vision",
         "valkyrie":"Valkyrie",
         "miles morales":"Miles Morales",
