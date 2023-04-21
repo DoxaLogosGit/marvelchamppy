@@ -495,7 +495,7 @@ class Statistics:
 
     def generate_team_plays(self):
         team_play_list = [ (x, self.team_plays[x]) for x in self.team_plays.keys()]
-        plays_tally = "Team Plays:"
+        plays_tally = "[b]Team Data:[/b]"
         for team, plays in sorted(team_play_list, key=lambda x: x[1], reverse=True):
             plays_tally = plays_tally + f"\n{team}: {plays}"
 
