@@ -132,22 +132,24 @@ class HeroData:
         self.difficulty_data = DifficultyStats()
         self.traits = traits
 
-    def add_play(self, play):
+    def add_play(self, hero, full_play):
         """
         Assumes the caller has matched up the hero
         """
         self.total_plays += 1
-        this_was_a_win = play["Win"]
+        this_was_a_win = hero["Win"]
         self.total_wins += this_was_a_win
-        self.aspect_data.add_play(play, this_was_a_win, self.hero_name)
-        #self.difficulty_data.add_play(play, this_was_a_win)
+        self.aspect_data.add_play(hero, this_was_a_win, self.hero_name)
+        self.difficulty_data.add_play(full_play, this_was_a_win)
 
 
     def smarter_string(self):
         smart_string = ("[b]Overall Data[/b]" +
                         f"\nTotal Plays: {self.total_plays}" +
                         f"\nTotal Wins: {self.total_wins}" +
-                        f"\nTotal Win  %: {self.win_percentage:.1%}")
+                        f"\nTotal Win  %: {self.win_percentage:.1%}" +
+                        "\n[b]Difficulty Data:[/b]")
+        smart_string += self.difficulty_data.smarter_string()
         smart_string += self.aspect_data.smarter_string()
         return smart_string
 
@@ -159,6 +161,7 @@ class HeroData:
         if self.total_plays:
             self.win_percentage = self.total_wins/self.total_plays
         self.aspect_data.calculate_percentages(bgg_format)
+        self.difficulty_data.calculate_percentages(bgg_format)
 
 class DifficultyStats:
     def __init__(self):
@@ -273,19 +276,22 @@ class VillainData:
         this_was_a_win = play["Heroes"][0]["Win"]
         self.total_wins += this_was_a_win
         self.difficulty_data.add_play(play, this_was_a_win)
-        #self.aspect_data.add_play(play, this_was_a_win)
+        for hero_play in play["Heroes"]:
+            self.aspect_data.add_play(hero_play, this_was_a_win, hero_play["Hero"])
 
 
     def __repr__(self):
         return (f"Total Plays: {self.total_plays}" +
         f"\nTotal Wins: {self.total_wins}" +
         f"\nTotal Win  %: {self.win_percentage:.1%}" +
-        self.difficulty_data.__repr__())
+        self.difficulty_data.__repr__() +
+        self.aspect_data.__repr__())
 
     def calculate_percentages(self, bgg_format=True):
         if self.total_plays:
             self.win_percentage = self.total_wins/self.total_plays
         self.difficulty_data.calculate_percentages(bgg_format)
+        self.aspect_data.calculate_percentages(bgg_format)
 
 
 
@@ -474,7 +480,7 @@ class Statistics:
     def analyze_hero_data(self):
         for play in self.all_plays:
             for hero in play["Heroes"]:
-                self.hero_data[hero["Hero"]].add_play(hero)
+                self.hero_data[hero["Hero"]].add_play(hero, play)
                 #check traits
                 for team in TeamTraits:
                     if team in self.hero_data[hero["Hero"]].traits:
