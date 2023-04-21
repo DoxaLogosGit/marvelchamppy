@@ -525,7 +525,7 @@ class Statistics:
     def __repr__(self):
         repr_string = "===========================================================\n"
         repr_string += self.overall_data.__repr__() + "\n"
-        repr_string = "===========================================================\n"
+        repr_string += "===========================================================\n"
         repr_string += self.generate_team_plays() + "\n"
         repr_string += "===========================================================\n"
         repr_string += f"Hero-H Index: {self.hero_h_index}   Villain H-Index: {self.villain_h_index}\n"
