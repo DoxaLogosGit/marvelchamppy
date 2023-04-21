@@ -66,71 +66,71 @@ class AspectData:
             if self.bgg_format:
                 smart_string += f"\n[b][COLOR=#00CCCC]Leadership Plays: {self.leadership_plays}"
             else:
-                smart_string += f"\n[b]Leadership Plays: {self.leadership_plays}"
+                smart_string += f"\nLeadership Plays: {self.leadership_plays}"
             smart_string += f"\nLeadership Wins: {self.leadership_wins}"
             smart_string += f"\nLeadership Win %: {self.leadership_win_percentage:.1%}"
             if self.bgg_format:
                 smart_string += f"[/COLOR][/b]"
             else:
-                smart_string += f"[/b]"
+                smart_string += f""
 
         if(self.aggression_plays > 0):
             if self.bgg_format:
                 smart_string += f"\n[b][COLOR=#FF0000]Aggression Plays: {self.aggression_plays}"
             else:
-                smart_string += f"\n[b]Aggression Plays: {self.aggression_plays}"
+                smart_string += f"\nAggression Plays: {self.aggression_plays}"
             smart_string += f"\nAggression Wins: {self.aggression_wins}"
             smart_string += f"\nAggression Win %: {self.aggression_win_percentage:.1%}"
             if self.bgg_format:
                 smart_string += f"[/COLOR][/b]"
             else:
-                smart_string += f"[/b]"
+                smart_string += f""
         if(self.justice_plays > 0):
             if self.bgg_format:
                 smart_string += f"\n[b][BGCOLOR=#003399][COLOR=#FFFF00]Justice Plays: {self.justice_plays}"
             else:
-                smart_string += f"\n[b]Justice Plays: {self.justice_plays}"
+                smart_string += f"\nJustice Plays: {self.justice_plays}"
             smart_string += f"\nJustice Wins: {self.justice_wins}"
             smart_string += f"\nJustice Win %: {self.justice_win_percentage:.1%}"
             if self.bgg_format:
                 smart_string += f"[/COLOR][/BGCOLOR][/b]"
             else:
-                smart_string += f"[/b]"
+                smart_string += f""
         if(self.protection_plays > 0):
             if self.bgg_format:
                 smart_string += f"\n[b][COLOR=#00FF33]Protection Plays: {self.protection_plays}"
             else:
-                smart_string += f"\n[b]Protection Plays: {self.protection_plays}"
-            smart_string += f"\n[b][COLOR=#00FF33]Protection Plays: {self.protection_plays}"
+                smart_string += f"\nProtection Plays: {self.protection_plays}"
             smart_string += f"\nProtection Wins: {self.protection_wins}"
             smart_string += f"\nProtection Win %: {self.protection_win_percentage:.1%}"
             if self.bgg_format:
                 smart_string += f"[/COLOR][/b]"
             else:
-                smart_string += f"[/b]"
+                smart_string += f""
         if(self.basic_plays > 0):
             if self.bgg_format:
                 smart_string += f"\n[b][COLOR=#808080]All Basic Plays: {self.basic_plays}"
             else:
-                smart_string += f"\n[b]All Basic Plays: {self.basic_plays}"
+                smart_string += f"\nAll Basic Plays: {self.basic_plays}"
             smart_string += f"\nAll Basic Wins: {self.basic_wins}"
             smart_string += f"\nAll Basic Win %: {self.basic_win_percentage:.1%}"
             if self.bgg_format:
                 smart_string += f"[/COLOR][/b]"
             else:
-                smart_string += f"[/b]"
+                smart_string += f""
         return smart_string
 
     def __repr__(self):
         return (self.smarter_string())
 
 class HeroData:
-    def __init__(self, hero):
+    def __init__(self, hero, traits):
         self.hero_name = hero
         self.total_plays = 0
         self.total_wins = 0
         self.aspect_data = AspectData()
         self.difficulty_data = DifficultyStats()
+        self.traits = traits
 
     def add_play(self, play):
         """
@@ -301,6 +301,7 @@ class OverallData:
         self.overall_multi_plays = 0
         self.aspect_data = AspectData()
         self.difficulty_data = DifficultyStats()
+        self.team_plays = {}
 
     def calculate_percentages(self, bgg_format=True):
         if self.overall_plays:
@@ -308,6 +309,7 @@ class OverallData:
         self.difficulty_data.calculate_percentages(bgg_format)
         self.aspect_data.calculate_percentages(bgg_format)
         return None
+
 
     def __repr__(self):
         return ("[b]Overall Data[/b][b]" +
@@ -338,59 +340,87 @@ class OverallData:
                 self.overall_solo_plays += 1
 
             self.difficulty_data.add_play(play, this_was_a_win)
-
             for hero in play["Heroes"]:
                 self.aspect_data.add_play(hero, this_was_a_win, hero["Hero"])
+
 
         self.calculate_percentages(bgg_format)
 
 
+HeroTraits = [
+    "Avenger",
+    "Aerial",
+    "Spy",
+    "Thief",
+    "Wakanda",
+    "Gamma",
+    "X-Men",
+    "X Force",
+    "X-Factor",
+    "Web Warrior",
+    "Guardian",
+    "Mystic",
+    "Psionic",
+    "Soldier",
+    "Champion",
+    "Tiny",
+    "Giant",
+    "Android"
+]
+
+TeamTraits = [
+    "Champion",
+    "Avenger",
+    "X-Men",
+    "Web Warrior",
+    "X Force",
+    "X-Factor",
+    "Guardian"
+]
 HERO_INIT_DATA  = {
-    "Spider Man" : HeroData("Spider Man"),
-    "Spider Ham" : HeroData("Spider Ham"),
-    "Miles Morales" : HeroData("Miles Morales"),
-    "Spider Woman" : HeroData("Spider Woman"),
-    "Spider Gwen" : HeroData("Spider Gwen"),
-    "Ms. Marvel" : HeroData("Ms. Marvel"),
-    "Iron Man" : HeroData("Iron Man"),
-    "Captain Marvel" : HeroData("Captain Marvel"),
-    "She-Hulk" : HeroData("She-Hulk"),
-    "Black Panther" : HeroData("Black Panther"),
-    "Ant Man" : HeroData("Ant Man"),
-    "Wasp" : HeroData("Wasp"),
-    "Quicksilver" : HeroData("Quicksilver"),
-    "Scarlet Witch" : HeroData("Scarlet Witch"),
-    "Captain America" : HeroData("Captain America"),
-    "Doctor Strange" : HeroData("Doctor Strange"),
-    "Hulk" : HeroData("Hulk"),
-    "Thor" : HeroData("Thor"),
-    "Black Widow" : HeroData("Black Widow"),
-    "Hawkeye" : HeroData("Hawkeye"),
-    "Rocket Raccoon" : HeroData("Rocket Raccoon"),
-    "Groot" : HeroData("Groot"),
-    "Gamora" : HeroData("Gamora"),
-    "Star Lord" : HeroData("Star Lord"),
-    "Drax" : HeroData("Drax"),
-    "Venom" : HeroData("Venom"),
-    "Adam Warlock" : HeroData("Adam Warlock"),
-    "Spectrum" : HeroData("Spectrum"),
-    "Nebula" : HeroData("Nebula"),
-    "War Machine" : HeroData("War Machine"),
-    "Vision" : HeroData("Vision"),
-    "Valkyrie" : HeroData("Valkyrie"),
-    "Miles Morales" : HeroData("Miles Morales"),
-    "Ghost Spider" : HeroData("Ghost Spider"),
-    "Iron Heart" : HeroData("Iron Heart"),
-    "Nova" : HeroData("Nova"),
-    "Wolverine" : HeroData("Wolverine"),
-    "Rogue" : HeroData("Rogue"),
-    "Storm" : HeroData("Storm"),
-    "Gambit" : HeroData("Gambit"),
-    "Cyclops" : HeroData("Cyclops"),
-    "Shadowcat" : HeroData("Shadowcat"),
-    "Colossus" : HeroData("Colossus"),
-    "Phoenix" : HeroData("Phoenix"),
-    "Sp//der" : HeroData("Sp//der"),
+    "Spider Man" : HeroData("Spider Man", ["Avenger", "Genius"]),
+    "Spider Ham" : HeroData("Spider Ham", ["Cartoon", "Civilian","Web Warrior"]),
+    "Miles Morales" : HeroData("Miles Morales",["Champion", "Web Warrior", "Civilian"]),
+    "Spider Woman" : HeroData("Spider Woman", ["Avenger", "Shield", "Spy"]),
+    "Ms. Marvel" : HeroData("Ms. Marvel", ["Champion","Inhuman"]),
+    "Iron Man" : HeroData("Iron Man", ["Avenger", "Genius"]),
+    "Captain Marvel" : HeroData("Captain Marvel", ["Avenger", "Soldier", "Shield"]),
+    "She-Hulk" : HeroData("She-Hulk", ["Attorney","Avenger", "Gamma"]),
+    "Black Panther" : HeroData("Black Panther", ["Avenger", "King", "Wakanda"]),
+    "Ant Man" : HeroData("Ant Man", ["Avenger", "Tiny", "Giant", "Civilian"]),
+    "Wasp" : HeroData("Wasp", ["Avenger", "Tiny", "Giant", "Genius"]),
+    "Quicksilver" : HeroData("Quicksilver", ["Avenger", "Civilian"]),
+    "Scarlet Witch" : HeroData("Scarlet Witch", ["Avenger", "Mystic"]),
+    "Captain America" : HeroData("Captain America", ["Avenger", "Shield", "Soldier"]),
+    "Doctor Strange" : HeroData("Doctor Strange", ["Avenger", "Mystic"]),
+    "Hulk" : HeroData("Hulk", ["Avenger","Gamma","Genius", "Scientist"]),
+    "Thor" : HeroData("Thor", ["Avenger", "Asgard"]),
+    "Black Widow" : HeroData("Black Widow", ["Avenger", "Shield", "Spy"]),
+    "Hawkeye" : HeroData("Hawkeye", ["Avenger", "Shield"]),
+    "Rocket Raccoon" : HeroData("Rocket Raccoon", ["Guardian", "Outlaw", "Genius"]),
+    "Groot" : HeroData("Groot", ["Guardian", "Outlaw"]),
+    "Gamora" : HeroData("Gamora", ["Guardian", "Outlaw"]),
+    "Star Lord" : HeroData("Star Lord", ["Guardian", "Outlaw"]),
+    "Drax" : HeroData("Drax", ["Guardian", "Outlaw"]),
+    "Venom" : HeroData("Venom", ["Guardian", "Space Knight", "Outlaw"]),
+    "Adam Warlock" : HeroData("Adam Warlock", ["Guardian", "Mystic"]),
+    "Spectrum" : HeroData("Spectrum", ["Aerial", "Avenger", "Civilian"]),
+    "Nebula" : HeroData("Nebula", ["Guardian", "Outlaw"]),
+    "War Machine" : HeroData("War Machine", ["Avenger", "Shield", "Soldier"]),
+    "Vision" : HeroData("Vision", ["Android", "Avenger"]),
+    "Valkyrie" : HeroData("Valkyrie", ["Avenger", "Asgard"]),
+    "Ghost Spider" : HeroData("Ghost Spider", ["Web Warrior","Civilian"]),
+    "Iron Heart" : HeroData("Iron Heart", ["Aerial", "Champion", "Genius"]),
+    "Nova" : HeroData("Nova", ["Champion", "Civilian"]),
+    "Wolverine" : HeroData("Wolverine", ["X-Men", "Mutant"]),
+    "Rogue" : HeroData("Rogue", ["X-Men", "Mutant"]),
+    "Storm" : HeroData("Storm", ["X-Men", "Mutant"]),
+    "Gambit" : HeroData("Gambit", ["X-Men", "Mutant", "Thief"]),
+    "Cyclops" : HeroData("Cyclops", ["X-Men", "Mutant"]),
+    "Shadowcat" : HeroData("Shadowcat", ["X-Men", "Mutant"]),
+    "Colossus" : HeroData("Colossus", ["X-Men", "Mutant"]),
+    "Phoenix" : HeroData("Phoenix", ["X-Men", "Psionic", "Mutant"]),
+    "Sp//der" : HeroData("Sp//der", ["Web Warrior", "Tech"]),
 }
 VILLAIN_INIT_DATA = {
     "Ultron": VillainData("Ultron"),
@@ -439,15 +469,31 @@ class Statistics:
         self.villain_h_index = 0
         self.hero_h_index = 0
         self.bgg_format=bgg_format
+        self.team_plays = {}
 
     def analyze_hero_data(self):
         for play in self.all_plays:
             for hero in play["Heroes"]:
                 self.hero_data[hero["Hero"]].add_play(hero)
+                #check traits
+                for team in TeamTraits:
+                    if team in self.hero_data[hero["Hero"]].traits:
+                        if team not in self.team_plays.keys():
+                            self.team_plays[team] = 1
+                        else:
+                            self.team_plays[team] += 1
 
         for hero in self.hero_data:
             self.hero_data[hero].calculate_percentages(self.bgg_format)
 
+
+    def generate_team_plays(self):
+        team_play_list = [ (x, self.team_plays[x]) for x in self.team_plays.keys()]
+        plays_tally = "Team Plays:"
+        for team, plays in sorted(team_play_list, key=lambda x: x[1], reverse=True):
+            plays_tally = plays_tally + f"\n{team}: {plays}"
+
+        return plays_tally
 
     def analyze_villain_data(self):
         for play in self.all_plays:
@@ -473,6 +519,8 @@ class Statistics:
     def __repr__(self):
         repr_string = "===========================================================\n"
         repr_string += self.overall_data.__repr__() + "\n"
+        repr_string = "===========================================================\n"
+        repr_string += self.generate_team_plays() + "\n"
         repr_string += "===========================================================\n"
         repr_string += f"Hero-H Index: {self.hero_h_index}   Villain H-Index: {self.villain_h_index}\n"
         repr_string += "===========================================================\n"
