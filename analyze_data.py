@@ -1,3 +1,11 @@
+import strictyaml
+from path import Path
+
+#load up traits from config file
+Traits = strictyaml.load(Path("traits.yaml").text()).data
+HeroTraits = Traits["Hero_Traits"]
+TeamTraits = Traits["Team_Traits"]
+
 class AspectData:
     def __init__(self):
         self.leadership_plays = 0
@@ -131,6 +139,7 @@ class HeroData:
         self.aspect_data = AspectData()
         self.difficulty_data = DifficultyStats()
         self.traits = traits
+        self.win_percentage = 0
 
     def add_play(self, hero, full_play):
         """
@@ -353,36 +362,9 @@ class OverallData:
         self.calculate_percentages(bgg_format)
 
 
-HeroTraits = [
-    "Avenger",
-    "Aerial",
-    "Spy",
-    "Thief",
-    "Wakanda",
-    "Gamma",
-    "X-Men",
-    "X Force",
-    "X-Factor",
-    "Web Warrior",
-    "Guardian",
-    "Mystic",
-    "Psionic",
-    "Soldier",
-    "Champion",
-    "Tiny",
-    "Giant",
-    "Android"
-]
+hero_config_data = strictyaml.load(Path("heroes.yaml").text()).data
+Hero_test_data = {x:HeroData(x, hero_config_data[x]["traits"]) for x in hero_config_data.keys()}
 
-TeamTraits = [
-    "Champion",
-    "Avenger",
-    "X-Men",
-    "Web Warrior",
-    "X Force",
-    "X-Factor",
-    "Guardian"
-]
 HERO_INIT_DATA  = {
     "Spider Man" : HeroData("Spider Man", ["Avenger", "Genius"]),
     "Spider Ham" : HeroData("Spider Ham", ["Cartoon", "Civilian","Web Warrior"]),
