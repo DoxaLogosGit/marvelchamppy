@@ -1,0 +1,131 @@
+---
+  Ultron: 
+    - replacements:
+        - None
+  Klaw:
+    - replacements:
+        - None
+  Rhino:
+    - replacements:
+        - None
+  Green Goblin - Risky Business:
+    - replacements:
+        - risky business
+        - risky-business
+        - riskybusiness
+  Green Goblin - Mutagen Formula:
+    - replacements:
+        - mutagen formula
+        - mutagenformula
+        - mutagen-formula
+  Wrecking Crew:
+    - replacements:
+        - wrecking-crew
+        - wreckingcrew
+  Crossbones:
+    - replacements:
+        - None
+  Absorbing Man:
+    - replacements:
+        - absorbing-man
+        - absorbingman
+  Taskmaster: 
+    - replacements:
+        - None
+  Amin Zola:
+    - replacements:
+        - amin-zola
+        - aminzola
+  Red Skull:
+    - replacements:
+        - red-skull
+        - redskull
+  Kang: 
+    - replacements:
+        - None
+  Drang: 
+    - replacements:
+        - None
+  Nebula:
+    - replacements:
+        - None
+  Ronan:
+    - replacements:
+        - None
+  Ebony Maw:
+    - replacements:
+        - ebony-maw
+        - ebonymaw
+  Thanos: 
+    - replacements:
+        - None
+  Loki: 
+    - replacements:
+        - None
+  Venom:
+    - replacements:
+        - None
+  Sandman:
+    - replacements:
+        - None
+  Mysterio:
+    - replacements:
+        - None
+  Sinister Six: 
+    - replacements:
+        - sinister-six
+        - sinistersix
+  Venom Goblin:
+    - replacements:
+        - venom-goblin
+        - venomgoblin
+  Tower Defense:
+    - replacements:
+        - tower-defense
+        - towerdefense
+  Hela: 
+    - replacements:
+        - None
+  Hood: 
+    - replacements:
+        - None
+  Magneto: 
+    - replacements:
+        - None
+  Mojo: 
+    - replacements:
+        - None 
+  Magog: 
+    - replacements:
+        - None 
+  Spiral: 
+    - replacements:
+        - None 
+  Sabretooth: 
+    - replacements:
+        - None
+  Master Mold: 
+    - replacements:
+        - master-mold
+        - mastermold
+  Mansion Attack: 
+    - replacements:
+        - mansion-attack
+        - mansionattack
+  Project Wideawake: 
+    - replacements:
+        - project-wideawake
+        - projectwideawake
+        - projectwide-awake
+        - project wide-awake
+        - project wide awake
+  The Collector - Infiltrate the Museum: 
+    - replacements:
+        - infiltrate the museum
+        - infiltrate-the-museum
+        - infiltratethemuseum
+  The Collector - Escape the Museum: 
+    - replacements:
+        - escape the museum
+        - escape-the-museum
+        - escapethemuseum
