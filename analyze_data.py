@@ -1,8 +1,6 @@
-import strictyaml
-from path import Path
+from config import hero_config_data, villain_config_data, Traits
 
 #load up traits from config file
-Traits = strictyaml.load(Path("traits.yaml").text()).data
 HeroTraits = Traits["Hero_Traits"]
 TeamTraits = Traits["Team_Traits"]
 
@@ -362,10 +360,7 @@ class OverallData:
         self.calculate_percentages(bgg_format)
 
 
-hero_config_data = strictyaml.load(Path("heroes.yaml").text()).data
 HERO_INIT_DATA = {x:HeroData(x, hero_config_data[x]["traits"]) for x in hero_config_data.keys()}
-
-villain_config_data = strictyaml.load(Path("villains.yaml").text()).data
 VILLAIN_INIT_DATA = {x:VillainData(x) for x in villain_config_data.keys()}
 
 class Statistics:
