@@ -35,8 +35,11 @@
             -Champion
             -Inhuman
         replacements:
+            - miss marvel
             - ms marvel
+            - ms. marvel
             - msmarvel
+            - ms.marvel
     Iron Man : 
         traits:
             - Avenger
@@ -113,6 +116,10 @@
             - Avenger
             - Mystic
         replacements:
+            - drstrange
+            - dr strange
+            - dr. strange
+            - dr.strange
             - doctor-strange
             - doctorstrange
     Hulk : 

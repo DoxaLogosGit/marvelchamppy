@@ -45,7 +45,9 @@
         - None
   Drang: 
     - replacements:
-        - None
+        - brotherhood of badoon
+        - brotherhood-of-badoon
+        - brotherhoodofbadoon
   Nebula:
     - replacements:
         - None
@@ -64,7 +66,7 @@
         - None
   Venom:
     - replacements:
-        - None
+        - venom villain
   Sandman:
     - replacements:
         - None
@@ -79,10 +81,13 @@
     - replacements:
         - venom-goblin
         - venomgoblin
+        - vengoblin
   Tower Defense:
     - replacements:
         - tower-defense
         - towerdefense
+        - proxima
+        - corvus
   Hela: 
     - replacements:
         - None

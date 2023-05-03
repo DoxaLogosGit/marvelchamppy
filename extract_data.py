@@ -1,5 +1,7 @@
 from xml.etree import ElementTree
+from config import hero_config_data, villain_config_data
 MARVEL_CHAMPIONS_ID="285774"
+
 
 """
 Data to extract:
@@ -122,110 +124,24 @@ def extract_difficulty(play_comment):
         return "Heroic"
     return "S1"
 
+ 
+def create_hero_replacements():
+    
+    replace_data = {}
+    for hero in hero_config_data.keys():
+        replace_data[hero.lower()] = hero
+        if(hero_config_data[hero]["replacements"][0] is not None):
+            for replace in hero_config_data[hero]["replacements"]:
+                replace_data[replace.lower()] = hero
+        
+    return replace_data
+    
+    
 def clean_up_hero_name(hero_name):
     """
     #This function will fix the hero name with a consistent naming scheme
     """
-    hero_name_replace = {
-        "spiderwoman":"Spider Woman",
-        "spider woman":"Spider Woman",
-        "spider-woman":"Spider Woman",
-        "spiderman":"Spider Man",
-        "spider man":"Spider Man",
-        "spider-man":"Spider Man",
-        "ghostspider":"Ghost Spider",
-        "ghost spider":"Ghost Spider",
-        "spider gwen":"Ghost Spider",
-        "spider-gwen":"Ghost Spider",
-        "spidergwen":"Ghost Spider",
-        "ant man":"Ant Man",
-        "miles morales":"Miles Morales",
-        "antman":"Ant Man",
-        "scarlet witch":"Scarlet Witch",
-        "scarlet-witch":"Scarlet Witch",
-        "scarlett witch":"Scarlet Witch",
-        "scarlett-witch":"Scarlet Witch",
-        "scarlettwitch":"Scarlet Witch",
-        "scarletwitch":"Scarlet Witch",
-        "iron man":"Iron Man",
-        "iron-man":"Iron Man",
-        "ironman":"Iron Man",
-        "iron-heart":"Iron Heart",
-        "ironheart":"Iron Heart",
-        "iron heart":"Iron Heart",
-        "black widow":"Black Widow",
-        "black-widow":"Black Widow",
-        "blackwidow":"Black Widow",
-        "ant man":"Ant Man",
-        "ant-man":"Ant Man",
-        "antman":"Ant Man",
-        "she hulk":"She-Hulk",
-        "she-hulk":"She-Hulk",
-        "shehulk":"She-Hulk",
-        "black panther":"Black Panther",
-        "black-panther":"Black Panther",
-        "blackpanther":"Black Panther",
-        "captain marvel":"Captain Marvel",
-        "captain-marvel":"Captain Marvel",
-        "captainmarvel":"Captain Marvel",
-        "captain america":"Captain America",
-        "captain-america":"Captain America",
-        "captainamerica":"Captain America",
-        "ms. marvel":"Ms. Marvel",
-        "ms.marvel":"Ms. Marvel",
-        "msmarvel":"Ms. Marvel",
-        "ms marvel":"Ms. Marvel",
-        "msmarvel":"Ms. Marvel",
-        "dr. strange":"Doctor Strange",
-        "dr.strange":"Doctor Strange",
-        "drstrange":"Doctor Strange",
-        "dr strange":"Doctor Strange",
-        "doctor strange":"Doctor Strange",
-        "doctorstrange":"Doctor Strange",
-        "hulk":"Hulk",
-        "nova":"Nova",
-        "wasp":"Wasp",
-        "thor":"Thor",
-        "quicksilver":"Quicksilver",
-        "hawkeye":"Hawkeye",
-        "hawk eye":"Hawkeye",
-        "hawk-eye":"Hawkeye",
-        "rocket":"Rocket Raccoon",
-        "rocket raccoon":"Rocket Raccoon",
-        "rocket racoon":"Rocket Raccoon",
-        "groot":"Groot",
-        "drax":"Drax",
-        "gamora":"Gamora",
-        "starlord":"Star Lord",
-        "star lord":"Star Lord",
-        "star-lord":"Star Lord",
-        "venom":"Venom",
-        "adam warlock":"Adam Warlock",
-        "adamwarlock":"Adam Warlock",
-        "spectrum":"Spectrum",
-        "nebula":"Nebula",
-        "war machine":"War Machine",
-        "war-machine":"War Machine",
-        "warmachine":"War Machine",
-        "shadowcat":"Shadowcat",
-        "shadow cat":"Shadowcat",
-        "shadow-cat":"Shadowcat",
-        "colossus":"Colossus",
-        "cyclops":"Cyclops",
-        "phoenix":"Phoenix",
-        "pheonix":"Phoenix",
-        "storm":"Storm",
-        "wolverine":"Wolverine",
-        "gambit":"Gambit",
-        "rogue":"Rogue",
-        "vision":"Vision",
-        "valkyrie":"Valkyrie",
-        "miles morales":"Miles Morales",
-        "spiderham":"Spider Ham",
-        "spider ham":"Spider Ham",
-        "spider-ham":"Spider Ham",
-        "sp//der":"Sp//der",
-    }
+    hero_name_replace = create_hero_replacements()
     try:
         return hero_name_replace[hero_name]
     except KeyError:
