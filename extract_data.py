@@ -3,6 +3,15 @@ from config import hero_config_data, villain_config_data
 MARVEL_CHAMPIONS_ID="285774"
 
 
+def create_string_replacements(config_data):
+    replace_data = {}
+    for hero_villain in config_data.keys():
+        replace_data[hero_villain.lower()] = hero_villain
+        if(config_data[hero_villain]["replacements"][0] is not None):
+            for replace in config_data[ hero_villain]["replacements"]:
+                replace_data[replace.lower()] = hero_villain
+        
+    return replace_data
 """
 Data to extract:
 
@@ -14,88 +23,10 @@ Data to extract:
 """
 
 def extract_villain(play_comment):
-    if("brotherhood of badoon" in play_comment.lower()):
-        return "Drang"
-    if("ultron" in play_comment.lower()):
-        return "Ultron"
-    if("absorbing" in play_comment.lower()):
-        return "Absorbing Man"
-    if("klaw" in play_comment.lower()):
-        return "Klaw"
-    if("rhino" in play_comment.lower()):
-        return "Rhino"
-    if("kang" in play_comment.lower()):
-        return "Kang"
-    if("green goblin" in play_comment.lower()):
-        if("risky" in play_comment.lower()):
-            return "Green Goblin - Risky Business"
-        else:
-            return "Green Goblin - Mutagen Formula"
-    if("crossbones" in play_comment.lower()):
-        return "Crossbones"
-    if("taskmaster" in play_comment.lower()):
-        return "Taskmaster"
-    if("zola" in play_comment.lower()):
-        return "Amin Zola"
-    if("red skull" in play_comment.lower()):
-        return "Red Skull"
-    if("nebula" in play_comment.lower()):
-        return "Nebula"
-    if("mojo" in play_comment.lower()):
-        return "Mojo"
-    if("drang" in play_comment.lower()):
-        return "Drang"
-    if("ronan" in play_comment.lower()):
-        return "Ronan"
-    if("ebony maw" in play_comment.lower()):
-        return "Ebony Maw"
-    if("thano" in play_comment.lower()):
-        return "Thanos"
-    if("thanos" in play_comment.lower()):
-        return "Thanos"
-    if("the hood" in play_comment.lower()):
-        return "Hood"
-    if("hood" in play_comment.lower()):
-        return "Hood"
-    if("tower defense" in play_comment.lower()):
-        return "Tower Defense"
-    if("corvious" in play_comment.lower()):
-        return "Tower Defense"
-    if("proxima" in play_comment.lower()):
-        return "Tower Defense"
-    if("loki" in play_comment.lower()):
-        return "Loki"
-    if("hela" in play_comment.lower()):
-        return "Hela"
-    if("venom villain" in play_comment.lower()):
-        return "Venom"
-    if("sinister six" in play_comment.lower()):
-        return "Sinister Six"
-    if("vengoblin" in play_comment.lower()):
-        return "Venom Goblin"
-    if("sandman" in play_comment.lower()):
-        return "Sandman"
-    if("mysterio" in play_comment.lower()):
-        return "Mysterio"
-    if("sabretooth" in play_comment.lower() or "sabertooth" in play_comment.lower()):
-        return "Sabretooth"
-    if("magneto" in play_comment.lower()):
-        return "Magneto"
-    if("project wideawake" in play_comment.lower()):
-        return "Project Wideawake"
-    if("mansion attack" in play_comment.lower()):
-        return "Mansion Attack"
-    if("master mold" in play_comment.lower()):
-        return "Master Mold"
-    if("master mold" in play_comment.lower()):
-        return "Master Mold"
-    if("collector" in play_comment.lower()):
-        if("infiltrate" in play_comment.lower()):
-            return "The Collector - Infiltrate the Museum"
-        else:
-            return "The Collector - Escape the Museum"
-    if("wrecking crew" in play_comment.lower()):
-        return "Wrecking Crew"
+    replace_check = create_string_replacements(villain_config_data)
+    for check in replace_check.keys():
+        if(check in play_comment.lower()):
+            return replace_check[check]
     return "UNKNOWN"
 
 def which_standard(play_comment):
@@ -125,23 +56,13 @@ def extract_difficulty(play_comment):
     return "S1"
 
  
-def create_hero_replacements():
-    
-    replace_data = {}
-    for hero in hero_config_data.keys():
-        replace_data[hero.lower()] = hero
-        if(hero_config_data[hero]["replacements"][0] is not None):
-            for replace in hero_config_data[hero]["replacements"]:
-                replace_data[replace.lower()] = hero
-        
-    return replace_data
     
     
 def clean_up_hero_name(hero_name):
     """
     #This function will fix the hero name with a consistent naming scheme
     """
-    hero_name_replace = create_hero_replacements()
+    hero_name_replace = create_string_replacements(hero_config_data)
     try:
         return hero_name_replace[hero_name]
     except KeyError:

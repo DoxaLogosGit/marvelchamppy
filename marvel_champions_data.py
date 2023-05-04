@@ -22,15 +22,25 @@ def main():
     parser.add_argument("-j", "--analyze-json", action="store_true",
                         help="analyze the default json file only")
 
+    parser.add_argument("-x", "--extract_data", action="store_true",
+                        help="test extraction on xml data")
     args = parser.parse_args()
 
-    if(not args.analyze_json):
+    if(not args.analyze_json and not args.extract_data):
         print("Begin collecting data")
         xml_data = retrieve_play_data_from_bgg(USER)
         print("Done collecting data")
 
         with open("play_data.xml","w") as xml_play_data:
             xml_play_data.writelines(xml_data)
+        print("Extracting data")
+        marvel_plays = find_the_marvel_champion_plays(xml_data, USER)
+
+        with open("marvel_play_data.json","w") as play_data:
+            play_data.write(json.dumps(marvel_plays, sort_keys=True, indent=2 * ' '))
+    elif(args.extract_data):
+        with open("play_data.xml") as xml_play_data:
+            xml_data = xml_play_data.read()
         print("Extracting data")
         marvel_plays = find_the_marvel_champion_plays(xml_data, USER)
 

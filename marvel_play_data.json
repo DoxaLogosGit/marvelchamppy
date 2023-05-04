@@ -1,5 +1,747 @@
 [
   {
+    "Date": "2023-04-30",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Phoenix",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Sinister Six"
+  },
+  {
+    "Date": "2023-04-29",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Spider Ham",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mysterio"
+  },
+  {
+    "Date": "2023-04-29",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Spider Ham",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mysterio"
+  },
+  {
+    "Date": "2023-04-28",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Spider Ham",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mysterio"
+  },
+  {
+    "Date": "2023-04-27",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Rogue",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2023-04-26",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Spider Ham",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mysterio"
+  },
+  {
+    "Date": "2023-04-26",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Rogue",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2023-04-26",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Rogue",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2023-04-26",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Rogue",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Magneto"
+  },
+  {
+    "Date": "2023-04-23",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Spider Ham",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mysterio"
+  },
+  {
+    "Date": "2023-04-23",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Spider Ham",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mysterio"
+  },
+  {
+    "Date": "2023-04-22",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Spider Ham",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mysterio"
+  },
+  {
+    "Date": "2023-04-22",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Spider Ham",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mysterio"
+  },
+  {
+    "Date": "2023-04-21",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Wolverine",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2023-04-21",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Wolverine",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2023-04-21",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Wolverine",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2023-04-21",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Wolverine",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mansion Attack"
+  },
+  {
+    "Date": "2023-04-21",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Wolverine",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mansion Attack"
+  },
+  {
+    "Date": "2023-04-20",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Wolverine",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mansion Attack"
+  },
+  {
+    "Date": "2023-04-20",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Wolverine",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mansion Attack"
+  },
+  {
+    "Date": "2023-04-18",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Wolverine",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2023-04-18",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Wolverine",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2023-04-18",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Wolverine",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Sandman"
+  },
+  {
+    "Date": "2023-04-16",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Wolverine",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2023-04-16",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Wolverine",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mansion Attack"
+  },
+  {
+    "Date": "2023-04-16",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Wolverine",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mansion Attack"
+  },
+  {
+    "Date": "2023-04-14",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Wolverine",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2023-04-12",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Wolverine",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2023-04-12",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Wolverine",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2023-04-12",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Wolverine",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2023-04-11",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Wolverine",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2023-03-27",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Hulk",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2023-03-27",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Hulk",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2023-03-27",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Hulk",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2023-03-25",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Gambit",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Project Wideawake"
+  },
+  {
+    "Date": "2023-03-25",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Rogue",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Project Wideawake"
+  },
+  {
+    "Date": "2023-01-31",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Wolverine",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Project Wideawake"
+  },
+  {
+    "Date": "2023-01-01",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Wolverine",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Project Wideawake"
+  },
+  {
+    "Date": "2023-01-01",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Wolverine",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Project Wideawake"
+  },
+  {
+    "Date": "2023-01-01",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Wolverine",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Project Wideawake"
+  },
+  {
+    "Date": "2022-11-14",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Wolverine",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Project Wideawake"
+  },
+  {
+    "Date": "2022-11-13",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Storm",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Project Wideawake"
+  },
+  {
+    "Date": "2022-11-13",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Wolverine",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Project Wideawake"
+  },
+  {
+    "Date": "2022-11-13",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Wolverine",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Project Wideawake"
+  },
+  {
+    "Date": "2022-11-13",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Wolverine",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Project Wideawake"
+  },
+  {
+    "Date": "2022-11-12",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Storm",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Sabretooth"
+  },
+  {
+    "Date": "2022-11-12",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Storm",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Sabretooth"
+  },
+  {
+    "Date": "2022-11-12",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Storm",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Taskmaster"
+  },
+  {
+    "Date": "2022-11-11",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Wolverine",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Sabretooth"
+  },
+  {
+    "Date": "2022-11-11",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Wolverine",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Sabretooth"
+  },
+  {
+    "Date": "2022-10-22",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Colossus",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Sabretooth"
+  },
+  {
+    "Date": "2022-10-22",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Colossus",
+        "Win": 1
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Sabretooth"
+  },
+  {
+    "Date": "2022-10-04",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Cyclops",
+        "Win": 0
+      }
+    ],
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Magneto"
+  },
+  {
     "Date": "2022-10-02",
     "Difficulty": "S1",
     "Heroes": [
@@ -1283,7 +2025,7 @@
     ],
     "Multiplayer": false,
     "True_Solo": false,
-    "Villain": "Venom"
+    "Villain": "Venom Villain"
   },
   {
     "Date": "2022-04-08",
