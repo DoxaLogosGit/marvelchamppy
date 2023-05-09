@@ -138,6 +138,7 @@ class HeroData:
         self.difficulty_data = DifficultyStats()
         self.traits = traits
         self.win_percentage = 0
+        self.villains_played = set()
 
     def add_play(self, hero, full_play):
         """
@@ -148,7 +149,13 @@ class HeroData:
         self.total_wins += this_was_a_win
         self.aspect_data.add_play(hero, this_was_a_win, self.hero_name)
         self.difficulty_data.add_play(full_play, this_was_a_win)
+        self.villains_played.add(full_play["Villain"])
 
+
+    def villains_unplayed(self):
+        villain_set = set(VILLAIN_INIT_DATA.keys())
+        villains_unplayed = villain_set.difference(self.villains_played)
+        return villains_unplayed
 
     def smarter_string(self):
         smart_string = ("[b]Overall Data[/b]" +
@@ -158,6 +165,7 @@ class HeroData:
                         "\n[b]Difficulty Data:[/b]")
         smart_string += self.difficulty_data.smarter_string()
         smart_string += self.aspect_data.smarter_string()
+        smart_string += (f"\nVillains Unplayed:\n {str(self.villains_unplayed())}")
         return smart_string
 
     def __repr__(self):
@@ -277,6 +285,7 @@ class VillainData:
         self.win_percentage = 0
         self.difficulty_data = DifficultyStats()
         self.aspect_data = AspectData()
+        self.heroes_played = set()
 
     def add_play(self, play):
         self.total_plays += 1
@@ -285,14 +294,20 @@ class VillainData:
         self.difficulty_data.add_play(play, this_was_a_win)
         for hero_play in play["Heroes"]:
             self.aspect_data.add_play(hero_play, this_was_a_win, hero_play["Hero"])
+            self.heroes_played.add(hero_play["Hero"])
 
+    def heroes_unplayed(self):
+        heroes_set = set(HERO_INIT_DATA.keys())
+        heroes_unplayed = heroes_set.difference(self.heroes_played)
+        return heroes_unplayed
 
     def __repr__(self):
         return (f"Total Plays: {self.total_plays}" +
         f"\nTotal Wins: {self.total_wins}" +
         f"\nTotal Win  %: {self.win_percentage:.1%}" +
         self.difficulty_data.__repr__() +
-        self.aspect_data.__repr__())
+        self.aspect_data.__repr__() + 
+        f"\nHeroes Unplayed:\n {str(self.heroes_unplayed())}")
 
     def calculate_percentages(self, bgg_format=True):
         if self.total_plays:
