@@ -8,6 +8,7 @@ from retrieve_data import retrieve_play_data_from_bgg
 from extract_data import find_the_marvel_champion_plays
 from analyze_data import Statistics
 from argparse import ArgumentParser
+from upload import UploadData
 
 USER='DoxaLogos'
 #OLD_USER='jgatkinsn' #old username
@@ -21,6 +22,9 @@ def main():
 
     parser.add_argument("-j", "--analyze-json", action="store_true",
                         help="analyze the default json file only")
+
+    parser.add_argument("-u", "--upload_data", action="store_true",
+                        help="upload the data to google spreadsheets")
 
     args = parser.parse_args()
 
@@ -44,7 +48,11 @@ def main():
 
     statistics = Statistics(marvel_plays)
     statistics.analyze_play_data()
-    print(statistics)
+    if(not args.upload_data):
+        print(statistics)
+    else:
+        data = UploadData(statistics)
+        data.perform_upload()
 
 
 
