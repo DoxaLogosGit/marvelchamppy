@@ -139,6 +139,7 @@ class HeroData:
         self.traits = traits
         self.win_percentage = 0
         self.villains_played = set()
+        self.villains_defeated = set()
         self.villains_not_played = set()
 
     def add_play(self, hero, full_play):
@@ -151,6 +152,8 @@ class HeroData:
         self.aspect_data.add_play(hero, this_was_a_win, self.hero_name)
         self.difficulty_data.add_play(full_play, this_was_a_win)
         self.villains_played.add(full_play["Villain"])
+        if this_was_a_win:
+            self.villains_defeated.add(full_play["Villain"])
         self.villains_not_played = VILLAIN_DATA_SET.difference(self.villains_played)
 
 
