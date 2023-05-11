@@ -26,6 +26,9 @@ def main():
     parser.add_argument("-u", "--upload_data", action="store_true",
                         help="upload the data to google spreadsheets")
 
+    parser.add_argument("-s", "--skip_found", action="store_true",
+                        help="skip upload on found worksheets")
+
     args = parser.parse_args()
 
     if(not args.analyze_json):
@@ -51,7 +54,7 @@ def main():
     if(not args.upload_data):
         print(statistics)
     else:
-        data = UploadData(statistics)
+        data = UploadData(statistics, args.skip_found)
         data.perform_upload()
 
 

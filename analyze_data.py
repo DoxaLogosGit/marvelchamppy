@@ -387,6 +387,9 @@ class Statistics:
         self.hero_h_index = 0
         self.bgg_format=bgg_format
         self.team_plays = {}
+        self.sorted_team_list = []
+        self.sorted_heroes = None
+        self.sorted_villains = None
 
     def analyze_hero_data(self):
         for play in self.all_plays:
@@ -406,10 +409,12 @@ class Statistics:
 
     def generate_team_plays(self):
         team_play_list = [ (x, self.team_plays[x]) for x in self.team_plays.keys()]
-        plays_tally = "[b]Team Data:[/b]"
-        for team, plays in sorted(team_play_list, key=lambda x: x[1], reverse=True):
-            plays_tally = plays_tally + f"\n{team}: {plays}"
+        self.sorted_team_list = sorted(team_play_list, key=lambda x: x[1], reverse=True)
 
+    def print_team_plays(self):
+        plays_tally = "[b]Team Data:[/b]"
+        for team, plays in self.sorted_team_list:
+            plays_tally = plays_tally + f"\n{team}: {plays}"
         return plays_tally
 
     def analyze_villain_data(self):
@@ -421,13 +426,13 @@ class Statistics:
 
 
     def calculate_h_indices(self):
-        sorted_heroes = sorted(self.hero_data.items(), key=lambda x: x[1].total_plays, reverse=True)
-        for i, h in enumerate(sorted_heroes):
+        self.sorted_heroes = sorted(self.hero_data.items(), key=lambda x: x[1].total_plays, reverse=True)
+        for i, h in enumerate(self.sorted_heroes):
             if self.hero_h_index < h[1].total_plays :
                 self.hero_h_index += 1
 
-        sorted_villains = sorted(self.villain_data.items(), key=lambda x: x[1].total_plays, reverse=True)
-        for i, h in enumerate(sorted_villains):
+        self.sorted_villains = sorted(self.villain_data.items(), key=lambda x: x[1].total_plays, reverse=True)
+        for i, h in enumerate(self.sorted_villains):
             if self.villain_h_index < h[1].total_plays :
                 self.villain_h_index += 1
 
@@ -437,18 +442,16 @@ class Statistics:
         repr_string = "===========================================================\n"
         repr_string += self.overall_data.__repr__() + "\n"
         repr_string += "===========================================================\n"
-        repr_string += self.generate_team_plays() + "\n"
+        repr_string += self.print_team_plays() + "\n"
         repr_string += "===========================================================\n"
-        repr_string += f"Hero-H Index: {self.hero_h_index}   Villain H-Index: {self.villain_h_index}\n"
+        repr_string += f"Hero H-Index: {self.hero_h_index}   Villain H-Index: {self.villain_h_index}\n"
         repr_string += "===========================================================\n"
-        sorted_heroes = sorted(self.hero_data.items(), key=lambda x: x[1].total_plays, reverse=True)
-        for i, hero in enumerate(sorted_heroes):
+        for i, hero in enumerate(self.sorted_heroes):
             if hero[1].total_plays > 0:
                 repr_string += f"{i+1}. " + hero[1].hero_name + "\n"
                 repr_string += hero[1].__repr__() + "\n"
                 repr_string += "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"
-        sorted_villains = sorted(self.villain_data.items(), key=lambda x: x[1].total_plays, reverse=True)
-        for j, villain in enumerate(sorted_villains):
+        for j, villain in enumerate(self.sorted_villains):
             if villain[1].total_plays > 0:
                 repr_string += f"{j+1}. " + villain[1].villain_name + "\n"
                 repr_string += villain[1].__repr__() + "\n"
@@ -462,4 +465,5 @@ class Statistics:
         self.overall_data.analyze_overall_data()
         self.analyze_hero_data()
         self.analyze_villain_data()
+        self.generate_team_plays()
         self.calculate_h_indices()

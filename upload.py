@@ -5,9 +5,10 @@ from datetime import datetime, timedelta
 class UploadData:
 
     
-    def __init__(self, statistics):
+    def __init__(self, statistics, skip_found=False):
         self.statistics = statistics
         self.sheet = None
+        self.skip_found = skip_found
 
         
     def login(self):
@@ -199,25 +200,110 @@ class UploadData:
             sheet.update(f"I{i+2}", villain)
 
     def upload_heroes(self, worksheets):
-        print(worksheets)
-        for hero in self.statistics.hero_data.keys():
+        print("Uploading Hero statistics...")
+        for hero in sorted(self.statistics.hero_data.keys()):
+            skip = False
             if hero not in worksheets:
                 print(f"creating {hero} worksheet, not found")
                 hsheet = self.sheet.add_worksheet(title = hero, rows=100, cols=100)
             else:
                 print(f"found {hero} worksheet, -- ")
                 hsheet = self.sheet.worksheet(hero)
-            self.update_hero_sheet(self.statistics.hero_data[hero], hsheet)
+                skip = self.skip_found
+
+            if not skip:
+                self.update_hero_sheet(self.statistics.hero_data[hero], hsheet)
             
 
-    def upload_villains(self, worksheets):
-        pass
+    def update_villain_sheet(self, villain, sheet):
+        #overall data
+        sheet.format("A1:Z1", {'textFormat': {'bold':True}, 'horizontalAlignment': "CENTER"})
+        sheet.update("A1", "Overall")
+        sheet.update("A2", "Total Plays")
+        sheet.update("B2", villain.total_plays)
+        sheet.update("A3", "Total Wins")
+        sheet.update("B3", villain.total_wins)
+        sheet.format("B4", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
+        sheet.update("A4", "Win %")
+        sheet.update("B4", villain.win_percentage)
+        #difficulty data (C-D)
+        self.update_difficulty(villain, sheet)
+        #aspect data (E-F)
+        self.update_aspects(villain, sheet)
+        
+        #villain data G,H
+        sheet.update("G1", f"Heroes Fought - {len(villain.heroes_played)}")
+        for i, hero in enumerate(villain.heroes_played):
+            sheet.update(f"G{i+2}", hero)
 
-    def upload_teams(self, worksheets):
-        pass
+        sheet.update("H1", f"Heroes Unplayed - {len(villain.heroes_not_played)}")
+        for i, hero in enumerate(villain.heroes_not_played):
+            sheet.update(f"I{i+2}", hero)
+
+    def upload_villains(self, worksheets):
+        print("Uploading Villain statistics...")
+        for villain in sorted(self.statistics.villain_data.keys()):
+            skip = False
+            if villain not in worksheets:
+                print(f"creating {villain} worksheet, not found")
+                vsheet = self.sheet.add_worksheet(title = villain, rows=100, cols=100)
+            else:
+                print(f"found {villain} worksheet, -- ")
+                vsheet = self.sheet.worksheet(villain)
+                skip = self.skip_found
+
+            if not skip:
+                self.update_villain_sheet(self.statistics.villain_data[villain], vsheet)
+
+
+    def upload_overall(self):
+        print("Uploading Overall statistics...")
+        osheet = self.sheet.worksheet("Overall")
+        osheet.format("A1:Z1", {'textFormat': {'bold':True}, 'horizontalAlignment': "CENTER"})
+        osheet.update("A1", "Overall")
+        osheet.update("A2", "Total Plays")
+        osheet.update("B2", self.statistics.overall_data.overall_plays)
+        osheet.update("A3", "Total Wins")
+        osheet.update("B3", self.statistics.overall_data.overall_wins)
+        osheet.format("B4", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
+        osheet.update("A4", "Win %")
+        osheet.update("B4", self.statistics.overall_data.overall_win_percentage)
+        osheet.update("A5", "Total True Solo Plays")
+        osheet.update("B5", self.statistics.overall_data.overall_true_solo_plays)
+        osheet.update("A6", "Total Multihanded Solo Plays")
+        osheet.update("B6", self.statistics.overall_data.overall_solo_plays)
+        osheet.update("A7", "Total Multiplayer Plays")
+        osheet.update("B7", self.statistics.overall_data.overall_multi_plays)
+        #difficulty data (C-D)
+        self.update_difficulty(self.statistics.overall_data, osheet)
+        #aspect data (E-F)
+        self.update_aspects(self.statistics.overall_data, osheet)
+
+        #team data (G-J)
+        osheet.update("G1", "Team")
+        #osheet.update("H1", "Plays")
+        for n, data in enumerate(self.statistics.sorted_team_list):
+            osheet.update(f"G{n+2}", data[0])
+            osheet.update(f"H{n+2}", data[1])
+            
+
+        #hero H-Index (K-L)
+        osheet.update("K1", f"Hero H-Index: {self.statistics.hero_h_index}")
+        osheet.update("L1", "Plays")
+        for n, hero in enumerate(self.statistics.sorted_heroes):
+            osheet.update(f"K{n+2}", hero[1].hero_name)
+            osheet.update(f"L{n+2}", hero[1].total_plays)
+        #villain H-Index (M-N)
+        osheet.update("M1", f"Villain H-Index: {self.statistics.villain_h_index}")
+        osheet.update("N1", "Plays")
+        for n, villain in enumerate(self.statistics.sorted_villains):
+            osheet.update(f"M{n+2}", villain[1].villain_name)
+            osheet.update(f"N{n+2}", villain[1].total_plays)
 
     def perform_upload(self):
         self.login()
+        self.upload_overall()
         worksheets = [x.title for x in self.sheet.worksheets()]
         self.upload_heroes(worksheets)
+        self.upload_villains(worksheets)
         
