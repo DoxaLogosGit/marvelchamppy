@@ -1,141 +1,141 @@
 ---
-  Ronan:
-    replacements:
-        - None
-  Absorbing Man:
-    replacements:
-        - absorbing-man
-        - absorbingman
-        - absorbing
-  Taskmaster: 
-    replacements:
-        - None
-  Amin Zola:
-    replacements:
-        - amin-zola
-        - aminzola
-        - zola
-  Tower Defense:
-    replacements:
-        - tower-defense
-        - towerdefense
-        - proxima
-        - corvious
-  Wrecking Crew:
-    replacements:
-        - wrecking-crew
-        - wreckingcrew
-  Ultron: 
-    replacements:
+Venom Goblin:
+  replacements:
+      - venom-goblin
+      - venomgoblin
+      - vengoblin
+Ronan:
+  replacements:
       - None
-  Klaw:
-    replacements:
-        - None
-  Rhino:
-    replacements:
-        - None
-  Green Goblin - Risky Business:
-    replacements:
-        - risky business
-        - risky-business
-        - riskybusiness
-  Green Goblin - Mutagen Formula:
-    replacements:
-        - green goblin
-        - mutagen formula
-        - mutagenformula
-        - mutagen-formula
-  Crossbones:
-    replacements:
-        - None
-  Kang: 
-    replacements:
-        - None
-  Red Skull:
-    replacements:
-        - red-skull
-        - redskull
-  Drang: 
-    replacements:
-        - brotherhood of badoon
-        - brotherhood-of-badoon
-        - brotherhoodofbadoon
-  Nebula:
-    replacements:
-        - None
-  Ebony Maw:
-    replacements:
-        - ebony-maw
-        - ebonymaw
-  Thanos: 
-    replacements:
-        - None
-  Loki: 
-    replacements:
-        - None
-  Venom Villain:
-    replacements:
-        - venomvillain
-  Sandman:
-    replacements:
-        - None
-  Mysterio:
-    replacements:
-        - None
-  Sinister Six: 
-    replacements:
-        - sinister-six
-        - sinistersix
-  Venom Goblin:
-    replacements:
-        - venom-goblin
-        - venomgoblin
-        - vengoblin
-  Hela: 
-    replacements:
-        - None
-  Hood: 
-    replacements:
-        - None
-  Magneto: 
-    replacements:
-        - None
-  Sabretooth: 
-    replacements:
-        - None
-  Master Mold: 
-    replacements:
-        - master-mold
-        - mastermold
-  Mansion Attack: 
-    replacements:
-        - mansion-attack
-        - mansionattack
-  Project Wideawake: 
-    replacements:
-        - project-wideawake
-        - projectwideawake
-        - projectwide-awake
-        - project wide-awake
-        - project wide awake
-  The Collector - Infiltrate the Museum: 
-    replacements:
-        - infiltrate the museum
-        - infiltrate-the-museum
-        - infiltratethemuseum
-        - infiltrate
-  The Collector - Escape the Museum: 
-    replacements:
-        - escape the museum
-        - escape
-        - escape-the-museum
-        - escapethemuseum
-  Mojo: 
-    replacements:
-        - None 
-  Magog: 
-    replacements:
-        - None 
-  Spiral: 
-    replacements:
-        - None 
+Absorbing Man:
+  replacements:
+      - absorbing-man
+      - absorbingman
+      - absorbing
+Taskmaster: 
+  replacements:
+      - None
+Amin Zola:
+  replacements:
+      - amin-zola
+      - aminzola
+      - zola
+Tower Defense:
+  replacements:
+      - tower-defense
+      - towerdefense
+      - proxima
+      - corvious
+Wrecking Crew:
+  replacements:
+      - wrecking-crew
+      - wreckingcrew
+Ultron: 
+  replacements:
+    - None
+Klaw:
+  replacements:
+      - None
+Rhino:
+  replacements:
+      - None
+Green Goblin - Risky Business:
+  replacements:
+      - risky business
+      - risky-business
+      - riskybusiness
+Green Goblin - Mutagen Formula:
+  replacements:
+      - green goblin
+      - mutagen formula
+      - mutagenformula
+      - mutagen-formula
+Crossbones:
+  replacements:
+      - None
+Kang: 
+  replacements:
+      - None
+Red Skull:
+  replacements:
+      - red-skull
+      - redskull
+Drang: 
+  replacements:
+      - brotherhood of badoon
+      - brotherhood-of-badoon
+      - brotherhoodofbadoon
+Nebula:
+  replacements:
+      - None
+Ebony Maw:
+  replacements:
+      - ebony-maw
+      - ebonymaw
+Thanos: 
+  replacements:
+      - None
+Loki: 
+  replacements:
+      - None
+Venom Villain:
+  replacements:
+      - venomvillain
+Sandman:
+  replacements:
+      - None
+Mysterio:
+  replacements:
+      - None
+Sinister Six: 
+  replacements:
+      - sinister-six
+      - sinistersix
+Hela: 
+  replacements:
+      - None
+Hood: 
+  replacements:
+      - None
+Magneto: 
+  replacements:
+      - None
+Sabretooth: 
+  replacements:
+      - None
+Master Mold: 
+  replacements:
+      - master-mold
+      - mastermold
+Mansion Attack: 
+  replacements:
+      - mansion-attack
+      - mansionattack
+Project Wideawake: 
+  replacements:
+      - project-wideawake
+      - projectwideawake
+      - projectwide-awake
+      - project wide-awake
+      - project wide awake
+The Collector - Infiltrate the Museum: 
+  replacements:
+      - infiltrate the museum
+      - infiltrate-the-museum
+      - infiltratethemuseum
+      - infiltrate
+The Collector - Escape the Museum: 
+  replacements:
+      - escape the museum
+      - escape
+      - escape-the-museum
+      - escapethemuseum
+#Mojo: 
+#  replacements:
+#      - None 
+#Magog: 
+#  replacements:
+#      - None 
+#Spiral: 
+#  replacements:
+#      - None 
