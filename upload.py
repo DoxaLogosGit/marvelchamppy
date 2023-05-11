@@ -238,7 +238,7 @@ class UploadData:
 
         sheet.update("H1", f"Heroes Unplayed - {len(villain.heroes_not_played)}")
         for i, hero in enumerate(villain.heroes_not_played):
-            sheet.update(f"I{i+2}", hero)
+            sheet.update(f"H{i+2}", hero)
 
     def upload_villains(self, worksheets):
         print("Uploading Villain statistics...")
