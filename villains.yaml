@@ -65,9 +65,11 @@ Drang:
       - brotherhood of badoon
       - brotherhood-of-badoon
       - brotherhoodofbadoon
-Nebula:
+Nebula Villain:
   replacements:
-      - None
+      - nebula
+      - nebulavillain
+      - nebula-villain
 Ebony Maw:
   replacements:
       - ebony-maw
