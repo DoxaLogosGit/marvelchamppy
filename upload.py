@@ -188,15 +188,18 @@ class UploadData:
         
         #villain data G,H,I
         sheet.update("G1", f"Villains Fought - {len(hero.villains_played)}")
-        for i, villain in enumerate(hero.villains_played):
+        for i, villain in enumerate(sorted(hero.villains_played)):
             sheet.update(f"G{i+2}", villain)
 
         sheet.update("H1", f"Villains Defeated - {len(hero.villains_defeated)}")
-        for i, villain in enumerate(hero.villains_defeated):
+        for i, villain in enumerate(sorted(hero.villains_defeated)):
             sheet.update(f"H{i+2}", villain)
 
+        #clear the unplayed before publishing unplayed (the list will shrink over time)
+        range = f"I1:I{len(hero.villains_played)+len(hero.villains_not_played)+3}"
+        sheet.batch_clear([range])
         sheet.update("I1", f"Villains Unplayed - {len(hero.villains_not_played)}")
-        for i, villain in enumerate(hero.villains_not_played):
+        for i, villain in enumerate(sorted(hero.villains_not_played)):
             sheet.update(f"I{i+2}", villain)
 
     def upload_heroes(self, worksheets):
@@ -233,11 +236,14 @@ class UploadData:
         
         #villain data G,H
         sheet.update("G1", f"Heroes Fought - {len(villain.heroes_played)}")
-        for i, hero in enumerate(villain.heroes_played):
+        for i, hero in enumerate(sorted(villain.heroes_played)):
             sheet.update(f"G{i+2}", hero)
 
+        #clear the unplayed before publishing unplayed (the list will shrink over time)
+        range = f"H1:H{len(villain.heroes_played)+len(villain.heroes_not_played)+3}"
+        sheet.batch_clear([range])
         sheet.update("H1", f"Heroes Unplayed - {len(villain.heroes_not_played)}")
-        for i, hero in enumerate(villain.heroes_not_played):
+        for i, hero in enumerate(sorted(villain.heroes_not_played)):
             sheet.update(f"H{i+2}", hero)
 
     def upload_villains(self, worksheets):
@@ -302,8 +308,10 @@ class UploadData:
 
     def perform_upload(self):
         self.login()
-        self.upload_overall()
+        #self.upload_overall()
         worksheets = [x.title for x in self.sheet.worksheets()]
+        sleep(10)
         self.upload_heroes(worksheets)
+        sleep(60)
         self.upload_villains(worksheets)
         
