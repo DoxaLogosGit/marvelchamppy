@@ -171,6 +171,8 @@ class UploadData:
     
 
     def update_hero_sheet(self, hero, sheet):
+        #clear the sheet
+        sheet.batch_clear(["A1:Z100"])
         #overall data
         sheet.format("A1:Z1", {'textFormat': {'bold':True}, 'horizontalAlignment': "CENTER"})
         sheet.update("A1", "Overall")
@@ -195,9 +197,6 @@ class UploadData:
         for i, villain in enumerate(sorted(hero.villains_defeated)):
             sheet.update(f"H{i+2}", villain)
 
-        #clear the unplayed before publishing unplayed (the list will shrink over time)
-        range = f"I1:I{len(hero.villains_played)+len(hero.villains_not_played)+3}"
-        sheet.batch_clear([range])
         sheet.update("I1", f"Villains Unplayed - {len(hero.villains_not_played)}")
         for i, villain in enumerate(sorted(hero.villains_not_played)):
             sheet.update(f"I{i+2}", villain)
@@ -219,6 +218,8 @@ class UploadData:
             
 
     def update_villain_sheet(self, villain, sheet):
+        #clear sheet
+        sheet.batch_clear(["A1:Z100"])
         #overall data
         sheet.format("A1:Z1", {'textFormat': {'bold':True}, 'horizontalAlignment': "CENTER"})
         sheet.update("A1", "Overall")
