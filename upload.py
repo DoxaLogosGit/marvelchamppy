@@ -277,6 +277,8 @@ class UploadData:
     def upload_overall(self):
         print("Uploading Overall statistics...")
         osheet = self.sheet.worksheet("Overall")
+        #clear sheet
+        osheet.batch_clear(["A1:Z100"])
         osheet.format("A1:Z1", {'textFormat': {'bold':True}, 'horizontalAlignment': "CENTER"})
         osheet.update("A1", "Overall")
         osheet.update("A2", "Total Plays")
