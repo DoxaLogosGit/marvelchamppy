@@ -6,9 +6,11 @@ from xml.etree import ElementTree
 import simplejson as json
 from retrieve_data import retrieve_play_data_from_bgg
 from extract_data import find_the_marvel_champion_plays
-from analyze_data import Statistics
+from analyze_data import Statistics, find_diff_data
 from argparse import ArgumentParser
 from upload import UploadData
+from os import path
+import shutil
 
 USER='DoxaLogos'
 #OLD_USER='jgatkinsn' #old username
@@ -29,8 +31,27 @@ def main():
     parser.add_argument("-s", "--skip_found", action="store_true",
                         help="skip upload on found worksheets")
 
+    parser.add_argument("-n", "--newest_data", action="store_true",
+                        help="do an upload of just the newest plays")
+
     args = parser.parse_args()
 
+    #double check some args
+    if(args.newest_data and args.upload_data):
+        print("Error! Pick -u or -n separately!")
+        return 1
+    #check for old data
+    elif(args.newest_data):
+        if(path.isfile("marvel_play_data.json")):
+            #backup file
+            shutil.copyfile("marvel_play_data.json", "marvel_play_data_bak.json")
+        else:
+            #no recent file to disable newest upload
+            args.newest_data=False
+            args.upload_data=True
+
+        
+    
     if(not args.analyze_json):
         print("Begin collecting data")
         xml_data = retrieve_play_data_from_bgg(USER)
@@ -45,16 +66,31 @@ def main():
         with open("marvel_play_data.json","w") as play_data:
             play_data.write(json.dumps(marvel_plays, sort_keys=True, indent=2 * ' '))
     else:
-         marvel_plays = None
-         with open("marvel_play_data.json") as play_data:
+        marvel_plays = None
+        with open("marvel_play_data.json") as play_data:
              marvel_plays = json.loads(play_data.read())
+
+    #check for old data
+    if(args.newest_data):
+        with open("marvel_play_data_bak.json") as play_data:
+            marvel_plays_bak = json.loads(play_data.read())
+        
+        diff_data = find_diff_data(marvel_plays, marvel_plays_bak)
+        print(diff_data)
+        if(diff_data[0] == -1):
+            print("something was deleted, restoring old data")
+            marvel_plays = marvel_plays_bak
+            diff_data = None
+    else:
+        diff_data = None
+            
 
     statistics = Statistics(marvel_plays)
     statistics.analyze_play_data()
-    if(not args.upload_data):
+    if(not args.upload_data and not args.newest_data):
         print(statistics)
     else:
-        data = UploadData(statistics, args.skip_found)
+        data = UploadData(statistics, args.skip_found, diff_data)
         data.perform_upload()
 
 

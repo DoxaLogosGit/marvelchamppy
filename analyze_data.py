@@ -1,8 +1,32 @@
 from config import hero_config_data, villain_config_data, Traits
+import sys
 
 #load up traits from config file
 HeroTraits = Traits["Hero_Traits"]
 TeamTraits = Traits["Team_Traits"]
+
+def find_diff_data(play_data_new, play_data_old):
+
+
+    new_size = len(play_data_new)
+    old_size = len(play_data_old)
+
+    if(new_size == old_size):
+        return ([],[])
+    elif(new_size < old_size):
+        return (-1, -1)
+    else:
+        delta_data = play_data_new[:new_size-1]
+    #get villains
+    villains = [x["Villain"] for x in delta_data]
+    
+    #get heroes
+    heroes = []
+    for play in delta_data:
+        for hero in play["Heroes"]:
+            heroes.append(hero["Hero"])
+
+    return (set(villains), set(heroes))
 
 class AspectData:
     def __init__(self):

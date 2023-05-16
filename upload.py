@@ -5,10 +5,11 @@ from datetime import datetime, timedelta
 class UploadData:
 
     
-    def __init__(self, statistics, skip_found=False):
+    def __init__(self, statistics, skip_found=False, diff_data=None):
         self.statistics = statistics
         self.sheet = None
         self.skip_found = skip_found
+        self.diff_data = diff_data
 
         
     def login(self):
@@ -202,8 +203,13 @@ class UploadData:
             sheet.update(f"I{i+2}", villain)
 
     def upload_heroes(self, worksheets):
+        if(self.diff_data is None):
+            hero_list = self.statistics.hero_data.keys()
+        else:
+            hero_list = list(self.diff_data[1])
+
         print("Uploading Hero statistics...")
-        for hero in sorted(self.statistics.hero_data.keys()):
+        for hero in sorted(hero_list):
             skip = False
             if hero not in worksheets:
                 print(f"creating {hero} worksheet, not found")
@@ -248,8 +254,13 @@ class UploadData:
             sheet.update(f"H{i+2}", hero)
 
     def upload_villains(self, worksheets):
+        if(self.diff_data is None):
+            villain_list = self.statistics.villain_data.keys()
+        else:
+            villain_list = list(self.diff_data[0])
+
         print("Uploading Villain statistics...")
-        for villain in sorted(self.statistics.villain_data.keys()):
+        for villain in sorted(villain_list):
             skip = False
             if villain not in worksheets:
                 print(f"creating {villain} worksheet, not found")
