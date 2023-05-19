@@ -16,7 +16,7 @@ def find_diff_data(play_data_new, play_data_old):
     elif(new_size < old_size):
         return (-1, -1)
     else:
-        delta_data = play_data_new[:new_size-old_size-1]
+        delta_data = play_data_new[:new_size-old_size]
     #get villains
     villains = [x["Villain"] for x in delta_data]
     
