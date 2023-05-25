@@ -4,115 +4,145 @@ Venom Goblin:
       - venom-goblin
       - venomgoblin
       - vengoblin
+  expansion: "Sinister Motives"
 Ronan:
   replacements:
       - None
+  expansion: "The Galaxy's Most Wanted"
 Absorbing Man:
   replacements:
       - absorbing-man
       - absorbingman
       - absorbing
+  expansion: "The Rise of Red skull"
 Taskmaster: 
   replacements:
       - None
+  expansion: "The Rise of Red skull"
 Amin Zola:
   replacements:
       - amin-zola
       - aminzola
       - zola
+  expansion: "The Rise of Red skull"
 Tower Defense:
   replacements:
       - tower-defense
       - towerdefense
       - proxima
       - corvious
+  expansion: "Mad Titan's Shadow"
 Wrecking Crew:
   replacements:
       - wrecking-crew
       - wreckingcrew
+  expansion: "Wrecking Crew"
 Ultron: 
   replacements:
     - None
+  expansion: None
 Klaw:
   replacements:
       - None
+  expansion: None
 Rhino:
   replacements:
       - None
+  expansion: None
 Green Goblin - Risky Business:
   replacements:
       - risky business
       - risky-business
       - riskybusiness
+  expansion: "Green Goblin"
 Green Goblin - Mutagen Formula:
   replacements:
       - green goblin
       - mutagen formula
       - mutagenformula
       - mutagen-formula
+  expansion: "Green Goblin"
 Crossbones:
   replacements:
       - None
+  expansion: "The Rise of Red Skull"
 Kang: 
   replacements:
       - None
+  expansion: "Once and Future Kang"
 Red Skull:
   replacements:
       - red-skull
       - redskull
+  expansion: "The Rise of Red Skull"
 Drang: 
   replacements:
       - brotherhood of badoon
       - brotherhood-of-badoon
       - brotherhoodofbadoon
+  expansion: "The Galaxy's Most Wanted"
 Nebula Villain:
   replacements:
       - nebula
       - nebulavillain
       - nebula-villain
+  expansion: "The Galaxy's Most Wanted"
 Ebony Maw:
   replacements:
       - ebony-maw
       - ebonymaw
+  expansion: "Mad Titan's Shadow"
 Thanos: 
   replacements:
       - None
+  expansion: "Mad Titan's Shadow"
 Loki: 
   replacements:
       - None
+  expansion: "Mad Titan's Shadow"
 Venom Villain:
   replacements:
       - venomvillain
+  expansion: "Sinister Motives"
 Sandman:
   replacements:
       - None
+  expansion: "Sinister Motives"
 Mysterio:
   replacements:
       - None
+  expansion: "Sinister Motives"
 Sinister Six: 
   replacements:
       - sinister-six
       - sinistersix
+  expansion: "Sinister Motives"
 Hela: 
   replacements:
       - None
+  expansion: "Mad Titan's Shadow"
 Hood: 
   replacements:
       - None
+  expansion: "The Hood"
 Magneto: 
   replacements:
       - None
+  expansion: "Mutant Genesis"
 Sabretooth: 
   replacements:
       - None
+  expansion: "Mutant Genesis"
 Master Mold: 
   replacements:
       - master-mold
       - mastermold
+  expansion: "Mutant Genesis"
 Mansion Attack: 
   replacements:
       - mansion-attack
       - mansionattack
+  expansion: "Mutant Genesis"
 Project Wideawake: 
   replacements:
       - project-wideawake
@@ -120,24 +150,30 @@ Project Wideawake:
       - projectwide-awake
       - project wide-awake
       - project wide awake
+  expansion: "Mutant Genesis"
 The Collector - Infiltrate the Museum: 
+  expansion: "The Galaxy's Most Wanted"
   replacements:
       - infiltrate the museum
       - infiltrate-the-museum
       - infiltratethemuseum
       - infiltrate
 The Collector - Escape the Museum: 
+  expansion: "The Galaxy's Most Wanted"
   replacements:
       - escape the museum
       - escape
       - escape-the-museum
       - escapethemuseum
 #Mojo: 
+#  expansion: "MojoMania"
 #  replacements:
 #      - None 
 #Magog: 
+#  expansion: "MojoMania"
 #  replacements:
 #      - None 
 #Spiral: 
+#  expansion: "MojoMania"
 #  replacements:
 #      - None 
