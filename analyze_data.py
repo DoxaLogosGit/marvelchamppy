@@ -1,9 +1,10 @@
-from config import hero_config_data, villain_config_data, Traits
+from config import hero_config_data, villain_config_data, Traits, expansions
 import sys
 
 #load up traits from config file
 HeroTraits = Traits["Hero_Traits"]
 TeamTraits = Traits["Team_Traits"]
+BigBoxes = expansions["bigbox"]
 
 def find_diff_data(play_data_new, play_data_old):
 
@@ -411,6 +412,7 @@ class Statistics:
         self.hero_h_index = 0
         self.bgg_format=bgg_format
         self.team_plays = {}
+        self.bigbox_plays = {}
         self.sorted_team_list = []
         self.sorted_heroes = None
         self.sorted_villains = None

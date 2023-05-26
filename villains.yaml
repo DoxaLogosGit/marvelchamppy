@@ -165,11 +165,11 @@ The Collector - Escape the Museum:
       - escape
       - escape-the-museum
       - escapethemuseum
-#Mojo: 
-#  expansion: "MojoMania"
-#  replacements:
-#      - None 
-#Magog: 
+Magog: 
+  expansion: "MojoMania"
+  replacements:
+    - None
+##Mojo: 
 #  expansion: "MojoMania"
 #  replacements:
 #      - None 
