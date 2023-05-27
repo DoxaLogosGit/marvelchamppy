@@ -5,6 +5,8 @@ import sys
 HeroTraits = Traits["Hero_Traits"]
 TeamTraits = Traits["Team_Traits"]
 BigBoxes = expansions["bigbox"]
+ScenarioPacks = expansions["scenario_packs"]
+CoreSet = ["Core Set"]
 
 def find_diff_data(play_data_new, play_data_old):
 
@@ -154,14 +156,14 @@ class AspectData:
     def __repr__(self):
         return (self.smarter_string())
 
-class HeroData:
-    def __init__(self, hero, traits):
-        self.hero_name = hero
+
+class HeroBase:
+    def __init__(self, name):
+        self.name = name
         self.total_plays = 0
         self.total_wins = 0
         self.aspect_data = AspectData()
         self.difficulty_data = DifficultyStats()
-        self.traits = traits
         self.win_percentage = 0
         self.villains_played = set()
         self.villains_defeated = set()
@@ -174,7 +176,7 @@ class HeroData:
         self.total_plays += 1
         this_was_a_win = hero["Win"]
         self.total_wins += this_was_a_win
-        self.aspect_data.add_play(hero, this_was_a_win, self.hero_name)
+        self.aspect_data.add_play(hero, this_was_a_win, self.name)
         self.difficulty_data.add_play(full_play, this_was_a_win)
         self.villains_played.add(full_play["Villain"])
         if this_was_a_win:
@@ -202,6 +204,29 @@ class HeroData:
             self.win_percentage = self.total_wins/self.total_plays
         self.aspect_data.calculate_percentages(bgg_format)
         self.difficulty_data.calculate_percentages(bgg_format)
+        
+class HeroData(HeroBase):
+    def __init__(self, hero, traits):
+        super().__init__(hero)
+        self.traits = traits
+        self.team = []
+
+    def add_play(self, hero, full_play):
+        """
+        Assumes the caller has matched up the hero
+        """
+        super().add_play(hero, full_play)
+        for team in self.team:
+            team.add_play(hero,full_play)
+
+    def add_team(self, team):
+        self.team.append(team)
+
+
+class TeamData(HeroBase):
+    def __init__(self, team):
+        super().__init__(team)
+
 
 class DifficultyStats:
     def __init__(self):
@@ -302,9 +327,9 @@ class DifficultyStats:
     def __repr__(self):
         return (self.smarter_string())
 
-class VillainData:
-    def __init__(self, villain):
-        self.villain_name = villain
+class VillainBase:
+    def __init__(self, name):
+        self.name = name
         self.total_plays = 0
         self.total_wins = 0
         self.win_percentage = 0
@@ -314,6 +339,8 @@ class VillainData:
         self.heroes_not_played = set()
 
     def add_play(self, play):
+        print("Adding new villain child play")
+        print(f"Child name is {self.name}")
         self.total_plays += 1
         this_was_a_win = play["Heroes"][0]["Win"]
         self.total_wins += this_was_a_win
@@ -337,6 +364,26 @@ class VillainData:
         self.difficulty_data.calculate_percentages(bgg_format)
         self.aspect_data.calculate_percentages(bgg_format)
 
+class VillainData(VillainBase):
+    def __init__(self, name, expansion):
+        super().__init__(name)
+        self.expansion = expansion
+        self.expansion_data = None
+
+    def add_expansion(self, expansion_data):
+        self.expansion_data = expansion_data
+        
+    def add_play(self, play):
+        print(f"Villain is {self.name}")
+        print("Adding new villain play")
+        print(f"Expansion is {self.expansion}")
+        super().add_play(play)
+        self.expansion_data.add_play(play)
+
+
+class ExpansionData(VillainBase):
+    def __init__(self, name):
+        super().__init__(name)
 
 
 class OverallData:
@@ -351,7 +398,6 @@ class OverallData:
         self.overall_multi_plays = 0
         self.aspect_data = AspectData()
         self.difficulty_data = DifficultyStats()
-        self.team_plays = {}
 
     def calculate_percentages(self, bgg_format=True):
         if self.overall_plays:
@@ -399,8 +445,12 @@ class OverallData:
 
 HERO_INIT_DATA = {x:HeroData(x, hero_config_data[x]["traits"]) for x in hero_config_data.keys()}
 HERO_DATA_SET = set(HERO_INIT_DATA.keys())
-VILLAIN_INIT_DATA = {x:VillainData(x) for x in villain_config_data.keys()}
+VILLAIN_INIT_DATA = {x:VillainData(x, villain_config_data[x]['expansion']) for x in villain_config_data.keys()}
 VILLAIN_DATA_SET = set(VILLAIN_INIT_DATA.keys())
+BIG_BOX_INIT_DATA = {x:ExpansionData(x) for  x in BigBoxes}
+SCENARIO_PACK_INIT_DATA = {x:ExpansionData(x) for  x in ScenarioPacks}
+CORE_SET_INIT_DATA = {x:ExpansionData(x) for  x in CoreSet}
+TEAM_INIT_DATA = {x:TeamData(x) for  x in TeamTraits}
 
 class Statistics:
     def __init__(self, all_plays, bgg_format=True):
@@ -411,30 +461,59 @@ class Statistics:
         self.villain_h_index = 0
         self.hero_h_index = 0
         self.bgg_format=bgg_format
-        self.team_plays = {}
-        self.bigbox_plays = {}
         self.sorted_team_list = []
         self.sorted_heroes = None
         self.sorted_villains = None
+        self.team_data = TEAM_INIT_DATA
+        self.big_box_data = BIG_BOX_INIT_DATA
+        self.core_set_data = CORE_SET_INIT_DATA
+        self.scenario_pack_data = SCENARIO_PACK_INIT_DATA
+        #setup big boxes in villains
+        for villain in self.villain_data.keys():
+            print("===============================")
+            print(villain)
+            print("===============================")
+            expansion_found = False
+            for big_box in self.big_box_data.keys():
+                print(big_box)
+                if big_box == self.villain_data[villain].expansion:
+                    self.villain_data[villain].add_expansion(self.big_box_data[big_box])
+                    expansion_found = True
+                    break
+            if expansion_found == False:
+                for scenario_pack in self.scenario_pack_data.keys():
+                    print(scenario_pack)
+                    if scenario_pack == self.villain_data[villain].expansion:
+                        print(self.scenario_pack_data[scenario_pack])
+                        self.villain_data[villain].add_expansion(self.scenario_pack_data[scenario_pack])
+                        expansion_found = True
+                        break
+            if expansion_found == False:
+                for core_set in self.core_set_data.keys():
+                    print(core_set)
+                    if core_set == self.villain_data[villain].expansion:
+                        self.villain_data[villain].add_expansion(self.core_set_data[core_set])
+                        expansion_found = True
+                        break
+
+        #setup the team data in heroes
+        for team in self.team_data.keys():
+            for hero in self.hero_data.keys():
+                if team in self.hero_data[hero].traits:
+                    self.hero_data[hero].add_team(self.team_data[team])
+                
 
     def analyze_hero_data(self):
         for play in self.all_plays:
             for hero in play["Heroes"]:
                 self.hero_data[hero["Hero"]].add_play(hero, play)
-                #check traits
-                for team in TeamTraits:
-                    if team in self.hero_data[hero["Hero"]].traits:
-                        if team not in self.team_plays.keys():
-                            self.team_plays[team] = 1
-                        else:
-                            self.team_plays[team] += 1
 
         for hero in self.hero_data:
             self.hero_data[hero].calculate_percentages(self.bgg_format)
 
 
     def generate_team_plays(self):
-        team_play_list = [ (x, self.team_plays[x]) for x in self.team_plays.keys()]
+        team_play_list = [ (x, self.team_data[x].total_plays) for x in self.team_data.keys()]
         self.sorted_team_list = sorted(team_play_list, key=lambda x: x[1], reverse=True)
 
     def print_team_plays(self):
@@ -474,12 +553,12 @@ class Statistics:
         repr_string += "===========================================================\n"
         for i, hero in enumerate(self.sorted_heroes):
             if hero[1].total_plays > 0:
-                repr_string += f"{i+1}. " + hero[1].hero_name + "\n"
+                repr_string += f"{i+1}. " + hero[1].name + "\n"
                 repr_string += hero[1].__repr__() + "\n"
                 repr_string += "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"
         for j, villain in enumerate(self.sorted_villains):
             if villain[1].total_plays > 0:
-                repr_string += f"{j+1}. " + villain[1].villain_name + "\n"
+                repr_string += f"{j+1}. " + villain[1].name + "\n"
                 repr_string += villain[1].__repr__() + "\n"
                 repr_string += "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"
         return repr_string

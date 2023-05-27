@@ -301,10 +301,15 @@ class UploadData:
 
         #team data (G-J)
         osheet.update("G1", "Team")
-        #osheet.update("H1", "Plays")
+        osheet.update("H1", "Plays")
+        osheet.update("I1", "Wins")
+        osheet.update("J1", "Percentage")
         for n, data in enumerate(self.statistics.sorted_team_list):
             osheet.update(f"G{n+2}", data[0])
             osheet.update(f"H{n+2}", data[1])
+            osheet.update(f"I{n+2}", self.team_data[data[0]].wins)
+            osheet.format(f"J{n+2}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
+            osheet.update(f"J{n+2}", self.team_data[data[0]].win_percentage)
             
 
         #hero H-Index (K-L)

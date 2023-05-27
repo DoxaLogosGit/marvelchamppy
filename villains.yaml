@@ -14,17 +14,17 @@ Absorbing Man:
       - absorbing-man
       - absorbingman
       - absorbing
-  expansion: "The Rise of Red skull"
+  expansion: "The Rise of Red Skull"
 Taskmaster: 
   replacements:
       - None
-  expansion: "The Rise of Red skull"
+  expansion: "The Rise of Red Skull"
 Amin Zola:
   replacements:
       - amin-zola
       - aminzola
       - zola
-  expansion: "The Rise of Red skull"
+  expansion: "The Rise of Red Skull"
 Tower Defense:
   replacements:
       - tower-defense
@@ -38,17 +38,17 @@ Wrecking Crew:
       - wreckingcrew
   expansion: "Wrecking Crew"
 Ultron: 
+  expansion: "Core Set"
   replacements:
     - None
-  expansion: None
 Klaw:
   replacements:
       - None
-  expansion: None
+  expansion: "Core Set"
 Rhino:
   replacements:
       - None
-  expansion: None
+  expansion: "Core Set"
 Green Goblin - Risky Business:
   replacements:
       - risky business
@@ -169,11 +169,11 @@ Magog:
   expansion: "MojoMania"
   replacements:
     - None
-##Mojo: 
-#  expansion: "MojoMania"
-#  replacements:
-#      - None 
-#Spiral: 
-#  expansion: "MojoMania"
-#  replacements:
-#      - None 
+Mojo: 
+  expansion: "MojoMania"
+  replacements:
+      - None 
+Spiral: 
+  expansion: "MojoMania"
+  replacements:
+      - None 
