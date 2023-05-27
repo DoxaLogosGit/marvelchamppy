@@ -339,8 +339,6 @@ class VillainBase:
         self.heroes_not_played = set()
 
     def add_play(self, play):
-        print("Adding new villain child play")
-        print(f"Child name is {self.name}")
         self.total_plays += 1
         this_was_a_win = play["Heroes"][0]["Win"]
         self.total_wins += this_was_a_win
@@ -374,9 +372,6 @@ class VillainData(VillainBase):
         self.expansion_data = expansion_data
         
     def add_play(self, play):
-        print(f"Villain is {self.name}")
-        print("Adding new villain play")
-        print(f"Expansion is {self.expansion}")
         super().add_play(play)
         self.expansion_data.add_play(play)
 
@@ -470,27 +465,20 @@ class Statistics:
         self.scenario_pack_data = SCENARIO_PACK_INIT_DATA
         #setup big boxes in villains
         for villain in self.villain_data.keys():
-            print("===============================")
-            print(villain)
-            print("===============================")
             expansion_found = False
             for big_box in self.big_box_data.keys():
-                print(big_box)
                 if big_box == self.villain_data[villain].expansion:
                     self.villain_data[villain].add_expansion(self.big_box_data[big_box])
                     expansion_found = True
                     break
             if expansion_found == False:
                 for scenario_pack in self.scenario_pack_data.keys():
-                    print(scenario_pack)
                     if scenario_pack == self.villain_data[villain].expansion:
-                        print(self.scenario_pack_data[scenario_pack])
                         self.villain_data[villain].add_expansion(self.scenario_pack_data[scenario_pack])
                         expansion_found = True
                         break
             if expansion_found == False:
                 for core_set in self.core_set_data.keys():
-                    print(core_set)
                     if core_set == self.villain_data[villain].expansion:
                         self.villain_data[villain].add_expansion(self.core_set_data[core_set])
                         expansion_found = True
@@ -511,6 +499,8 @@ class Statistics:
         for hero in self.hero_data:
             self.hero_data[hero].calculate_percentages(self.bgg_format)
 
+        for team in self.team_data:
+            self.team_data[team].calculate_percentages(self.bgg_format)
 
     def generate_team_plays(self):
         team_play_list = [ (x, self.team_data[x].total_plays) for x in self.team_data.keys()]
@@ -528,6 +518,9 @@ class Statistics:
 
         for villain in self.villain_data:
             self.villain_data[villain].calculate_percentages(self.bgg_format)
+
+        for big_box in self.big_box_data:
+            self.big_box_data[big_box].calculate_percentages(self.bgg_format)
 
 
     def calculate_h_indices(self):

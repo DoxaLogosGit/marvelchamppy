@@ -222,6 +222,31 @@ class UploadData:
             if not skip:
                 self.update_hero_sheet(self.statistics.hero_data[hero], hsheet)
             
+    def upload_teams(self, worksheets):
+        if(self.diff_data is None):
+            team_list = self.statistics.team_data.keys()
+        else:
+            team_list = []
+            for hero in list(self.diff_data[1]):
+                for trait in self.hero_data[hero].traits:
+                    if trait in self.statistics.team_data.keys():
+                        team_list.append(trait)
+                
+
+        print("Uploading Team statistics...")
+        for team in sorted(team_list):
+            skip = False
+            if team not in worksheets:
+                print(f"creating {team} worksheet, not found")
+                hsheet = self.sheet.add_worksheet(title = team, rows=100, cols=100)
+            else:
+                print(f"found {team} worksheet, -- ")
+                hsheet = self.sheet.worksheet(team)
+                skip = self.skip_found
+
+            if not skip:
+                self.update_hero_sheet(self.statistics.team_data[team], hsheet)
+            
 
     def update_villain_sheet(self, villain, sheet):
         #clear sheet
@@ -274,6 +299,30 @@ class UploadData:
                 self.update_villain_sheet(self.statistics.villain_data[villain], vsheet)
 
 
+    def upload_big_box_expansions(self, worksheets):
+        if(self.diff_data is None):
+            big_box_list = self.statistics.big_box_data.keys()
+        else:
+            #grab expansion data out of villain
+            big_box_list = []
+            for villain in list(self.diff_data[0]):
+                if self.statistics.villain_data[villain].expansion in self.statistics.big_box_data.keys():
+                    big_box_list.append(self.statistics.villain_data[villain].expansion)
+                
+        print("Uploading Big Box statistics...")
+        for big_box in sorted(big_box_list):
+            skip = False
+            if big_box not in worksheets:
+                print(f"creating {big_box} worksheet, not found")
+                bsheet = self.sheet.add_worksheet(title = big_box, rows=100, cols=100)
+            else:
+                print(f"found {big_box} worksheet, -- ")
+                bsheet = self.sheet.worksheet(big_box)
+                skip = self.skip_found
+
+            if not skip:
+                self.update_villain_box_sheet(self.statistics.big_box_data[big_box], bsheet)
+
     def upload_overall(self):
         print("Uploading Overall statistics...")
         osheet = self.sheet.worksheet("Overall")
@@ -307,22 +356,22 @@ class UploadData:
         for n, data in enumerate(self.statistics.sorted_team_list):
             osheet.update(f"G{n+2}", data[0])
             osheet.update(f"H{n+2}", data[1])
-            osheet.update(f"I{n+2}", self.team_data[data[0]].wins)
+            osheet.update(f"I{n+2}", self.statistics.team_data[data[0]].total_wins)
             osheet.format(f"J{n+2}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
-            osheet.update(f"J{n+2}", self.team_data[data[0]].win_percentage)
+            osheet.update(f"J{n+2}", self.statistics.team_data[data[0]].win_percentage)
             
 
         #hero H-Index (K-L)
         osheet.update("K1", f"Hero H-Index: {self.statistics.hero_h_index}")
         osheet.update("L1", "Plays")
         for n, hero in enumerate(self.statistics.sorted_heroes):
-            osheet.update(f"K{n+2}", hero[1].hero_name)
+            osheet.update(f"K{n+2}", hero[1].name)
             osheet.update(f"L{n+2}", hero[1].total_plays)
         #villain H-Index (M-N)
         osheet.update("M1", f"Villain H-Index: {self.statistics.villain_h_index}")
         osheet.update("N1", "Plays")
         for n, villain in enumerate(self.statistics.sorted_villains):
-            osheet.update(f"M{n+2}", villain[1].villain_name)
+            osheet.update(f"M{n+2}", villain[1].name)
             osheet.update(f"N{n+2}", villain[1].total_plays)
 
     def perform_upload(self):
@@ -332,5 +381,9 @@ class UploadData:
         sleep(10)
         self.upload_heroes(worksheets)
         sleep(60)
+        self.upload_teams(worksheets)
+        sleep(10)
         self.upload_villains(worksheets)
+        sleep(10)
+        self.upload_big_box_expansions(worksheets)
         
