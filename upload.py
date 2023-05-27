@@ -314,14 +314,14 @@ class UploadData:
             skip = False
             if big_box not in worksheets:
                 print(f"creating {big_box} worksheet, not found")
-                bsheet = self.sheet.add_worksheet(title = big_box, rows=100, cols=100)
+                vsheet = self.sheet.add_worksheet(title = big_box, rows=100, cols=100)
             else:
                 print(f"found {big_box} worksheet, -- ")
-                bsheet = self.sheet.worksheet(big_box)
+                vsheet = self.sheet.worksheet(big_box)
                 skip = self.skip_found
 
             if not skip:
-                self.update_villain_box_sheet(self.statistics.big_box_data[big_box], bsheet)
+                self.update_villain_sheet(self.statistics.big_box_data[big_box], vsheet)
 
     def upload_overall(self):
         print("Uploading Overall statistics...")
