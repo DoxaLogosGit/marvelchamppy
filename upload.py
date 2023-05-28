@@ -228,7 +228,7 @@ class UploadData:
         else:
             team_list = []
             for hero in list(self.diff_data[1]):
-                for trait in self.hero_data[hero].traits:
+                for trait in self.statistics.hero_data[hero].traits:
                     if trait in self.statistics.team_data.keys():
                         team_list.append(trait)
                 
