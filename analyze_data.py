@@ -14,6 +14,7 @@ def find_diff_data(play_data_new, play_data_old):
     new_size = len(play_data_new)
     old_size = len(play_data_old)
 
+    print(f"New games: {new_size - old_size}")
     if(new_size == old_size):
         return ([],[])
     elif(new_size < old_size):
