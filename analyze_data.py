@@ -523,6 +523,9 @@ class Statistics:
         for big_box in self.big_box_data:
             self.big_box_data[big_box].calculate_percentages(self.bgg_format)
 
+        for scenario_pack in self.scenario_pack_data:
+            self.scenario_pack_data[scenario_pack].calculate_percentages(self.bgg_format)
+
 
     def calculate_h_indices(self):
         self.sorted_heroes = sorted(self.hero_data.items(), key=lambda x: x[1].total_plays, reverse=True)

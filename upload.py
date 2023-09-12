@@ -323,6 +323,31 @@ class UploadData:
             if not skip:
                 self.update_villain_sheet(self.statistics.big_box_data[big_box], vsheet)
 
+    def upload_scenario_packs(self, worksheets):
+        if(self.diff_data is None):
+            scenario_pack_list = self.statistics.scenario_pack_data.keys()
+        else:
+            #grab expansion data out of villain
+            scenario_pack_list = []
+            for villain in list(self.diff_data[0]):
+                if self.statistics.villain_data[villain].expansion in self.statistics.scenario_pack_data.keys():
+                    scenario_pack_list.append(self.statistics.villain_data[villain].expansion)
+                
+        print("Uploading Scenario Pack statistics...")
+        for scenario_pack in sorted(scenario_pack_list):
+            skip = False
+            if scenario_pack not in worksheets:
+                print(f"creating {scenario_pack} worksheet, not found")
+                vsheet = self.sheet.add_worksheet(title = scenario_pack, rows=100, cols=100)
+            else:
+                print(f"found {scenario_pack} worksheet, -- ")
+                vsheet = self.sheet.worksheet(scenario_pack)
+                skip = self.skip_found
+
+            if not skip:
+                self.update_villain_sheet(self.statistics.scenario_pack_data[scenario_pack], vsheet)
+
+
     def upload_overall(self):
         print("Uploading Overall statistics...")
         osheet = self.sheet.worksheet("Overall")
@@ -365,25 +390,27 @@ class UploadData:
         osheet.update("K1", f"Hero H-Index: {self.statistics.hero_h_index}")
         osheet.update("L1", "Plays")
         for n, hero in enumerate(self.statistics.sorted_heroes):
-            osheet.update(f"K{n+2}", hero[1].name)
+            osheet.update(f"K{n+2}", f"{n+2}. {hero[1].name}")
             osheet.update(f"L{n+2}", hero[1].total_plays)
         #villain H-Index (M-N)
         osheet.update("M1", f"Villain H-Index: {self.statistics.villain_h_index}")
         osheet.update("N1", "Plays")
         for n, villain in enumerate(self.statistics.sorted_villains):
-            osheet.update(f"M{n+2}", villain[1].name)
+            osheet.update(f"M{n+2}", f"{n+2}. {villain[1].name}")
             osheet.update(f"N{n+2}", villain[1].total_plays)
 
     def perform_upload(self):
         self.login()
         self.upload_overall()
         worksheets = [x.title for x in self.sheet.worksheets()]
-        sleep(10)
+        sleep(5)
         self.upload_heroes(worksheets)
-        sleep(60)
+        sleep(20)
         self.upload_teams(worksheets)
-        sleep(10)
+        sleep(5)
         self.upload_villains(worksheets)
-        sleep(10)
+        sleep(5)
         self.upload_big_box_expansions(worksheets)
+        sleep(5)
+        self.upload_scenario_packs(worksheets)
         
