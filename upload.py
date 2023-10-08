@@ -390,13 +390,13 @@ class UploadData:
         osheet.update("K1", f"Hero H-Index: {self.statistics.hero_h_index}")
         osheet.update("L1", "Plays")
         for n, hero in enumerate(self.statistics.sorted_heroes):
-            osheet.update(f"K{n+2}", f"{n+2}. {hero[1].name}")
+            osheet.update(f"K{n+2}", f"{n+1}. {hero[1].name}")
             osheet.update(f"L{n+2}", hero[1].total_plays)
         #villain H-Index (M-N)
         osheet.update("M1", f"Villain H-Index: {self.statistics.villain_h_index}")
         osheet.update("N1", "Plays")
         for n, villain in enumerate(self.statistics.sorted_villains):
-            osheet.update(f"M{n+2}", f"{n+2}. {villain[1].name}")
+            osheet.update(f"M{n+2}", f"{n+1}. {villain[1].name}")
             osheet.update(f"N{n+2}", villain[1].total_plays)
 
     def perform_upload(self):
