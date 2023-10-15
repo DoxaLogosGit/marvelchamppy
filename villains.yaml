@@ -127,7 +127,7 @@ Hood:
   expansion: "The Hood"
 Magneto: 
   replacements:
-      - None
+      - magento
   expansion: "Mutant Genesis"
 Sabretooth: 
   replacements:

@@ -19,6 +19,7 @@ Data to extract:
     Difficulty:
     Heroes: [(Hero, Aspect, Win)] (it's a list because i could play more than one hero solo)
     Date:  this is for debugging
+    ID:  this is for debugging and sorting
 
 """
 
@@ -77,6 +78,7 @@ def clean_up_hero_name(hero_name):
 def extract_marvel_champions_play_data(xml_play_data, user):
     play_data = {}
     play_data["Date"] = xml_play_data.attrib["date"]
+    play_data["Id"] = xml_play_data.attrib["id"]
     hero_list = []
     player_count = 0
     play_data["Multiplayer"] = False
@@ -104,6 +106,9 @@ def extract_marvel_champions_play_data(xml_play_data, user):
 
 #parse the list of xml data plays and just return the marvel champion data in a list
 def find_the_marvel_champion_plays(all_xml_data, user):
+    def get_id(x):
+        return x['Id']
+
     marvel_champion_plays = []
     for page in all_xml_data:
         page_root = ElementTree.fromstring(page)
@@ -111,6 +116,8 @@ def find_the_marvel_champion_plays(all_xml_data, user):
             if play.find('item').attrib['objectid'] == MARVEL_CHAMPIONS_ID:
                 marvel_champion_plays.append(extract_marvel_champions_play_data(play, user))
 
+    #sort based on id
+    marvel_champion_plays.sort(key=get_id, reverse=True)
     print("Total plays retrieved: {}".format(len(marvel_champion_plays)))
     return marvel_champion_plays
 
