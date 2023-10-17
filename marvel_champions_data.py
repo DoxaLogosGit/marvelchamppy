@@ -36,22 +36,17 @@ def main():
 
     args = parser.parse_args()
 
-    #double check some args
-    if(args.newest_data and args.upload_data):
-        print("Error! Pick -u or -n separately!")
-        return 1
     #check for old data
-    elif(args.newest_data):
+    if(args.newest_data and not args.analyze_json):
         if(path.isfile("marvel_play_data.json")):
             #backup file
             shutil.copyfile("marvel_play_data.json", "marvel_play_data_bak.json")
         else:
             #no recent file to disable newest upload
             args.newest_data=False
-            args.upload_data=True
 
-        
-    
+
+
     if(not args.analyze_json):
         print("Begin collecting data")
         xml_data = retrieve_play_data_from_bgg(USER)
@@ -74,7 +69,7 @@ def main():
     if(args.newest_data):
         with open("marvel_play_data_bak.json") as play_data:
             marvel_plays_bak = json.loads(play_data.read())
-        
+
         diff_data = find_diff_data(marvel_plays, marvel_plays_bak)
         print(diff_data)
         if(diff_data[0] == -1):
@@ -85,13 +80,13 @@ def main():
         diff_data = None
             
 
-    statistics = Statistics(marvel_plays)
-    statistics.analyze_play_data()
-    if(not args.upload_data and not args.newest_data):
-        print(statistics)
-    else:
-        data = UploadData(statistics, args.skip_found, diff_data)
-        data.perform_upload()
+ #   statistics = Statistics(marvel_plays)
+ #   statistics.analyze_play_data()
+ #   if(not args.upload_data):
+ #       print(statistics)
+ #   else:
+ #       data = UploadData(statistics, args.skip_found, diff_data)
+ #       data.perform_upload()
 
 
 

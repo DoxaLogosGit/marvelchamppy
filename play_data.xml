@@ -1,5 +1,606 @@
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="846" page="1" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="72280766" date="2023-05-26" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="886" page="1" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="76651696" date="2023-10-13" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1 Magneto + Acolytes
+
+Justice War Machine in a knock down drag out fight with the master of magnetism.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="War Machine" color="Justice" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="76295431" date="2023-10-01" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1 Magento + Acolytes
+
+STorm Justice taking care of business.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Storm" color="Justice" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="75703764" date="2023-09-11" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Magog (sort of... played the wrong side)
+
+Not a legitimate win, but I gave myself a mulligan on a resource &quot;mana screw&quot; draw at the end. The game was so close and the next card was what I needed to finish off Magog.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Cyclops" color="Protection" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="75645195" date="2023-09-10" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Mojo
+
+Masterplan hosed me over... emptied the deck prematurely and put me behind the eightball</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Cyclops" color="Justice" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="75627651" date="2023-09-09" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Spiral
+
+Tough loss on the scheme with Cyclops.  You can feel the power of his kit if you build the deck right. I may have had too many allies and not enough tactics to get him really going.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Cyclops" color="Aggression" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="75635755" date="2023-09-09" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Spiral
+
+Another tough loss to threat.  Think the deck was clogged up with too many allies.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Cyclops" color="Aggression" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="75635773" date="2023-09-09" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Spiral
+
+Got the win this time. After thinning deck, but still tough</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Cyclops" color="Aggression" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="75640469" date="2023-09-09" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Mojo
+
+Tough fight to the finish, but Storm burned him down.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Storm" color="Justice" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="75640514" date="2023-09-09" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Mojo
+
+Slobber knocker of a game that came close to losing maybe. I lost track of all those threat tokens.  Somehow we prevailed on the last encounter set.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Storm" color="Justice" score="" new="0" rating="0" win="1" />
+						<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Cyclops" color="Aggression" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="75475614" date="2023-09-03" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Magog + Fantasy
+
+Magog can&apos;t withstand the power of a phased Shadowcat!</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Shadowcat" color="Justice" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="75434189" date="2023-09-02" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1  Spiral  
+
+Tough match. I screwed up some rules early, but corrected as I went.  Long game, but got Spiral in the end.  I felt I timed the flip to cornered better.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Shadowcat" color="Justice" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="75362397" date="2023-08-31" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1 Spiral
+
+Fun encounter with Spiral. She&apos;s tricky.  Got to work that cornering at the right time to make full affect of damage before she flips back.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Shadowcat" color="Protection" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="75362406" date="2023-08-31" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1 Spiral
+
+Tough loss to scheme.  Didn&apos;t time the cornering correctly.  Need to wait until I have attacks in play.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Shadowcat" color="Protection" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="73340282" date="2023-06-30" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>SCL 15.3 Practice Round
+
+S1 Mojo
+
+Not liking this round.
+
+Win with Nebula in Basic.  </comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Nebula" color="Basic" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="73108767" date="2023-06-22" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>SCL Practice Round 15.3
+
+S1 Mojo + Horror + Western
+
+Ugh.. really long game. Wolverine might be better because threat is still awful = 13!
+
+12 turns!  Quicksilver basic.  Still not sure if I should play symbiote suite or not.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Quicksilver" color="Basic" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="73063702" date="2023-06-20" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>SCL 15.3 Practice Round
+
+S1 Mojo  
+
+First time playing mojo... wow.. don&apos;t know how I&apos;m going to clean the board... at least with Wolverine.  
+
+May have to try Quicksilver with his boosted readies.  
+
+6 turns... 15 threat!!!!</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Wolverine" color="Basic" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="72958506" date="2023-06-17" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>SCL 15.2 Official Match 3
+
+Took me a while to get this done, made too many bad mistakes.
+
+S1 Master Mold + Sentines + Mystique
+
+Turn 6
+Threat 1
+HH  8
+EH 0
+VS 2
+MS 1</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Colossus" color="Leadership" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="72939194" date="2023-06-16" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>SCL 15.2 Official match 1
+
+S1 Master Mold + Sentinels + Mystique
+
+8 turns
+1 threat
+ms stage 1
+enemy health 0
+hero health 12
+villain stage 2
+
+sheesh, SoTp came out.  Big fat Mark VIII came out with Unit Upgrade, then Juggernaut again, then MarkVIII again (no upgrade)!!!!
+</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Colossus" color="Leadership" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="72939214" date="2023-06-16" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>SCL 15.2 Official Match 2
+
+S1 Master Mold + Sentinels + Mystique
+
+7 turns
+0 threat
+ms stage 1
+v stage 2
+enemy health 0
+hero health 17</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Colossus" color="Leadership" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="72912641" date="2023-06-15" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>SCL 15.2 Practice Round
+
+S1 Master Mold + Mystique + Sentinels
+
+6 turn ugly win, 7 threat, ms stage 1, 0 enemy health, 4 HP?  I had to shut it down fast.  Encounter deck cycled because it took forever to find a sentinel minion at the start.  I was in trouble.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Colossus" color="Leadership" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="72912646" date="2023-06-15" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>SCL 15.2 Practice Round
+
+S1 Master Mold + Mystique + Sentinels
+
+Great 5 turn clean board win.  I could have won in 4 with 1 threat, but I tried one more turn and got crushing win at 19 health.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Colossus" color="Leadership" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="72867753" date="2023-06-14" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>SCL 15.2 Practice Round
+
+
+S1 Master mold + Mystique + Sentinels
+
+another 6 turn win, but still went to main scheme stage 2!  Ugh.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Colossus" color="Leadership" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="72889649" date="2023-06-14" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>SCL 15.2 Practice Round
+
+S1 Master Mold + Mystique + Sentinels
+
+Great turn 6 win with a clean board!! Woot! Shaved my Magento voltron deck down to 45 cards and work a tad better even with some tough calls.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Colossus" color="Leadership" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="72842031" date="2023-06-12" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>SCL 15.2 Practice Round.
+
+S1 Master Mold + Mystique + Sentinels
+
+Not quite clean.. .went to stage 2 of the main scheme :(  But... won in 6 turns.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Colossus" color="Leadership" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="72828359" date="2023-06-11" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>SCL 15.2 Practice Round
+
+S1 Master Mold + Mystique + Sentinels
+
+Mini voltron of Magneto went well this round even though I didn&apos;t get the X-men training upgrades on him. I think it went 7 turns with clean board.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="J. @kinson" startposition="Colossus" color="Leadership" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="72771299" date="2023-06-10" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>SCL 15.2 Practice Round
+
+S1 Master Mold + Mystique + Sentinels
+
+When 9 turns, but far from clean partly because Nemesis came out near the end. Also main scheme went to stage 2 on me :(   
+
+Left juggernaut on the board with his scheme (2 threat) and 7 threat on the main scheme.  This is with an all basic deck. It may not work for SCL, but it can get a win.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Colossus" color="Basic" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="72780684" date="2023-06-10" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>SCL 15.2 Practice
+
+S1 Master Mold + Mystique + Sentinels
+
+Turn 9 win with one threat left.  Man... hard to get a clean board with Colossus... too much junk comes out.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Colossus" color="Justice" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="72713198" date="2023-06-08" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>SCL 15.2 Practice Round
+
+S1 Master Mold + Sentinels + Mystique
+
+Took down MM in 7 turns with almost a clean board, 1 threat left.   I didn&apos;t want risk more bad minions popping out like turn 6 with the big beefy sentinel to stop me from finishing with a clean board.  Stupid big attachment made it worse.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Colossus" color="Aggression" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="72661120" date="2023-06-06" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Mansion Attack 
+
+Beatdown on Miles MOrales Stun Lock protection deck could not get going.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Miles morales" color="Protection" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="72532130" date="2023-06-02" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Hela
+
+Got quite built up to take down Hela, I&apos;m not sure I was ever in any real danger.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Ironheart" color="Protection" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="72506408" date="2023-06-01" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Taskmaster
+
+Complete beat down by Sp//der Justice, no surprise</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Sp//der" color="Justice" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="72481881" date="2023-05-31" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Kang
+
+Sp//der rocking it all the way home.  Took Kang 3 out in two turns.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Sp//der" color="Leadership" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="72483254" date="2023-05-31" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Thanos
+
+Brutal brutal start to the game for Sp//der.  What&apos;s worse is I made the colossal mistake for not getting Host Spider out in time before the snap and it probably cost me the game.  I had to give up because it was getting long and I was slowly getting beatdown.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Sp//der" color="Leadership" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="72458047" date="2023-05-30" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Risky Business
+
+Sp//der just locking down GG in good ole fashin stun lock heal damage on allies.
+
+OCTGN crashed on me again, but the end was inevitable.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Sp//der" color="Protection" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="72422901" date="2023-05-29" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Wrecking Crew
+
+I&apos;m calling it a win. I was well on the way of taking down Thunderball when my OCTGN game crashed. All I had left was Wrecker. I had enough allies in play to protect myself to finish him off.  I had enough health.
+
+Very slow build being multi villains. I started to get the groove when I got sunfire in play with an attachment plus Thunderstorm to boost his atk to 4 along with two Game Actions.
+
+Another great deck by the master that is VillainTheory:
+
+[url=https://marvelcdb.com/decklist/view/24149/thunderstruck-1.0][/url]</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Storm" color="Aggression" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="72364908" date="2023-05-28" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Risky Business
+
+Ironheart just trashing GG.  Waited until mostly setup before flipping Norman over to GG then burned him down.
+
+Ironheart can just get work done.
+
+[url=https://marvelcdb.com/decklist/view/19353/tony-starks-a-i-ronheart-turbo-deck-1.0][/url]</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Ironheart" color="Justice" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="72389305" date="2023-05-28" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Klaw
+
+Wow wow wow.  I thought Sp//der was dead down to 1 HP.  Lots of minions in play.  
+
+Was able to claw my way back to victory.  At that 1 HP level, Sp//der was almost set up. Just needed the Web Compressor.  Got it that turn, and got a handful of All Systems Go... cleared the board.  Took Klaw down within about four more turns. I got VEN#M out as well at almost full counters (saved one for stunning Klaw).
+
+[url=https://marvelcdb.com/decklist/view/20883/one-way-entrance-to-the-sp-dr-verse-or-another-1.0][/url]</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Sp//der" color="Justice" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="72334643" date="2023-05-27" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Sandman
+
+Used VillainTheory&apos;s 20+ damage leadership deck.  Worked great but had to target Miles Morales.  He did 19 damage to finish off Sandman &amp; Rh*no which isn&apos;t too shabby, since he&apos;s not the true target of the deck (Goliath).</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Phoenix" color="Leadership" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="72346054" date="2023-05-27" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1 Hood
+
+Sp//der Aggression deck from N#RF is insane.  Put the smack down on Hood.
+
+[url=https://marvelcdb.com/decklist/view/20890/sp-dr00-s-n-rf-this-1.0][/url]</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Sp//der" color="Aggression" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="72347730" date="2023-05-27" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1 Ebony Maw
+
+Another good deck on marvelcdb.  Vigilant Defense for Nova worked quite smooth against the maw man.
+[url=https://marvelcdb.com/decklist/view/20682/champion-supernova-in-the-sky-vigilant-defense-1.0][/url]</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Nova" color="Protection" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="72280766" date="2023-05-26" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -1001,7 +1602,9 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Hulk" color="Aggression" score="" new="0" rating="0" win="0" />
 						</players>
 					</play>
-	<play id="70438120" date="2023-03-27" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="886" page="2" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="70438120" date="2023-03-27" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -1670,9 +2273,7 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Adam Warlock" color="all" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="846" page="2" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="62112075" date="2022-07-08" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="62112075" date="2022-07-08" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -2767,7 +3368,9 @@ Played with the following expansions:
 						<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Ghost Spider" color="Protection" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	<play id="60043341" date="2022-04-17" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="886" page="3" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="60043341" date="2022-04-17" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -3430,9 +4033,7 @@ I&apos;m thinking about one more test run removing one Target Acquired for eithe
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Wasp" color="Justice" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="846" page="3" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="58819947" date="2022-03-02" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="58819947" date="2022-03-02" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -4486,7 +5087,9 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Valkyrie" color="Aggression" score="" new="0" rating="0" win="0" />
 						</players>
 					</play>
-	<play id="57660668" date="2022-01-22" quantity="1" length="0" incomplete="0" nowinstats="0" location="Lucky Dice Cafe">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="886" page="4" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="57660668" date="2022-01-22" quantity="1" length="0" incomplete="0" nowinstats="0" location="Lucky Dice Cafe">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -5167,9 +5770,7 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="War Machine" color="Protection" score="" new="0" rating="0" win="0" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="846" page="4" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="56381463" date="2021-12-14" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="56381463" date="2021-12-14" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -6072,7 +6673,9 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Venom" color="Justice" score="" new="0" rating="0" win="0" />
 						</players>
 					</play>
-	<play id="54844360" date="2021-10-10" quantity="1" length="0" incomplete="0" nowinstats="0" location="For the Win Game Shop">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="886" page="5" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="54844360" date="2021-10-10" quantity="1" length="0" incomplete="0" nowinstats="0" location="For the Win Game Shop">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -6656,9 +7259,7 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Gamora" color="Basic" score="" new="0" rating="0" win="0" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="846" page="5" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="53154463" date="2021-07-28" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="53154463" date="2021-07-28" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -7514,7 +8115,9 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Gamora" color="Aggression" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	<play id="51463560" date="2021-05-18" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="886" page="6" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="51463560" date="2021-05-18" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -8049,9 +8652,7 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Black Widow" color="Justice" score="" new="0" rating="0" win="0" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="846" page="6" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="50608831" date="2021-04-10" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="50608831" date="2021-04-10" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -8886,7 +9487,9 @@ Played with the following expansions:
 						<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Scarlet Witch" color="Justice" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	<play id="49802021" date="2021-03-07" quantity="1" length="0" incomplete="0" nowinstats="0" location="Lucky Dice Cafe">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="886" page="7" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="49802021" date="2021-03-07" quantity="1" length="0" incomplete="0" nowinstats="0" location="Lucky Dice Cafe">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -9456,9 +10059,7 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Quicksilver" color="Aggression" score="" new="0" rating="0" win="0" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="846" page="7" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="49199945" date="2021-02-11" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="49199945" date="2021-02-11" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -10175,7 +10776,9 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Thor" color="Justice" score="" new="0" rating="0" win="0" />
 						</players>
 					</play>
-	<play id="46330790" date="2020-10-18" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="886" page="8" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="46330790" date="2020-10-18" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -10615,9 +11218,7 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Hulk" color="Justice" score="" new="0" rating="0" win="0" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="846" page="8" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="45717859" date="2020-09-18" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="45717859" date="2020-09-18" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -11305,7 +11906,9 @@ Standard Ultron</comments>
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="She Hulk" color="Leadership" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	<play id="45058358" date="2020-08-16" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="886" page="9" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="45058358" date="2020-08-16" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -11756,9 +12359,7 @@ Good win.  I would have had Rhino in 6 if it wasn&apos;t for the tough status sh
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Captain America" color="Leadership" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="846" page="9" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="44039307" date="2020-06-30" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="44039307" date="2020-06-30" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />

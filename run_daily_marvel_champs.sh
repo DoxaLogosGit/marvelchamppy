@@ -2,5 +2,5 @@
 #
 
 cd /home/jgatkinsn/projects/marvelchampy
-./marvel_champions_data.py -n
+./marvel_champions_data.py -n -u
 
