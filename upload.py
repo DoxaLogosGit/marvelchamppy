@@ -384,7 +384,6 @@ class UploadData:
             osheet.update(f"I{n+2}", self.statistics.team_data[data[0]].total_wins)
             osheet.format(f"J{n+2}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
             osheet.update(f"J{n+2}", self.statistics.team_data[data[0]].win_percentage)
-            
 
         #hero H-Index (K-L)
         osheet.update("K1", f"Hero H-Index: {self.statistics.hero_h_index}")
@@ -398,6 +397,22 @@ class UploadData:
         for n, villain in enumerate(self.statistics.sorted_villains):
             osheet.update(f"M{n+2}", f"{n+1}. {villain[1].name}")
             osheet.update(f"N{n+2}", villain[1].total_plays)
+
+        #hero win percentage (O-P)
+        osheet.update("O1", f"Hero")
+        osheet.update("P1", " Winning Percent")
+        for n, hero in enumerate(self.statistics.sorted_percent_heroes):
+            osheet.update(f"O{n+2}", f"{n+1}. {hero[1].name}")
+            osheet.format(f"P{n+2}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
+            osheet.update(f"P{n+2}", hero[1].win_percentage)
+
+        #villain win percentage (Q-R)
+        osheet.update("Q1", f"Villain")
+        osheet.update("R1", "Losing Percent")
+        for n, villain in enumerate(self.statistics.sorted_percent_villains):
+            osheet.update(f"Q{n+2}", f"{n+1}. {villain[1].name}")
+            osheet.format(f"R{n+2}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
+            osheet.update(f"R{n+2}", villain[1].win_percentage)
 
     def perform_upload(self):
         self.login()

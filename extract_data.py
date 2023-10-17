@@ -117,7 +117,7 @@ def find_the_marvel_champion_plays(all_xml_data, user):
                 marvel_champion_plays.append(extract_marvel_champions_play_data(play, user))
 
     #sort based on id
-    marvel_champion_plays.sort(key=get_id, reverse=True)
+    marvel_champion_plays.sort(key=get_id)
     print("Total plays retrieved: {}".format(len(marvel_champion_plays)))
     return marvel_champion_plays
 

@@ -23,7 +23,7 @@ def find_diff_data(play_data_new, play_data_old):
         delta_data = play_data_new[:new_size-old_size]
     #get villains
     villains = [x["Villain"] for x in delta_data]
-    
+
     #get heroes
     heroes = []
     for play in delta_data:
@@ -459,7 +459,9 @@ class Statistics:
         self.bgg_format=bgg_format
         self.sorted_team_list = []
         self.sorted_heroes = None
+        self.sorted_percent_heroes = None
         self.sorted_villains = None
+        self.sorted_percent_villains = None
         self.team_data = TEAM_INIT_DATA
         self.big_box_data = BIG_BOX_INIT_DATA
         self.core_set_data = CORE_SET_INIT_DATA
@@ -529,11 +531,13 @@ class Statistics:
 
     def calculate_h_indices(self):
         self.sorted_heroes = sorted(self.hero_data.items(), key=lambda x: x[1].total_plays, reverse=True)
+        self.sorted_percent_heroes = sorted(self.hero_data.items(), key=lambda x: x[1].win_percentage, reverse=True)
         for i, h in enumerate(self.sorted_heroes):
             if self.hero_h_index < h[1].total_plays :
                 self.hero_h_index += 1
 
         self.sorted_villains = sorted(self.villain_data.items(), key=lambda x: x[1].total_plays, reverse=True)
+        self.sorted_percent_villains = sorted(self.villain_data.items(), key=lambda x: x[1].win_percentage, reverse=True)
         for i, h in enumerate(self.sorted_villains):
             if self.villain_h_index < h[1].total_plays :
                 self.villain_h_index += 1
