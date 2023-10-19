@@ -13,9 +13,6 @@ from os import path
 import shutil
 
 USER='DoxaLogos'
-#OLD_USER='jgatkinsn' #old username
-START_DATE =  (2019, 11, 6)
-
 
 
 #main loop function
@@ -78,15 +75,15 @@ def main():
             diff_data = None
     else:
         diff_data = None
-            
 
- #   statistics = Statistics(marvel_plays)
- #   statistics.analyze_play_data()
- #   if(not args.upload_data):
- #       print(statistics)
- #   else:
- #       data = UploadData(statistics, args.skip_found, diff_data)
- #       data.perform_upload()
+
+    statistics = Statistics(marvel_plays)
+    statistics.analyze_play_data()
+    if(not args.upload_data):
+        print(statistics)
+    else:
+        data = UploadData(statistics, args.skip_found, diff_data)
+        data.perform_upload()
 
 
 
