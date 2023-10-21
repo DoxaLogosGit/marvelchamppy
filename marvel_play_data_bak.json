@@ -13403,5 +13403,80 @@
     "Multiplayer": false,
     "True_Solo": true,
     "Villain": "Mojo"
+  },
+  {
+    "Date": "2023-09-11",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Cyclops",
+        "Win": 1
+      }
+    ],
+    "Id": "75703764",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Magog"
+  },
+  {
+    "Date": "2023-10-01",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Storm",
+        "Win": 1
+      }
+    ],
+    "Id": "76295431",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Magneto"
+  },
+  {
+    "Date": "2023-10-13",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "War Machine",
+        "Win": 1
+      }
+    ],
+    "Id": "76651696",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Magneto"
+  },
+  {
+    "Date": "2023-10-19",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Cable",
+        "Win": 1
+      }
+    ],
+    "Id": "76842963",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Juggernaut"
+  },
+  {
+    "Date": "2023-10-19",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Cable",
+        "Win": 1
+      }
+    ],
+    "Id": "76842972",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Juggernaut"
   }
 ]

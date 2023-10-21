@@ -13448,5 +13448,65 @@
     "Multiplayer": false,
     "True_Solo": true,
     "Villain": "Magneto"
+  },
+  {
+    "Date": "2023-10-19",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Cable",
+        "Win": 1
+      }
+    ],
+    "Id": "76842963",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Juggernaut"
+  },
+  {
+    "Date": "2023-10-19",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Cable",
+        "Win": 1
+      }
+    ],
+    "Id": "76842972",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Juggernaut"
+  },
+  {
+    "Date": "2023-10-20",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Domino",
+        "Win": 1
+      }
+    ],
+    "Id": "76874013",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Juggernaut"
+  },
+  {
+    "Date": "2023-10-21",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Domino",
+        "Win": 1
+      }
+    ],
+    "Id": "76892830",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mister Sinister"
   }
 ]

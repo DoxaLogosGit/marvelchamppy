@@ -4,19 +4,19 @@ from datetime import datetime, timedelta
 
 class UploadData:
 
-    
+
     def __init__(self, statistics, skip_found=False, diff_data=None):
         self.statistics = statistics
         self.sheet = None
         self.skip_found = skip_found
         self.diff_data = diff_data
 
-        
+
     def login(self):
         gc = gspread.service_account(client_factory=gspread.client.BackoffClient)
         self.sheet = gc.open("Marvel Champions Data")
 
-        
+
     def update_difficulty(self, data, sheet):
         sheet.update("C1", "Difficulty Data")
         start_row = 2
@@ -347,6 +347,15 @@ class UploadData:
             if not skip:
                 self.update_villain_sheet(self.statistics.scenario_pack_data[scenario_pack], vsheet)
 
+    def upload_play_matrix(self):
+        print("Uploading Play Matrix statistics...")
+        osheet = self.sheet.worksheet("Play Matrix")
+        #clear sheet
+        osheet.batch_clear(["A1:ZZ200"])
+        #print the hero names
+        for n, hero in enumerate(self.statistics.hero_data):
+            osheet.update(f"A{n+2}", f"{hero[1].name}")
+
 
     def upload_overall(self):
         print("Uploading Overall statistics...")
@@ -401,26 +410,31 @@ class UploadData:
         #hero win percentage (O-P)
         osheet.update("O1", f"Hero")
         osheet.update("P1", " Winning Percent")
-        for n, hero in enumerate(self.statistics.sorted_percent_heroes):
+        printed_row = 2 #start row
+        for hero in self.statistics.sorted_percent_heroes:
             #only upload those with minimum number of plays and opponents
             if(hero[1].total_plays >= 10 and len(hero[1].villains_played) >=8):
-                osheet.update(f"O{n+2}", f"{n+1}. {hero[1].name}")
-                osheet.format(f"P{n+2}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
-                osheet.update(f"P{n+2}", hero[1].win_percentage)
+                osheet.update(f"O{printed_row}", f"{printed_row-1}. {hero[1].name}")
+                osheet.format(f"P{printed_row}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
+                osheet.update(f"P{printed_row}", hero[1].win_percentage)
+                printed_row += 1
 
         #villain win percentage (Q-R)
         osheet.update("Q1", f"Villain")
         osheet.update("R1", "Losing Percent")
-        for n, villain in enumerate(self.statistics.sorted_percent_villains):
+        printed_row = 2 #start row
+        for villain in self.statistics.sorted_percent_villains:
             #only upload those with minimum number of plays and opponents
             if(villain[1].total_plays >= 10 and len(villain[1].heroes_played) >= 8):
-                osheet.update(f"Q{n+2}", f"{n+1}. {villain[1].name}")
-                osheet.format(f"R{n+2}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
-                osheet.update(f"R{n+2}", villain[1].win_percentage)
+                osheet.update(f"Q{printed_row}", f"{printed_row-1}. {villain[1].name}")
+                osheet.format(f"R{printed_row}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
+                osheet.update(f"R{printed_row}", villain[1].win_percentage)
+                printed_row += 1
 
     def perform_upload(self):
         self.login()
         self.upload_overall()
+        self.upload_play_matrix()
         worksheets = [x.title for x in self.sheet.worksheets()]
         sleep(5)
         self.upload_heroes(worksheets)
