@@ -402,17 +402,21 @@ class UploadData:
         osheet.update("O1", f"Hero")
         osheet.update("P1", " Winning Percent")
         for n, hero in enumerate(self.statistics.sorted_percent_heroes):
-            osheet.update(f"O{n+2}", f"{n+1}. {hero[1].name}")
-            osheet.format(f"P{n+2}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
-            osheet.update(f"P{n+2}", hero[1].win_percentage)
+            #only upload those with minimum number of plays and opponents
+            if(hero[1].total_plays >= 10 and len(hero[1].villains_played) >=8):
+                osheet.update(f"O{n+2}", f"{n+1}. {hero[1].name}")
+                osheet.format(f"P{n+2}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
+                osheet.update(f"P{n+2}", hero[1].win_percentage)
 
         #villain win percentage (Q-R)
         osheet.update("Q1", f"Villain")
         osheet.update("R1", "Losing Percent")
         for n, villain in enumerate(self.statistics.sorted_percent_villains):
-            osheet.update(f"Q{n+2}", f"{n+1}. {villain[1].name}")
-            osheet.format(f"R{n+2}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
-            osheet.update(f"R{n+2}", villain[1].win_percentage)
+            #only upload those with minimum number of plays and opponents
+            if(villain[1].total_plays >= 10 and len(villain[1].heroes_played) >= 8):
+                osheet.update(f"Q{n+2}", f"{n+1}. {villain[1].name}")
+                osheet.format(f"R{n+2}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
+                osheet.update(f"R{n+2}", villain[1].win_percentage)
 
     def perform_upload(self):
         self.login()
