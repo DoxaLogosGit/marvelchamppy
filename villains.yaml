@@ -177,3 +177,16 @@ Spiral:
   expansion: "MojoMania"
   replacements:
       - None 
+Juggernaut: 
+  expansion: "Next Evolution"
+  replacements:
+      - jugernaut 
+      - juggernuat 
+      - juggernut 
+Mister Sinister: 
+  expansion: "Next Evolution"
+  replacements:
+      - mistersinister 
+      - mister sinster 
+      - mr. sinister 
+      - mr sinister 

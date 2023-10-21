@@ -314,3 +314,16 @@
             - Tech
         replacements:
             - None
+    Cable : 
+        traits:
+            - X-Force
+            - Soldier
+        replacements:
+            - None
+    Domino : 
+        traits:
+            - X-Force
+            - Posse
+        replacements:
+            - dominio
+            - dominoe
