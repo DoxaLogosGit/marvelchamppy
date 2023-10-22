@@ -1,6 +1,7 @@
 import gspread
 from time import sleep
 from datetime import datetime, timedelta
+from config import COLUMNS
 
 class UploadData:
 
@@ -349,12 +350,32 @@ class UploadData:
 
     def upload_play_matrix(self):
         print("Uploading Play Matrix statistics...")
-        osheet = self.sheet.worksheet("Play Matrix")
+        psheet = self.sheet.worksheet("Play Matrix")
         #clear sheet
-        osheet.batch_clear(["A1:ZZ200"])
+        psheet.batch_clear(["A1:ZZ200"])
+        psheet.add_cols(100)
+        psheet.format("B2:ZZ200", {'textFormat': {'bold':True}, 'horizontalAlignment': "CENTER"})
         #print the hero names
-        for n, hero in enumerate(self.statistics.hero_data):
-            osheet.update(f"A{n+2}", f"{hero[1].name}")
+        heroes = sorted(self.statistics.hero_data.keys())
+        for n, hero in enumerate(heroes):
+            psheet.update(f"A{n+2}", f"{hero}")
+
+        #walk the villains
+        villains = sorted(self.statistics.villain_data.keys())
+        for column, villain in enumerate(villains):
+            #walk heroes played
+            for hero_played in self.statistics.villain_data[villain].heroes_played:
+                #see where in the list the hero played is in there
+                for index, hero in enumerate(heroes):
+                    if index == 0:
+                        #print the name on first row
+                        psheet.update(f"{COLUMNS[column]}1", f"{villain}")
+                    if hero_played == hero:
+                        #found here, print x
+                        psheet.update(f"{COLUMNS[column]}{index+2}", "X")
+                            
+                        
+
 
 
     def upload_overall(self):
@@ -433,17 +454,17 @@ class UploadData:
 
     def perform_upload(self):
         self.login()
-        self.upload_overall()
+#        self.upload_overall()
         self.upload_play_matrix()
-        worksheets = [x.title for x in self.sheet.worksheets()]
-        sleep(5)
-        self.upload_heroes(worksheets)
-        sleep(20)
-        self.upload_teams(worksheets)
-        sleep(5)
-        self.upload_villains(worksheets)
-        sleep(5)
-        self.upload_big_box_expansions(worksheets)
-        sleep(5)
-        self.upload_scenario_packs(worksheets)
+#        worksheets = [x.title for x in self.sheet.worksheets()]
+#        sleep(5)
+#        self.upload_heroes(worksheets)
+#        sleep(20)
+#        self.upload_teams(worksheets)
+#        sleep(5)
+#        self.upload_villains(worksheets)
+#        sleep(5)
+#        self.upload_big_box_expansions(worksheets)
+#        sleep(5)
+#        self.upload_scenario_packs(worksheets)
         
