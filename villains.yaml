@@ -177,6 +177,16 @@ Spiral:
   expansion: "MojoMania"
   replacements:
       - None 
+Morlock Siege: 
+  expansion: "Next Evolution"
+  replacements:
+      - morlocksiege
+      - morlockseige
+      - morlock seige
+On the Run: 
+  expansion: "Next Evolution"
+  replacements:
+      - ontherun
 Juggernaut: 
   expansion: "Next Evolution"
   replacements:
@@ -190,3 +200,7 @@ Mister Sinister:
       - mister sinster 
       - mr. sinister 
       - mr sinister 
+Stryfe: 
+  expansion: "Next Evolution"
+  replacements:
+      - strife 

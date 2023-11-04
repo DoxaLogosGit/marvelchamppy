@@ -454,17 +454,17 @@ class UploadData:
 
     def perform_upload(self):
         self.login()
-#        self.upload_overall()
+        self.upload_overall()
         self.upload_play_matrix()
-#        worksheets = [x.title for x in self.sheet.worksheets()]
-#        sleep(5)
-#        self.upload_heroes(worksheets)
-#        sleep(20)
-#        self.upload_teams(worksheets)
-#        sleep(5)
-#        self.upload_villains(worksheets)
-#        sleep(5)
-#        self.upload_big_box_expansions(worksheets)
-#        sleep(5)
-#        self.upload_scenario_packs(worksheets)
+        worksheets = [x.title for x in self.sheet.worksheets()]
+        sleep(5)
+        self.upload_heroes(worksheets)
+        sleep(20)
+        self.upload_teams(worksheets)
+        sleep(5)
+        self.upload_villains(worksheets)
+        sleep(5)
+        self.upload_big_box_expansions(worksheets)
+        sleep(5)
+        self.upload_scenario_packs(worksheets)
         
