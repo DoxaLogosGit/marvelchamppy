@@ -327,3 +327,11 @@
         replacements:
             - dominio
             - dominoe
+    Psylocke : 
+        traits:
+            - X-Force
+            - Psionic
+        replacements:
+            - psylock
+            - psilocke
+            - psilock
