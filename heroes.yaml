@@ -318,12 +318,29 @@
         traits:
             - X-Force
             - Soldier
+            - Mutant
         replacements:
             - None
     Domino : 
         traits:
             - X-Force
             - Posse
+            - Mutant
         replacements:
             - dominio
             - dominoe
+    Angel :
+        traits:
+            - X-Force
+            - Mutant
+            - Aerial
+        replacements:
+            - agnel
+            - angle
+    X-23 :
+        traits: 
+            - X-Force
+            - Mutant
+        replacements:
+            - x23
+            
