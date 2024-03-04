@@ -2,6 +2,7 @@ import gspread
 from time import sleep
 from datetime import datetime, timedelta
 from config import COLUMNS
+import math
 
 class UploadData:
 
@@ -429,24 +430,24 @@ class UploadData:
             osheet.update(f"N{n+2}", villain[1].total_plays)
 
         #hero win percentage (O-P)
-        osheet.update("O1", f"Hero")
+        osheet.update("O1", "Hero")
         osheet.update("P1", " Winning Percent")
         printed_row = 2 #start row
         for hero in self.statistics.sorted_percent_heroes:
             #only upload those with minimum number of plays and opponents
-            if(hero[1].total_plays >= 10 and len(hero[1].villains_played) >=8):
+            if(hero[1].total_plays >= 10 and len(hero[1].villains_played) >= math.floor(len(self.statistics.sorted_villains)/3) - 2):
                 osheet.update(f"O{printed_row}", f"{printed_row-1}. {hero[1].name}")
                 osheet.format(f"P{printed_row}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
                 osheet.update(f"P{printed_row}", hero[1].win_percentage)
                 printed_row += 1
 
         #villain win percentage (Q-R)
-        osheet.update("Q1", f"Villain")
+        osheet.update("Q1", "Villain")
         osheet.update("R1", "Losing Percent")
         printed_row = 2 #start row
         for villain in self.statistics.sorted_percent_villains:
             #only upload those with minimum number of plays and opponents
-            if(villain[1].total_plays >= 10 and len(villain[1].heroes_played) >= 8):
+            if(villain[1].total_plays >= 10 and len(villain[1].heroes_played) >= math.floor(len(self.statistics.sorted_heroes)/3) - 2):
                 osheet.update(f"Q{printed_row}", f"{printed_row-1}. {villain[1].name}")
                 osheet.format(f"R{printed_row}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
                 osheet.update(f"R{printed_row}", villain[1].win_percentage)
@@ -456,7 +457,7 @@ class UploadData:
         self.login()
         self.upload_overall()
         sleep(60)
-        self.upload_play_matrix()
+        #self.upload_play_matrix()
         worksheets = [x.title for x in self.sheet.worksheets()]
         sleep(5)
         self.upload_heroes(worksheets)

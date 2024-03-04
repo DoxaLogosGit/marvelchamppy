@@ -2,6 +2,7 @@ import requests
 from xml.etree import ElementTree
 import math
 import time
+from rich.progress import track
 
 
 BASE_URL='https://www.boardgamegeek.com/xmlapi2/'
@@ -27,9 +28,9 @@ def retrieve_play_page(url, user, page_num='1'):
     Retrieves the play page given the page number
     returns the xml text
     """
-    print("Retrieving page data...")
+    #print("Retrieving page data...")
     res = requests.get(url+PLAYS+"username="+user+"&id="+MARVEL_CHAMPIONS_ID+"&type=thing&subtype=boardgame&page="+page_num)
-    print(res)
+    #print(res)
     if (res.status_code != 200):
         return ""
     else:
@@ -50,7 +51,7 @@ def retrieve_play_data_from_bgg(user):
 
     xml_data.append(page_data)
     #pages = 2 #iterate fast for now
-    for index in range(2, pages+1):
+    for index in track(range(2, pages+1), "[red]Retrieving..."):
         time.sleep(.5)
         #print("Retrieving page {} of data".format(index))
         page_data = retrieve_play_page(BASE_URL,user,str(index))

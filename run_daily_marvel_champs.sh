@@ -2,5 +2,6 @@
 #
 
 cd /home/jgatkinsn/projects/marvelchampy
-./marvel_champions_data.py -n -u
+. pydev/bin/activate
+python3 marvel_champions_data.py -n -u
 
