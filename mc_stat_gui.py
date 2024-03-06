@@ -14,7 +14,45 @@ def read_data():
     statistics.analyze_play_data()
     return statistics
 
-    
+class TotalStats(Static):
+    total_plays: reactive[int] = reactive(0)
+    total_wins: reactive[int] = reactive(0)
+    total_win_percentage: reactive[float] = reactive(0)
+    c1 = None
+    ct = None
+    rp = None
+    rw = None
+    rwp = None
+
+    def compose(self) -> ComposeResult:
+        yield DataTable(id = "total_data_table")
+
+    def on_mount(self) -> None:
+        table = self.query_one("#total_data_table")
+        self.c1 = table.add_column("Total Data:")
+        self.ct = table.add_column("   ")
+        self.rp = table.add_row("Plays", self.total_plays)
+        self.rw = table.add_row("Wins", self.total_wins)
+        self.rwp = table.add_row("Win %", round(self.total_win_percentage * 100, 1))
+
+    def watch_total_plays(self, old_total_plays, new_total_plays):
+        self.total_plays = new_total_plays
+        table = self.query_one("#total_data_table", DataTable)
+        if self.rp is not None:
+            table.update_cell(self.rp,self.ct, self.total_plays)
+
+    def watch_total_wins(self, old_total_wins, new_total_wins):
+        self.total_wins = new_total_wins
+        table = self.query_one("#total_data_table", DataTable)
+        if self.rw is not None:
+            table.update_cell(self.rw,self.ct, self.total_wins)
+
+    def watch_total_win_percentage(self, old_total_win_percentage, new_total_win_percentage):
+        self.total_win_percentage = new_total_win_percentage
+        table = self.query_one("#total_data_table", DataTable)
+        if self.rwp is not None:
+            table.update_cell(self.rwp,self.ct, round(self.total_win_percentage * 100, 1))
+
 class AspectStats(Static):
     aspect_data: reactive[AspectData] = reactive(AspectData())
     c1 = None 
@@ -48,11 +86,11 @@ class AspectStats(Static):
                       self.aspect_data.aggression_wins,
                       self.aspect_data.protection_wins,
                       self.aspect_data.basic_wins)
-        self.rwp = table.add_row("Win %", self.aspect_data.leadership_win_percentage,
-                      self.aspect_data.justice_win_percentage,
-                      self.aspect_data.aggression_win_percentage,
-                      self.aspect_data.protection_win_percentage,
-                      self.aspect_data.basic_win_percentage)
+        self.rwp = table.add_row("Win %", round(self.aspect_data.leadership_win_percentage * 100, 1),
+                      round(self.aspect_data.justice_win_percentage * 100, 1),
+                      round(self.aspect_data.aggression_win_percentage * 100, 1),
+                      round(self.aspect_data.protection_win_percentage * 100, 1),
+                      round(self.aspect_data.basic_win_percentage * 100, 1))
 
     def watch_aspect_data(self, old_aspect_data: AspectData, new_aspect_data: AspectData):
         self.aspect_data = new_aspect_data
@@ -70,11 +108,11 @@ class AspectStats(Static):
             table.update_cell(self.rw,self.cj, self.aspect_data.justice_wins)
             table.update_cell(self.rw,self.cp, self.aspect_data.protection_wins)
         if self.rwp is not None:
-            table.update_cell(self.rwp,self.cl, self.aspect_data.leadership_win_percentage)
-            table.update_cell(self.rwp,self.ca, self.aspect_data.aggression_win_percentage)
-            table.update_cell(self.rwp,self.cb, self.aspect_data.basic_win_percentage)
-            table.update_cell(self.rwp,self.cj, self.aspect_data.justice_win_percentage)
-            table.update_cell(self.rwp,self.cp, self.aspect_data.protection_win_percentage)
+            table.update_cell(self.rwp,self.cl, round(self.aspect_data.leadership_win_percentage * 100, 1))
+            table.update_cell(self.rwp,self.ca, round(self.aspect_data.aggression_win_percentage * 100, 1))
+            table.update_cell(self.rwp,self.cb, round(self.aspect_data.basic_win_percentage * 100, 1))
+            table.update_cell(self.rwp,self.cj, round(self.aspect_data.justice_win_percentage * 100, 1))
+            table.update_cell(self.rwp,self.cp, round(self.aspect_data.protection_win_percentage * 100, 1))
         
     
 class DifficultyStatistics(Static):
@@ -118,13 +156,13 @@ class DifficultyStatistics(Static):
                       self.difficulty_data.expert3_wins,
                       self.difficulty_data.expert4_wins,
                       self.difficulty_data.heroic_wins)
-        self.rwp = table.add_row("Win %", self.difficulty_data.standard1_win_percentage,
-                      self.difficulty_data.expert1_win_percentage,
-                      self.difficulty_data.expert2_win_percentage,
-                      self.difficulty_data.standard2_win_percentage,
-                      self.difficulty_data.expert3_win_percentage,
-                      self.difficulty_data.expert4_win_percentage,
-                      self.difficulty_data.heroic_win_percentage)
+        self.rwp = table.add_row("Win %", round(self.difficulty_data.standard1_win_percentage * 100, 1),
+                      round(self.difficulty_data.expert1_win_percentage * 100, 1),
+                      round(self.difficulty_data.expert2_win_percentage * 100, 1),
+                      round(self.difficulty_data.standard2_win_percentage * 100, 1),
+                      round(self.difficulty_data.expert3_win_percentage * 100, 1),
+                      round(self.difficulty_data.expert4_win_percentage * 100, 1),
+                      round(self.difficulty_data.heroic_win_percentage * 100, 1))
 
     def watch_difficulty_data(self, old_difficulty_data: DifficultyStats, new_difficulty_data: DifficultyStats):
         self.difficulty_data = new_difficulty_data
@@ -146,22 +184,28 @@ class DifficultyStatistics(Static):
             table.update_cell(self.rw,self.cs2e2, self.difficulty_data.expert4_wins)
             table.update_cell(self.rw,self.ch, self.difficulty_data.heroic_wins)
         if self.rwp is not None:
-            table.update_cell(self.rwp,self.cs1, self.difficulty_data.standard1_win_percentage)
-            table.update_cell(self.rwp,self.cs1e1, self.difficulty_data.expert1_win_percentage)
-            table.update_cell(self.rwp,self.cs1e2, self.difficulty_data.expert2_win_percentage)
-            table.update_cell(self.rwp,self.cs2, self.difficulty_data.standard2_win_percentage)
-            table.update_cell(self.rwp,self.cs2e1, self.difficulty_data.expert3_win_percentage)
-            table.update_cell(self.rwp,self.cs2e2, self.difficulty_data.expert4_win_percentage)
-            table.update_cell(self.rwp,self.ch, self.difficulty_data.heroic_win_percentage)
+            table.update_cell(self.rwp,self.cs1, round(self.difficulty_data.standard1_win_percentage * 100, 1))
+            table.update_cell(self.rwp,self.cs1e1, round(self.difficulty_data.expert1_win_percentage * 100, 1))
+            table.update_cell(self.rwp,self.cs1e2, round(self.difficulty_data.expert2_win_percentage * 100, 1))
+            table.update_cell(self.rwp,self.cs2, round(self.difficulty_data.standard2_win_percentage * 100, 1))
+            table.update_cell(self.rwp,self.cs2e1, round(self.difficulty_data.expert3_win_percentage * 100, 1))
+            table.update_cell(self.rwp,self.cs2e2, round(self.difficulty_data.expert4_win_percentage * 100, 1))
+            table.update_cell(self.rwp,self.ch, round(self.difficulty_data.heroic_win_percentage * 100, 1))
 
 
 class HeroResults(Widget):
     current_hero : reactive[HeroData] = reactive(HeroData("Bob", "none"))
     aspect_data : reactive[AspectData] = reactive(AspectData())
     difficulty_data : reactive[DifficultyStats] = reactive(DifficultyStats())
+    total_plays : reactive[int] = reactive(0)
+    total_wins : reactive[int] = reactive(0)
+    total_win_percentage : reactive[float] = reactive(0)
 
     def compose(self) -> ComposeResult:
         with Vertical(id="hero_results"):
+            yield TotalStats(id="total_stats").data_bind(total_plays=HeroResults.total_plays,
+                                                           total_wins=HeroResults.total_wins,
+                                                           total_win_percentage=HeroResults.total_win_percentage)
             yield AspectStats(id="hero_aspect").data_bind(aspect_data=HeroResults.aspect_data)
             yield DifficultyStatistics(id="diff_stats").data_bind(difficulty_data=HeroResults.difficulty_data)
 
@@ -169,10 +213,16 @@ class HeroResults(Widget):
         self.query_one("#hero_results").current_hero = new_hero
         self.query_one("#hero_aspect").aspect_data = new_hero.aspect_data
         self.query_one("#diff_stats").difficulty_data = new_hero.difficulty_data
+        self.query_one("#total_stats").total_plays = new_hero.total_plays
+        self.query_one("#total_stats").total_wins = new_hero.total_wins
+        self.query_one("#total_stats").total_win_percentage = new_hero.win_percentage
         
     def on_mount(self) -> None:
         self.aspect_data = self.current_hero.aspect_data
         self.difficulty_data = self.current_hero.difficulty_data
+        self.total_plays = self.current_hero.total_plays
+        self.total_wins = self.current_hero.win_percentage
+        self.total_wins = self.current_hero.win_percentage
         
 
 class OverallResults(Widget):
@@ -219,11 +269,9 @@ class MCStatApp(App):
         yield Footer()
 
     def on_mount(self) -> None:
-        self.statistics = read_data()
         self.current_hero = self.statistics.hero_data["Drax"]
 
     def on_tree_node_selected(self, event: Tree.NodeSelected) -> None:
-        #event.stop()
         #test if hero or villain or none
         if(event.node.label.plain in self.statistics.hero_data.keys()):
             #context switch to hero data
