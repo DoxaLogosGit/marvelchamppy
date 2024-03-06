@@ -1,9 +1,9 @@
 import simplejson as json
 from textual.app import App, ComposeResult
-from textual.containers import Horizontal, Container, Widget
+from textual.containers import Vertical, Horizontal, Container, Widget
 from textual.reactive import reactive
 from textual.widgets import Header, Footer, Tree, DataTable, Static
-from analyze_data import Statistics, HeroData, VillainData, OverallData, AspectData
+from analyze_data import Statistics, HeroData, VillainData, OverallData, AspectData, DifficultyStats
 
 def read_data():
     marvel_plays = None
@@ -76,31 +76,103 @@ class AspectStats(Static):
             table.update_cell(self.rwp,self.cj, self.aspect_data.justice_win_percentage)
             table.update_cell(self.rwp,self.cp, self.aspect_data.protection_win_percentage)
         
-
-
-        
     
-class DifficultyStats(Static):
+class DifficultyStatistics(Static):
+    difficulty_data: reactive[DifficultyStats] = reactive(DifficultyStats())
+    c1 = None
+    cs1 = None
+    cs1e1 = None
+    cs1e2 = None
+    cs2 = None
+    cs2e1 = None
+    cs2e2 = None
+    ch = None
+    rp = None
+    rw = None
+    rwp = None
+
     def compose(self) -> ComposeResult:
-        yield DataTable(id = "difficulty_data")
+        yield DataTable(id = "difficulty_table")
+
+    def on_mount(self) -> None:
+        table = self.query_one("#difficulty_table")
+        self.c1 = table.add_column("Difficulty Data:")
+        self.cs1 = table.add_column("S1")
+        self.cs1e1 = table.add_column("S1E1")
+        self.cs1e2 = table.add_column("S1E2")
+        self.cs2 = table.add_column("S2")
+        self.cs2e1 = table.add_column("S2E1")
+        self.cs2e2 = table.add_column("S2E2")
+        self.ch = table.add_column("Heroic")
+        self.rp = table.add_row("Plays", self.difficulty_data.standard1_plays,
+                      self.difficulty_data.expert1_plays,
+                      self.difficulty_data.expert2_plays,
+                      self.difficulty_data.standard2_plays,
+                      self.difficulty_data.expert3_plays,
+                      self.difficulty_data.expert4_plays,
+                      self.difficulty_data.heroic_plays)
+        self.rw = table.add_row("Wins", self.difficulty_data.standard1_wins,
+                      self.difficulty_data.expert1_wins,
+                      self.difficulty_data.expert2_wins,
+                      self.difficulty_data.standard2_wins,
+                      self.difficulty_data.expert3_wins,
+                      self.difficulty_data.expert4_wins,
+                      self.difficulty_data.heroic_wins)
+        self.rwp = table.add_row("Win %", self.difficulty_data.standard1_win_percentage,
+                      self.difficulty_data.expert1_win_percentage,
+                      self.difficulty_data.expert2_win_percentage,
+                      self.difficulty_data.standard2_win_percentage,
+                      self.difficulty_data.expert3_win_percentage,
+                      self.difficulty_data.expert4_win_percentage,
+                      self.difficulty_data.heroic_win_percentage)
+
+    def watch_difficulty_data(self, old_difficulty_data: DifficultyStats, new_difficulty_data: DifficultyStats):
+        self.difficulty_data = new_difficulty_data
+        table = self.query_one("#difficulty_table", DataTable)
+        if self.rp is not None:
+            table.update_cell(self.rp,self.cs1, self.difficulty_data.standard1_plays)
+            table.update_cell(self.rp,self.cs1e1, self.difficulty_data.expert1_plays)
+            table.update_cell(self.rp,self.cs1e2, self.difficulty_data.expert2_plays)
+            table.update_cell(self.rp,self.cs2, self.difficulty_data.standard2_plays)
+            table.update_cell(self.rp,self.cs2e1, self.difficulty_data.expert3_plays)
+            table.update_cell(self.rp,self.cs2e2, self.difficulty_data.expert4_plays)
+            table.update_cell(self.rp,self.ch, self.difficulty_data.heroic_plays)
+        if self.rw is not None:
+            table.update_cell(self.rw,self.cs1, self.difficulty_data.standard1_wins)
+            table.update_cell(self.rw,self.cs1e1, self.difficulty_data.expert1_wins)
+            table.update_cell(self.rw,self.cs1e2, self.difficulty_data.expert2_wins)
+            table.update_cell(self.rw,self.cs2, self.difficulty_data.standard2_wins)
+            table.update_cell(self.rw,self.cs2e1, self.difficulty_data.expert3_wins)
+            table.update_cell(self.rw,self.cs2e2, self.difficulty_data.expert4_wins)
+            table.update_cell(self.rw,self.ch, self.difficulty_data.heroic_wins)
+        if self.rwp is not None:
+            table.update_cell(self.rwp,self.cs1, self.difficulty_data.standard1_win_percentage)
+            table.update_cell(self.rwp,self.cs1e1, self.difficulty_data.expert1_win_percentage)
+            table.update_cell(self.rwp,self.cs1e2, self.difficulty_data.expert2_win_percentage)
+            table.update_cell(self.rwp,self.cs2, self.difficulty_data.standard2_win_percentage)
+            table.update_cell(self.rwp,self.cs2e1, self.difficulty_data.expert3_win_percentage)
+            table.update_cell(self.rwp,self.cs2e2, self.difficulty_data.expert4_win_percentage)
+            table.update_cell(self.rwp,self.ch, self.difficulty_data.heroic_win_percentage)
 
 
 class HeroResults(Widget):
     current_hero : reactive[HeroData] = reactive(HeroData("Bob", "none"))
     aspect_data : reactive[AspectData] = reactive(AspectData())
+    difficulty_data : reactive[DifficultyStats] = reactive(DifficultyStats())
 
     def compose(self) -> ComposeResult:
-        with Horizontal(id="hero_results"):
+        with Vertical(id="hero_results"):
             yield AspectStats(id="hero_aspect").data_bind(aspect_data=HeroResults.aspect_data)
+            yield DifficultyStatistics(id="diff_stats").data_bind(difficulty_data=HeroResults.difficulty_data)
 
     def watch_current_hero(self, old_hero: HeroData, new_hero: HeroData):
         self.query_one("#hero_results").current_hero = new_hero
         self.query_one("#hero_aspect").aspect_data = new_hero.aspect_data
-        self.query_one("#hero_aspect", Static).refresh()
+        self.query_one("#diff_stats").difficulty_data = new_hero.difficulty_data
         
     def on_mount(self) -> None:
         self.aspect_data = self.current_hero.aspect_data
-        self.query_one("#aspect_data_table").refresh()
+        self.difficulty_data = self.current_hero.difficulty_data
         
 
 class OverallResults(Widget):
