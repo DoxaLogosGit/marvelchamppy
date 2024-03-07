@@ -3,3 +3,9 @@
     height: 100%;
     width: 15%;
 }
+#overall_totals {
+    width: 25%;
+}
+#play_data {
+    height: 10%;
+}

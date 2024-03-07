@@ -14,6 +14,46 @@ def read_data():
     statistics.analyze_play_data()
     return statistics
 
+class SpecialPlays(Static):
+    solo_plays: reactive[int] = reactive(0)
+    multiplayer_plays: reactive[int] = reactive(0)
+    multihanded_solo_plays: reactive[int] = reactive(0)
+    c1 = None
+    ct = None
+    rs = None
+    rmp = None
+    rmsp = None
+
+    def compose(self) -> ComposeResult:
+        yield DataTable(id = "special_play_table")
+
+    def on_mount(self) -> None:
+        table = self.query_one("#special_play_table")
+        self.c1 = table.add_column("Special Plays:")
+        self.ct = table.add_column("   ")
+        self.rmp = table.add_row("Mutiplayer  Plays", self.multiplayer_plays)
+        self.rmsp = table.add_row("Multi-Handed Solo Plays", self.multihanded_solo_plays)
+        self.rs = table.add_row("True Solo Plays", self.solo_plays)
+
+    def watch_solo_plays(self, old_solo_plays, new_solo_plays):
+        self.solo_plays = new_solo_plays
+        table = self.query_one("#special_play_table", DataTable)
+        if self.rs is not None:
+            table.update_cell(self.rs,self.ct, self.solo_plays)
+
+    def watch_multiplayer_plays(self, old_multiplayer_plays, new_multiplayer_plays):
+        self.multiplayer_plays = new_multiplayer_plays
+        table = self.query_one("#special_play_table", DataTable)
+        if self.rmp is not None:
+            table.update_cell(self.rmp,self.ct, self.multiplayer_plays)
+
+    def watch_multihanded_solo_plays(self, old_multihanded_solo_plays, new_multihanded_solo_plays):
+        self.multihanded_solo_plays = new_multihanded_solo_plays
+        table = self.query_one("#special_play_table", DataTable)
+        if self.rmsp is not None:
+            table.update_cell(self.rmsp,self.ct, self.multihanded_solo_plays)
+
+
 class TotalStats(Static):
     total_plays: reactive[int] = reactive(0)
     total_wins: reactive[int] = reactive(0)
@@ -260,14 +300,51 @@ class OverallResults(Static):
 
     overall_data: reactive[OverallData] = reactive(OverallData(""))
     aspect_data : reactive[AspectData] = reactive(AspectData())
+    difficulty_data : reactive[DifficultyStats] = reactive(DifficultyStats())
+    total_plays : reactive[int] = reactive(0)
+    total_wins : reactive[int] = reactive(0)
+    total_win_percentage : reactive[float] = reactive(0)
+    solo_plays : reactive[int] = reactive(0)
+    multiplayer_plays : reactive[int] = reactive(0)
+    multihanded_solo_plays : reactive[int] = reactive(0)
 
     def compose(self) -> ComposeResult:
-        with Horizontal(id="overall_results"):
-            yield AspectStats(id='overall_aspect').data_bind(OverallResults.aspect_data)
+        with Vertical(id="overall_results"):
+            with Horizontal(id="play_data"):
+                yield TotalStats(id="overall_totals").data_bind(total_plays=OverallResults.total_plays,
+                                                            total_wins=OverallResults.total_wins,
+                                                            total_win_percentage=OverallResults.total_win_percentage)
+                yield SpecialPlays(id="special_plays").data_bind(solo_plays=OverallResults.solo_plays,
+                                                                 multiplayer_plays=OverallResults.multiplayer_plays,
+                                                                 multihanded_solo_plays=OverallResults.multihanded_solo_plays)
+            yield AspectStats(id='overall_aspect').data_bind(aspect_data=OverallResults.aspect_data)
+            yield DifficultyStatistics(id='overall_diff').data_bind(difficulty_data=OverallResults.difficulty_data)
             
     def on_mount(self) -> None:
         self.aspect_data = self.overall_data.aspect_data
         self.query_one('#overall_aspect').aspect_data = self.aspect_data
+        self.query_one('#overall_diff').difficulty_data = self.difficulty_data
+        self.total_plays = self.overall_data.overall_plays
+        self.total_wins = self.overall_data.overall_wins
+        self.total_win_percentage = self.overall_data.overall_win_percentage
+        self.solo_plays = self.overall_data.overall_true_solo_plays
+        self.multiplayer_plays = self.overall_data.overall_multi_plays
+        self.multihanded_solo_plays = self.overall_data.overall_solo_plays
+
+    
+    def watch_overall_data(self, old_overall_data : OverallData, new_overall_data : OverallData):
+        self.overall_data = new_overall_data
+        self.solo_plays = new_overall_data.overall_true_solo_plays
+        self.multiplayer_plays = new_overall_data.overall_multi_plays
+        self.multihanded_solo_plays = new_overall_data.overall_solo_plays
+        self.query_one("#overall_aspect").aspect_data = self.overall_data.aspect_data
+        self.query_one('#overall_diff').difficulty_data = self.overall_data.difficulty_data
+        self.query_one("#overall_totals").total_plays = new_overall_data.overall_plays
+        self.query_one("#overall_totals").total_wins = new_overall_data.overall_wins
+        self.query_one("#overall_totals").total_win_percentage = new_overall_data.overall_win_percentage
+        self.query_one("#special_plays").solo_plays = new_overall_data.overall_true_solo_plays
+        self.query_one("#special_plays").multihanded_solo_plays = new_overall_data.overall_solo_plays
+        self.query_one("#special_plays").multiplayer_plays = new_overall_data.overall_multi_plays
 
 class MCStatApp(App):
     """ A Textual app for my Marvel Champions stat tracking"""
@@ -276,7 +353,9 @@ class MCStatApp(App):
     CSS_PATH = "mc_stat_gui.tcss"
 
     statistics: reactive[Statistics] = reactive(read_data())
-    current_hero : reactive[HeroData] = reactive(HeroData("Drax", "Guardian"))
+    #statistics: reactive[Statistics] = reactive(STATISTICS)
+    #current_hero : reactive[HeroData] = reactive(STATISTICS.hero_data["Gamora"])
+    current_hero : reactive[HeroData] = reactive(HeroData("Gamora", "Guardian"))
     current_villain: reactive[VillainData] = reactive(VillainData("Rhino", "core"))
     overall_data : reactive[OverallData] = reactive(OverallData(""))
 
@@ -295,7 +374,6 @@ class MCStatApp(App):
                 villains_root.add_leaf(villain[0])
             yield tree
             with ContentSwitcher(initial="oresults"):
-            #with Vertical(id="holder"):
                 yield OverallResults(id="oresults").data_bind(overall_data=MCStatApp.overall_data)
                 yield HeroResults(id="hresults").data_bind(current_hero=MCStatApp.current_hero)
                 yield VillainResults(id="vresults").data_bind(current_villain=MCStatApp.current_villain)
@@ -303,7 +381,11 @@ class MCStatApp(App):
 
     def on_mount(self) -> None:
         self.current_hero = self.statistics.hero_data["Gamora"]
+        self.current_villain = self.statistics.villain_data["Klaw"]
+        self.overall_data = self.statistics.overall_data
         self.query_one("#oresults").overall_data = self.overall_data
+        self.query_one("#hresults").current_hero = self.current_hero
+        self.query_one("#vresults").current_villain = self.current_villain
 
     def on_tree_node_selected(self, event: Tree.NodeSelected) -> None:
         #test if hero or villain or none
