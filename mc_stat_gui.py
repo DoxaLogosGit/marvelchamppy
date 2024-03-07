@@ -2,7 +2,7 @@ import simplejson as json
 from textual.app import App, ComposeResult
 from textual.containers import Vertical, Horizontal, Container, Widget
 from textual.reactive import reactive
-from textual.widgets import Header, Footer, Tree, DataTable, Static, ContentSwitcher
+from textual.widgets import Header, Footer, Tree, DataTable, Static, ContentSwitcher, Label
 from analyze_data import Statistics, HeroData, VillainData, OverallData, AspectData, DifficultyStats
 
 def read_data():
@@ -13,6 +13,13 @@ def read_data():
     statistics = Statistics(marvel_plays)
     statistics.analyze_play_data()
     return statistics
+
+
+class Name(Widget):
+     who = reactive("Name")
+
+     def render(self) -> str:
+         return f"{self.who}"
 
 class SpecialPlays(Static):
     solo_plays: reactive[int] = reactive(0)
@@ -240,9 +247,13 @@ class HeroResults(Static):
     total_plays : reactive[int] = reactive(0)
     total_wins : reactive[int] = reactive(0)
     total_win_percentage : reactive[float] = reactive(0)
+    name : reactive[str] = reactive("bob")
 
     def compose(self) -> ComposeResult:
         with Vertical(id="hero_results"):
+            with Horizontal(id="hero_banner"):
+                yield Label("Hero Statistics - ")
+                yield Name(id="hero_name").data_bind(who=HeroResults.name)
             yield TotalStats(id="total_stats").data_bind(total_plays=HeroResults.total_plays,
                                                            total_wins=HeroResults.total_wins,
                                                            total_win_percentage=HeroResults.total_win_percentage)
@@ -251,6 +262,7 @@ class HeroResults(Static):
 
     def watch_current_hero(self, old_hero: HeroData, new_hero: HeroData):
         self.current_hero = new_hero
+        self.name = new_hero.name
         self.query_one("#hero_aspect").aspect_data = new_hero.aspect_data
         self.query_one("#diff_stats").difficulty_data = new_hero.difficulty_data
         self.query_one("#total_stats").total_plays = new_hero.total_plays
@@ -263,6 +275,7 @@ class HeroResults(Static):
         self.total_plays = self.current_hero.total_plays
         self.total_wins = self.current_hero.win_percentage
         self.total_wins = self.current_hero.win_percentage
+        self.name = self.current_hero.name
         
 class VillainResults(Static):
     current_villain : reactive[VillainData] = reactive(VillainData("Evil Bob", "none"))
@@ -271,9 +284,13 @@ class VillainResults(Static):
     total_plays : reactive[int] = reactive(0)
     total_wins : reactive[int] = reactive(0)
     total_win_percentage : reactive[float] = reactive(0)
+    name : reactive[str] = reactive("Evil Bob")
 
     def compose(self) -> ComposeResult:
         with Vertical(id="villain_results"):
+            with Horizontal(id="villain_banner"):
+                yield Label("Villain Statistics - ")
+                yield Name(id="villain_name").data_bind(who=VillainResults.name)
             yield TotalStats(id="total_stats").data_bind(total_plays=VillainResults.total_plays,
                                                            total_wins=VillainResults.total_wins,
                                                            total_win_percentage=VillainResults.total_win_percentage)
@@ -282,6 +299,7 @@ class VillainResults(Static):
 
     def watch_current_villain(self, old_villain: HeroData, new_villain: HeroData):
         self.current_villain = new_villain
+        self.name = new_villain.name
         self.query_one("#villain_aspect").aspect_data = new_villain.aspect_data
         self.query_one("#villain_diff_stats").difficulty_data = new_villain.difficulty_data
         self.query_one("#total_stats").total_plays = new_villain.total_plays
@@ -294,6 +312,7 @@ class VillainResults(Static):
         self.total_plays = self.current_villain.total_plays
         self.total_wins = self.current_villain.win_percentage
         self.total_wins = self.current_villain.win_percentage
+        self.name = self.current_villain.name
         
 
 class OverallResults(Static):
@@ -310,6 +329,7 @@ class OverallResults(Static):
 
     def compose(self) -> ComposeResult:
         with Vertical(id="overall_results"):
+            yield Label("Overall Statistics")
             with Horizontal(id="play_data"):
                 yield TotalStats(id="overall_totals").data_bind(total_plays=OverallResults.total_plays,
                                                             total_wins=OverallResults.total_wins,

@@ -9,3 +9,9 @@
 #play_data {
     height: 10%;
 }
+#hero_banner {
+    height: auto;
+}
+#villain_banner {
+    height: auto;
+}
