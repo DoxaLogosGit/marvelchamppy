@@ -82,17 +82,15 @@ def extract_marvel_champions_play_data(xml_play_data, user):
     hero_list = []
     player_count = 0
     play_data["Multiplayer"] = False
-    play_data["True_Solo"] = False
+    play_data["True_Solo"] = True
     for player in xml_play_data.find("players").findall("./player"):
         hero_list.append({"Hero":clean_up_hero_name(player.attrib["startposition"].lower().rstrip().strip()), "Aspect":player.attrib["color"], "Win":int(player.attrib["win"])})
-        if player.attrib["username"] == user:
-            if player_count == 0:
-                play_data["True_Solo"] = True
-            else:
-                play_data["True_Solo"] = False
-        else:
-            play_data["Multiplayer"] = True
         player_count +=1
+        if player.attrib["username"] != user:
+            play_data["Multiplayer"] = True
+            play_data["True_Solo"] = False
+        elif player_count > 1:
+            play_data["True_Solo"] = False
 
     play_data["Heroes"] = hero_list
 
