@@ -4,6 +4,8 @@ from textual.containers import Vertical, Horizontal, Container, Widget
 from textual.reactive import reactive
 from textual.widgets import Header, Footer, Tree, DataTable, Static, ContentSwitcher, Label
 from analyze_data import Statistics, HeroData, VillainData, OverallData, AspectData, DifficultyStats
+from rich.text import Text
+
 
 def read_data():
     marvel_plays = None
@@ -32,12 +34,12 @@ class SpecialPlays(Static):
     rmsp = None
 
     def compose(self) -> ComposeResult:
-        yield DataTable(id = "special_play_table")
+        yield DataTable(id = "special_play_table", show_cursor=False)
 
     def on_mount(self) -> None:
         table = self.query_one("#special_play_table")
         self.c1 = table.add_column("Special Plays:")
-        self.ct = table.add_column("   ")
+        self.ct = table.add_column("      ")
         self.rmp = table.add_row("Mutiplayer  Plays", self.multiplayer_plays)
         self.rmsp = table.add_row("Multi-Handed Solo Plays", self.multihanded_solo_plays)
         self.rs = table.add_row("True Solo Plays", self.solo_plays)
@@ -72,15 +74,15 @@ class TotalStats(Static):
     rwp = None
 
     def compose(self) -> ComposeResult:
-        yield DataTable(id = "total_data_table")
+        yield DataTable(id = "total_data_table", show_cursor=False)
 
     def on_mount(self) -> None:
         table = self.query_one("#total_data_table")
         self.c1 = table.add_column("Total Data:")
-        self.ct = table.add_column("   ")
+        self.ct = table.add_column("      ")
         self.rp = table.add_row("Plays", self.total_plays)
         self.rw = table.add_row("Wins", self.total_wins)
-        self.rwp = table.add_row("Win %", round(self.total_win_percentage * 100, 1))
+        self.rwp = table.add_row("Win %", round(self.total_win_percentage * 100))
 
     def watch_total_plays(self, old_total_plays, new_total_plays):
         self.total_plays = new_total_plays
@@ -98,7 +100,7 @@ class TotalStats(Static):
         self.total_win_percentage = new_total_win_percentage
         table = self.query_one("#total_data_table", DataTable)
         if self.rwp is not None:
-            table.update_cell(self.rwp,self.ct, round(self.total_win_percentage * 100, 1))
+            table.update_cell(self.rwp,self.ct, round(self.total_win_percentage * 100))
 
 class AspectStats(Static):
     aspect_data: reactive[AspectData] = reactive(AspectData())
@@ -113,16 +115,17 @@ class AspectStats(Static):
     rwp = None
 
     def compose(self) -> ComposeResult:
-        yield DataTable(id = "aspect_data_table")
+        yield DataTable(id = "aspect_data_table", show_cursor=False)
     
     def on_mount(self) -> None:
         table = self.query_one("#aspect_data_table")
         self.c1 = table.add_column("Aspect Data:")
-        self.cl = table.add_column("Leadership")
-        self.cj = table.add_column("Justice")
-        self.ca = table.add_column("Agression")
-        self.cp = table.add_column("Protection")
-        self.cb = table.add_column("Basic")
+        self.cl = table.add_column(Text("Leadership", style="bold navy_blue", justify='right'))
+        #self.cj = table.add_column("Justice")
+        self.cj = table.add_column(Text("Justice",style="bold yellow1", justify='right'))
+        self.ca = table.add_column(Text("Agression", style="bold bright_red", justify='right'))
+        self.cp = table.add_column(Text("Protection", style="bold green3", justify='right'))
+        self.cb = table.add_column(Text("Basic", style="bold grey54", justify='right'))
         self.rp = table.add_row("Plays", self.aspect_data.leadership_plays,
                       self.aspect_data.justice_plays,
                       self.aspect_data.aggression_plays,
@@ -133,33 +136,33 @@ class AspectStats(Static):
                       self.aspect_data.aggression_wins,
                       self.aspect_data.protection_wins,
                       self.aspect_data.basic_wins)
-        self.rwp = table.add_row("Win %", round(self.aspect_data.leadership_win_percentage * 100, 1),
-                      round(self.aspect_data.justice_win_percentage * 100, 1),
-                      round(self.aspect_data.aggression_win_percentage * 100, 1),
-                      round(self.aspect_data.protection_win_percentage * 100, 1),
-                      round(self.aspect_data.basic_win_percentage * 100, 1))
+        self.rwp = table.add_row("Win %", round(self.aspect_data.leadership_win_percentage * 100),
+                      round(self.aspect_data.justice_win_percentage * 100),
+                      round(self.aspect_data.aggression_win_percentage * 100),
+                      round(self.aspect_data.protection_win_percentage * 100),
+                      round(self.aspect_data.basic_win_percentage * 100))
 
     def watch_aspect_data(self, old_aspect_data: AspectData, new_aspect_data: AspectData):
         self.aspect_data = new_aspect_data
         table = self.query_one("#aspect_data_table", DataTable)
         if self.rp is not None:
-            table.update_cell(self.rp,self.cl, self.aspect_data.leadership_plays)
-            table.update_cell(self.rp,self.ca, self.aspect_data.aggression_plays)
-            table.update_cell(self.rp,self.cb, self.aspect_data.basic_plays)
-            table.update_cell(self.rp,self.cj, self.aspect_data.justice_plays)
-            table.update_cell(self.rp,self.cp, self.aspect_data.protection_plays)
+            table.update_cell(self.rp,self.cl, Text(str(self.aspect_data.leadership_plays), style="bold bright_blue", justify='right'))
+            table.update_cell(self.rp,self.ca, Text(str(self.aspect_data.aggression_plays), style="bold bright_red", justify='right'))
+            table.update_cell(self.rp,self.cb, Text(str(self.aspect_data.basic_plays), style="bold grey50", justify='right'))
+            table.update_cell(self.rp,self.cj, Text(str(self.aspect_data.justice_plays),style="bold yellow1", justify='right'))
+            table.update_cell(self.rp,self.cp, Text(str(self.aspect_data.protection_plays), style="bold green3", justify='right'))
         if self.rw is not None:
-            table.update_cell(self.rw,self.cl, self.aspect_data.leadership_wins)
-            table.update_cell(self.rw,self.ca, self.aspect_data.aggression_wins)
-            table.update_cell(self.rw,self.cb, self.aspect_data.basic_wins)
-            table.update_cell(self.rw,self.cj, self.aspect_data.justice_wins)
-            table.update_cell(self.rw,self.cp, self.aspect_data.protection_wins)
+            table.update_cell(self.rw,self.cl, Text(str(self.aspect_data.leadership_wins), style="bold bright_blue", justify='right'))
+            table.update_cell(self.rw,self.ca, Text(str(self.aspect_data.aggression_wins),  style="bold bright_red",justify='right'))
+            table.update_cell(self.rw,self.cb, Text(str(self.aspect_data.basic_wins), style="bold grey50", justify='right'))
+            table.update_cell(self.rw,self.cj, Text(str(self.aspect_data.justice_wins), style="bold yellow1", justify='right'))
+            table.update_cell(self.rw,self.cp, Text(str(self.aspect_data.protection_wins), style="bold green3", justify='right'))
         if self.rwp is not None:
-            table.update_cell(self.rwp,self.cl, round(self.aspect_data.leadership_win_percentage * 100, 1))
-            table.update_cell(self.rwp,self.ca, round(self.aspect_data.aggression_win_percentage * 100, 1))
-            table.update_cell(self.rwp,self.cb, round(self.aspect_data.basic_win_percentage * 100, 1))
-            table.update_cell(self.rwp,self.cj, round(self.aspect_data.justice_win_percentage * 100, 1))
-            table.update_cell(self.rwp,self.cp, round(self.aspect_data.protection_win_percentage * 100, 1))
+            table.update_cell(self.rwp,self.cl, Text(str(round(self.aspect_data.leadership_win_percentage * 100)), style="bold bright_blue", justify='right'))
+            table.update_cell(self.rwp,self.ca, Text(str(round(self.aspect_data.aggression_win_percentage * 100)), style="bold bright_red", justify='right'))
+            table.update_cell(self.rwp,self.cb, Text(str(round(self.aspect_data.basic_win_percentage * 100)), style="bold grey50", justify='right'))
+            table.update_cell(self.rwp,self.cj, Text(str(round(self.aspect_data.justice_win_percentage * 100)), style="bold yellow1", justify='right'))
+            table.update_cell(self.rwp,self.cp, Text(str(round(self.aspect_data.protection_win_percentage * 100)), style="bold green3", justify='right'))
         
     
 class DifficultyStatistics(Static):
@@ -177,18 +180,18 @@ class DifficultyStatistics(Static):
     rwp = None
 
     def compose(self) -> ComposeResult:
-        yield DataTable(id = "difficulty_table")
+        yield DataTable(id = "difficulty_table", show_cursor=False)
 
     def on_mount(self) -> None:
         table = self.query_one("#difficulty_table")
         self.c1 = table.add_column("Difficulty Data:")
-        self.cs1 = table.add_column("S1")
-        self.cs1e1 = table.add_column("S1E1")
-        self.cs1e2 = table.add_column("S1E2")
-        self.cs2 = table.add_column("S2")
-        self.cs2e1 = table.add_column("S2E1")
-        self.cs2e2 = table.add_column("S2E2")
-        self.ch = table.add_column("Heroic")
+        self.cs1 = table.add_column(Text("  S1", justify='right'))
+        self.cs1e1 = table.add_column(Text("S1E1", justify='right'))
+        self.cs1e2 = table.add_column(Text("S1E2", justify='right'))
+        self.cs2 = table.add_column(Text("  S2", justify='right'))
+        self.cs2e1 = table.add_column(Text("S2E1", justify='right'))
+        self.cs2e2 = table.add_column(Text("S2E2", justify='right'))
+        self.ch = table.add_column(Text("Heroic", justify='right'))
         self.rp = table.add_row("Plays", self.difficulty_data.standard1_plays,
                       self.difficulty_data.expert1_plays,
                       self.difficulty_data.expert2_plays,
@@ -203,41 +206,41 @@ class DifficultyStatistics(Static):
                       self.difficulty_data.expert3_wins,
                       self.difficulty_data.expert4_wins,
                       self.difficulty_data.heroic_wins)
-        self.rwp = table.add_row("Win %", round(self.difficulty_data.standard1_win_percentage * 100, 1),
-                      round(self.difficulty_data.expert1_win_percentage * 100, 1),
-                      round(self.difficulty_data.expert2_win_percentage * 100, 1),
-                      round(self.difficulty_data.standard2_win_percentage * 100, 1),
-                      round(self.difficulty_data.expert3_win_percentage * 100, 1),
-                      round(self.difficulty_data.expert4_win_percentage * 100, 1),
-                      round(self.difficulty_data.heroic_win_percentage * 100, 1))
+        self.rwp = table.add_row("Win %", round(self.difficulty_data.standard1_win_percentage * 100),
+                      round(self.difficulty_data.expert1_win_percentage * 100),
+                      round(self.difficulty_data.expert2_win_percentage * 100),
+                      round(self.difficulty_data.standard2_win_percentage * 100),
+                      round(self.difficulty_data.expert3_win_percentage * 100),
+                      round(self.difficulty_data.expert4_win_percentage * 100),
+                      round(self.difficulty_data.heroic_win_percentage * 100))
 
     def watch_difficulty_data(self, old_difficulty_data: DifficultyStats, new_difficulty_data: DifficultyStats):
         self.difficulty_data = new_difficulty_data
         table = self.query_one("#difficulty_table", DataTable)
         if self.rp is not None:
-            table.update_cell(self.rp,self.cs1, self.difficulty_data.standard1_plays)
-            table.update_cell(self.rp,self.cs1e1, self.difficulty_data.expert1_plays)
-            table.update_cell(self.rp,self.cs1e2, self.difficulty_data.expert2_plays)
-            table.update_cell(self.rp,self.cs2, self.difficulty_data.standard2_plays)
-            table.update_cell(self.rp,self.cs2e1, self.difficulty_data.expert3_plays)
-            table.update_cell(self.rp,self.cs2e2, self.difficulty_data.expert4_plays)
-            table.update_cell(self.rp,self.ch, self.difficulty_data.heroic_plays)
+            table.update_cell(self.rp,self.cs1, Text(str(self.difficulty_data.standard1_plays), justify='right'))
+            table.update_cell(self.rp,self.cs1e1, Text(str(self.difficulty_data.expert1_plays), justify='right'))
+            table.update_cell(self.rp,self.cs1e2, Text(str(self.difficulty_data.expert2_plays), justify='right'))
+            table.update_cell(self.rp,self.cs2, Text(str(self.difficulty_data.standard2_plays), justify='right'))
+            table.update_cell(self.rp,self.cs2e1, Text(str(self.difficulty_data.expert3_plays), justify='right'))
+            table.update_cell(self.rp,self.cs2e2, Text(str(self.difficulty_data.expert4_plays), justify='right'))
+            table.update_cell(self.rp,self.ch, Text(str(self.difficulty_data.heroic_plays), justify='right'))
         if self.rw is not None:
-            table.update_cell(self.rw,self.cs1, self.difficulty_data.standard1_wins)
-            table.update_cell(self.rw,self.cs1e1, self.difficulty_data.expert1_wins)
-            table.update_cell(self.rw,self.cs1e2, self.difficulty_data.expert2_wins)
-            table.update_cell(self.rw,self.cs2, self.difficulty_data.standard2_wins)
-            table.update_cell(self.rw,self.cs2e1, self.difficulty_data.expert3_wins)
-            table.update_cell(self.rw,self.cs2e2, self.difficulty_data.expert4_wins)
-            table.update_cell(self.rw,self.ch, self.difficulty_data.heroic_wins)
+            table.update_cell(self.rw,self.cs1, Text(str(self.difficulty_data.standard1_wins), justify='right'))
+            table.update_cell(self.rw,self.cs1e1, Text(str(self.difficulty_data.expert1_wins), justify='right'))
+            table.update_cell(self.rw,self.cs1e2, Text(str(self.difficulty_data.expert2_wins), justify='right'))
+            table.update_cell(self.rw,self.cs2, Text(str(self.difficulty_data.standard2_wins), justify='right'))
+            table.update_cell(self.rw,self.cs2e1, Text(str(self.difficulty_data.expert3_wins), justify='right'))
+            table.update_cell(self.rw,self.cs2e2, Text(str(self.difficulty_data.expert4_wins), justify='right'))
+            table.update_cell(self.rw,self.ch, Text(str(self.difficulty_data.heroic_wins), justify='right'))
         if self.rwp is not None:
-            table.update_cell(self.rwp,self.cs1, round(self.difficulty_data.standard1_win_percentage * 100, 1))
-            table.update_cell(self.rwp,self.cs1e1, round(self.difficulty_data.expert1_win_percentage * 100, 1))
-            table.update_cell(self.rwp,self.cs1e2, round(self.difficulty_data.expert2_win_percentage * 100, 1))
-            table.update_cell(self.rwp,self.cs2, round(self.difficulty_data.standard2_win_percentage * 100, 1))
-            table.update_cell(self.rwp,self.cs2e1, round(self.difficulty_data.expert3_win_percentage * 100, 1))
-            table.update_cell(self.rwp,self.cs2e2, round(self.difficulty_data.expert4_win_percentage * 100, 1))
-            table.update_cell(self.rwp,self.ch, round(self.difficulty_data.heroic_win_percentage * 100, 1))
+            table.update_cell(self.rwp,self.cs1, Text(str(round(self.difficulty_data.standard1_win_percentage * 100)), justify='right'))
+            table.update_cell(self.rwp,self.cs1e1, Text(str(round(self.difficulty_data.expert1_win_percentage * 100)), justify='right'))
+            table.update_cell(self.rwp,self.cs1e2, Text(str(round(self.difficulty_data.expert2_win_percentage * 100)), justify='right'))
+            table.update_cell(self.rwp,self.cs2, Text(str(round(self.difficulty_data.standard2_win_percentage * 100)), justify='right'))
+            table.update_cell(self.rwp,self.cs2e1, Text(str(round(self.difficulty_data.expert3_win_percentage * 100)), justify='right'))
+            table.update_cell(self.rwp,self.cs2e2, Text(str(round(self.difficulty_data.expert4_win_percentage * 100)), justify='right'))
+            table.update_cell(self.rwp,self.ch, Text(str(round(self.difficulty_data.heroic_win_percentage * 100)), justify='right'))
 
 
 class HeroResults(Static):
@@ -263,19 +266,12 @@ class HeroResults(Static):
     def watch_current_hero(self, old_hero: HeroData, new_hero: HeroData):
         self.current_hero = new_hero
         self.name = new_hero.name
-        self.query_one("#hero_aspect").aspect_data = new_hero.aspect_data
-        self.query_one("#diff_stats").difficulty_data = new_hero.difficulty_data
-        self.query_one("#total_stats").total_plays = new_hero.total_plays
-        self.query_one("#total_stats").total_wins = new_hero.total_wins
-        self.query_one("#total_stats").total_win_percentage = new_hero.win_percentage
+        self.aspect_data = new_hero.aspect_data
+        self.difficulty_data = new_hero.difficulty_data
+        self.total_plays = new_hero.total_plays
+        self.total_wins = new_hero.total_wins
+        self.total_win_percentage = new_hero.win_percentage
         
-    def on_mount(self) -> None:
-        self.aspect_data = self.current_hero.aspect_data
-        self.difficulty_data = self.current_hero.difficulty_data
-        self.total_plays = self.current_hero.total_plays
-        self.total_wins = self.current_hero.win_percentage
-        self.total_wins = self.current_hero.win_percentage
-        self.name = self.current_hero.name
         
 class VillainResults(Static):
     current_villain : reactive[VillainData] = reactive(VillainData("Evil Bob", "none"))
@@ -300,19 +296,11 @@ class VillainResults(Static):
     def watch_current_villain(self, old_villain: HeroData, new_villain: HeroData):
         self.current_villain = new_villain
         self.name = new_villain.name
-        self.query_one("#villain_aspect").aspect_data = new_villain.aspect_data
-        self.query_one("#villain_diff_stats").difficulty_data = new_villain.difficulty_data
-        self.query_one("#total_stats").total_plays = new_villain.total_plays
-        self.query_one("#total_stats").total_wins = new_villain.total_wins
-        self.query_one("#total_stats").total_win_percentage = new_villain.win_percentage
-        
-    def on_mount(self) -> None:
-        self.aspect_data = self.current_villain.aspect_data
-        self.difficulty_data = self.current_villain.difficulty_data
-        self.total_plays = self.current_villain.total_plays
-        self.total_wins = self.current_villain.win_percentage
-        self.total_wins = self.current_villain.win_percentage
-        self.name = self.current_villain.name
+        self.aspect_data = new_villain.aspect_data
+        self.difficulty_data = new_villain.difficulty_data
+        self.total_plays = new_villain.total_plays
+        self.total_wins = new_villain.total_wins
+        self.total_win_percentage = new_villain.win_percentage
         
 
 class OverallResults(Static):
@@ -340,31 +328,20 @@ class OverallResults(Static):
             yield AspectStats(id='overall_aspect').data_bind(aspect_data=OverallResults.aspect_data)
             yield DifficultyStatistics(id='overall_diff').data_bind(difficulty_data=OverallResults.difficulty_data)
             
-    def on_mount(self) -> None:
-        self.aspect_data = self.overall_data.aspect_data
-        self.query_one('#overall_aspect').aspect_data = self.aspect_data
-        self.query_one('#overall_diff').difficulty_data = self.difficulty_data
-        self.total_plays = self.overall_data.overall_plays
-        self.total_wins = self.overall_data.overall_wins
-        self.total_win_percentage = self.overall_data.overall_win_percentage
-        self.solo_plays = self.overall_data.overall_true_solo_plays
-        self.multiplayer_plays = self.overall_data.overall_multi_plays
-        self.multihanded_solo_plays = self.overall_data.overall_solo_plays
-
     
     def watch_overall_data(self, old_overall_data : OverallData, new_overall_data : OverallData):
         self.overall_data = new_overall_data
         self.solo_plays = new_overall_data.overall_true_solo_plays
         self.multiplayer_plays = new_overall_data.overall_multi_plays
         self.multihanded_solo_plays = new_overall_data.overall_solo_plays
-        self.query_one("#overall_aspect").aspect_data = self.overall_data.aspect_data
-        self.query_one('#overall_diff').difficulty_data = self.overall_data.difficulty_data
-        self.query_one("#overall_totals").total_plays = new_overall_data.overall_plays
-        self.query_one("#overall_totals").total_wins = new_overall_data.overall_wins
-        self.query_one("#overall_totals").total_win_percentage = new_overall_data.overall_win_percentage
-        self.query_one("#special_plays").solo_plays = new_overall_data.overall_true_solo_plays
-        self.query_one("#special_plays").multihanded_solo_plays = new_overall_data.overall_solo_plays
-        self.query_one("#special_plays").multiplayer_plays = new_overall_data.overall_multi_plays
+        self.aspect_data = self.overall_data.aspect_data
+        self.difficulty_data = self.overall_data.difficulty_data
+        self.total_plays = new_overall_data.overall_plays
+        self.total_wins = new_overall_data.overall_wins
+        self.total_win_percentage = new_overall_data.overall_win_percentage
+        self.solo_plays = new_overall_data.overall_true_solo_plays
+        self.multihanded_solo_plays = new_overall_data.overall_solo_plays
+        self.multiplayer_plays = new_overall_data.overall_multi_plays
 
 class MCStatApp(App):
     """ A Textual app for my Marvel Champions stat tracking"""
@@ -373,8 +350,6 @@ class MCStatApp(App):
     CSS_PATH = "mc_stat_gui.tcss"
 
     statistics: reactive[Statistics] = reactive(read_data())
-    #statistics: reactive[Statistics] = reactive(STATISTICS)
-    #current_hero : reactive[HeroData] = reactive(STATISTICS.hero_data["Gamora"])
     current_hero : reactive[HeroData] = reactive(HeroData("Gamora", "Guardian"))
     current_villain: reactive[VillainData] = reactive(VillainData("Rhino", "core"))
     overall_data : reactive[OverallData] = reactive(OverallData(""))
