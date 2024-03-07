@@ -2,7 +2,7 @@ import simplejson as json
 from textual.app import App, ComposeResult
 from textual.containers import Vertical, Horizontal, Container, Widget
 from textual.reactive import reactive
-from textual.widgets import Header, Footer, Tree, DataTable, Static
+from textual.widgets import Header, Footer, Tree, DataTable, Static, ContentSwitcher
 from analyze_data import Statistics, HeroData, VillainData, OverallData, AspectData, DifficultyStats
 
 def read_data():
@@ -193,7 +193,7 @@ class DifficultyStatistics(Static):
             table.update_cell(self.rwp,self.ch, round(self.difficulty_data.heroic_win_percentage * 100, 1))
 
 
-class HeroResults(Widget):
+class HeroResults(Static):
     current_hero : reactive[HeroData] = reactive(HeroData("Bob", "none"))
     aspect_data : reactive[AspectData] = reactive(AspectData())
     difficulty_data : reactive[DifficultyStats] = reactive(DifficultyStats())
@@ -210,7 +210,7 @@ class HeroResults(Widget):
             yield DifficultyStatistics(id="diff_stats").data_bind(difficulty_data=HeroResults.difficulty_data)
 
     def watch_current_hero(self, old_hero: HeroData, new_hero: HeroData):
-        self.query_one("#hero_results").current_hero = new_hero
+        self.current_hero = new_hero
         self.query_one("#hero_aspect").aspect_data = new_hero.aspect_data
         self.query_one("#diff_stats").difficulty_data = new_hero.difficulty_data
         self.query_one("#total_stats").total_plays = new_hero.total_plays
@@ -224,18 +224,50 @@ class HeroResults(Widget):
         self.total_wins = self.current_hero.win_percentage
         self.total_wins = self.current_hero.win_percentage
         
+class VillainResults(Static):
+    current_villain : reactive[VillainData] = reactive(VillainData("Evil Bob", "none"))
+    aspect_data : reactive[AspectData] = reactive(AspectData())
+    difficulty_data : reactive[DifficultyStats] = reactive(DifficultyStats())
+    total_plays : reactive[int] = reactive(0)
+    total_wins : reactive[int] = reactive(0)
+    total_win_percentage : reactive[float] = reactive(0)
 
-class OverallResults(Widget):
+    def compose(self) -> ComposeResult:
+        with Vertical(id="villain_results"):
+            yield TotalStats(id="total_stats").data_bind(total_plays=VillainResults.total_plays,
+                                                           total_wins=VillainResults.total_wins,
+                                                           total_win_percentage=VillainResults.total_win_percentage)
+            yield AspectStats(id="villain_aspect").data_bind(aspect_data=VillainResults.aspect_data)
+            yield DifficultyStatistics(id="villain_diff_stats").data_bind(difficulty_data=VillainResults.difficulty_data)
+
+    def watch_current_villain(self, old_villain: HeroData, new_villain: HeroData):
+        self.current_villain = new_villain
+        self.query_one("#villain_aspect").aspect_data = new_villain.aspect_data
+        self.query_one("#villain_diff_stats").difficulty_data = new_villain.difficulty_data
+        self.query_one("#total_stats").total_plays = new_villain.total_plays
+        self.query_one("#total_stats").total_wins = new_villain.total_wins
+        self.query_one("#total_stats").total_win_percentage = new_villain.win_percentage
+        
+    def on_mount(self) -> None:
+        self.aspect_data = self.current_villain.aspect_data
+        self.difficulty_data = self.current_villain.difficulty_data
+        self.total_plays = self.current_villain.total_plays
+        self.total_wins = self.current_villain.win_percentage
+        self.total_wins = self.current_villain.win_percentage
+        
+
+class OverallResults(Static):
 
     overall_data: reactive[OverallData] = reactive(OverallData(""))
     aspect_data : reactive[AspectData] = reactive(AspectData())
 
     def compose(self) -> ComposeResult:
         with Horizontal(id="overall_results"):
-            yield AspectStats().data_bind(OverallResults.aspect_data)
+            yield AspectStats(id='overall_aspect').data_bind(OverallResults.aspect_data)
             
     def on_mount(self) -> None:
         self.aspect_data = self.overall_data.aspect_data
+        self.query_one('#overall_aspect').aspect_data = self.aspect_data
 
 class MCStatApp(App):
     """ A Textual app for my Marvel Champions stat tracking"""
@@ -251,7 +283,6 @@ class MCStatApp(App):
     def compose(self) -> ComposeResult:
         yield Header()
         with Horizontal(id="menu"):
-            self.current_hero =self.statistics.hero_data["Drax"]
             #create the tree
             tree: Tree[dict] = Tree("Marvel Champions Data", id="mctree")
             tree.root.expand()
@@ -263,27 +294,28 @@ class MCStatApp(App):
             for villain in self.statistics.sorted_villains:
                 villains_root.add_leaf(villain[0])
             yield tree
-            with Container(id="data"):
-                #yield OverallResults().data_bind(MCStatApp.overall_data)
+            with ContentSwitcher(initial="oresults"):
+            #with Vertical(id="holder"):
+                yield OverallResults(id="oresults").data_bind(overall_data=MCStatApp.overall_data)
                 yield HeroResults(id="hresults").data_bind(current_hero=MCStatApp.current_hero)
+                yield VillainResults(id="vresults").data_bind(current_villain=MCStatApp.current_villain)
         yield Footer()
 
     def on_mount(self) -> None:
-        self.current_hero = self.statistics.hero_data["Drax"]
+        self.current_hero = self.statistics.hero_data["Gamora"]
+        self.query_one("#oresults").overall_data = self.overall_data
 
     def on_tree_node_selected(self, event: Tree.NodeSelected) -> None:
         #test if hero or villain or none
         if(event.node.label.plain in self.statistics.hero_data.keys()):
-            #context switch to hero data
+            self.query_one(ContentSwitcher).current = "hresults"
             self.current_hero = self.statistics.hero_data[event.node.label.plain]
-            hero_results = self.query_one("#hresults", Widget)
-            hero_results.refresh()
         elif(event.node.label.plain in self.statistics.villain_data.keys()):
-            #context switch to villain data
+            self.query_one(ContentSwitcher).current = "vresults"
             self.current_villain = self.statistics.villain_data[event.node.label.plain]
         elif(event.node.label.plain == "Overall"):
-            #context switch to overall data
-            pass
+            self.query_one(ContentSwitcher).current = "oresults"
+            self.overall_data = self.statistics.overall_data
 
     def action_toggle_dark(self) -> None:
         self.dark = not self.dark
