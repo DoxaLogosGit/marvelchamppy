@@ -290,8 +290,8 @@ class UploadData:
         next(my_progress_track)
 
         #clear the unplayed before publishing unplayed (the list will shrink over time)
-        range = f"H1:H{len(villain.heroes_played)+len(villain.heroes_not_played)+3}"
-        sheet.batch_clear([range])
+        vrange = f"H1:H{len(villain.heroes_played)+len(villain.heroes_not_played)+3}"
+        sheet.batch_clear([vrange])
         sheet.update("H1", f"Heroes Unplayed - {len(villain.heroes_not_played)}")
         next(my_progress_track)
         for i, hero in enumerate(sorted(villain.heroes_not_played)):
@@ -494,17 +494,17 @@ class UploadData:
     def perform_upload(self):
         self.login()
         self.upload_overall()
-        sleep(60)
-        self.upload_play_matrix()
         worksheets = [x.title for x in self.sheet.worksheets()]
         sleep(5)
         self.upload_heroes(worksheets)
-        sleep(60)
-        self.upload_teams(worksheets)
-        sleep(60)
+        sleep(30)
         self.upload_villains(worksheets)
-        sleep(60)
+        sleep(30)
+        self.upload_teams(worksheets)
+        sleep(30)
         self.upload_big_box_expansions(worksheets)
-        sleep(60)
+        sleep(30)
         self.upload_scenario_packs(worksheets)
+        sleep(30)
+        self.upload_play_matrix()
         

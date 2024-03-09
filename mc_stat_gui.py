@@ -361,12 +361,21 @@ class MCStatApp(App):
             tree: Tree[dict] = Tree("Marvel Champions Data", id="mctree")
             tree.root.expand()
             overall_root = tree.root.add_leaf("Overall")
+            team_root = tree.root.add_leaf("Team")
+            #for super_team in self.statistics.team_data.keys():
+            #    team_root.add_leaf(super_team)
             heroes_root = tree.root.add("Heroes")
             for hero in self.statistics.sorted_heroes:
                 heroes_root.add_leaf(hero[0])
             villains_root = tree.root.add("Villains")
             for villain in self.statistics.sorted_villains:
                 villains_root.add_leaf(villain[0])
+            aspect_root = tree.root.add_leaf("Aspect")
+            aspect_root.add_leaf("Aggression")
+            aspect_root.add_leaf("Justice")
+            aspect_root.add_leaf("Leadership")
+            aspect_root.add_leaf("Protection")
+            aspect_root.add_leaf("Basic")
             yield tree
             with ContentSwitcher(initial="oresults"):
                 yield OverallResults(id="oresults").data_bind(overall_data=MCStatApp.overall_data)
