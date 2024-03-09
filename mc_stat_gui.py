@@ -3,7 +3,7 @@ from textual.app import App, ComposeResult
 from textual.containers import Vertical, Horizontal, Container, Widget
 from textual.reactive import reactive
 from textual.widgets import Header, Footer, Tree, DataTable, Static, ContentSwitcher, Label
-from analyze_data import Statistics, HeroData, VillainData, OverallData, AspectData, DifficultyStats
+from analyze_data import Statistics, HeroData, VillainData, OverallData, AspectData, TeamData, DifficultyStats
 from rich.text import Text
 
 
@@ -293,7 +293,7 @@ class VillainResults(Static):
             yield AspectStats(id="villain_aspect").data_bind(aspect_data=VillainResults.aspect_data)
             yield DifficultyStatistics(id="villain_diff_stats").data_bind(difficulty_data=VillainResults.difficulty_data)
 
-    def watch_current_villain(self, old_villain: HeroData, new_villain: HeroData):
+    def watch_current_villain(self, old_villain: VillainData, new_villain: VillainData):
         self.current_villain = new_villain
         self.name = new_villain.name
         self.aspect_data = new_villain.aspect_data
@@ -302,6 +302,34 @@ class VillainResults(Static):
         self.total_wins = new_villain.total_wins
         self.total_win_percentage = new_villain.win_percentage
         
+class TeamResults(Static):
+    current_team : reactive[TeamData] = reactive(TeamData("Junkers"))
+    aspect_data : reactive[AspectData] = reactive(AspectData())
+    difficulty_data : reactive[DifficultyStats] = reactive(DifficultyStats())
+    total_plays : reactive[int] = reactive(0)
+    total_wins : reactive[int] = reactive(0)
+    total_win_percentage : reactive[float] = reactive(0)
+    name : reactive[str] = reactive("Junkers")
+
+    def compose(self) -> ComposeResult:
+        with Vertical(id="team_results"):
+            with Horizontal(id="team_banner"):
+                yield Label("Team Statistics - ")
+                yield Name(id="team_name").data_bind(who=TeamResults.name)
+            yield TotalStats(id="total_stats").data_bind(total_plays=TeamResults.total_plays,
+                                                           total_wins=TeamResults.total_wins,
+                                                           total_win_percentage=TeamResults.total_win_percentage)
+            yield AspectStats(id="team_aspect").data_bind(aspect_data=TeamResults.aspect_data)
+            yield DifficultyStatistics(id="team_diff_stats").data_bind(difficulty_data=TeamResults.difficulty_data)
+
+    def watch_current_team(self, old_team: TeamData, new_team: TeamData):
+        self.current_team = new_team
+        self.name = new_team.name
+        self.aspect_data = new_team.aspect_data
+        self.difficulty_data = new_team.difficulty_data
+        self.total_plays = new_team.total_plays
+        self.total_wins = new_team.total_wins
+        self.total_win_percentage = new_team.win_percentage
 
 class OverallResults(Static):
 
@@ -353,6 +381,7 @@ class MCStatApp(App):
     current_hero : reactive[HeroData] = reactive(HeroData("Gamora", "Guardian"))
     current_villain: reactive[VillainData] = reactive(VillainData("Rhino", "core"))
     overall_data : reactive[OverallData] = reactive(OverallData(""))
+    current_team : reactive[TeamData] = reactive(TeamData("Junker"))
 
     def compose(self) -> ComposeResult:
         yield Header()
@@ -361,35 +390,47 @@ class MCStatApp(App):
             tree: Tree[dict] = Tree("Marvel Champions Data", id="mctree")
             tree.root.expand()
             overall_root = tree.root.add_leaf("Overall")
-            team_root = tree.root.add_leaf("Team")
-            #for super_team in self.statistics.team_data.keys():
-            #    team_root.add_leaf(super_team)
             heroes_root = tree.root.add("Heroes")
             for hero in self.statistics.sorted_heroes:
                 heroes_root.add_leaf(hero[0])
             villains_root = tree.root.add("Villains")
             for villain in self.statistics.sorted_villains:
                 villains_root.add_leaf(villain[0])
-            aspect_root = tree.root.add_leaf("Aspect")
+            team_root = tree.root.add("Teams")
+            for team_name in self.statistics.team_data.keys():
+                if team_name != "X-Force" and team_name != "X-Men":
+                    team_root.add_leaf(team_name+"s")
+                else:
+                    team_root.add_leaf(team_name)
+            aspect_root = tree.root.add("Aspects")
             aspect_root.add_leaf("Aggression")
             aspect_root.add_leaf("Justice")
             aspect_root.add_leaf("Leadership")
             aspect_root.add_leaf("Protection")
             aspect_root.add_leaf("Basic")
+            big_box_root = tree.root.add("Big Box Expansions")
+            for bb_name in self.statistics.big_box_data.keys():
+                big_box_root.add_leaf(bb_name)
+            scenario_pack_root = tree.root.add("Scenario Packs")
+            for sp_name in self.statistics.scenario_pack_data.keys():
+                scenario_pack_root.add_leaf(sp_name)
             yield tree
             with ContentSwitcher(initial="oresults"):
                 yield OverallResults(id="oresults").data_bind(overall_data=MCStatApp.overall_data)
                 yield HeroResults(id="hresults").data_bind(current_hero=MCStatApp.current_hero)
                 yield VillainResults(id="vresults").data_bind(current_villain=MCStatApp.current_villain)
+                yield TeamResults(id="tresults").data_bind(current_team=MCStatApp.current_team)
         yield Footer()
 
     def on_mount(self) -> None:
         self.current_hero = self.statistics.hero_data["Gamora"]
         self.current_villain = self.statistics.villain_data["Klaw"]
+        self.current_team = self.statistics.team_data["Avenger"]
         self.overall_data = self.statistics.overall_data
         self.query_one("#oresults").overall_data = self.overall_data
         self.query_one("#hresults").current_hero = self.current_hero
         self.query_one("#vresults").current_villain = self.current_villain
+        self.query_one("#tresults").current_team = self.current_team
 
     def on_tree_node_selected(self, event: Tree.NodeSelected) -> None:
         #test if hero or villain or none
@@ -399,6 +440,14 @@ class MCStatApp(App):
         elif(event.node.label.plain in self.statistics.villain_data.keys()):
             self.query_one(ContentSwitcher).current = "vresults"
             self.current_villain = self.statistics.villain_data[event.node.label.plain]
+        #checking for X-force & X-men (not ending in s)
+        elif(event.node.label.plain in self.statistics.team_data.keys()):
+            self.query_one(ContentSwitcher).current = "tresults"
+            self.current_team = self.statistics.team_data[event.node.label.plain]
+        #checking for other teams ending with s
+        elif(event.node.label.plain[:-1] in self.statistics.team_data.keys()):
+            self.query_one(ContentSwitcher).current = "tresults"
+            self.current_team = self.statistics.team_data[event.node.label.plain[:-1]]
         elif(event.node.label.plain == "Overall"):
             self.query_one(ContentSwitcher).current = "oresults"
             self.overall_data = self.statistics.overall_data
