@@ -2,7 +2,7 @@ import simplejson as json
 from textual.app import App, ComposeResult
 from textual.containers import Vertical, Horizontal, Container, Widget
 from textual.reactive import reactive
-from textual.widgets import Header, Footer, Tree, DataTable, Static, ContentSwitcher, Label
+from textual.widgets import Header, Footer, Tree, DataTable, Static, ContentSwitcher, Label, OptionList
 from analyze_data import Statistics, HeroData, VillainData, OverallData, AspectData, TeamData, DifficultyStats
 from rich.text import Text
 
@@ -262,6 +262,14 @@ class HeroResults(Static):
                                                            total_win_percentage=HeroResults.total_win_percentage)
             yield AspectStats(id="hero_aspect").data_bind(aspect_data=HeroResults.aspect_data)
             yield DifficultyStatistics(id="diff_stats").data_bind(difficulty_data=HeroResults.difficulty_data)
+            with Horizontal(id="hero_lists_labels"):
+                yield Label("Villains Defeated",markup=True, classes="listlabels")
+                yield Label("Villains Played", markup=True, classes="listlabels")
+                yield Label("Villains Not Played",markup=True, classes="listlabels")
+            with Horizontal(id="hero_lists"):
+                yield OptionList("Bad", "Good",id="villains_defeat")
+                yield OptionList("Bad", "Good",id="villains_played")
+                yield OptionList("Bad", "Good",id="villains_unplayed")
 
     def watch_current_hero(self, old_hero: HeroData, new_hero: HeroData):
         self.current_hero = new_hero
@@ -271,7 +279,21 @@ class HeroResults(Static):
         self.total_plays = new_hero.total_plays
         self.total_wins = new_hero.total_wins
         self.total_win_percentage = new_hero.win_percentage
-        
+        dlist = self.query_one("#villains_defeat", OptionList)
+        dlist.clear_options()
+        dlist.add_options(self.current_hero.villains_defeated)
+        dlist.highlighted = None
+
+        ulist = self.query_one("#villains_unplayed", OptionList)
+        ulist.clear_options()
+        ulist.add_options(self.current_hero.villains_not_played)
+        ulist.highlighted = None
+
+        plist = self.query_one("#villains_played", OptionList)
+        plist.clear_options()
+        plist.add_options(self.current_hero.villains_played)
+        plist.highlighted = None
+       
         
 class VillainResults(Static):
     current_villain : reactive[VillainData] = reactive(VillainData("Evil Bob", "none"))
@@ -321,6 +343,14 @@ class TeamResults(Static):
                                                            total_win_percentage=TeamResults.total_win_percentage)
             yield AspectStats(id="team_aspect").data_bind(aspect_data=TeamResults.aspect_data)
             yield DifficultyStatistics(id="team_diff_stats").data_bind(difficulty_data=TeamResults.difficulty_data)
+            with Horizontal(id="hero_lists_labels"):
+                yield Label("Villains Defeated",markup=True, classes="listlabels")
+                yield Label("Villains Played", markup=True, classes="listlabels")
+                yield Label("Villains Not Played",markup=True, classes="listlabels")
+            with Horizontal(id="team_lists"):
+                yield OptionList("Bad", "Good",id="villains_defeat")
+                yield OptionList("Bad", "Good",id="villains_played")
+                yield OptionList("Bad", "Good",id="villains_unplayed")
 
     def watch_current_team(self, old_team: TeamData, new_team: TeamData):
         self.current_team = new_team
@@ -330,6 +360,20 @@ class TeamResults(Static):
         self.total_plays = new_team.total_plays
         self.total_wins = new_team.total_wins
         self.total_win_percentage = new_team.win_percentage
+        dlist = self.query_one("#villains_defeat", OptionList)
+        dlist.clear_options()
+        dlist.add_options(self.current_team.villains_defeated)
+        dlist.highlighted = None
+
+        ulist = self.query_one("#villains_unplayed", OptionList)
+        ulist.clear_options()
+        ulist.add_options(self.current_team.villains_not_played)
+        ulist.highlighted = None
+
+        plist = self.query_one("#villains_played", OptionList)
+        plist.clear_options()
+        plist.add_options(self.current_team.villains_played)
+        plist.highlighted = None
 
 class OverallResults(Static):
 

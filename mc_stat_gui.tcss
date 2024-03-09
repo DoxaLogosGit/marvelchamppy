@@ -9,7 +9,20 @@
 #play_data {
     height: 10%;
 }
+#hero_lists_labels {
+    height: auto;
+    background: red;
+}
+
+.listlabels {
+    width: 33%;
+    text-style: bold;
+    content-align: center middle;
+}
 #hero_banner {
+    height: auto;
+}
+#team_banner {
     height: auto;
 }
 #villain_banner {
