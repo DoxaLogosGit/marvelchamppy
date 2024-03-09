@@ -3,7 +3,7 @@ from textual.app import App, ComposeResult
 from textual.containers import Vertical, Horizontal, Container, Widget
 from textual.reactive import reactive
 from textual.widgets import Header, Footer, Tree, DataTable, Static, ContentSwitcher, Label, OptionList
-from analyze_data import Statistics, HeroData, VillainData, OverallData, AspectData, TeamData, DifficultyStats
+from analyze_data import Statistics, HeroData, VillainData, OverallData, AspectData, TeamData, DifficultyStats, ExpansionData
 from rich.text import Text
 
 
@@ -294,36 +294,6 @@ class HeroResults(Static):
         plist.add_options(self.current_hero.villains_played)
         plist.highlighted = None
        
-        
-class VillainResults(Static):
-    current_villain : reactive[VillainData] = reactive(VillainData("Evil Bob", "none"))
-    aspect_data : reactive[AspectData] = reactive(AspectData())
-    difficulty_data : reactive[DifficultyStats] = reactive(DifficultyStats())
-    total_plays : reactive[int] = reactive(0)
-    total_wins : reactive[int] = reactive(0)
-    total_win_percentage : reactive[float] = reactive(0)
-    name : reactive[str] = reactive("Evil Bob")
-
-    def compose(self) -> ComposeResult:
-        with Vertical(id="villain_results"):
-            with Horizontal(id="villain_banner"):
-                yield Label("Villain Statistics - ")
-                yield Name(id="villain_name").data_bind(who=VillainResults.name)
-            yield TotalStats(id="total_stats").data_bind(total_plays=VillainResults.total_plays,
-                                                           total_wins=VillainResults.total_wins,
-                                                           total_win_percentage=VillainResults.total_win_percentage)
-            yield AspectStats(id="villain_aspect").data_bind(aspect_data=VillainResults.aspect_data)
-            yield DifficultyStatistics(id="villain_diff_stats").data_bind(difficulty_data=VillainResults.difficulty_data)
-
-    def watch_current_villain(self, old_villain: VillainData, new_villain: VillainData):
-        self.current_villain = new_villain
-        self.name = new_villain.name
-        self.aspect_data = new_villain.aspect_data
-        self.difficulty_data = new_villain.difficulty_data
-        self.total_plays = new_villain.total_plays
-        self.total_wins = new_villain.total_wins
-        self.total_win_percentage = new_villain.win_percentage
-        
 class TeamResults(Static):
     current_team : reactive[TeamData] = reactive(TeamData("Junkers"))
     aspect_data : reactive[AspectData] = reactive(AspectData())
@@ -375,6 +345,145 @@ class TeamResults(Static):
         plist.add_options(self.current_team.villains_played)
         plist.highlighted = None
 
+        
+class VillainResults(Static):
+    current_villain : reactive[VillainData] = reactive(VillainData("Evil Bob", "none"))
+    aspect_data : reactive[AspectData] = reactive(AspectData())
+    difficulty_data : reactive[DifficultyStats] = reactive(DifficultyStats())
+    total_plays : reactive[int] = reactive(0)
+    total_wins : reactive[int] = reactive(0)
+    total_win_percentage : reactive[float] = reactive(0)
+    name : reactive[str] = reactive("Evil Bob")
+
+    def compose(self) -> ComposeResult:
+        with Vertical(id="villain_results"):
+            with Horizontal(id="villain_banner"):
+                yield Label("Villain Statistics - ")
+                yield Name(id="villain_name").data_bind(who=VillainResults.name)
+            yield TotalStats(id="total_stats").data_bind(total_plays=VillainResults.total_plays,
+                                                           total_wins=VillainResults.total_wins,
+                                                           total_win_percentage=VillainResults.total_win_percentage)
+            yield AspectStats(id="villain_aspect").data_bind(aspect_data=VillainResults.aspect_data)
+            yield DifficultyStatistics(id="villain_diff_stats").data_bind(difficulty_data=VillainResults.difficulty_data)
+            with Horizontal(id="villains_lists_labels"):
+                yield Label("Heroes Played", markup=True, classes="vlistlabels")
+                yield Label("Heroes Not Played",markup=True, classes="vlistlabels")
+            with Horizontal(id="villain_lists"):
+                yield OptionList("Bad", "Good",id="heroes_played")
+                yield OptionList("Bad", "Good",id="heroes_unplayed")
+
+    def watch_current_villain(self, old_villain: VillainData, new_villain: VillainData):
+        self.current_villain = new_villain
+        self.name = new_villain.name
+        self.aspect_data = new_villain.aspect_data
+        self.difficulty_data = new_villain.difficulty_data
+        self.total_plays = new_villain.total_plays
+        self.total_wins = new_villain.total_wins
+        self.total_win_percentage = new_villain.win_percentage
+
+
+        ulist = self.query_one("#heroes_unplayed", OptionList)
+        ulist.clear_options()
+        ulist.add_options(self.current_villain.heroes_not_played)
+        ulist.highlighted = None
+
+        plist = self.query_one("#heroes_played", OptionList)
+        plist.clear_options()
+        plist.add_options(self.current_villain.heroes_played)
+        plist.highlighted = None
+
+class BigBoxResults(Static):
+    current_bigbox : reactive[ExpansionData] = reactive(ExpansionData("Evil Bob"))
+    aspect_data : reactive[AspectData] = reactive(AspectData())
+    difficulty_data : reactive[DifficultyStats] = reactive(DifficultyStats())
+    total_plays : reactive[int] = reactive(0)
+    total_wins : reactive[int] = reactive(0)
+    total_win_percentage : reactive[float] = reactive(0)
+    name : reactive[str] = reactive("Evil Bob")
+
+    def compose(self) -> ComposeResult:
+        with Vertical(id="bigbox_results"):
+            with Horizontal(id="bigbox_banner"):
+                yield Label("Big Box Statistics - ")
+                yield Name(id="bigbox_name").data_bind(who=BigBoxResults.name)
+            yield TotalStats(id="total_stats").data_bind(total_plays=BigBoxResults.total_plays,
+                                                           total_wins=BigBoxResults.total_wins,
+                                                           total_win_percentage=BigBoxResults.total_win_percentage)
+            yield AspectStats(id="bigbox_aspect").data_bind(aspect_data=BigBoxResults.aspect_data)
+            yield DifficultyStatistics(id="bigbox_diff_stats").data_bind(difficulty_data=BigBoxResults.difficulty_data)
+            with Horizontal(id="villains_lists_labels"):
+                yield Label("Heroes Played", markup=True, classes="vlistlabels")
+                yield Label("Heroes Not Played",markup=True, classes="vlistlabels")
+            with Horizontal(id="bigbox_lists"):
+                yield OptionList("Bad", "Good",id="heroes_played")
+                yield OptionList("Bad", "Good",id="heroes_unplayed")
+
+    def watch_current_bigbox(self, old_bigbox: ExpansionData, new_bigbox: ExpansionData):
+        self.current_bigbox = new_bigbox
+        self.name = new_bigbox.name
+        self.aspect_data = new_bigbox.aspect_data
+        self.difficulty_data = new_bigbox.difficulty_data
+        self.total_plays = new_bigbox.total_plays
+        self.total_wins = new_bigbox.total_wins
+        self.total_win_percentage = new_bigbox.win_percentage
+
+
+        ulist = self.query_one("#heroes_unplayed", OptionList)
+        ulist.clear_options()
+        ulist.add_options(self.current_bigbox.heroes_not_played)
+        ulist.highlighted = None
+
+        plist = self.query_one("#heroes_played", OptionList)
+        plist.clear_options()
+        plist.add_options(self.current_bigbox.heroes_played)
+        plist.highlighted = None
+
+class ScenarioPackResults(Static):
+    current_pack : reactive[ExpansionData] = reactive(ExpansionData("Evil Bob"))
+    aspect_data : reactive[AspectData] = reactive(AspectData())
+    difficulty_data : reactive[DifficultyStats] = reactive(DifficultyStats())
+    total_plays : reactive[int] = reactive(0)
+    total_wins : reactive[int] = reactive(0)
+    total_win_percentage : reactive[float] = reactive(0)
+    name : reactive[str] = reactive("Evil Bob")
+
+    def compose(self) -> ComposeResult:
+        with Vertical(id="pack_results"):
+            with Horizontal(id="pack_banner"):
+                yield Label("Scenario Pack Statistics - ")
+                yield Name(id="pack_name").data_bind(who=ScenarioPackResults.name)
+            yield TotalStats(id="total_stats").data_bind(total_plays=ScenarioPackResults.total_plays,
+                                                           total_wins=ScenarioPackResults.total_wins,
+                                                           total_win_percentage=ScenarioPackResults.total_win_percentage)
+            yield AspectStats(id="pack_aspect").data_bind(aspect_data=ScenarioPackResults.aspect_data)
+            yield DifficultyStatistics(id="pack_diff_stats").data_bind(difficulty_data=ScenarioPackResults.difficulty_data)
+            with Horizontal(id="villains_lists_labels"):
+                yield Label("Heroes Played", markup=True, classes="vlistlabels")
+                yield Label("Heroes Not Played",markup=True, classes="vlistlabels")
+            with Horizontal(id="pack_lists"):
+                yield OptionList("Bad", "Good",id="heroes_played")
+                yield OptionList("Bad", "Good",id="heroes_unplayed")
+
+    def watch_current_pack(self, old_pack: ExpansionData, new_pack: ExpansionData):
+        self.current_villain = new_pack
+        self.name = new_pack.name
+        self.aspect_data = new_pack.aspect_data
+        self.difficulty_data = new_pack.difficulty_data
+        self.total_plays = new_pack.total_plays
+        self.total_wins = new_pack.total_wins
+        self.total_win_percentage = new_pack.win_percentage
+
+
+        ulist = self.query_one("#heroes_unplayed", OptionList)
+        ulist.clear_options()
+        ulist.add_options(self.current_pack.heroes_not_played)
+        ulist.highlighted = None
+
+        plist = self.query_one("#heroes_played", OptionList)
+        plist.clear_options()
+        plist.add_options(self.current_pack.heroes_played)
+        plist.highlighted = None
+        
 class OverallResults(Static):
 
     overall_data: reactive[OverallData] = reactive(OverallData(""))
@@ -426,6 +535,8 @@ class MCStatApp(App):
     current_villain: reactive[VillainData] = reactive(VillainData("Rhino", "core"))
     overall_data : reactive[OverallData] = reactive(OverallData(""))
     current_team : reactive[TeamData] = reactive(TeamData("Junker"))
+    current_bigbox : reactive[ExpansionData] = reactive(ExpansionData("Junker"))
+    current_pack : reactive[ExpansionData] = reactive(ExpansionData("Junker"))
 
     def compose(self) -> ComposeResult:
         yield Header()
@@ -464,17 +575,23 @@ class MCStatApp(App):
                 yield HeroResults(id="hresults").data_bind(current_hero=MCStatApp.current_hero)
                 yield VillainResults(id="vresults").data_bind(current_villain=MCStatApp.current_villain)
                 yield TeamResults(id="tresults").data_bind(current_team=MCStatApp.current_team)
+                yield ScenarioPackResults(id="presults").data_bind(current_pack=MCStatApp.current_pack)
+                yield BigBoxResults(id="bresults").data_bind(current_bigbox=MCStatApp.current_bigbox)
         yield Footer()
 
     def on_mount(self) -> None:
         self.current_hero = self.statistics.hero_data["Gamora"]
         self.current_villain = self.statistics.villain_data["Klaw"]
         self.current_team = self.statistics.team_data["Avenger"]
+        self.current_bigbox = self.statistics.big_box_data["Sinister Motives"]
+        self.current_pack = self.statistics.scenario_pack_data["The Hood"]
         self.overall_data = self.statistics.overall_data
         self.query_one("#oresults").overall_data = self.overall_data
         self.query_one("#hresults").current_hero = self.current_hero
         self.query_one("#vresults").current_villain = self.current_villain
         self.query_one("#tresults").current_team = self.current_team
+        self.query_one("#bresults").current_bigbox = self.current_bigbox
+        self.query_one("#presults").current_pack = self.current_pack
 
     def on_tree_node_selected(self, event: Tree.NodeSelected) -> None:
         #test if hero or villain or none
@@ -495,6 +612,12 @@ class MCStatApp(App):
         elif(event.node.label.plain == "Overall"):
             self.query_one(ContentSwitcher).current = "oresults"
             self.overall_data = self.statistics.overall_data
+        elif(event.node.label.plain in self.statistics.big_box_data.keys()):
+            self.query_one(ContentSwitcher).current = "bresults"
+            self.current_bigbox = self.statistics.big_box_data[event.node.label.plain]
+        elif(event.node.label.plain in self.statistics.scenario_pack_data.keys()):
+            self.query_one(ContentSwitcher).current = "presults"
+            self.current_pack = self.statistics.scenario_pack_data[event.node.label.plain]
 
     def action_toggle_dark(self) -> None:
         self.dark = not self.dark

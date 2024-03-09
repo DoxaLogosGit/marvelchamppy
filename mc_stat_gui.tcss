@@ -19,6 +19,17 @@
     text-style: bold;
     content-align: center middle;
 }
+
+#villains_lists_labels {
+    height: auto;
+    background: green;
+}
+
+.vlistlabels {
+    width: 50%;
+    text-style: bold;
+    content-align: center middle;
+}
 #hero_banner {
     height: auto;
 }
@@ -26,5 +37,11 @@
     height: auto;
 }
 #villain_banner {
+    height: auto;
+}
+#pack_banner {
+    height: auto;
+}
+#bigbox_banner {
     height: auto;
 }
