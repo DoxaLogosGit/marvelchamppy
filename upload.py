@@ -3,6 +3,7 @@ from time import sleep
 from datetime import datetime, timedelta
 from config import COLUMNS
 import math
+from rich.progress import track
 
 class UploadData:
 
@@ -174,8 +175,10 @@ class UploadData:
     
 
     def update_hero_sheet(self, hero, sheet):
+        my_progress_track = track(range(7), f"Uploading {hero.name} statistics: ")
         #clear the sheet
         sheet.batch_clear(["A1:Z100"])
+        next(my_progress_track)
         #overall data
         sheet.format("A1:Z1", {'textFormat': {'bold':True}, 'horizontalAlignment': "CENTER"})
         sheet.update("A1", "Overall")
@@ -186,23 +189,30 @@ class UploadData:
         sheet.format("B4", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
         sheet.update("A4", "Win %")
         sheet.update("B4", hero.win_percentage)
+        next(my_progress_track)
         #difficulty data (C-D)
         self.update_difficulty(hero, sheet)
+        next(my_progress_track)
         #aspect data (E-F)
         self.update_aspects(hero, sheet)
+        next(my_progress_track)
         
         #villain data G,H,I
         sheet.update("G1", f"Villains Fought - {len(hero.villains_played)}")
         for i, villain in enumerate(sorted(hero.villains_played)):
             sheet.update(f"G{i+2}", villain)
+        next(my_progress_track)
 
         sheet.update("H1", f"Villains Defeated - {len(hero.villains_defeated)}")
         for i, villain in enumerate(sorted(hero.villains_defeated)):
             sheet.update(f"H{i+2}", villain)
+        next(my_progress_track)
 
         sheet.update("I1", f"Villains Unplayed - {len(hero.villains_not_played)}")
         for i, villain in enumerate(sorted(hero.villains_not_played)):
             sheet.update(f"I{i+2}", villain)
+        next(my_progress_track)
+        next(my_progress_track, 0)
 
     def upload_heroes(self, worksheets):
         if(self.diff_data is None):
@@ -251,8 +261,10 @@ class UploadData:
             
 
     def update_villain_sheet(self, villain, sheet):
+        my_progress_track = track(range(7), f"Uploading {villain.name} statistics: ")
         #clear sheet
         sheet.batch_clear(["A1:Z100"])
+        next(my_progress_track)
         #overall data
         sheet.format("A1:Z1", {'textFormat': {'bold':True}, 'horizontalAlignment': "CENTER"})
         sheet.update("A1", "Overall")
@@ -263,22 +275,29 @@ class UploadData:
         sheet.format("B4", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
         sheet.update("A4", "Win %")
         sheet.update("B4", villain.win_percentage)
+        next(my_progress_track)
         #difficulty data (C-D)
         self.update_difficulty(villain, sheet)
+        next(my_progress_track)
         #aspect data (E-F)
         self.update_aspects(villain, sheet)
+        next(my_progress_track)
         
         #villain data G,H
         sheet.update("G1", f"Heroes Fought - {len(villain.heroes_played)}")
         for i, hero in enumerate(sorted(villain.heroes_played)):
             sheet.update(f"G{i+2}", hero)
+        next(my_progress_track)
 
         #clear the unplayed before publishing unplayed (the list will shrink over time)
         range = f"H1:H{len(villain.heroes_played)+len(villain.heroes_not_played)+3}"
         sheet.batch_clear([range])
         sheet.update("H1", f"Heroes Unplayed - {len(villain.heroes_not_played)}")
+        next(my_progress_track)
         for i, hero in enumerate(sorted(villain.heroes_not_played)):
             sheet.update(f"H{i+2}", hero)
+        next(my_progress_track)
+        next(my_progress_track, 0)
 
     def upload_villains(self, worksheets):
         if(self.diff_data is None):
@@ -286,7 +305,7 @@ class UploadData:
         else:
             villain_list = list(self.diff_data[0])
 
-        print("Uploading Villain statistics...")
+        print("Uploading Villain statistics: ")
         for villain in sorted(villain_list):
             skip = False
             if villain not in worksheets:
@@ -311,7 +330,7 @@ class UploadData:
                 if self.statistics.villain_data[villain].expansion in self.statistics.big_box_data.keys():
                     big_box_list.append(self.statistics.villain_data[villain].expansion)
                 
-        print("Uploading Big Box statistics...")
+        print("Uploading Big Box statistics: ")
         for big_box in sorted(big_box_list):
             skip = False
             if big_box not in worksheets:
@@ -335,7 +354,7 @@ class UploadData:
                 if self.statistics.villain_data[villain].expansion in self.statistics.scenario_pack_data.keys():
                     scenario_pack_list.append(self.statistics.villain_data[villain].expansion)
                 
-        print("Uploading Scenario Pack statistics...")
+        print("Uploading Scenario Pack statistics: ")
         for scenario_pack in sorted(scenario_pack_list):
             skip = False
             if scenario_pack not in worksheets:
@@ -350,11 +369,16 @@ class UploadData:
                 self.update_villain_sheet(self.statistics.scenario_pack_data[scenario_pack], vsheet)
 
     def upload_play_matrix(self):
-        print("Uploading Play Matrix statistics...")
+
+        #determine maximum amount of entries
+        total = 0
+        for villain in self.statistics.villain_data.values():
+            total += len(villain.heroes_played)
+
+        my_progress_track = track(range(total), "Uploading Play Matrix statistics: ")
         psheet = self.sheet.worksheet("Play Matrix")
         #clear sheet
         psheet.batch_clear(["A1:ZZ200"])
-        psheet.add_cols(100)
         psheet.format("B2:ZZ200", {'textFormat': {'bold':True}, 'horizontalAlignment': "CENTER"})
         #print the hero names
         heroes = sorted(self.statistics.hero_data.keys())
@@ -372,18 +396,22 @@ class UploadData:
                         #print the name on first row
                         psheet.update(f"{COLUMNS[column]}1", f"{villain}")
                     if hero_played == hero:
-                        #found here, print x
+                       #found here, print x
                         psheet.update(f"{COLUMNS[column]}{index+2}", "X")
+                        next(my_progress_track)
+        next(my_progress_track, 0)
+                    
                             
                         
 
 
 
     def upload_overall(self):
-        print("Uploading Overall statistics...")
+        my_progress_track = track(range(10), "Uploading Overall statistics...", show_speed=False)
         osheet = self.sheet.worksheet("Overall")
         #clear sheet
         osheet.batch_clear(["A1:Z100"])
+        next(my_progress_track)
         osheet.format("A1:Z1", {'textFormat': {'bold':True}, 'horizontalAlignment': "CENTER"})
         osheet.update("A1", "Overall")
         osheet.update("A2", "Total Plays")
@@ -399,22 +427,27 @@ class UploadData:
         osheet.update("B6", self.statistics.overall_data.overall_solo_plays)
         osheet.update("A7", "Total Multiplayer Plays")
         osheet.update("B7", self.statistics.overall_data.overall_multi_plays)
+        next(my_progress_track)
         #difficulty data (C-D)
         self.update_difficulty(self.statistics.overall_data, osheet)
+        next(my_progress_track)
         #aspect data (E-F)
         self.update_aspects(self.statistics.overall_data, osheet)
+        next(my_progress_track)
 
         #team data (G-J)
         osheet.update("G1", "Team")
         osheet.update("H1", "Plays")
         osheet.update("I1", "Wins")
         osheet.update("J1", "Percentage")
+        next(my_progress_track)
         for n, data in enumerate(self.statistics.sorted_team_list):
             osheet.update(f"G{n+2}", data[0])
             osheet.update(f"H{n+2}", data[1])
             osheet.update(f"I{n+2}", self.statistics.team_data[data[0]].total_wins)
             osheet.format(f"J{n+2}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
             osheet.update(f"J{n+2}", self.statistics.team_data[data[0]].win_percentage)
+        next(my_progress_track)
 
         #hero H-Index (K-L)
         osheet.update("K1", f"Hero H-Index: {self.statistics.hero_h_index}")
@@ -422,6 +455,7 @@ class UploadData:
         for n, hero in enumerate(self.statistics.sorted_heroes):
             osheet.update(f"K{n+2}", f"{n+1}. {hero[1].name}")
             osheet.update(f"L{n+2}", hero[1].total_plays)
+        next(my_progress_track)
         #villain H-Index (M-N)
         osheet.update("M1", f"Villain H-Index: {self.statistics.villain_h_index}")
         osheet.update("N1", "Plays")
@@ -429,6 +463,7 @@ class UploadData:
             osheet.update(f"M{n+2}", f"{n+1}. {villain[1].name}")
             osheet.update(f"N{n+2}", villain[1].total_plays)
 
+        next(my_progress_track)
         #hero win percentage (O-P)
         osheet.update("O1", "Hero")
         osheet.update("P1", " Winning Percent")
@@ -440,6 +475,7 @@ class UploadData:
                 osheet.format(f"P{printed_row}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
                 osheet.update(f"P{printed_row}", hero[1].win_percentage)
                 printed_row += 1
+        next(my_progress_track)
 
         #villain win percentage (Q-R)
         osheet.update("Q1", "Villain")
@@ -452,12 +488,14 @@ class UploadData:
                 osheet.format(f"R{printed_row}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
                 osheet.update(f"R{printed_row}", villain[1].win_percentage)
                 printed_row += 1
+        next(my_progress_track)
+        next(my_progress_track, 0)
 
     def perform_upload(self):
         self.login()
         self.upload_overall()
         sleep(60)
-        #self.upload_play_matrix()
+        self.upload_play_matrix()
         worksheets = [x.title for x in self.sheet.worksheets()]
         sleep(5)
         self.upload_heroes(worksheets)
