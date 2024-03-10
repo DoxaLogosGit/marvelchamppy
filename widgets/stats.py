@@ -2,14 +2,9 @@ from textual.app import ComposeResult
 from textual.containers import Widget
 from textual.reactive import reactive
 from textual.widgets import DataTable, Static
-from analyze_data import HeroData, VillainData, OverallData, AspectData, TeamData, DifficultyStats, ExpansionData
+from analyze_data import AspectData, DifficultyStats
 from rich.text import Text
 
-class Name(Widget):
-     who = reactive("Name")
-
-     def render(self) -> str:
-         return f"{self.who}"
 
 class SpecialPlays(Static):
     solo_plays: reactive[int] = reactive(0)

@@ -207,7 +207,7 @@ class HeroBase:
         self.difficulty_data.calculate_percentages(bgg_format)
         
 class HeroData(HeroBase):
-    def __init__(self, hero, traits):
+    def __init__(self, hero, traits="Avenger"):
         super().__init__(hero)
         self.traits = traits
         self.team = []
@@ -364,7 +364,7 @@ class VillainBase:
         self.aspect_data.calculate_percentages(bgg_format)
 
 class VillainData(VillainBase):
-    def __init__(self, name, expansion):
+    def __init__(self, name, expansion="Core Set"):
         super().__init__(name)
         self.expansion = expansion
         self.expansion_data = None
