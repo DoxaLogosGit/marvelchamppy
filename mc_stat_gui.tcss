@@ -33,15 +33,6 @@
 #hero_banner {
     height: auto;
 }
-#team_banner {
-    height: auto;
-}
 #villain_banner {
-    height: auto;
-}
-#pack_banner {
-    height: auto;
-}
-#bigbox_banner {
     height: auto;
 }

@@ -4,7 +4,7 @@ from textual.containers import Horizontal
 from textual.reactive import reactive
 from textual.widgets import Header, Footer, Tree, ContentSwitcher
 from analyze_data import Statistics, HeroData, VillainData, OverallData, TeamData, ExpansionData
-from widgets.results import HeroResults, VillainResults, OverallResults, TeamResults, BigBoxResults, ScenarioPackResults
+from widgets.results import HeroBaseResults, VillainBaseResults, OverallResults
 
 
 def read_data():
@@ -65,11 +65,11 @@ class MCStatApp(App):
             yield tree
             with ContentSwitcher(initial="oresults"):
                 yield OverallResults(id="oresults").data_bind(overall_data=MCStatApp.overall_data)
-                yield HeroResults(id="hresults").data_bind(current_hero=MCStatApp.current_hero)
-                yield VillainResults(id="vresults").data_bind(current_villain=MCStatApp.current_villain)
-                yield TeamResults(id="tresults").data_bind(current_team=MCStatApp.current_team)
-                yield ScenarioPackResults(id="presults").data_bind(current_pack=MCStatApp.current_pack)
-                yield BigBoxResults(id="bresults").data_bind(current_bigbox=MCStatApp.current_bigbox)
+                yield HeroBaseResults(id="hresults").data_bind(current_base=MCStatApp.current_hero)
+                yield VillainBaseResults(id="vresults").data_bind(current_base=MCStatApp.current_villain)
+                yield HeroBaseResults(id="tresults").data_bind(current_base=MCStatApp.current_team)
+                yield VillainBaseResults(id="presults").data_bind(current_base=MCStatApp.current_pack)
+                yield VillainBaseResults(id="bresults").data_bind(current_base=MCStatApp.current_bigbox)
         yield Footer()
 
     def on_mount(self) -> None:
@@ -80,11 +80,11 @@ class MCStatApp(App):
         self.current_pack = self.statistics.scenario_pack_data["The Hood"]
         self.overall_data = self.statistics.overall_data
         self.query_one("#oresults").overall_data = self.overall_data
-        self.query_one("#hresults").current_hero = self.current_hero
-        self.query_one("#vresults").current_villain = self.current_villain
-        self.query_one("#tresults").current_team = self.current_team
-        self.query_one("#bresults").current_bigbox = self.current_bigbox
-        self.query_one("#presults").current_pack = self.current_pack
+        self.query_one("#hresults").current_base = self.current_hero
+        self.query_one("#vresults").current_base = self.current_villain
+        self.query_one("#tresults").current_base = self.current_team
+        self.query_one("#bresults").current_base = self.current_bigbox
+        self.query_one("#presults").current_base = self.current_pack
 
     def on_tree_node_selected(self, event: Tree.NodeSelected) -> None:
         #test if hero or villain or none
