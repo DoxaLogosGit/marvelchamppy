@@ -31,7 +31,7 @@
     ],
     "Id": "38723879",
     "Multiplayer": true,
-    "True_Solo": true,
+    "True_Solo": false,
     "Villain": "Rhino"
   },
   {
@@ -111,7 +111,7 @@
     ],
     "Id": "38819549",
     "Multiplayer": true,
-    "True_Solo": true,
+    "True_Solo": false,
     "Villain": "Rhino"
   },
   {
@@ -131,7 +131,7 @@
     ],
     "Id": "38835009",
     "Multiplayer": true,
-    "True_Solo": true,
+    "True_Solo": false,
     "Villain": "Klaw"
   },
   {
@@ -156,7 +156,7 @@
     ],
     "Id": "38846243",
     "Multiplayer": true,
-    "True_Solo": true,
+    "True_Solo": false,
     "Villain": "Rhino"
   },
   {
@@ -191,7 +191,7 @@
     ],
     "Id": "38992330",
     "Multiplayer": true,
-    "True_Solo": true,
+    "True_Solo": false,
     "Villain": "Klaw"
   },
   {
@@ -226,7 +226,7 @@
     ],
     "Id": "39023432",
     "Multiplayer": true,
-    "True_Solo": true,
+    "True_Solo": false,
     "Villain": "Klaw"
   },
   {
@@ -291,7 +291,7 @@
     ],
     "Id": "39150814",
     "Multiplayer": true,
-    "True_Solo": true,
+    "True_Solo": false,
     "Villain": "Klaw"
   },
   {
@@ -316,7 +316,7 @@
     ],
     "Id": "39184555",
     "Multiplayer": true,
-    "True_Solo": true,
+    "True_Solo": false,
     "Villain": "Rhino"
   },
   {
@@ -381,7 +381,7 @@
     ],
     "Id": "40029892",
     "Multiplayer": true,
-    "True_Solo": true,
+    "True_Solo": false,
     "Villain": "Rhino"
   },
   {
@@ -461,7 +461,7 @@
     ],
     "Id": "42103273",
     "Multiplayer": true,
-    "True_Solo": true,
+    "True_Solo": false,
     "Villain": "Rhino"
   },
   {
@@ -806,7 +806,7 @@
     ],
     "Id": "44235378",
     "Multiplayer": true,
-    "True_Solo": true,
+    "True_Solo": false,
     "Villain": "Green Goblin - Mutagen Formula"
   },
   {
@@ -856,7 +856,7 @@
     ],
     "Id": "44293627",
     "Multiplayer": true,
-    "True_Solo": true,
+    "True_Solo": false,
     "Villain": "Green Goblin - Mutagen Formula"
   },
   {
@@ -4556,7 +4556,7 @@
     ],
     "Id": "49977113",
     "Multiplayer": true,
-    "True_Solo": true,
+    "True_Solo": false,
     "Villain": "Red Skull"
   },
   {
@@ -10726,7 +10726,7 @@
     ],
     "Id": "61049758",
     "Multiplayer": true,
-    "True_Solo": true,
+    "True_Solo": false,
     "Villain": "Tower Defense"
   },
   {
@@ -13478,5 +13478,675 @@
     "Multiplayer": false,
     "True_Solo": true,
     "Villain": "Juggernaut"
+  },
+  {
+    "Date": "2023-10-20",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Domino",
+        "Win": 1
+      }
+    ],
+    "Id": "76874013",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Juggernaut"
+  },
+  {
+    "Date": "2023-10-21",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Domino",
+        "Win": 1
+      }
+    ],
+    "Id": "76892830",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mister Sinister"
+  },
+  {
+    "Date": "2023-10-22",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Cable",
+        "Win": 1
+      }
+    ],
+    "Id": "76955099",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mister Sinister"
+  },
+  {
+    "Date": "2023-10-22",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Cable",
+        "Win": 1
+      }
+    ],
+    "Id": "76955115",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Stryfe"
+  },
+  {
+    "Date": "2023-10-22",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Cable",
+        "Win": 1
+      }
+    ],
+    "Id": "76960408",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Stryfe"
+  },
+  {
+    "Date": "2023-10-24",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Cable",
+        "Win": 1
+      }
+    ],
+    "Id": "77010285",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Morlock Siege"
+  },
+  {
+    "Date": "2023-10-24",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Cable",
+        "Win": 0
+      }
+    ],
+    "Id": "77010300",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "On the Run"
+  },
+  {
+    "Date": "2023-10-24",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Cable",
+        "Win": 1
+      }
+    ],
+    "Id": "77010312",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "On the Run"
+  },
+  {
+    "Date": "2023-10-29",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Domino",
+        "Win": 0
+      }
+    ],
+    "Id": "77187863",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Stryfe"
+  },
+  {
+    "Date": "2023-10-29",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Domino",
+        "Win": 1
+      }
+    ],
+    "Id": "77187870",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Stryfe"
+  },
+  {
+    "Date": "2023-10-30",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Cable",
+        "Win": 1
+      },
+      {
+        "Aspect": "Justice",
+        "Hero": "Domino",
+        "Win": 1
+      }
+    ],
+    "Id": "77215358",
+    "Multiplayer": false,
+    "True_Solo": false,
+    "Villain": "Morlock Siege"
+  },
+  {
+    "Date": "2023-11-14",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Psylocke",
+        "Win": 1
+      }
+    ],
+    "Id": "77728206",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mister Sinister"
+  },
+  {
+    "Date": "2023-11-14",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Psylocke",
+        "Win": 1
+      }
+    ],
+    "Id": "77732453",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mister Sinister"
+  },
+  {
+    "Date": "2023-12-17",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Angel",
+        "Win": 0
+      }
+    ],
+    "Id": "78848078",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Magneto"
+  },
+  {
+    "Date": "2023-12-17",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Angel",
+        "Win": 0
+      }
+    ],
+    "Id": "78854687",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Magneto"
+  },
+  {
+    "Date": "2023-12-19",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "X-23",
+        "Win": 0
+      }
+    ],
+    "Id": "78901136",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "On the Run"
+  },
+  {
+    "Date": "2023-12-31",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Gamora",
+        "Win": 0
+      }
+    ],
+    "Id": "79510337",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Venom Villain"
+  },
+  {
+    "Date": "2024-01-07",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Cable",
+        "Win": 1
+      },
+      {
+        "Aspect": "Justice",
+        "Hero": "Domino",
+        "Win": 1
+      }
+    ],
+    "Id": "79876470",
+    "Multiplayer": false,
+    "True_Solo": false,
+    "Villain": "On the Run"
+  },
+  {
+    "Date": "2024-01-08",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Cable",
+        "Win": 1
+      }
+    ],
+    "Id": "79949434",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Hela"
+  },
+  {
+    "Date": "2024-01-08",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Spider Man",
+        "Win": 1
+      }
+    ],
+    "Id": "79957318",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Venom Villain"
+  },
+  {
+    "Date": "2024-01-09",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Angel",
+        "Win": 1
+      }
+    ],
+    "Id": "79993710",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2024-01-11",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Angel",
+        "Win": 0
+      }
+    ],
+    "Id": "80062541",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Green Goblin - Mutagen Formula"
+  },
+  {
+    "Date": "2024-01-13",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Angel",
+        "Win": 1
+      }
+    ],
+    "Id": "80163479",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Taskmaster"
+  },
+  {
+    "Date": "2024-01-13",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "X-23",
+        "Win": 0
+      }
+    ],
+    "Id": "80171703",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Taskmaster"
+  },
+  {
+    "Date": "2024-01-14",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "X-23",
+        "Win": 1
+      }
+    ],
+    "Id": "80234839",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Ebony Maw"
+  },
+  {
+    "Date": "2024-01-15",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Psylocke",
+        "Win": 1
+      }
+    ],
+    "Id": "80261705",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "The Collector - Escape the Museum"
+  },
+  {
+    "Date": "2024-01-15",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Cable",
+        "Win": 0
+      }
+    ],
+    "Id": "80273030",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mojo"
+  },
+  {
+    "Date": "2024-02-29",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Venom",
+        "Win": 1
+      }
+    ],
+    "Id": "82034940",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Red Skull"
+  },
+  {
+    "Date": "2024-03-01",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Black Widow",
+        "Win": 0
+      }
+    ],
+    "Id": "82073865",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Green Goblin - Mutagen Formula"
+  },
+  {
+    "Date": "2024-03-01",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Black Widow",
+        "Win": 1
+      }
+    ],
+    "Id": "82073875",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Green Goblin - Mutagen Formula"
+  },
+  {
+    "Date": "2024-03-02",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Cyclops",
+        "Win": 1
+      }
+    ],
+    "Id": "82113442",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Ebony Maw"
+  },
+  {
+    "Date": "2024-03-03",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Valkyrie",
+        "Win": 0
+      }
+    ],
+    "Id": "82129144",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Absorbing Man"
+  },
+  {
+    "Date": "2024-03-03",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Gamora",
+        "Win": 0
+      }
+    ],
+    "Id": "82166575",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Amin Zola"
+  },
+  {
+    "Date": "2024-03-03",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Colossus",
+        "Win": 1
+      }
+    ],
+    "Id": "82175236",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Taskmaster"
+  },
+  {
+    "Date": "2024-03-05",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Hulk",
+        "Win": 0
+      }
+    ],
+    "Id": "82230139",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Ebony Maw"
+  },
+  {
+    "Date": "2024-03-07",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Doctor Strange",
+        "Win": 1
+      }
+    ],
+    "Id": "82288984",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Ebony Maw"
+  },
+  {
+    "Date": "2024-03-08",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Gambit",
+        "Win": 0
+      }
+    ],
+    "Id": "82291644",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2024-03-08",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Captain America",
+        "Win": 0
+      }
+    ],
+    "Id": "82323282",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Sandman"
+  },
+  {
+    "Date": "2024-03-08",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Captain America",
+        "Win": 1
+      }
+    ],
+    "Id": "82324556",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mysterio"
+  },
+  {
+    "Date": "2024-03-09",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Thor",
+        "Win": 1
+      }
+    ],
+    "Id": "82349596",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Drang"
+  },
+  {
+    "Date": "2024-03-09",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Ms. Marvel",
+        "Win": 1
+      }
+    ],
+    "Id": "82351620",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "The Collector - Escape the Museum"
+  },
+  {
+    "Date": "2024-03-09",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Scarlet Witch",
+        "Win": 0
+      }
+    ],
+    "Id": "82380644",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Drang"
+  },
+  {
+    "Date": "2024-03-09",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Nebula",
+        "Win": 1
+      }
+    ],
+    "Id": "82382102",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Drang"
+  },
+  {
+    "Date": "2024-03-09",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Wolverine",
+        "Win": 1
+      }
+    ],
+    "Id": "82383768",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Drang"
   }
 ]

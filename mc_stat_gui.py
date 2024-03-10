@@ -56,7 +56,7 @@ class MCStatApp(App):
             aspect_root.add_leaf("Leadership")
             aspect_root.add_leaf("Protection")
             aspect_root.add_leaf("Basic")
-            big_box_root = tree.root.add("Big Box Expansions")
+            big_box_root = tree.root.add("Big Boxes")
             for bb_name in self.statistics.big_box_data.keys():
                 big_box_root.add_leaf(bb_name)
             scenario_pack_root = tree.root.add("Scenario Packs")

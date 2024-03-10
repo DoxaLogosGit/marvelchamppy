@@ -158,6 +158,7 @@ The Collector - Infiltrate the Museum:
       - infiltrate-the-museum
       - infiltratethemuseum
       - infiltrate
+      - collector 1
 The Collector - Escape the Museum: 
   expansion: "The Galaxy's Most Wanted"
   replacements:
@@ -165,6 +166,7 @@ The Collector - Escape the Museum:
       - escape
       - escape-the-museum
       - escapethemuseum
+      - collector 2
 Magog: 
   expansion: "MojoMania"
   replacements:
