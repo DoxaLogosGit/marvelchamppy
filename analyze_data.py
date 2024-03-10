@@ -1,5 +1,6 @@
 from config import hero_config_data, villain_config_data, Traits, expansions
 import sys
+from sortedcontainers import SortedSet
 
 #load up traits from config file
 HeroTraits = Traits["Hero_Traits"]
@@ -166,10 +167,10 @@ class HeroBase:
         self.aspect_data = AspectData()
         self.difficulty_data = DifficultyStats()
         self.win_percentage = 0
-        self.villains_played = set()
-        self.villains_defeated = set()
-        self.villains_not_defeated = set()
-        self.villains_not_played = set()
+        self.villains_played = SortedSet()
+        self.villains_defeated = SortedSet()
+        self.villains_not_defeated = SortedSet()
+        self.villains_not_played = SortedSet()
 
     def add_play(self, hero, full_play):
         """
@@ -207,7 +208,6 @@ class HeroBase:
             self.win_percentage = self.total_wins/self.total_plays
         self.aspect_data.calculate_percentages(bgg_format)
         self.difficulty_data.calculate_percentages(bgg_format)
-        #go ahead and determine villains not defeated
         
 class HeroData(HeroBase):
     def __init__(self, hero, traits="Avenger"):
@@ -339,8 +339,8 @@ class VillainBase:
         self.win_percentage = 0
         self.difficulty_data = DifficultyStats()
         self.aspect_data = AspectData()
-        self.heroes_played = set()
-        self.heroes_not_played = set()
+        self.heroes_played = SortedSet()
+        self.heroes_not_played = SortedSet()
 
     def add_play(self, play):
         self.total_plays += 1
@@ -443,9 +443,9 @@ class OverallData:
 
 
 HERO_INIT_DATA = {x:HeroData(x, hero_config_data[x]["traits"]) for x in hero_config_data.keys()}
-HERO_DATA_SET = set(HERO_INIT_DATA.keys())
+HERO_DATA_SET = SortedSet(HERO_INIT_DATA.keys())
 VILLAIN_INIT_DATA = {x:VillainData(x, villain_config_data[x]['expansion']) for x in villain_config_data.keys()}
-VILLAIN_DATA_SET = set(VILLAIN_INIT_DATA.keys())
+VILLAIN_DATA_SET = SortedSet(VILLAIN_INIT_DATA.keys())
 BIG_BOX_INIT_DATA = {x:ExpansionData(x) for  x in BigBoxes}
 SCENARIO_PACK_INIT_DATA = {x:ExpansionData(x) for  x in ScenarioPacks}
 CORE_SET_INIT_DATA = {x:ExpansionData(x) for  x in CoreSet}

@@ -31,7 +31,7 @@ class HeroBaseResults(Static):
             yield AspectStats(id="hero_aspect").data_bind(aspect_data=HeroBaseResults.aspect_data)
             yield DifficultyStatistics(id="diff_stats").data_bind(difficulty_data=HeroBaseResults.difficulty_data)
             with Horizontal(id="hero_lists_labels"):
-                yield Label("Villains Defeated",markup=True, classes="listlabels")
+                yield Label("Villains Not Defeated",markup=True, classes="listlabels")
                 yield Label("Villains Played", markup=True, classes="listlabels")
                 yield Label("Villains Not Played",markup=True, classes="listlabels")
             with Horizontal(id="hero_lists"):
@@ -49,7 +49,7 @@ class HeroBaseResults(Static):
         self.total_win_percentage = new_hero.win_percentage
         dlist = self.query_one("#villains_defeat", OptionList)
         dlist.clear_options()
-        dlist.add_options(self.current_base.villains_defeated)
+        dlist.add_options(self.current_base.villains_not_defeated)
         dlist.highlighted = None
 
         ulist = self.query_one("#villains_unplayed", OptionList)
