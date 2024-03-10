@@ -168,6 +168,7 @@ class HeroBase:
         self.win_percentage = 0
         self.villains_played = set()
         self.villains_defeated = set()
+        self.villains_not_defeated = set()
         self.villains_not_played = set()
 
     def add_play(self, hero, full_play):
@@ -183,6 +184,7 @@ class HeroBase:
         if this_was_a_win:
             self.villains_defeated.add(full_play["Villain"])
         self.villains_not_played = VILLAIN_DATA_SET.difference(self.villains_played)
+        self.villains_not_defeated = self.villains_played.difference(self.villains_defeated)
 
 
     def smarter_string(self):
@@ -205,6 +207,7 @@ class HeroBase:
             self.win_percentage = self.total_wins/self.total_plays
         self.aspect_data.calculate_percentages(bgg_format)
         self.difficulty_data.calculate_percentages(bgg_format)
+        #go ahead and determine villains not defeated
         
 class HeroData(HeroBase):
     def __init__(self, hero, traits="Avenger"):
