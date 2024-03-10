@@ -32,8 +32,8 @@
             - milesmorales
     Ms. Marvel : 
         traits:
-            -Champion
-            -Inhuman
+            - Champion
+            - Inhuman
         replacements:
             - miss marvel
             - ms marvel
