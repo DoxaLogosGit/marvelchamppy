@@ -1,4 +1,4 @@
-from config import hero_config_data, villain_config_data, Traits, expansions
+from config import hero_config_data, villain_config_data, Traits, expansions, aspects
 import sys
 from sortedcontainers import SortedSet
 
@@ -32,6 +32,47 @@ def find_diff_data(play_data_new, play_data_old):
             heroes.append(hero["Hero"])
 
     return (set(villains), set(heroes))
+
+class AspectSpecificStats:
+
+    def __init__(self, name):
+        self.name = name
+        self.total_plays = 0
+        #this is used to filter out characters who only had 1 or 2 plays
+        self.minimum_play_percentage = 0.03
+        self.heroes = []
+        self.villains = []
+        self.teams = []
+
+    def add_villain(self, name, plays, win_percentage):
+        if(plays >= round(self.total_plays * self.minimum_play_percentage)):
+           #minimum criteria met so add them
+           self.villains.append((name, plays, win_percentage))
+
+    def add_hero(self, name, plays, win_percentage):
+        if(plays >= round(self.total_plays * self.minimum_play_percentage)):
+           #minimum criteria met so add them
+           self.heroes.append((name, plays, win_percentage))
+
+    def add_team(self, name, plays, win_percentage):
+        if(plays >= round(self.total_plays * self.minimum_play_percentage)):
+           #minimum criteria met so add them
+           self.teams.append((name, plays, win_percentage))
+
+    def check_percent(self, entry):
+           return entry[2]
+
+    def get_best_x_heroes(self, num):
+           self.heroes.sort(reverse=True, key=self.check_percent)
+           return self.heroes[:num]
+
+    def get_best_x_villains(self, num):
+           self.villains.sort(key=self.check_percent)
+           return self.villains[:num]
+
+    def get_best_x_teams(self, num):
+           self.teams.sort(reverse=True, key=self.check_percent)
+           return self.teams[:num]
 
 class AspectData:
     def __init__(self):
@@ -442,6 +483,8 @@ class OverallData:
         self.calculate_percentages(bgg_format)
 
 
+
+
 HERO_INIT_DATA = {x:HeroData(x, hero_config_data[x]["traits"]) for x in hero_config_data.keys()}
 HERO_DATA_SET = SortedSet(HERO_INIT_DATA.keys())
 VILLAIN_INIT_DATA = {x:VillainData(x, villain_config_data[x]['expansion']) for x in villain_config_data.keys()}
@@ -450,6 +493,7 @@ BIG_BOX_INIT_DATA = {x:ExpansionData(x) for  x in BigBoxes}
 SCENARIO_PACK_INIT_DATA = {x:ExpansionData(x) for  x in ScenarioPacks}
 CORE_SET_INIT_DATA = {x:ExpansionData(x) for  x in CoreSet}
 TEAM_INIT_DATA = {x:TeamData(x) for  x in TeamTraits}
+ASPECT_SPECIFIC_INIT_DATA = {x:AspectSpecificStats(x) for x in aspects}
 
 class Statistics:
     def __init__(self, all_plays, bgg_format=True):
@@ -459,6 +503,7 @@ class Statistics:
         self.villain_data = VILLAIN_INIT_DATA
         self.villain_h_index = 0
         self.hero_h_index = 0
+        self.aspect_specific_data = ASPECT_SPECIFIC_INIT_DATA
         self.bgg_format=bgg_format
         self.sorted_team_list = []
         self.sorted_heroes = None
@@ -495,7 +540,6 @@ class Statistics:
             for hero in self.hero_data.keys():
                 if team in self.hero_data[hero].traits:
                     self.hero_data[hero].add_team(self.team_data[team])
-                
 
     def analyze_hero_data(self):
         for play in self.all_plays:
@@ -504,9 +548,51 @@ class Statistics:
 
         for hero in self.hero_data:
             self.hero_data[hero].calculate_percentages(self.bgg_format)
+            for aspect in self.aspect_specific_data:
+                if aspect == "Justice":
+                    self.aspect_specific_data[aspect].add_hero(hero,
+                                                               self.hero_data[hero].aspect_data.justice_plays,
+                                                               self.hero_data[hero].aspect_data.justice_win_percentage)
+                elif aspect == "Leadership":
+                    self.aspect_specific_data[aspect].add_hero(hero,
+                                                               self.hero_data[hero].aspect_data.leadership_plays,
+                                                               self.hero_data[hero].aspect_data.leadership_win_percentage)
+                elif aspect == "Aggression":
+                    self.aspect_specific_data[aspect].add_hero(hero,
+                                                               self.hero_data[hero].aspect_data.aggression_plays,
+                                                               self.hero_data[hero].aspect_data.aggression_win_percentage)
+                elif aspect == "Protection":
+                    self.aspect_specific_data[aspect].add_hero(hero,
+                                                               self.hero_data[hero].aspect_data.aggression_plays,
+                                                               self.hero_data[hero].aspect_data.aggression_win_percentage)
+                elif aspect == "Basic":
+                    self.aspect_specific_data[aspect].add_hero(hero,
+                                                               self.hero_data[hero].aspect_data.aggression_plays,
+                                                               self.hero_data[hero].aspect_data.aggression_win_percentage)
 
         for team in self.team_data:
             self.team_data[team].calculate_percentages(self.bgg_format)
+            for aspect in self.aspect_specific_data:
+                if aspect == "Justice":
+                    self.aspect_specific_data[aspect].add_team(team,
+                                                               self.team_data[team].aspect_data.justice_plays,
+                                                               self.team_data[team].aspect_data.justice_win_percentage)
+                elif aspect == "Leadership":
+                    self.aspect_specific_data[aspect].add_team(team,
+                                                               self.team_data[team].aspect_data.leadership_plays,
+                                                               self.team_data[team].aspect_data.leadership_win_percentage)
+                elif aspect == "Aggression":
+                    self.aspect_specific_data[aspect].add_team(team,
+                                                               self.team_data[team].aspect_data.aggression_plays,
+                                                               self.team_data[team].aspect_data.aggression_win_percentage)
+                elif aspect == "Protection":
+                    self.aspect_specific_data[aspect].add_team(team,
+                                                               self.team_data[team].aspect_data.aggression_plays,
+                                                               self.team_data[team].aspect_data.aggression_win_percentage)
+                elif aspect == "Basic":
+                    self.aspect_specific_data[aspect].add_team(team,
+                                                               self.team_data[team].aspect_data.aggression_plays,
+                                                               self.team_data[team].aspect_data.aggression_win_percentage)
 
     def generate_team_plays(self):
         team_play_list = [ (x, self.team_data[x].total_plays) for x in self.team_data.keys()]
@@ -524,6 +610,27 @@ class Statistics:
 
         for villain in self.villain_data:
             self.villain_data[villain].calculate_percentages(self.bgg_format)
+            for aspect in self.aspect_specific_data:
+                if aspect == "Justice":
+                    self.aspect_specific_data[aspect].add_villain(villain,
+                                                               self.villain_data[villain].aspect_data.justice_plays,
+                                                               self.villain_data[villain].aspect_data.justice_win_percentage)
+                elif aspect == "Leadership":
+                    self.aspect_specific_data[aspect].add_villain(villain,
+                                                               self.villain_data[villain].aspect_data.leadership_plays,
+                                                               self.villain_data[villain].aspect_data.leadership_win_percentage)
+                elif aspect == "Aggression":
+                    self.aspect_specific_data[aspect].add_villain(villain,
+                                                               self.villain_data[villain].aspect_data.aggression_plays,
+                                                               self.villain_data[villain].aspect_data.aggression_win_percentage)
+                elif aspect == "Protection":
+                    self.aspect_specific_data[aspect].add_villain(villain,
+                                                               self.villain_data[villain].aspect_data.aggression_plays,
+                                                               self.villain_data[villain].aspect_data.aggression_win_percentage)
+                elif aspect == "Basic":
+                    self.aspect_specific_data[aspect].add_villain(villain,
+                                                               self.villain_data[villain].aspect_data.aggression_plays,
+                                                               self.villain_data[villain].aspect_data.aggression_win_percentage)
 
         for big_box in self.big_box_data:
             self.big_box_data[big_box].calculate_percentages(self.bgg_format)
@@ -572,6 +679,20 @@ class Statistics:
 
     def analyze_play_data(self, bgg_format=True):
         self.overall_data.analyze_overall_data()
+
+        #get the total plays for each aspect
+        for aspect in self.aspect_specific_data.keys():
+            if aspect == "Justice":
+                self.aspect_specific_data[aspect].total_plays = self.overall_data.aspect_data.justice_plays
+            elif aspect == "Leadership":
+                self.aspect_specific_data[aspect].total_plays = self.overall_data.aspect_data.leadership_plays
+            elif aspect == "Protection":
+                self.aspect_specific_data[aspect].total_plays = self.overall_data.aspect_data.protection_plays
+            elif aspect == "Aggression":
+                self.aspect_specific_data[aspect].total_plays = self.overall_data.aspect_data.aggression_plays
+            elif aspect == "Basic":
+                self.aspect_specific_data[aspect].total_plays = self.overall_data.aspect_data.basic_plays
+
         self.analyze_hero_data()
         self.analyze_villain_data()
         self.generate_team_plays()

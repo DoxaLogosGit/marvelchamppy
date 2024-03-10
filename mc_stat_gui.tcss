@@ -36,3 +36,18 @@
 #villain_banner {
     height: auto;
 }
+
+#aspect_banner {
+    height: auto;
+}
+
+#best_lists_labels {
+    height: auto;
+    background: orange;
+}
+
+.alistlabels {
+    width: 33%;
+    text-style: bold;
+    content-align: center middle;
+}

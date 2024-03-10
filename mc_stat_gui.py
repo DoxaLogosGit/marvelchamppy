@@ -3,8 +3,8 @@ from textual.app import App, ComposeResult
 from textual.containers import Horizontal
 from textual.reactive import reactive
 from textual.widgets import Header, Footer, Tree, ContentSwitcher
-from analyze_data import Statistics, HeroData, VillainData, OverallData, TeamData, ExpansionData
-from widgets.results import HeroBaseResults, VillainBaseResults, OverallResults
+from analyze_data import Statistics, HeroData, VillainData, OverallData, TeamData, ExpansionData, AspectSpecificStats
+from widgets.results import HeroBaseResults, VillainBaseResults, OverallResults, AspectSpecificResults
 
 
 def read_data():
@@ -30,6 +30,7 @@ class MCStatApp(App):
     current_team : reactive[TeamData] = reactive(TeamData("Junker"))
     current_bigbox : reactive[ExpansionData] = reactive(ExpansionData("Junker"))
     current_pack : reactive[ExpansionData] = reactive(ExpansionData("Junker"))
+    current_aspect : reactive[AspectSpecificStats] = reactive(AspectSpecificStats("Justice"))
 
     def compose(self) -> ComposeResult:
         yield Header()
@@ -51,11 +52,8 @@ class MCStatApp(App):
                 else:
                     team_root.add_leaf(team_name)
             aspect_root = tree.root.add("Aspects")
-            aspect_root.add_leaf("Aggression")
-            aspect_root.add_leaf("Justice")
-            aspect_root.add_leaf("Leadership")
-            aspect_root.add_leaf("Protection")
-            aspect_root.add_leaf("Basic")
+            for aspect in self.statistics.aspect_specific_data.keys():
+                aspect_root.add_leaf(aspect)
             big_box_root = tree.root.add("Big Boxes")
             for bb_name in self.statistics.big_box_data.keys():
                 big_box_root.add_leaf(bb_name)
@@ -70,6 +68,7 @@ class MCStatApp(App):
                 yield HeroBaseResults(id="tresults").data_bind(current_base=MCStatApp.current_team)
                 yield VillainBaseResults(id="presults").data_bind(current_base=MCStatApp.current_pack)
                 yield VillainBaseResults(id="bresults").data_bind(current_base=MCStatApp.current_bigbox)
+                yield AspectSpecificResults(id="aresults").data_bind(aspect_specific_stats=MCStatApp.current_aspect)
         yield Footer()
 
     def on_mount(self) -> None:
@@ -78,6 +77,7 @@ class MCStatApp(App):
         self.current_team = self.statistics.team_data["Avenger"]
         self.current_bigbox = self.statistics.big_box_data["Sinister Motives"]
         self.current_pack = self.statistics.scenario_pack_data["The Hood"]
+        self.current_aspect = self.statistics.aspect_specific_data["Justice"]
         self.overall_data = self.statistics.overall_data
         self.query_one("#oresults").overall_data = self.overall_data
         self.query_one("#hresults").current_base = self.current_hero
@@ -85,6 +85,7 @@ class MCStatApp(App):
         self.query_one("#tresults").current_base = self.current_team
         self.query_one("#bresults").current_base = self.current_bigbox
         self.query_one("#presults").current_base = self.current_pack
+        self.query_one("#aresults").aspect_specific_stats = self.current_aspect
 
     def on_tree_node_selected(self, event: Tree.NodeSelected) -> None:
         #test if hero or villain or none
@@ -111,6 +112,9 @@ class MCStatApp(App):
         elif(event.node.label.plain in self.statistics.scenario_pack_data.keys()):
             self.query_one(ContentSwitcher).current = "presults"
             self.current_pack = self.statistics.scenario_pack_data[event.node.label.plain]
+        elif(event.node.label.plain in self.statistics.aspect_specific_data.keys()):
+            self.current_aspect = self.statistics.aspect_specific_data[event.node.label.plain]
+            self.query_one(ContentSwitcher).current = "aresults"
 
     def action_toggle_dark(self) -> None:
         self.dark = not self.dark
