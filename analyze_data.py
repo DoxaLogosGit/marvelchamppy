@@ -576,12 +576,12 @@ class Statistics:
                                                                self.hero_data[hero].aspect_data.aggression_win_percentage)
                 elif aspect == "Protection":
                     self.aspect_specific_data[aspect].add_hero(hero,
-                                                               self.hero_data[hero].aspect_data.aggression_plays,
-                                                               self.hero_data[hero].aspect_data.aggression_win_percentage)
+                                                               self.hero_data[hero].aspect_data.protection_plays,
+                                                               self.hero_data[hero].aspect_data.protection_win_percentage)
                 elif aspect == "Basic":
                     self.aspect_specific_data[aspect].add_hero(hero,
-                                                               self.hero_data[hero].aspect_data.aggression_plays,
-                                                               self.hero_data[hero].aspect_data.aggression_win_percentage)
+                                                               self.hero_data[hero].aspect_data.basic_plays,
+                                                               self.hero_data[hero].aspect_data.basic_win_percentage)
 
         for team in self.team_data:
             self.team_data[team].calculate_percentages(self.bgg_format)
@@ -600,12 +600,12 @@ class Statistics:
                                                                self.team_data[team].aspect_data.aggression_win_percentage)
                 elif aspect == "Protection":
                     self.aspect_specific_data[aspect].add_team(team,
-                                                               self.team_data[team].aspect_data.aggression_plays,
-                                                               self.team_data[team].aspect_data.aggression_win_percentage)
+                                                               self.team_data[team].aspect_data.protection_plays,
+                                                               self.team_data[team].aspect_data.protection_win_percentage)
                 elif aspect == "Basic":
                     self.aspect_specific_data[aspect].add_team(team,
-                                                               self.team_data[team].aspect_data.aggression_plays,
-                                                               self.team_data[team].aspect_data.aggression_win_percentage)
+                                                               self.team_data[team].aspect_data.basic_plays,
+                                                               self.team_data[team].aspect_data.basic_win_percentage)
 
     def generate_team_plays(self):
         team_play_list = [ (x, self.team_data[x].total_plays) for x in self.team_data.keys()]

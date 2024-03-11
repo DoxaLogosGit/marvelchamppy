@@ -120,17 +120,17 @@ class AspectSpecificResults(Static):
                 yield Label("Aspect Statistics for ")
                 yield Name(id="aspect_name").data_bind(who=AspectSpecificResults.name)
             with Horizontal(id="best_lists_labels"):
-                yield Label("Best Heroes %", markup=True, classes="alistlabels")
-                yield Label("Best Villlain %",markup=True, classes="alistlabels")
-                yield Label("Best Teams %",markup=True, classes="alistlabels")
+                yield Label("Best 10 Heroes %", markup=True, classes="alistlabels")
+                yield Label("Best 10 Villlain %",markup=True, classes="alistlabels")
+                yield Label("Best 3 Teams %",markup=True, classes="alistlabels")
             with Horizontal(id="best_lists"):
                 yield OptionList("Bad", "Good",id="best_hero_aspect", classes="olists")
                 yield OptionList("Bad", "Good",id="best_villain_aspect", classes="olists")
                 yield OptionList("Bad", "Good",id="best_team_aspect", classes="olists")
             with Horizontal(id="worst_lists_labels"):
-                yield Label("Worst Heroes %", markup=True, classes="alistlabels")
-                yield Label("Worst Villlain %",markup=True, classes="alistlabels")
-                yield Label("Worst Teams %",markup=True, classes="alistlabels")
+                yield Label("Worst 10 Heroes %", markup=True, classes="alistlabels")
+                yield Label("Worst 10 Villlain %",markup=True, classes="alistlabels")
+                yield Label("Worst 3 Teams %",markup=True, classes="alistlabels")
             with Horizontal(id="worst_lists"):
                 yield OptionList("Bad", "Good",id="worst_hero_aspect", classes="olists")
                 yield OptionList("Bad", "Good",id="worst_villain_aspect", classes="olists")
@@ -157,7 +157,7 @@ class AspectSpecificResults(Static):
 
         tlist = self.query_one("#best_team_aspect", OptionList)
         tlist.clear_options()
-        team_data = [f"{x[0]} - {round(x[2]*100)}" for x in self.aspect_specific_stats.get_best_x_teams(10)]
+        team_data = [f"{x[0]} - {round(x[2]*100)}" for x in self.aspect_specific_stats.get_best_x_teams(3)]
         tlist.add_options(team_data)
         tlist.highlighted = None
 
@@ -175,7 +175,7 @@ class AspectSpecificResults(Static):
 
         twlist = self.query_one("#worst_team_aspect", OptionList)
         twlist.clear_options()
-        wteam_data = [f"{x[0]} - {round(x[2]*100)}" for x in self.aspect_specific_stats.get_worst_x_teams(10)]
+        wteam_data = [f"{x[0]} - {round(x[2]*100)}" for x in self.aspect_specific_stats.get_worst_x_teams(3)]
         twlist.add_options(wteam_data)
         twlist.highlighted = None
 
