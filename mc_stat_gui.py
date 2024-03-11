@@ -40,25 +40,25 @@ class MCStatApp(App):
             tree.root.expand()
             overall_root = tree.root.add_leaf("Overall")
             heroes_root = tree.root.add("Heroes")
-            for hero in self.statistics.sorted_heroes:
-                heroes_root.add_leaf(hero[0])
+            for hero in sorted(self.statistics.hero_data.keys()):
+                heroes_root.add_leaf(hero)
             villains_root = tree.root.add("Villains")
-            for villain in self.statistics.sorted_villains:
-                villains_root.add_leaf(villain[0])
+            for villain in sorted(self.statistics.villain_data.keys()):
+                villains_root.add_leaf(villain)
             team_root = tree.root.add("Teams")
-            for team_name in self.statistics.team_data.keys():
+            for team_name in sorted(self.statistics.team_data.keys()):
                 if team_name != "X-Force" and team_name != "X-Men":
                     team_root.add_leaf(team_name+"s")
                 else:
                     team_root.add_leaf(team_name)
             aspect_root = tree.root.add("Aspects")
-            for aspect in self.statistics.aspect_specific_data.keys():
+            for aspect in sorted(self.statistics.aspect_specific_data.keys()):
                 aspect_root.add_leaf(aspect)
             big_box_root = tree.root.add("Big Boxes")
-            for bb_name in self.statistics.big_box_data.keys():
+            for bb_name in sorted(self.statistics.big_box_data.keys()):
                 big_box_root.add_leaf(bb_name)
             scenario_pack_root = tree.root.add("Scenario Packs")
-            for sp_name in self.statistics.scenario_pack_data.keys():
+            for sp_name in sorted(self.statistics.scenario_pack_data.keys()):
                 scenario_pack_root.add_leaf(sp_name)
             yield tree
             with ContentSwitcher(initial="oresults"):
