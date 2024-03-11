@@ -54,20 +54,23 @@ class AspectSpecificStats:
     def add_villain(self, name, plays, win_percentage):
         if(plays >= round(self.total_plays * self.minimum_play_percentage)):
            #minimum criteria met so add them
-           self.villains.append((name, plays, win_percentage))
+           self.villains.append({"name":name, "plays":plays, "percent":win_percentage})
 
     def add_hero(self, name, plays, win_percentage):
         if(plays >= round(self.total_plays * self.minimum_play_percentage)):
            #minimum criteria met so add them
-           self.heroes.append((name, plays, win_percentage))
+           self.heroes.append({"name":name, "plays":plays, "percent":win_percentage})
 
     def add_team(self, name, plays, win_percentage):
         if(plays >= round(self.total_plays * self.minimum_play_percentage)):
            #minimum criteria met so add them
-           self.teams.append((name, plays, win_percentage))
+           self.teams.append({"name":name, "plays":plays, "percent":win_percentage})
 
     def check_percent(self, entry):
-           return entry[2]
+           return entry["percent"]
+           
+    def check_plays(self, entry):
+           return entry["plays"]
 
     def get_best_x_heroes(self, num):
            self.heroes.sort(reverse=True, key=self.check_percent)
@@ -93,6 +96,17 @@ class AspectSpecificStats:
            self.teams.sort(key=self.check_percent)
            return self.teams[:num]
 
+    def get_most_x_teams(self, num):
+           self.teams.sort(reverse=True, key=self.check_plays)
+           return self.teams[:num]
+
+    def get_most_x_heroes(self, num):
+           self.heroes.sort(reverse=True, key=self.check_plays)
+           return self.heroes[:num]
+
+    def get_most_x_villains(self, num):
+           self.villains.sort(reverse=True, key=self.check_plays)
+           return self.villains[:num]
 class AspectData:
     def __init__(self):
         self.aspect_plays = { x:AspectPlayData() for x in aspects}

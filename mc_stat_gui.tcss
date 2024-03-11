@@ -52,7 +52,10 @@
     height: auto;
     background: black;
 }
-
+#most_lists_labels {
+    height: auto;
+    background: blue;
+}
 .alistlabels {
     width: 33%;
     text-style: bold;

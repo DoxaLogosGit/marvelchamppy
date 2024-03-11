@@ -135,6 +135,14 @@ class AspectSpecificResults(Static):
                 yield OptionList("Bad", "Good",id="worst_hero_aspect", classes="olists")
                 yield OptionList("Bad", "Good",id="worst_villain_aspect", classes="olists")
                 yield OptionList("Bad", "Good",id="worst_team_aspect", classes="olists")
+            with Horizontal(id="most_lists_labels"):
+                yield Label("10 Most Played Heroes", markup=True, classes="alistlabels")
+                yield Label("10 Most Played Villlain",markup=True, classes="alistlabels")
+                yield Label("3  Most Played Teams",markup=True, classes="alistlabels")
+            with Horizontal(id="most_lists"):
+                yield OptionList("Bad", "Good",id="most_hero_aspect", classes="olists")
+                yield OptionList("Bad", "Good",id="most_villain_aspect", classes="olists")
+                yield OptionList("Bad", "Good",id="most_team_aspect", classes="olists")
 
 
 
@@ -145,39 +153,57 @@ class AspectSpecificResults(Static):
 
         hlist = self.query_one("#best_hero_aspect", OptionList)
         hlist.clear_options()
-        hero_data = [f"{x[0]} - {round(x[2]*100)}" for x in self.aspect_specific_stats.get_best_x_heroes(10)]
+        hero_data = [f"{x["name"]} - {round(x["percent"]*100)}%" for x in self.aspect_specific_stats.get_best_x_heroes(10)]
         hlist.add_options(hero_data)
         hlist.highlighted = None
 
         vlist = self.query_one("#best_villain_aspect", OptionList)
         vlist.clear_options()
-        villain_data = [f"{x[0]} - {round(x[2]*100)}" for x in self.aspect_specific_stats.get_best_x_villains(10)]
+        villain_data = [f"{x["name"]} - {round(x["percent"]*100)}%" for x in self.aspect_specific_stats.get_best_x_villains(10)]
         vlist.add_options(villain_data)
         vlist.highlighted = None
 
         tlist = self.query_one("#best_team_aspect", OptionList)
         tlist.clear_options()
-        team_data = [f"{x[0]} - {round(x[2]*100)}" for x in self.aspect_specific_stats.get_best_x_teams(3)]
+        team_data = [f"{x["name"]} - {round(x["percent"]*100)}%" for x in self.aspect_specific_stats.get_best_x_teams(3)]
         tlist.add_options(team_data)
         tlist.highlighted = None
 
         hwlist = self.query_one("#worst_hero_aspect", OptionList)
         hwlist.clear_options()
-        whero_data = [f"{x[0]} - {round(x[2]*100)}" for x in self.aspect_specific_stats.get_worst_x_heroes(10)]
+        whero_data = [f"{x["name"]} - {round(x["percent"]*100)}%" for x in self.aspect_specific_stats.get_worst_x_heroes(10)]
         hwlist.add_options(whero_data)
         hwlist.highlighted = None
 
         vwlist = self.query_one("#worst_villain_aspect", OptionList)
         vwlist.clear_options()
-        wvillain_data = [f"{x[0]} - {round(x[2]*100)}" for x in self.aspect_specific_stats.get_worst_x_villains(10)]
+        wvillain_data = [f"{x["name"]} - {round(x["percent"]*100)}%" for x in self.aspect_specific_stats.get_worst_x_villains(10)]
         vwlist.add_options(wvillain_data)
         vwlist.highlighted = None
 
         twlist = self.query_one("#worst_team_aspect", OptionList)
         twlist.clear_options()
-        wteam_data = [f"{x[0]} - {round(x[2]*100)}" for x in self.aspect_specific_stats.get_worst_x_teams(3)]
+        wteam_data = [f"{x["name"]} - {round(x["percent"]*100)}%" for x in self.aspect_specific_stats.get_worst_x_teams(3)]
         twlist.add_options(wteam_data)
         twlist.highlighted = None
+
+        hmlist = self.query_one("#most_hero_aspect", OptionList)
+        hmlist.clear_options()
+        mhero_data = [f"{x["name"]} - {x["plays"]} plays" for x in self.aspect_specific_stats.get_most_x_heroes(10)]
+        hmlist.add_options(mhero_data)
+        hmlist.highlighted = None
+
+        vmlist = self.query_one("#most_villain_aspect", OptionList)
+        vmlist.clear_options()
+        mvillain_data = [f"{x["name"]} - {x["plays"]} plays" for x in self.aspect_specific_stats.get_most_x_villains(10)]
+        vmlist.add_options(mvillain_data)
+        vmlist.highlighted = None
+
+        tmlist = self.query_one("#most_team_aspect", OptionList)
+        tmlist.clear_options()
+        mteam_data = [f"{x["name"]} - {x["plays"]} plays" for x in self.aspect_specific_stats.get_most_x_teams(3)]
+        tmlist.add_options(mteam_data)
+        tmlist.highlighted = None
 
 class OverallResults(Static):
 
