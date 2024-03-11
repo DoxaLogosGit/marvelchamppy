@@ -41,9 +41,16 @@
     height: auto;
 }
 
+.olists {
+   height: auto;
+}
 #best_lists_labels {
     height: auto;
     background: orange;
+}
+#worst_lists_labels {
+    height: auto;
+    background: black;
 }
 
 .alistlabels {

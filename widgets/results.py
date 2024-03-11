@@ -2,7 +2,7 @@ from textual.app import ComposeResult
 from textual.reactive import reactive
 from textual.containers import Vertical, Horizontal
 from textual.widgets import Label, OptionList, Static
-from analyze_data import OverallData, AspectData, DifficultyStats, HeroBase, VillainBase
+from analyze_data import OverallData, AspectData, DifficultyStats, HeroBase, VillainBase, AspectSpecificStats
 from widgets.stats import SpecialPlays, AspectStats, DifficultyStatistics, TotalStats
 
 class Name(Static):
@@ -110,6 +110,75 @@ class VillainBaseResults(Static):
         plist.highlighted = None
 
         
+class AspectSpecificResults(Static):
+    aspect_specific_stats: reactive[AspectSpecificStats] = reactive(AspectSpecificStats("Justice"))
+    name: reactive[str] = reactive("Justice")
+
+    def compose(self) -> ComposeResult:
+        with Vertical(id="best_results"):
+            with Horizontal(id="aspect_banner"):
+                yield Label("Aspect Statistics for ")
+                yield Name(id="aspect_name").data_bind(who=AspectSpecificResults.name)
+            with Horizontal(id="best_lists_labels"):
+                yield Label("Best Heroes %", markup=True, classes="alistlabels")
+                yield Label("Best Villlain %",markup=True, classes="alistlabels")
+                yield Label("Best Teams %",markup=True, classes="alistlabels")
+            with Horizontal(id="best_lists"):
+                yield OptionList("Bad", "Good",id="best_hero_aspect", classes="olists")
+                yield OptionList("Bad", "Good",id="best_villain_aspect", classes="olists")
+                yield OptionList("Bad", "Good",id="best_team_aspect", classes="olists")
+            with Horizontal(id="worst_lists_labels"):
+                yield Label("Worst Heroes %", markup=True, classes="alistlabels")
+                yield Label("Worst Villlain %",markup=True, classes="alistlabels")
+                yield Label("Worst Teams %",markup=True, classes="alistlabels")
+            with Horizontal(id="worst_lists"):
+                yield OptionList("Bad", "Good",id="worst_hero_aspect", classes="olists")
+                yield OptionList("Bad", "Good",id="worst_villain_aspect", classes="olists")
+                yield OptionList("Bad", "Good",id="worst_team_aspect", classes="olists")
+
+
+
+    def watch_aspect_specific_stats(self, old_specific: AspectSpecificStats, new_specific: AspectSpecificStats):
+        self.aspect_specific_stats = new_specific
+        self.name = new_specific.name
+        self.query_one("#aspect_name").who = self.name
+
+        hlist = self.query_one("#best_hero_aspect", OptionList)
+        hlist.clear_options()
+        hero_data = [f"{x[0]} - {round(x[2]*100)}" for x in self.aspect_specific_stats.get_best_x_heroes(10)]
+        hlist.add_options(hero_data)
+        hlist.highlighted = None
+
+        vlist = self.query_one("#best_villain_aspect", OptionList)
+        vlist.clear_options()
+        villain_data = [f"{x[0]} - {round(x[2]*100)}" for x in self.aspect_specific_stats.get_best_x_villains(10)]
+        vlist.add_options(villain_data)
+        vlist.highlighted = None
+
+        tlist = self.query_one("#best_team_aspect", OptionList)
+        tlist.clear_options()
+        team_data = [f"{x[0]} - {round(x[2]*100)}" for x in self.aspect_specific_stats.get_best_x_teams(10)]
+        tlist.add_options(team_data)
+        tlist.highlighted = None
+
+        hwlist = self.query_one("#worst_hero_aspect", OptionList)
+        hwlist.clear_options()
+        whero_data = [f"{x[0]} - {round(x[2]*100)}" for x in self.aspect_specific_stats.get_worst_x_heroes(10)]
+        hwlist.add_options(whero_data)
+        hwlist.highlighted = None
+
+        vwlist = self.query_one("#worst_villain_aspect", OptionList)
+        vwlist.clear_options()
+        wvillain_data = [f"{x[0]} - {round(x[2]*100)}" for x in self.aspect_specific_stats.get_worst_x_villains(10)]
+        vwlist.add_options(wvillain_data)
+        vwlist.highlighted = None
+
+        twlist = self.query_one("#worst_team_aspect", OptionList)
+        twlist.clear_options()
+        wteam_data = [f"{x[0]} - {round(x[2]*100)}" for x in self.aspect_specific_stats.get_worst_x_teams(10)]
+        twlist.add_options(wteam_data)
+        twlist.highlighted = None
+
 class OverallResults(Static):
 
     overall_data: reactive[OverallData] = reactive(OverallData(""))

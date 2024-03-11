@@ -66,12 +66,24 @@ class AspectSpecificStats:
            self.heroes.sort(reverse=True, key=self.check_percent)
            return self.heroes[:num]
 
+    def get_worst_x_heroes(self, num):
+           self.heroes.sort(key=self.check_percent)
+           return self.heroes[:num]
+
     def get_best_x_villains(self, num):
            self.villains.sort(key=self.check_percent)
            return self.villains[:num]
 
+    def get_worst_x_villains(self, num):
+           self.villains.sort(reverse=True, key=self.check_percent)
+           return self.villains[:num]
+
     def get_best_x_teams(self, num):
            self.teams.sort(reverse=True, key=self.check_percent)
+           return self.teams[:num]
+
+    def get_worst_x_teams(self, num):
+           self.teams.sort(key=self.check_percent)
            return self.teams[:num]
 
 class AspectData:
@@ -101,6 +113,7 @@ class AspectData:
             else:
                 self.justice_plays += 1
                 self.justice_wins += this_was_a_win
+                self.protection_plays += 1
                 self.protection_wins += this_was_a_win
                 self.aggression_plays += 1
                 self.aggression_wins += this_was_a_win
@@ -625,12 +638,12 @@ class Statistics:
                                                                self.villain_data[villain].aspect_data.aggression_win_percentage)
                 elif aspect == "Protection":
                     self.aspect_specific_data[aspect].add_villain(villain,
-                                                               self.villain_data[villain].aspect_data.aggression_plays,
-                                                               self.villain_data[villain].aspect_data.aggression_win_percentage)
+                                                               self.villain_data[villain].aspect_data.protection_plays,
+                                                               self.villain_data[villain].aspect_data.protection_win_percentage)
                 elif aspect == "Basic":
                     self.aspect_specific_data[aspect].add_villain(villain,
-                                                               self.villain_data[villain].aspect_data.aggression_plays,
-                                                               self.villain_data[villain].aspect_data.aggression_win_percentage)
+                                                               self.villain_data[villain].aspect_data.basic_plays,
+                                                               self.villain_data[villain].aspect_data.basic_win_percentage)
 
         for big_box in self.big_box_data:
             self.big_box_data[big_box].calculate_percentages(self.bgg_format)
