@@ -109,43 +109,43 @@ class AspectStats(Static):
         self.ca = table.add_column(Text("Agression", style="bold bright_red", justify='right'))
         self.cp = table.add_column(Text("Protection", style="bold green3", justify='right'))
         self.cb = table.add_column(Text("Basic", style="bold grey54", justify='right'))
-        self.rp = table.add_row("Plays", self.aspect_data.leadership_plays,
-                      self.aspect_data.justice_plays,
-                      self.aspect_data.aggression_plays,
-                      self.aspect_data.protection_plays,
-                      self.aspect_data.basic_plays)
-        self.rw = table.add_row("Wins", self.aspect_data.leadership_wins,
-                      self.aspect_data.justice_wins,
-                      self.aspect_data.aggression_wins,
-                      self.aspect_data.protection_wins,
-                      self.aspect_data.basic_wins)
-        self.rwp = table.add_row("Win %", round(self.aspect_data.leadership_win_percentage * 100),
-                      round(self.aspect_data.justice_win_percentage * 100),
-                      round(self.aspect_data.aggression_win_percentage * 100),
-                      round(self.aspect_data.protection_win_percentage * 100),
-                      round(self.aspect_data.basic_win_percentage * 100))
+        self.rp = table.add_row("Plays", self.aspect_data.aspect_plays["Leadership"].plays,
+                      self.aspect_data.aspect_plays["Justice"].plays,
+                      self.aspect_data.aspect_plays["Aggression"].plays,
+                      self.aspect_data.aspect_plays["Protection"].plays,
+                      self.aspect_data.aspect_plays["Basic"].plays)
+        self.rw = table.add_row("Wins", self.aspect_data.aspect_plays["Leadership"].wins,
+                      self.aspect_data.aspect_plays["Justice"].wins,
+                      self.aspect_data.aspect_plays["Aggression"].wins,
+                      self.aspect_data.aspect_plays["Protection"].wins,
+                      self.aspect_data.aspect_plays["Basic"].wins)
+        self.rwp = table.add_row("Win %", round(self.aspect_data.aspect_plays["Leadership"].win_percentage * 100),
+                      round(self.aspect_data.aspect_plays["Justice"].win_percentage * 100),
+                      round(self.aspect_data.aspect_plays["Aggression"].win_percentage * 100),
+                      round(self.aspect_data.aspect_plays["Protection"].win_percentage * 100),
+                      round(self.aspect_data.aspect_plays["Basic"].win_percentage * 100))
 
     def watch_aspect_data(self, old_aspect_data: AspectData, new_aspect_data: AspectData):
         self.aspect_data = new_aspect_data
         table = self.query_one("#aspect_data_table", DataTable)
         if self.rp is not None:
-            table.update_cell(self.rp,self.cl, Text(str(self.aspect_data.leadership_plays), style="bold bright_blue", justify='right'))
-            table.update_cell(self.rp,self.ca, Text(str(self.aspect_data.aggression_plays), style="bold bright_red", justify='right'))
-            table.update_cell(self.rp,self.cb, Text(str(self.aspect_data.basic_plays), style="bold grey50", justify='right'))
-            table.update_cell(self.rp,self.cj, Text(str(self.aspect_data.justice_plays),style="bold yellow1", justify='right'))
-            table.update_cell(self.rp,self.cp, Text(str(self.aspect_data.protection_plays), style="bold green3", justify='right'))
+            table.update_cell(self.rp,self.cl, Text(str(self.aspect_data.aspect_plays["Leadership"].plays), style="bold bright_blue", justify='right'))
+            table.update_cell(self.rp,self.ca, Text(str(self.aspect_data.aspect_plays["Aggression"].plays), style="bold bright_red", justify='right'))
+            table.update_cell(self.rp,self.cb, Text(str(self.aspect_data.aspect_plays["Basic"].plays), style="bold grey50", justify='right'))
+            table.update_cell(self.rp,self.cj, Text(str(self.aspect_data.aspect_plays["Justice"].plays),style="bold yellow1", justify='right'))
+            table.update_cell(self.rp,self.cp, Text(str(self.aspect_data.aspect_plays["Protection"].plays), style="bold green3", justify='right'))
         if self.rw is not None:
-            table.update_cell(self.rw,self.cl, Text(str(self.aspect_data.leadership_wins), style="bold bright_blue", justify='right'))
-            table.update_cell(self.rw,self.ca, Text(str(self.aspect_data.aggression_wins),  style="bold bright_red",justify='right'))
-            table.update_cell(self.rw,self.cb, Text(str(self.aspect_data.basic_wins), style="bold grey50", justify='right'))
-            table.update_cell(self.rw,self.cj, Text(str(self.aspect_data.justice_wins), style="bold yellow1", justify='right'))
-            table.update_cell(self.rw,self.cp, Text(str(self.aspect_data.protection_wins), style="bold green3", justify='right'))
+            table.update_cell(self.rw,self.cl, Text(str(self.aspect_data.aspect_plays["Leadership"].wins), style="bold bright_blue", justify='right'))
+            table.update_cell(self.rw,self.ca, Text(str(self.aspect_data.aspect_plays["Aggression"].wins),  style="bold bright_red",justify='right'))
+            table.update_cell(self.rw,self.cb, Text(str(self.aspect_data.aspect_plays["Basic"].wins), style="bold grey50", justify='right'))
+            table.update_cell(self.rw,self.cj, Text(str(self.aspect_data.aspect_plays["Justice"].wins), style="bold yellow1", justify='right'))
+            table.update_cell(self.rw,self.cp, Text(str(self.aspect_data.aspect_plays["Protection"].wins), style="bold green3", justify='right'))
         if self.rwp is not None:
-            table.update_cell(self.rwp,self.cl, Text(str(round(self.aspect_data.leadership_win_percentage * 100)), style="bold bright_blue", justify='right'))
-            table.update_cell(self.rwp,self.ca, Text(str(round(self.aspect_data.aggression_win_percentage * 100)), style="bold bright_red", justify='right'))
-            table.update_cell(self.rwp,self.cb, Text(str(round(self.aspect_data.basic_win_percentage * 100)), style="bold grey50", justify='right'))
-            table.update_cell(self.rwp,self.cj, Text(str(round(self.aspect_data.justice_win_percentage * 100)), style="bold yellow1", justify='right'))
-            table.update_cell(self.rwp,self.cp, Text(str(round(self.aspect_data.protection_win_percentage * 100)), style="bold green3", justify='right'))
+            table.update_cell(self.rwp,self.cl, Text(str(round(self.aspect_data.aspect_plays["Leadership"].win_percentage * 100)), style="bold bright_blue", justify='right'))
+            table.update_cell(self.rwp,self.ca, Text(str(round(self.aspect_data.aspect_plays["Aggression"].win_percentage * 100)), style="bold bright_red", justify='right'))
+            table.update_cell(self.rwp,self.cb, Text(str(round(self.aspect_data.aspect_plays["Basic"].win_percentage * 100)), style="bold grey50", justify='right'))
+            table.update_cell(self.rwp,self.cj, Text(str(round(self.aspect_data.aspect_plays["Justice"].win_percentage * 100)), style="bold yellow1", justify='right'))
+            table.update_cell(self.rwp,self.cp, Text(str(round(self.aspect_data.aspect_plays["Protection"].win_percentage * 100)), style="bold green3", justify='right'))
         
     
 class DifficultyStatistics(Static):

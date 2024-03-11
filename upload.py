@@ -113,63 +113,18 @@ class UploadData:
         sheet.update("E1", "Aspect Data")
         start_row = 2
         increment = 0
-        if data.aspect_data.leadership_plays > 0:
-            sheet.update(f"E{start_row + increment}", "Leadership Plays")
-            sheet.update(f"F{start_row + increment}", data.aspect_data.leadership_plays)
-            increment += 1
-            sheet.update(f"E{start_row + increment}", "Leadership Wins")
-            sheet.update(f"F{start_row + increment}", data.aspect_data.leadership_wins)
-            increment += 1
-            sheet.update(f"E{start_row + increment}", "Leadership Win %")
-            sheet.format(f"F{start_row + increment}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
-            sheet.update(f"F{start_row + increment}", data.aspect_data.leadership_win_percentage)
-            increment += 1
-        if data.aspect_data.aggression_plays > 0:
-            sheet.update(f"E{start_row + increment}", "Aggression Plays")
-            sheet.update(f"F{start_row + increment}", data.aspect_data.aggression_plays)
-            increment += 1
-            sheet.update(f"E{start_row + increment}", "Aggression Wins")
-            sheet.update(f"F{start_row + increment}", data.aspect_data.aggression_wins)
-            increment += 1
-            sheet.update(f"E{start_row + increment}", "Aggression Win %")
-            sheet.format(f"F{start_row + increment}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
-            sheet.update(f"F{start_row + increment}", data.aspect_data.aggression_win_percentage)
-            increment += 1
-        if data.aspect_data.justice_plays > 0:
-            sheet.update(f"E{start_row + increment}", "Justice Plays")
-            sheet.update(f"F{start_row + increment}", data.aspect_data.justice_plays)
-            increment += 1
-            sheet.update(f"E{start_row + increment}", "Justice Wins")
-            sheet.update(f"F{start_row + increment}", data.aspect_data.justice_wins)
-            increment += 1
-            sheet.update(f"E{start_row + increment}", "Justice Win %")
-            sheet.format(f"F{start_row + increment}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
-            sheet.update(f"F{start_row + increment}", data.aspect_data.justice_win_percentage)
-            increment += 1
-
-        if data.aspect_data.protection_plays > 0:
-            sheet.update(f"E{start_row + increment}", "Protection Plays")
-            sheet.update(f"F{start_row + increment}", data.aspect_data.protection_plays)
-            increment += 1
-            sheet.update(f"E{start_row + increment}", "Protection Wins")
-            sheet.update(f"F{start_row + increment}", data.aspect_data.protection_wins)
-            increment += 1
-            sheet.update(f"E{start_row + increment}", "Protection Win %")
-            sheet.format(f"F{start_row + increment}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
-            sheet.update(f"F{start_row + increment}", data.aspect_data.protection_win_percentage)
-            increment += 1
-
-        if data.aspect_data.basic_plays > 0:
-            sheet.update(f"E{start_row + increment}", "Basic Plays")
-            sheet.update(f"F{start_row + increment}", data.aspect_data.basic_plays)
-            increment += 1
-            sheet.update(f"E{start_row + increment}", "Basic Wins")
-            sheet.update(f"F{start_row + increment}", data.aspect_data.basic_wins)
-            increment += 1
-            sheet.update(f"E{start_row + increment}", "Basic Win %")
-            sheet.format(f"F{start_row + increment}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
-            sheet.update(f"F{start_row + increment}", data.aspect_data.basic_win_percentage)
-            increment += 1
+        for aspect in data.aspect_data.aspect_plays.keys():
+            if data.aspect_data.aspect_plays[aspect] > 0:
+                sheet.update(f"E{start_row + increment}", f"{aspect} Plays")
+                sheet.update(f"F{start_row + increment}", data.aspect_data.aspect_plays[aspect].plays)
+                increment += 1
+                sheet.update(f"E{start_row + increment}", f"{aspect} Wins")
+                sheet.update(f"F{start_row + increment}", data.aspect_data.aspect_plays[aspect].wins)
+                increment += 1
+                sheet.update(f"E{start_row + increment}", f"{aspect} Win %")
+                sheet.format(f"F{start_row + increment}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
+                sheet.update(f"F{start_row + increment}", data.aspect_data.aspect_plays[aspect].win_percentage)
+                increment += 1
 
 
     

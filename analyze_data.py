@@ -33,6 +33,13 @@ def find_diff_data(play_data_new, play_data_old):
 
     return (set(villains), set(heroes))
 
+class AspectPlayData:
+    
+    def __init__(self):
+        self.plays = 0
+        self.wins = 0
+        self.win_percentage = 0
+
 class AspectSpecificStats:
 
     def __init__(self, name):
@@ -88,129 +95,48 @@ class AspectSpecificStats:
 
 class AspectData:
     def __init__(self):
-        self.leadership_plays = 0
-        self.leadership_wins = 0
-        self.leadership_win_percentage = 0
-        self.justice_plays = 0
-        self.justice_wins = 0
-        self.justice_win_percentage = 0
-        self.protection_plays = 0
-        self.protection_wins = 0
-        self.protection_win_percentage = 0
-        self.aggression_plays = 0
-        self.aggression_wins = 0
-        self.aggression_win_percentage = 0
-        self.basic_plays = 0
-        self.basic_wins = 0
-        self.basic_win_percentage = 0
-        self.bgg_format = True
+        self.aspect_plays = { x:AspectPlayData() for x in aspects}
 
-    def add_play(self, play, this_was_a_win, hero):
-        if hero == "Adam Warlock":
+    def add_play(self, play, this_was_a_win):
+        if play["Hero"] == "Adam Warlock":
             if "basic" in play["Aspect"].lower():
-                self.basic_plays +=1
-                self.basic_wins += this_was_a_win
+                self.aspect_plays["Basic"].plays +=1
+                self.aspect_plays["Basic"].wins += this_was_a_win
             else:
-                self.justice_plays += 1
-                self.justice_wins += this_was_a_win
-                self.protection_plays += 1
-                self.protection_wins += this_was_a_win
-                self.aggression_plays += 1
-                self.aggression_wins += this_was_a_win
-                self.leadership_plays += 1
-                self.leadership_wins += this_was_a_win
+                self.aspect_plays["Justice"].plays +=1
+                self.aspect_plays["Justice"].wins += this_was_a_win
+                self.aspect_plays["Leadership"].plays +=1
+                self.aspect_plays["Leadership"].wins += this_was_a_win
+                self.aspect_plays["Protection"].plays +=1
+                self.aspect_plays["Protection"].wins += this_was_a_win
+                self.aspect_plays["Aggression"].plays +=1
+                self.aspect_plays["Aggression"].wins += this_was_a_win
+        elif play["Hero"] == "Spider Woman":
+            if "Justice" in play["Aspect"]:
+                self.aspect_plays["Justice"].plays +=1
+                self.aspect_plays["Justice"].wins += this_was_a_win
+            if "Aggression" in play["Aspect"]:
+                self.aspect_plays["Aggression"].plays +=1
+                self.aspect_plays["Aggression"].wins += this_was_a_win
+            if "Leadership" in play["Aspect"]:
+                self.aspect_plays["Leadership"].plays +=1
+                self.aspect_plays["Leadership"].wins += this_was_a_win
+            if "Protection" in play["Aspect"]:
+                self.aspect_plays["Protection"].plays +=1
+                self.aspect_plays["Protection"].wins += this_was_a_win
+            if "Basic" in play["Aspect"]:
+                self.aspect_plays["Basic"].plays +=1
+                self.aspect_plays["Basic"].wins += this_was_a_win
         else:
-            if "justice" in play["Aspect"].lower():
-                self.justice_plays += 1
-                self.justice_wins += this_was_a_win
-            if "protection" in play["Aspect"].lower():
-                self.protection_plays += 1
-                self.protection_wins += this_was_a_win
-            if "aggression" in play["Aspect"].lower():
-                self.aggression_plays += 1
-                self.aggression_wins += this_was_a_win
-            if "leadership" in play["Aspect"].lower():
-                self.leadership_plays += 1
-                self.leadership_wins += this_was_a_win
-            if "basic" in play["Aspect"].lower():
-                self.basic_plays += 1
-                self.basic_wins += this_was_a_win
+            self.aspect_plays[play["Aspect"].strip()].plays +=1
+            self.aspect_plays[play["Aspect"].strip()].wins += this_was_a_win
 
-    def calculate_percentages(self, bgg_format=True):
-        self.bgg_format = bgg_format
-        if self.leadership_plays:
-            self.leadership_win_percentage = self.leadership_wins/self.leadership_plays
-        if self.justice_plays:
-            self.justice_win_percentage = self.justice_wins/self.justice_plays
-        if self.protection_plays:
-            self.protection_win_percentage = self.protection_wins/self.protection_plays
-        if self.basic_plays:
-            self.basic_win_percentage = self.basic_wins/self.basic_plays
-        if self.aggression_plays:
-            self.aggression_win_percentage = self.aggression_wins/self.aggression_plays
+    def calculate_percentages(self):
+        for aspect in self.aspect_plays.keys():
+            if(self.aspect_plays[aspect].plays > 0):
+                self.aspect_plays[aspect].win_percentage = self.aspect_plays[aspect].wins / self.aspect_plays[aspect].plays
 
-    def smarter_string(self):
-        smart_string = "\n[b]Aspect Data:[/b]"
-        if(self.leadership_plays > 0):
-            if self.bgg_format:
-                smart_string += f"\n[b][COLOR=#00CCCC]Leadership Plays: {self.leadership_plays}"
-            else:
-                smart_string += f"\nLeadership Plays: {self.leadership_plays}"
-            smart_string += f"\nLeadership Wins: {self.leadership_wins}"
-            smart_string += f"\nLeadership Win %: {self.leadership_win_percentage:.1%}"
-            if self.bgg_format:
-                smart_string += f"[/COLOR][/b]"
-            else:
-                smart_string += f""
 
-        if(self.aggression_plays > 0):
-            if self.bgg_format:
-                smart_string += f"\n[b][COLOR=#FF0000]Aggression Plays: {self.aggression_plays}"
-            else:
-                smart_string += f"\nAggression Plays: {self.aggression_plays}"
-            smart_string += f"\nAggression Wins: {self.aggression_wins}"
-            smart_string += f"\nAggression Win %: {self.aggression_win_percentage:.1%}"
-            if self.bgg_format:
-                smart_string += f"[/COLOR][/b]"
-            else:
-                smart_string += f""
-        if(self.justice_plays > 0):
-            if self.bgg_format:
-                smart_string += f"\n[b][BGCOLOR=#003399][COLOR=#FFFF00]Justice Plays: {self.justice_plays}"
-            else:
-                smart_string += f"\nJustice Plays: {self.justice_plays}"
-            smart_string += f"\nJustice Wins: {self.justice_wins}"
-            smart_string += f"\nJustice Win %: {self.justice_win_percentage:.1%}"
-            if self.bgg_format:
-                smart_string += f"[/COLOR][/BGCOLOR][/b]"
-            else:
-                smart_string += f""
-        if(self.protection_plays > 0):
-            if self.bgg_format:
-                smart_string += f"\n[b][COLOR=#00FF33]Protection Plays: {self.protection_plays}"
-            else:
-                smart_string += f"\nProtection Plays: {self.protection_plays}"
-            smart_string += f"\nProtection Wins: {self.protection_wins}"
-            smart_string += f"\nProtection Win %: {self.protection_win_percentage:.1%}"
-            if self.bgg_format:
-                smart_string += f"[/COLOR][/b]"
-            else:
-                smart_string += f""
-        if(self.basic_plays > 0):
-            if self.bgg_format:
-                smart_string += f"\n[b][COLOR=#808080]All Basic Plays: {self.basic_plays}"
-            else:
-                smart_string += f"\nAll Basic Plays: {self.basic_plays}"
-            smart_string += f"\nAll Basic Wins: {self.basic_wins}"
-            smart_string += f"\nAll Basic Win %: {self.basic_win_percentage:.1%}"
-            if self.bgg_format:
-                smart_string += f"[/COLOR][/b]"
-            else:
-                smart_string += f""
-        return smart_string
-
-    def __repr__(self):
-        return (self.smarter_string())
 
 
 class HeroBase:
@@ -233,7 +159,7 @@ class HeroBase:
         self.total_plays += 1
         this_was_a_win = hero["Win"]
         self.total_wins += this_was_a_win
-        self.aspect_data.add_play(hero, this_was_a_win, self.name)
+        self.aspect_data.add_play(hero, this_was_a_win)
         self.difficulty_data.add_play(full_play, this_was_a_win)
         self.villains_played.add(full_play["Villain"])
         if this_was_a_win:
@@ -241,27 +167,11 @@ class HeroBase:
         self.villains_not_played = VILLAIN_DATA_SET.difference(self.villains_played)
         self.villains_not_defeated = self.villains_played.difference(self.villains_defeated)
 
-
-    def smarter_string(self):
-        smart_string = ("[b]Overall Data[/b]" +
-                        f"\nTotal Plays: {self.total_plays}" +
-                        f"\nTotal Wins: {self.total_wins}" +
-                        f"\nTotal Win  %: {self.win_percentage:.1%}" +
-                        "\n[b]Difficulty Data:[/b]")
-        smart_string += self.difficulty_data.smarter_string()
-        smart_string += self.aspect_data.smarter_string()
-        smart_string += (f"\nVillains Unplayed: {len(self.villains_not_played)}\n {str(self.villains_not_played)}")
-        return smart_string
-
-    def __repr__(self):
-        return (self.smarter_string())
-
-
-    def calculate_percentages(self, bgg_format=True):
+    def calculate_percentages(self):
         if self.total_plays:
             self.win_percentage = self.total_wins/self.total_plays
-        self.aspect_data.calculate_percentages(bgg_format)
-        self.difficulty_data.calculate_percentages(bgg_format)
+        self.aspect_data.calculate_percentages()
+        self.difficulty_data.calculate_percentages()
         
 class HeroData(HeroBase):
     def __init__(self, hero, traits="Avenger"):
@@ -284,7 +194,6 @@ class HeroData(HeroBase):
 class TeamData(HeroBase):
     def __init__(self, team):
         super().__init__(team)
-
 
 class DifficultyStats:
     def __init__(self):
@@ -333,8 +242,7 @@ class DifficultyStats:
             self.heroic_plays += 1
             self.heroic_wins += this_was_a_win
 
-    def calculate_percentages(self, bgg_format=True):
-        self.bgg_format = bgg_format
+    def calculate_percentages(self):
         if self.expert1_plays:
             self.expert1_win_percentage = self.expert1_wins/self.expert1_plays
         if self.expert2_plays:
@@ -350,40 +258,6 @@ class DifficultyStats:
         if self.heroic_plays:
             self.heroic_win_percentage = self.heroic_wins/self.heroic_plays
 
-    def smarter_string(self):
-        smart_string = ""
-        if(self.expert1_plays > 0):
-            smart_string += f"\nS1E1 Plays: {self.expert1_plays}"
-            smart_string += f"\nS1E1 Wins: {self.expert1_wins}"
-            smart_string += f"\nS1E1 Wins %: {self.expert1_win_percentage:.1%}"
-        if(self.expert2_plays > 0):
-            smart_string += f"\nS1E2 Plays: {self.expert2_plays}"
-            smart_string += f"\nS1E2 Wins: {self.expert2_wins}"
-            smart_string += f"\nS1E2 Wins %: {self.expert2_win_percentage:.1%}"
-        if(self.expert3_plays > 0):
-            smart_string += f"\nS2E1 Plays: {self.expert3_plays}"
-            smart_string += f"\nS2E1 Wins: {self.expert3_wins}"
-            smart_string += f"\nS2E1 Wins %: {self.expert3_win_percentage:.1%}"
-        if(self.expert4_plays > 0):
-            smart_string += f"\nS2E2 Plays: {self.expert4_plays}"
-            smart_string += f"\nS2E2 Wins: {self.expert4_wins}"
-            smart_string += f"\nS2E2 Wins %: {self.expert4_win_percentage:.1%}"
-        if(self.standard1_plays > 0):
-            smart_string += f"\nS1 Plays: {self.standard1_plays}"
-            smart_string += f"\nS1 Wins: {self.standard1_wins}"
-            smart_string += f"\nS1 Wins %: {self.standard1_win_percentage:.1%}"
-        if(self.standard2_plays > 0):
-            smart_string += f"\nS2 Plays: {self.standard2_plays}"
-            smart_string += f"\nS2 Wins: {self.standard2_wins}"
-            smart_string += f"\nS2 Wins %: {self.standard2_win_percentage:.1%}"
-        if(self.heroic_plays > 0):
-            smart_string += f"\nHeroic Plays: {self.heroic_plays}"
-            smart_string += f"\nHeroic Wins: {self.heroic_wins}"
-            smart_string += f"\nHeroic Wins %: {self.heroic_win_percentage:.1%}"
-        return smart_string
-
-    def __repr__(self):
-        return (self.smarter_string())
 
 class VillainBase:
     def __init__(self, name):
@@ -402,23 +276,16 @@ class VillainBase:
         self.total_wins += this_was_a_win
         self.difficulty_data.add_play(play, this_was_a_win)
         for hero_play in play["Heroes"]:
-            self.aspect_data.add_play(hero_play, this_was_a_win, hero_play["Hero"])
+            self.aspect_data.add_play(hero_play, this_was_a_win)
             self.heroes_played.add(hero_play["Hero"])
             self.heroes_not_played = HERO_DATA_SET.difference(self.heroes_played)
 
-    def __repr__(self):
-        return (f"Total Plays: {self.total_plays}" +
-        f"\nTotal Wins: {self.total_wins}" +
-        f"\nTotal Win  %: {self.win_percentage:.1%}" +
-        self.difficulty_data.__repr__() +
-        self.aspect_data.__repr__() + 
-        f"\nHeroes Unplayed: {len(self.heroes_not_played)}\n{str(self.heroes_not_played)}")
 
-    def calculate_percentages(self, bgg_format=True):
+    def calculate_percentages(self):
         if self.total_plays:
             self.win_percentage = self.total_wins/self.total_plays
-        self.difficulty_data.calculate_percentages(bgg_format)
-        self.aspect_data.calculate_percentages(bgg_format)
+        self.difficulty_data.calculate_percentages()
+        self.aspect_data.calculate_percentages()
 
 class VillainData(VillainBase):
     def __init__(self, name, expansion="Core Set"):
@@ -452,28 +319,16 @@ class OverallData:
         self.aspect_data = AspectData()
         self.difficulty_data = DifficultyStats()
 
-    def calculate_percentages(self, bgg_format=True):
+    def calculate_percentages(self):
         if self.overall_plays:
             self.overall_win_percentage = self.overall_wins/self.overall_plays
-        self.difficulty_data.calculate_percentages(bgg_format)
-        self.aspect_data.calculate_percentages(bgg_format)
+        self.difficulty_data.calculate_percentages()
+        self.aspect_data.calculate_percentages()
         return None
 
 
-    def __repr__(self):
-        return ("[b]Overall Data[/b][b]" +
-        f"\nTotal Plays: {self.overall_plays}" +
-        f"\nTotal Wins: {self.overall_wins}" +
-        f"\nTotal Win  %: {self.overall_win_percentage:.1%}" +
-        f"\nTotal True Solo Plays: {self.overall_true_solo_plays}" +
-        f"\nTotal Multihanded Solo Plays: {self.overall_solo_plays}" +
-        f"\nTotal Multiplayer Plays: {self.overall_multi_plays}" +
-        "\n[b]Difficulty Data:[/b]" +
-        self.difficulty_data.__repr__() +
-        self.aspect_data.__repr__())
 
-
-    def analyze_overall_data(self,bgg_format=True):
+    def analyze_overall_data(self):
         """
         Main function to analyze the overall data
         """
@@ -490,10 +345,10 @@ class OverallData:
 
             self.difficulty_data.add_play(play, this_was_a_win)
             for hero in play["Heroes"]:
-                self.aspect_data.add_play(hero, this_was_a_win, hero["Hero"])
+                self.aspect_data.add_play(hero, this_was_a_win)
 
 
-        self.calculate_percentages(bgg_format)
+        self.calculate_percentages()
 
 
 
@@ -560,53 +415,18 @@ class Statistics:
                 self.hero_data[hero["Hero"]].add_play(hero, play)
 
         for hero in self.hero_data:
-            self.hero_data[hero].calculate_percentages(self.bgg_format)
+            self.hero_data[hero].calculate_percentages()
             for aspect in self.aspect_specific_data:
-                if aspect == "Justice":
-                    self.aspect_specific_data[aspect].add_hero(hero,
-                                                               self.hero_data[hero].aspect_data.justice_plays,
-                                                               self.hero_data[hero].aspect_data.justice_win_percentage)
-                elif aspect == "Leadership":
-                    self.aspect_specific_data[aspect].add_hero(hero,
-                                                               self.hero_data[hero].aspect_data.leadership_plays,
-                                                               self.hero_data[hero].aspect_data.leadership_win_percentage)
-                elif aspect == "Aggression":
-                    self.aspect_specific_data[aspect].add_hero(hero,
-                                                               self.hero_data[hero].aspect_data.aggression_plays,
-                                                               self.hero_data[hero].aspect_data.aggression_win_percentage)
-                elif aspect == "Protection":
-                    self.aspect_specific_data[aspect].add_hero(hero,
-                                                               self.hero_data[hero].aspect_data.protection_plays,
-                                                               self.hero_data[hero].aspect_data.protection_win_percentage)
-                elif aspect == "Basic":
-                    self.aspect_specific_data[aspect].add_hero(hero,
-                                                               self.hero_data[hero].aspect_data.basic_plays,
-                                                               self.hero_data[hero].aspect_data.basic_win_percentage)
+                self.aspect_specific_data[aspect].add_hero(hero,
+                                                            self.hero_data[hero].aspect_data.aspect_plays[aspect].plays,
+                                                            self.hero_data[hero].aspect_data.aspect_plays[aspect].win_percentage)
 
         for team in self.team_data:
-            self.team_data[team].calculate_percentages(self.bgg_format)
+            self.team_data[team].calculate_percentages()
             for aspect in self.aspect_specific_data:
-                if aspect == "Justice":
-                    self.aspect_specific_data[aspect].add_team(team,
-                                                               self.team_data[team].aspect_data.justice_plays,
-                                                               self.team_data[team].aspect_data.justice_win_percentage)
-                elif aspect == "Leadership":
-                    self.aspect_specific_data[aspect].add_team(team,
-                                                               self.team_data[team].aspect_data.leadership_plays,
-                                                               self.team_data[team].aspect_data.leadership_win_percentage)
-                elif aspect == "Aggression":
-                    self.aspect_specific_data[aspect].add_team(team,
-                                                               self.team_data[team].aspect_data.aggression_plays,
-                                                               self.team_data[team].aspect_data.aggression_win_percentage)
-                elif aspect == "Protection":
-                    self.aspect_specific_data[aspect].add_team(team,
-                                                               self.team_data[team].aspect_data.protection_plays,
-                                                               self.team_data[team].aspect_data.protection_win_percentage)
-                elif aspect == "Basic":
-                    self.aspect_specific_data[aspect].add_team(team,
-                                                               self.team_data[team].aspect_data.basic_plays,
-                                                               self.team_data[team].aspect_data.basic_win_percentage)
-
+                self.aspect_specific_data[aspect].add_team(team,
+                                                            self.team_data[team].aspect_data.aspect_plays[aspect].plays,
+                                                            self.team_data[team].aspect_data.aspect_plays[aspect].win_percentage)
     def generate_team_plays(self):
         team_play_list = [ (x, self.team_data[x].total_plays) for x in self.team_data.keys()]
         self.sorted_team_list = sorted(team_play_list, key=lambda x: x[1], reverse=True)
@@ -622,34 +442,17 @@ class Statistics:
             self.villain_data[play["Villain"]].add_play(play)
 
         for villain in self.villain_data:
-            self.villain_data[villain].calculate_percentages(self.bgg_format)
+            self.villain_data[villain].calculate_percentages()
             for aspect in self.aspect_specific_data:
-                if aspect == "Justice":
-                    self.aspect_specific_data[aspect].add_villain(villain,
-                                                               self.villain_data[villain].aspect_data.justice_plays,
-                                                               self.villain_data[villain].aspect_data.justice_win_percentage)
-                elif aspect == "Leadership":
-                    self.aspect_specific_data[aspect].add_villain(villain,
-                                                               self.villain_data[villain].aspect_data.leadership_plays,
-                                                               self.villain_data[villain].aspect_data.leadership_win_percentage)
-                elif aspect == "Aggression":
-                    self.aspect_specific_data[aspect].add_villain(villain,
-                                                               self.villain_data[villain].aspect_data.aggression_plays,
-                                                               self.villain_data[villain].aspect_data.aggression_win_percentage)
-                elif aspect == "Protection":
-                    self.aspect_specific_data[aspect].add_villain(villain,
-                                                               self.villain_data[villain].aspect_data.protection_plays,
-                                                               self.villain_data[villain].aspect_data.protection_win_percentage)
-                elif aspect == "Basic":
-                    self.aspect_specific_data[aspect].add_villain(villain,
-                                                               self.villain_data[villain].aspect_data.basic_plays,
-                                                               self.villain_data[villain].aspect_data.basic_win_percentage)
+                self.aspect_specific_data[aspect].add_villain(villain,
+                                                            self.villain_data[villain].aspect_data.aspect_plays[aspect].plays,
+                                                            self.villain_data[villain].aspect_data.aspect_plays[aspect].win_percentage)
 
         for big_box in self.big_box_data:
-            self.big_box_data[big_box].calculate_percentages(self.bgg_format)
+            self.big_box_data[big_box].calculate_percentages()
 
         for scenario_pack in self.scenario_pack_data:
-            self.scenario_pack_data[scenario_pack].calculate_percentages(self.bgg_format)
+            self.scenario_pack_data[scenario_pack].calculate_percentages()
 
 
     def calculate_h_indices(self):
@@ -667,44 +470,16 @@ class Statistics:
 
         return None
 
-    def __repr__(self):
-        repr_string = "===========================================================\n"
-        repr_string += self.overall_data.__repr__() + "\n"
-        repr_string += "===========================================================\n"
-        repr_string += self.print_team_plays() + "\n"
-        repr_string += "===========================================================\n"
-        repr_string += f"Hero H-Index: {self.hero_h_index}   Villain H-Index: {self.villain_h_index}\n"
-        repr_string += "===========================================================\n"
-        for i, hero in enumerate(self.sorted_heroes):
-            if hero[1].total_plays > 0:
-                repr_string += f"{i+1}. " + hero[1].name + "\n"
-                repr_string += hero[1].__repr__() + "\n"
-                repr_string += "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"
-        for j, villain in enumerate(self.sorted_villains):
-            if villain[1].total_plays > 0:
-                repr_string += f"{j+1}. " + villain[1].name + "\n"
-                repr_string += villain[1].__repr__() + "\n"
-                repr_string += "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"
-        return repr_string
 
 
 
 
-    def analyze_play_data(self, bgg_format=True):
+    def analyze_play_data(self):
         self.overall_data.analyze_overall_data()
 
         #get the total plays for each aspect
         for aspect in self.aspect_specific_data.keys():
-            if aspect == "Justice":
-                self.aspect_specific_data[aspect].total_plays = self.overall_data.aspect_data.justice_plays
-            elif aspect == "Leadership":
-                self.aspect_specific_data[aspect].total_plays = self.overall_data.aspect_data.leadership_plays
-            elif aspect == "Protection":
-                self.aspect_specific_data[aspect].total_plays = self.overall_data.aspect_data.protection_plays
-            elif aspect == "Aggression":
-                self.aspect_specific_data[aspect].total_plays = self.overall_data.aspect_data.aggression_plays
-            elif aspect == "Basic":
-                self.aspect_specific_data[aspect].total_plays = self.overall_data.aspect_data.basic_plays
+            self.aspect_specific_data[aspect].total_plays = self.overall_data.aspect_data.aspect_plays[aspect].plays
 
         self.analyze_hero_data()
         self.analyze_villain_data()

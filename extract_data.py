@@ -71,6 +71,29 @@ def clean_up_hero_name(hero_name):
         return hero_name
 
 
+def clean_up_aspect(aspect):
+    aspect = aspect.capitalize()
+    if aspect == "Jusitce":
+        aspect = "Justice"
+    elif aspect == "Prtotection":
+        aspect = "Protection"
+    elif aspect == "Blue":
+        aspect = "Leadership"
+    elif aspect == "Aggressio":
+        aspect = "Aggression"
+    elif aspect == "Agression":
+        aspect = "Aggression"
+    elif aspect == "Aggresion":
+        aspect = "Aggression"
+    elif aspect == "Red":
+        aspect = "Aggression"
+    elif aspect == "Yellow":
+        aspect = "Justice"
+    elif aspect == "Green":
+        aspect = "Protection"
+    elif aspect == "Gray" or aspect == "Grey":
+        aspect = "Basic"
+    return aspect
 
 
 #walk the list of pages and return a list of all the marvel champions play data
@@ -84,7 +107,7 @@ def extract_marvel_champions_play_data(xml_play_data, user):
     play_data["Multiplayer"] = False
     play_data["True_Solo"] = True
     for player in xml_play_data.find("players").findall("./player"):
-        hero_list.append({"Hero":clean_up_hero_name(player.attrib["startposition"].lower().rstrip().strip()), "Aspect":player.attrib["color"], "Win":int(player.attrib["win"])})
+        hero_list.append({"Hero":clean_up_hero_name(player.attrib["startposition"].lower().rstrip().strip()), "Aspect":clean_up_aspect(player.attrib["color"]), "Win":int(player.attrib["win"])})
         player_count +=1
         if player.attrib["username"] != user:
             play_data["Multiplayer"] = True
