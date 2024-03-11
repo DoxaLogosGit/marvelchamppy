@@ -112,19 +112,19 @@ class AspectData:
                 self.aspect_plays["Aggression"].plays +=1
                 self.aspect_plays["Aggression"].wins += this_was_a_win
         elif play["Hero"] == "Spider Woman":
-            if "Justice" in play["Aspect"]:
+            if "justice" in play["Aspect"].lower():
                 self.aspect_plays["Justice"].plays +=1
                 self.aspect_plays["Justice"].wins += this_was_a_win
-            if "Aggression" in play["Aspect"]:
+            if "aggression" in play["Aspect"].lower():
                 self.aspect_plays["Aggression"].plays +=1
                 self.aspect_plays["Aggression"].wins += this_was_a_win
-            if "Leadership" in play["Aspect"]:
+            if "leadership" in play["Aspect"].lower():
                 self.aspect_plays["Leadership"].plays +=1
                 self.aspect_plays["Leadership"].wins += this_was_a_win
-            if "Protection" in play["Aspect"]:
+            if "protection" in play["Aspect"].lower():
                 self.aspect_plays["Protection"].plays +=1
                 self.aspect_plays["Protection"].wins += this_was_a_win
-            if "Basic" in play["Aspect"]:
+            if "basic" in play["Aspect"].lower():
                 self.aspect_plays["Basic"].plays +=1
                 self.aspect_plays["Basic"].wins += this_was_a_win
         else:

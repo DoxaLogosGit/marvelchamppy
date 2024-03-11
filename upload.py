@@ -114,7 +114,7 @@ class UploadData:
         start_row = 2
         increment = 0
         for aspect in data.aspect_data.aspect_plays.keys():
-            if data.aspect_data.aspect_plays[aspect] > 0:
+            if data.aspect_data.aspect_plays[aspect].plays > 0:
                 sheet.update(f"E{start_row + increment}", f"{aspect} Plays")
                 sheet.update(f"F{start_row + increment}", data.aspect_data.aspect_plays[aspect].plays)
                 increment += 1

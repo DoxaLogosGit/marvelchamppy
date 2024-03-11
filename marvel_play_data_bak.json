@@ -264,7 +264,7 @@
     "Difficulty": "S1",
     "Heroes": [
       {
-        "Aspect": "Jusitce",
+        "Aspect": "Justice",
         "Hero": "She-Hulk",
         "Win": 0
       }
@@ -499,7 +499,7 @@
     "Difficulty": "S1",
     "Heroes": [
       {
-        "Aspect": "Blue",
+        "Aspect": "Leadership",
         "Hero": "Captain America",
         "Win": 1
       }
@@ -609,7 +609,7 @@
     "Difficulty": "S1",
     "Heroes": [
       {
-        "Aspect": "Yellow",
+        "Aspect": "Justice",
         "Hero": "Black Widow",
         "Win": 0
       }
@@ -1779,7 +1779,7 @@
     "Difficulty": "S1",
     "Heroes": [
       {
-        "Aspect": "Prtoection",
+        "Aspect": "Protection",
         "Hero": "Spider Man",
         "Win": 0
       }
@@ -1794,7 +1794,7 @@
     "Difficulty": "S1",
     "Heroes": [
       {
-        "Aspect": "Prtoection",
+        "Aspect": "Protection",
         "Hero": "Spider Man",
         "Win": 1
       }
@@ -1809,7 +1809,7 @@
     "Difficulty": "S1",
     "Heroes": [
       {
-        "Aspect": "Prtoection",
+        "Aspect": "Protection",
         "Hero": "Spider Man",
         "Win": 0
       }
@@ -2364,7 +2364,7 @@
     "Difficulty": "S1E1",
     "Heroes": [
       {
-        "Aspect": "Justice & Aggression",
+        "Aspect": "Justice & aggression",
         "Hero": "Spider Woman",
         "Win": 1
       }
@@ -2379,7 +2379,7 @@
     "Difficulty": "S1E1",
     "Heroes": [
       {
-        "Aspect": "Justice Aggression",
+        "Aspect": "Justice aggression",
         "Hero": "Spider Woman",
         "Win": 0
       }
@@ -2394,7 +2394,7 @@
     "Difficulty": "S1E1",
     "Heroes": [
       {
-        "Aspect": "Justice Aggression",
+        "Aspect": "Justice aggression",
         "Hero": "Spider Woman",
         "Win": 0
       }
@@ -2409,7 +2409,7 @@
     "Difficulty": "S1E1",
     "Heroes": [
       {
-        "Aspect": "Justice Aggression",
+        "Aspect": "Justice aggression",
         "Hero": "Spider Woman",
         "Win": 0
       }
@@ -2424,7 +2424,7 @@
     "Difficulty": "S1E1",
     "Heroes": [
       {
-        "Aspect": "Justice Aggression",
+        "Aspect": "Justice aggression",
         "Hero": "Spider Woman",
         "Win": 1
       }
@@ -2439,7 +2439,7 @@
     "Difficulty": "S1E1",
     "Heroes": [
       {
-        "Aspect": "Justice Aggression",
+        "Aspect": "Justice aggression",
         "Hero": "Spider Woman",
         "Win": 1
       }
@@ -2454,7 +2454,7 @@
     "Difficulty": "S1E1",
     "Heroes": [
       {
-        "Aspect": "Justice Aggression",
+        "Aspect": "Justice aggression",
         "Hero": "Spider Woman",
         "Win": 1
       }
@@ -4894,7 +4894,7 @@
     "Difficulty": "S1E1",
     "Heroes": [
       {
-        "Aspect": "Justice Aggression",
+        "Aspect": "Justice aggression",
         "Hero": "Spider Woman",
         "Win": 1
       }
@@ -5374,7 +5374,7 @@
     "Difficulty": "S1E1",
     "Heroes": [
       {
-        "Aspect": "Aggressio",
+        "Aspect": "Aggression",
         "Hero": "Rocket Raccoon",
         "Win": 1
       }
@@ -5899,7 +5899,7 @@
     "Difficulty": "S1",
     "Heroes": [
       {
-        "Aspect": "Aggressio",
+        "Aspect": "Aggression",
         "Hero": "Gamora",
         "Win": 1
       }
@@ -7104,7 +7104,7 @@
     "Difficulty": "S1E1",
     "Heroes": [
       {
-        "Aspect": "Aggresion",
+        "Aspect": "Aggression",
         "Hero": "Gamora",
         "Win": 0
       }
@@ -8364,7 +8364,7 @@
     "Difficulty": "S2",
     "Heroes": [
       {
-        "Aspect": "Agression",
+        "Aspect": "Aggression",
         "Hero": "Captain America",
         "Win": 1
       }
@@ -11364,7 +11364,7 @@
     "Difficulty": "S1E1",
     "Heroes": [
       {
-        "Aspect": "all",
+        "Aspect": "All",
         "Hero": "Adam Warlock",
         "Win": 1
       }
@@ -11439,7 +11439,7 @@
     "Difficulty": "S1E1",
     "Heroes": [
       {
-        "Aspect": "Aggression Protection",
+        "Aspect": "Aggression protection",
         "Hero": "Spider Woman",
         "Win": 0
       }
@@ -11454,7 +11454,7 @@
     "Difficulty": "S1E1",
     "Heroes": [
       {
-        "Aspect": "Aggression Protection",
+        "Aspect": "Aggression protection",
         "Hero": "Spider Woman",
         "Win": 0
       }
@@ -11469,7 +11469,7 @@
     "Difficulty": "S1E1",
     "Heroes": [
       {
-        "Aspect": "Aggression Protection",
+        "Aspect": "Aggression protection",
         "Hero": "Spider Woman",
         "Win": 0
       }
@@ -14148,5 +14148,20 @@
     "Multiplayer": false,
     "True_Solo": true,
     "Villain": "Drang"
+  },
+  {
+    "Date": "2024-03-10",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Quicksilver",
+        "Win": 1
+      }
+    ],
+    "Id": "82414743",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Thanos"
   }
 ]

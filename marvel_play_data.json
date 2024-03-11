@@ -2364,7 +2364,7 @@
     "Difficulty": "S1E1",
     "Heroes": [
       {
-        "Aspect": "Justice & Aggression",
+        "Aspect": "Justice & aggression",
         "Hero": "Spider Woman",
         "Win": 1
       }
@@ -2379,7 +2379,7 @@
     "Difficulty": "S1E1",
     "Heroes": [
       {
-        "Aspect": "Justice Aggression",
+        "Aspect": "Justice aggression",
         "Hero": "Spider Woman",
         "Win": 0
       }
@@ -2394,7 +2394,7 @@
     "Difficulty": "S1E1",
     "Heroes": [
       {
-        "Aspect": "Justice Aggression",
+        "Aspect": "Justice aggression",
         "Hero": "Spider Woman",
         "Win": 0
       }
@@ -2409,7 +2409,7 @@
     "Difficulty": "S1E1",
     "Heroes": [
       {
-        "Aspect": "Justice Aggression",
+        "Aspect": "Justice aggression",
         "Hero": "Spider Woman",
         "Win": 0
       }
@@ -2424,7 +2424,7 @@
     "Difficulty": "S1E1",
     "Heroes": [
       {
-        "Aspect": "Justice Aggression",
+        "Aspect": "Justice aggression",
         "Hero": "Spider Woman",
         "Win": 1
       }
@@ -2439,7 +2439,7 @@
     "Difficulty": "S1E1",
     "Heroes": [
       {
-        "Aspect": "Justice Aggression",
+        "Aspect": "Justice aggression",
         "Hero": "Spider Woman",
         "Win": 1
       }
@@ -2454,7 +2454,7 @@
     "Difficulty": "S1E1",
     "Heroes": [
       {
-        "Aspect": "Justice Aggression",
+        "Aspect": "Justice aggression",
         "Hero": "Spider Woman",
         "Win": 1
       }
@@ -4894,7 +4894,7 @@
     "Difficulty": "S1E1",
     "Heroes": [
       {
-        "Aspect": "Justice Aggression",
+        "Aspect": "Justice aggression",
         "Hero": "Spider Woman",
         "Win": 1
       }
@@ -11364,7 +11364,7 @@
     "Difficulty": "S1E1",
     "Heroes": [
       {
-        "Aspect": "all",
+        "Aspect": "All",
         "Hero": "Adam Warlock",
         "Win": 1
       }
@@ -11439,7 +11439,7 @@
     "Difficulty": "S1E1",
     "Heroes": [
       {
-        "Aspect": "Aggression Protection",
+        "Aspect": "Aggression protection",
         "Hero": "Spider Woman",
         "Win": 0
       }
@@ -11454,7 +11454,7 @@
     "Difficulty": "S1E1",
     "Heroes": [
       {
-        "Aspect": "Aggression Protection",
+        "Aspect": "Aggression protection",
         "Hero": "Spider Woman",
         "Win": 0
       }
@@ -11469,7 +11469,7 @@
     "Difficulty": "S1E1",
     "Heroes": [
       {
-        "Aspect": "Aggression Protection",
+        "Aspect": "Aggression protection",
         "Hero": "Spider Woman",
         "Win": 0
       }
@@ -14163,5 +14163,20 @@
     "Multiplayer": false,
     "True_Solo": true,
     "Villain": "Thanos"
+  },
+  {
+    "Date": "2024-03-11",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Wolverine",
+        "Win": 1
+      }
+    ],
+    "Id": "82435459",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Sandman"
   }
 ]

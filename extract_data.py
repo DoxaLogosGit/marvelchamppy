@@ -75,7 +75,7 @@ def clean_up_aspect(aspect):
     aspect = aspect.capitalize()
     if aspect == "Jusitce":
         aspect = "Justice"
-    elif aspect == "Prtotection":
+    elif aspect == "Prtoection":
         aspect = "Protection"
     elif aspect == "Blue":
         aspect = "Leadership"
