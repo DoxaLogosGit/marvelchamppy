@@ -14163,5 +14163,50 @@
     "Multiplayer": false,
     "True_Solo": true,
     "Villain": "Thanos"
+  },
+  {
+    "Date": "2024-03-11",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Wolverine",
+        "Win": 1
+      }
+    ],
+    "Id": "82435459",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Sandman"
+  },
+  {
+    "Date": "2024-03-11",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "X-23",
+        "Win": 0
+      }
+    ],
+    "Id": "82463039",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Hood"
+  },
+  {
+    "Date": "2024-03-12",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "X-23",
+        "Win": 1
+      }
+    ],
+    "Id": "82491597",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Morlock Siege"
   }
 ]

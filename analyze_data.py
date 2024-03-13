@@ -33,14 +33,14 @@ def find_diff_data(play_data_new, play_data_old):
 
     return (set(villains), set(heroes))
 
-class AspectPlayData:
+class PlayData:
     
     def __init__(self):
         self.plays = 0
         self.wins = 0
         self.win_percentage = 0
 
-class AspectSpecificStats:
+class PlaySpecificStats:
 
     def __init__(self, name):
         self.name = name
@@ -51,6 +51,12 @@ class AspectSpecificStats:
         self.villains = []
         self.teams = []
 
+    def set_total_plays(self, plays):
+        self.total_plays = plays
+        
+    def set_percent(self, percent):
+        self.minimum_play_percentage = percent
+        
     def add_villain(self, name, plays, win_percentage):
         if(plays >= round(self.total_plays * self.minimum_play_percentage)):
            #minimum criteria met so add them
@@ -109,7 +115,7 @@ class AspectSpecificStats:
            return self.villains[:num]
 class AspectData:
     def __init__(self):
-        self.aspect_plays = { x:AspectPlayData() for x in aspects}
+        self.aspect_plays = { x:PlayData() for x in aspects}
 
     def add_play(self, play, this_was_a_win):
         if play["Hero"] == "Adam Warlock":
@@ -324,18 +330,18 @@ class OverallData:
 
     def __init__(self, all_plays):
         self.all_plays = all_plays
-        self.overall_plays = len(all_plays)
-        self.overall_wins = 0
-        self.overall_win_percentage = 0
+        self.overall = PlayData()
+        self.overall.plays = len(all_plays)
         self.overall_solo_plays = 0
         self.overall_true_solo_plays = 0
         self.overall_multi_plays = 0
         self.aspect_data = AspectData()
         self.difficulty_data = DifficultyStats()
+        self.overall_specific_stats = PlaySpecificStats("Overall")
 
     def calculate_percentages(self):
-        if self.overall_plays:
-            self.overall_win_percentage = self.overall_wins/self.overall_plays
+        if self.overall.plays:
+            self.overall.win_percentage = self.overall.wins/self.overall.plays
         self.difficulty_data.calculate_percentages()
         self.aspect_data.calculate_percentages()
         return None
@@ -346,9 +352,11 @@ class OverallData:
         """
         Main function to analyze the overall data
         """
+        self.overall_specific_stats.set_total_plays(self.overall.plays)
+        self.overall_specific_stats.set_percent(0.02)
         for play in self.all_plays:
             this_was_a_win = play["Heroes"][0]["Win"]
-            self.overall_wins += this_was_a_win
+            self.overall.wins += this_was_a_win
 
             if play["Multiplayer"] == True:
                 self.overall_multi_plays += 1
@@ -375,7 +383,7 @@ BIG_BOX_INIT_DATA = {x:ExpansionData(x) for  x in BigBoxes}
 SCENARIO_PACK_INIT_DATA = {x:ExpansionData(x) for  x in ScenarioPacks}
 CORE_SET_INIT_DATA = {x:ExpansionData(x) for  x in CoreSet}
 TEAM_INIT_DATA = {x:TeamData(x) for  x in TeamTraits}
-ASPECT_SPECIFIC_INIT_DATA = {x:AspectSpecificStats(x) for x in aspects}
+ASPECT_SPECIFIC_INIT_DATA = {x:PlaySpecificStats(x) for x in aspects}
 
 class Statistics:
     def __init__(self, all_plays, bgg_format=True):
@@ -430,6 +438,9 @@ class Statistics:
 
         for hero in self.hero_data:
             self.hero_data[hero].calculate_percentages()
+            self.overall_data.overall_specific_stats.add_hero(hero,
+                                                        self.hero_data[hero].total_plays,
+                                                        self.hero_data[hero].win_percentage)
             for aspect in self.aspect_specific_data:
                 self.aspect_specific_data[aspect].add_hero(hero,
                                                             self.hero_data[hero].aspect_data.aspect_plays[aspect].plays,
@@ -437,6 +448,9 @@ class Statistics:
 
         for team in self.team_data:
             self.team_data[team].calculate_percentages()
+            self.overall_data.overall_specific_stats.add_team(team,
+                                                        self.team_data[team].total_plays,
+                                                        self.team_data[team].win_percentage)
             for aspect in self.aspect_specific_data:
                 self.aspect_specific_data[aspect].add_team(team,
                                                             self.team_data[team].aspect_data.aspect_plays[aspect].plays,
@@ -457,6 +471,9 @@ class Statistics:
 
         for villain in self.villain_data:
             self.villain_data[villain].calculate_percentages()
+            self.overall_data.overall_specific_stats.add_villain(villain,
+                                                        self.villain_data[villain].total_plays,
+                                                        self.villain_data[villain].win_percentage)
             for aspect in self.aspect_specific_data:
                 self.aspect_specific_data[aspect].add_villain(villain,
                                                             self.villain_data[villain].aspect_data.aspect_plays[aspect].plays,
@@ -493,7 +510,7 @@ class Statistics:
 
         #get the total plays for each aspect
         for aspect in self.aspect_specific_data.keys():
-            self.aspect_specific_data[aspect].total_plays = self.overall_data.aspect_data.aspect_plays[aspect].plays
+            self.aspect_specific_data[aspect].set_total_plays(self.overall_data.aspect_data.aspect_plays[aspect].plays)
 
         self.analyze_hero_data()
         self.analyze_villain_data()

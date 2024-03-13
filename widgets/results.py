@@ -2,7 +2,7 @@ from textual.app import ComposeResult
 from textual.reactive import reactive
 from textual.containers import Vertical, Horizontal
 from textual.widgets import Label, OptionList, Static
-from analyze_data import OverallData, AspectData, DifficultyStats, HeroBase, VillainBase, AspectSpecificStats
+from analyze_data import OverallData, AspectData, DifficultyStats, HeroBase, VillainBase, PlaySpecificStats
 from widgets.stats import SpecialPlays, AspectStats, DifficultyStatistics, TotalStats
 
 class Name(Static):
@@ -111,7 +111,7 @@ class VillainBaseResults(Static):
 
         
 class AspectSpecificResults(Static):
-    aspect_specific_stats: reactive[AspectSpecificStats] = reactive(AspectSpecificStats("Justice"))
+    aspect_specific_stats: reactive[PlaySpecificStats] = reactive(PlaySpecificStats("Justice"))
     name: reactive[str] = reactive("Justice")
 
     def compose(self) -> ComposeResult:
@@ -146,7 +146,7 @@ class AspectSpecificResults(Static):
 
 
 
-    def watch_aspect_specific_stats(self, old_specific: AspectSpecificStats, new_specific: AspectSpecificStats):
+    def watch_aspect_specific_stats(self, old_specific: PlaySpecificStats, new_specific: PlaySpecificStats):
         self.aspect_specific_stats = new_specific
         self.name = new_specific.name
         self.query_one("#aspect_name").who = self.name
@@ -229,6 +229,31 @@ class OverallResults(Static):
                                                                  multihanded_solo_plays=OverallResults.multihanded_solo_plays)
             yield AspectStats(id='overall_aspect').data_bind(aspect_data=OverallResults.aspect_data)
             yield DifficultyStatistics(id='overall_diff').data_bind(difficulty_data=OverallResults.difficulty_data)
+            with Horizontal(id="best_lists_labels"):
+                yield Label("Best 10 Heroes %", markup=True, classes="alistlabels")
+                yield Label("Best 10 Villlain %",markup=True, classes="alistlabels")
+                yield Label("Best 3 Teams %",markup=True, classes="alistlabels")
+            with Horizontal(id="best_lists"):
+                yield OptionList("Bad", "Good",id="best_hero_overall", classes="olists")
+                yield OptionList("Bad", "Good",id="best_villain_overall", classes="olists")
+                yield OptionList("Bad", "Good",id="best_team_overall", classes="olists")
+            with Horizontal(id="worst_lists_labels"):
+                yield Label("Worst 10 Heroes %", markup=True, classes="alistlabels")
+                yield Label("Worst 10 Villlain %",markup=True, classes="alistlabels")
+                yield Label("Worst 3 Teams %",markup=True, classes="alistlabels")
+            with Horizontal(id="worst_lists"):
+                yield OptionList("Bad", "Good",id="worst_hero_overall", classes="olists")
+                yield OptionList("Bad", "Good",id="worst_villain_overall", classes="olists")
+                yield OptionList("Bad", "Good",id="worst_team_overall", classes="olists")
+            with Horizontal(id="most_lists_labels"):
+                yield Label("10 Most Played Heroes", markup=True, classes="alistlabels")
+                yield Label("10 Most Played Villlain",markup=True, classes="alistlabels")
+                yield Label("3  Most Played Teams",markup=True, classes="alistlabels")
+            with Horizontal(id="most_lists"):
+                yield OptionList("Bad", "Good",id="most_hero_overall", classes="olists")
+                yield OptionList("Bad", "Good",id="most_villain_overall", classes="olists")
+                yield OptionList("Bad", "Good",id="most_team_overall", classes="olists")
+
             
     
     def watch_overall_data(self, old_overall_data : OverallData, new_overall_data : OverallData):
@@ -238,10 +263,63 @@ class OverallResults(Static):
         self.multihanded_solo_plays = new_overall_data.overall_solo_plays
         self.aspect_data = self.overall_data.aspect_data
         self.difficulty_data = self.overall_data.difficulty_data
-        self.total_plays = new_overall_data.overall_plays
-        self.total_wins = new_overall_data.overall_wins
-        self.total_win_percentage = new_overall_data.overall_win_percentage
+        self.total_plays = new_overall_data.overall.plays
+        self.total_wins = new_overall_data.overall.wins
+        self.total_win_percentage = new_overall_data.overall.win_percentage
         self.solo_plays = new_overall_data.overall_true_solo_plays
         self.multihanded_solo_plays = new_overall_data.overall_solo_plays
         self.multiplayer_plays = new_overall_data.overall_multi_plays
 
+        hlist = self.query_one("#best_hero_overall", OptionList)
+        hlist.clear_options()
+        hero_data = [f"{x["name"]} - {round(x["percent"]*100)}%" for x in self.overall_data.overall_specific_stats.get_best_x_heroes(10)]
+        hlist.add_options(hero_data)
+        hlist.highlighted = None
+
+        vlist = self.query_one("#best_villain_overall", OptionList)
+        vlist.clear_options()
+        villain_data = [f"{x["name"]} - {round(x["percent"]*100)}%" for x in self.overall_data.overall_specific_stats.get_best_x_villains(10)]
+        vlist.add_options(villain_data)
+        vlist.highlighted = None
+
+        tlist = self.query_one("#best_team_overall", OptionList)
+        tlist.clear_options()
+        team_data = [f"{x["name"]} - {round(x["percent"]*100)}%" for x in self.overall_data.overall_specific_stats.get_best_x_teams(3)]
+        tlist.add_options(team_data)
+        tlist.highlighted = None
+
+        hwlist = self.query_one("#worst_hero_overall", OptionList)
+        hwlist.clear_options()
+        whero_data = [f"{x["name"]} - {round(x["percent"]*100)}%" for x in self.overall_data.overall_specific_stats.get_worst_x_heroes(10)]
+        hwlist.add_options(whero_data)
+        hwlist.highlighted = None
+
+        vwlist = self.query_one("#worst_villain_overall", OptionList)
+        vwlist.clear_options()
+        wvillain_data = [f"{x["name"]} - {round(x["percent"]*100)}%" for x in self.overall_data.overall_specific_stats.get_worst_x_villains(10)]
+        vwlist.add_options(wvillain_data)
+        vwlist.highlighted = None
+
+        twlist = self.query_one("#worst_team_overall", OptionList)
+        twlist.clear_options()
+        wteam_data = [f"{x["name"]} - {round(x["percent"]*100)}%" for x in self.overall_data.overall_specific_stats.get_worst_x_teams(3)]
+        twlist.add_options(wteam_data)
+        twlist.highlighted = None
+
+        hmlist = self.query_one("#most_hero_overall", OptionList)
+        hmlist.clear_options()
+        mhero_data = [f"{x["name"]} - {x["plays"]} plays" for x in self.overall_data.overall_specific_stats.get_most_x_heroes(10)]
+        hmlist.add_options(mhero_data)
+        hmlist.highlighted = None
+
+        vmlist = self.query_one("#most_villain_overall", OptionList)
+        vmlist.clear_options()
+        mvillain_data = [f"{x["name"]} - {x["plays"]} plays" for x in self.overall_data.overall_specific_stats.get_most_x_villains(10)]
+        vmlist.add_options(mvillain_data)
+        vmlist.highlighted = None
+
+        tmlist = self.query_one("#most_team_overall", OptionList)
+        tmlist.clear_options()
+        mteam_data = [f"{x["name"]} - {x["plays"]} plays" for x in self.overall_data.overall_specific_stats.get_most_x_teams(3)]
+        tmlist.add_options(mteam_data)
+        tmlist.highlighted = None

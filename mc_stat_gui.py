@@ -3,7 +3,7 @@ from textual.app import App, ComposeResult
 from textual.containers import Horizontal
 from textual.reactive import reactive
 from textual.widgets import Header, Footer, Tree, ContentSwitcher
-from analyze_data import Statistics, HeroData, VillainData, OverallData, TeamData, ExpansionData, AspectSpecificStats
+from analyze_data import Statistics, HeroData, VillainData, OverallData, TeamData, ExpansionData, PlaySpecificStats
 from widgets.results import HeroBaseResults, VillainBaseResults, OverallResults, AspectSpecificResults
 
 
@@ -30,7 +30,7 @@ class MCStatApp(App):
     current_team : reactive[TeamData] = reactive(TeamData("Junker"))
     current_bigbox : reactive[ExpansionData] = reactive(ExpansionData("Junker"))
     current_pack : reactive[ExpansionData] = reactive(ExpansionData("Junker"))
-    current_aspect : reactive[AspectSpecificStats] = reactive(AspectSpecificStats("Justice"))
+    current_aspect : reactive[PlaySpecificStats] = reactive(PlaySpecificStats("Justice"))
 
     def compose(self) -> ComposeResult:
         yield Header()
