@@ -114,7 +114,7 @@ class UploadData:
         start_row = 2
         increment = 0
         for aspect in data.aspect_data.aspect_plays.keys():
-            if data.aspect_data.aspect_plays[aspect].plays > 0:
+            if data.aspect_data.aspect_plays[aspect].plays > 1:
                 sheet.update(f"E{start_row + increment}", f"{aspect} Plays")
                 sheet.update(f"F{start_row + increment}", data.aspect_data.aspect_plays[aspect].plays)
                 increment += 1
@@ -370,12 +370,12 @@ class UploadData:
         osheet.format("A1:Z1", {'textFormat': {'bold':True}, 'horizontalAlignment': "CENTER"})
         osheet.update("A1", "Overall")
         osheet.update("A2", "Total Plays")
-        osheet.update("B2", self.statistics.overall_data.overall_plays)
+        osheet.update("B2", self.statistics.overall_data.overall.plays)
         osheet.update("A3", "Total Wins")
-        osheet.update("B3", self.statistics.overall_data.overall_wins)
+        osheet.update("B3", self.statistics.overall_data.overall.wins)
         osheet.format("B4", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
         osheet.update("A4", "Win %")
-        osheet.update("B4", self.statistics.overall_data.overall_win_percentage)
+        osheet.update("B4", self.statistics.overall_data.overall.win_percentage)
         osheet.update("A5", "Total True Solo Plays")
         osheet.update("B5", self.statistics.overall_data.overall_true_solo_plays)
         osheet.update("A6", "Total Multihanded Solo Plays")
