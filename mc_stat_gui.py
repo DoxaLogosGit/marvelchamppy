@@ -5,7 +5,25 @@ from textual.reactive import reactive
 from textual.widgets import Header, Footer, Tree, ContentSwitcher
 from analyze_data import Statistics, HeroData, VillainData, OverallData, TeamData, ExpansionData, PlaySpecificStats
 from widgets.results import HeroBaseResults, VillainBaseResults, OverallResults, AspectSpecificResults
+from retrieve_data import retrieve_play_data_from_bgg
+from extract_data import find_the_marvel_champion_plays
 
+USER='DoxaLogos'
+
+def download_data():
+    print("Begin collecting data")
+    xml_data = retrieve_play_data_from_bgg(USER)
+    print("Done collecting data")
+
+    xml_string = "".join(xml_data)
+    with open("play_data.xml","w") as xml_play_data:
+        xml_play_data.write(xml_string)
+    print("Extracting data")
+    marvel_plays = find_the_marvel_champion_plays(xml_data, USER)
+
+    with open("marvel_play_data.json","w") as play_data:
+        play_data.write(json.dumps(marvel_plays, sort_keys=True, indent=2 * ' '))
+    return marvel_plays
 
 def read_data():
     marvel_plays = None
@@ -20,7 +38,9 @@ def read_data():
 class MCStatApp(App):
     """ A Textual app for my Marvel Champions stat tracking"""
 
-    BINDINGS = [("d", "toggle_dark", "Toggle Dark Mode")]
+    BINDINGS = [("t", "toggle_dark", "Toggle Dark Mode"), 
+                ("d", "download_stats", "Download Stats"), 
+                ("r", "reload_data", "Reload data")]
     CSS_PATH = "mc_stat_gui.tcss"
 
     statistics: reactive[Statistics] = reactive(read_data())
@@ -119,6 +139,13 @@ class MCStatApp(App):
     def action_toggle_dark(self) -> None:
         self.dark = not self.dark
         
+    def action_reload_data(self) -> None:
+        self.statistics = read_data()
+
+    def action_download_stats(self) -> None:
+        download_data()
+        self.statistics = read_data()
+
 if __name__ == "__main__":
     app = MCStatApp()
     app.run()
