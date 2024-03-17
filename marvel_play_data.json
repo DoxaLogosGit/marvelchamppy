@@ -14223,5 +14223,185 @@
     "Multiplayer": false,
     "True_Solo": true,
     "Villain": "Taskmaster"
+  },
+  {
+    "Date": "2024-03-13",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "X-23",
+        "Win": 0
+      }
+    ],
+    "Id": "82517687",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Juggernaut"
+  },
+  {
+    "Date": "2024-03-13",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "X-23",
+        "Win": 1
+      }
+    ],
+    "Id": "82518548",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Juggernaut"
+  },
+  {
+    "Date": "2024-03-14",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "X-23",
+        "Win": 1
+      }
+    ],
+    "Id": "82542810",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2024-03-14",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "X-23",
+        "Win": 0
+      }
+    ],
+    "Id": "82545320",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Green Goblin - Risky Business"
+  },
+  {
+    "Date": "2024-03-14",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "X-23",
+        "Win": 1
+      }
+    ],
+    "Id": "82545756",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Green Goblin - Risky Business"
+  },
+  {
+    "Date": "2024-03-14",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "X-23",
+        "Win": 1
+      }
+    ],
+    "Id": "82546810",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Project Wideawake"
+  },
+  {
+    "Date": "2024-03-15",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Angel",
+        "Win": 1
+      }
+    ],
+    "Id": "82579920",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Red Skull"
+  },
+  {
+    "Date": "2024-03-15",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Angel",
+        "Win": 1
+      }
+    ],
+    "Id": "82580965",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mysterio"
+  },
+  {
+    "Date": "2024-03-16",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Angel",
+        "Win": 1
+      }
+    ],
+    "Id": "82613488",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Project Wideawake"
+  },
+  {
+    "Date": "2024-03-16",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Angel",
+        "Win": 1
+      }
+    ],
+    "Id": "82617091",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Drang"
+  },
+  {
+    "Date": "2024-03-16",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Angel",
+        "Win": 0
+      }
+    ],
+    "Id": "82623195",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Magog"
+  },
+  {
+    "Date": "2024-03-16",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Angel",
+        "Win": 0
+      }
+    ],
+    "Id": "82625053",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Venom Villain"
   }
 ]

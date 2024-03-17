@@ -121,19 +121,19 @@ class AspectSpecificResults(Static):
                 yield Name(id="aspect_name").data_bind(who=AspectSpecificResults.name)
             with Horizontal(id="best_lists_labels"):
                 yield Label("Best 10 Heroes %", markup=True, classes="alistlabels")
-                yield Label("Best 10 Villlain %",markup=True, classes="alistlabels")
+                yield Label("Hardest 10 Villlain %",markup=True, classes="alistlabels")
                 yield Label("Best 3 Teams %",markup=True, classes="alistlabels")
             with Horizontal(id="best_lists"):
                 yield OptionList("Bad", "Good",id="best_hero_aspect", classes="olists")
-                yield OptionList("Bad", "Good",id="best_villain_aspect", classes="olists")
+                yield OptionList("Bad", "Good",id="hardest_villain_aspect", classes="olists")
                 yield OptionList("Bad", "Good",id="best_team_aspect", classes="olists")
             with Horizontal(id="worst_lists_labels"):
                 yield Label("Worst 10 Heroes %", markup=True, classes="alistlabels")
-                yield Label("Worst 10 Villlain %",markup=True, classes="alistlabels")
+                yield Label("Easiest 10 Villlain %",markup=True, classes="alistlabels")
                 yield Label("Worst 3 Teams %",markup=True, classes="alistlabels")
             with Horizontal(id="worst_lists"):
                 yield OptionList("Bad", "Good",id="worst_hero_aspect", classes="olists")
-                yield OptionList("Bad", "Good",id="worst_villain_aspect", classes="olists")
+                yield OptionList("Bad", "Good",id="easiest_villain_aspect", classes="olists")
                 yield OptionList("Bad", "Good",id="worst_team_aspect", classes="olists")
             with Horizontal(id="most_lists_labels"):
                 yield Label("10 Most Played Heroes", markup=True, classes="alistlabels")
@@ -157,7 +157,7 @@ class AspectSpecificResults(Static):
         hlist.add_options(hero_data)
         hlist.highlighted = None
 
-        vlist = self.query_one("#best_villain_aspect", OptionList)
+        vlist = self.query_one("#hardest_villain_aspect", OptionList)
         vlist.clear_options()
         villain_data = [f"{x["name"]} - {round(x["percent"]*100)}%" for x in self.aspect_specific_stats.get_best_x_villains(10)]
         vlist.add_options(villain_data)
@@ -175,7 +175,7 @@ class AspectSpecificResults(Static):
         hwlist.add_options(whero_data)
         hwlist.highlighted = None
 
-        vwlist = self.query_one("#worst_villain_aspect", OptionList)
+        vwlist = self.query_one("#easiest_villain_aspect", OptionList)
         vwlist.clear_options()
         wvillain_data = [f"{x["name"]} - {round(x["percent"]*100)}%" for x in self.aspect_specific_stats.get_worst_x_villains(10)]
         vwlist.add_options(wvillain_data)
@@ -231,19 +231,19 @@ class OverallResults(Static):
             yield DifficultyStatistics(id='overall_diff').data_bind(difficulty_data=OverallResults.difficulty_data)
             with Horizontal(id="best_lists_labels"):
                 yield Label("Best 10 Heroes %", markup=True, classes="alistlabels")
-                yield Label("Best 10 Villlain %",markup=True, classes="alistlabels")
+                yield Label("Hardest 10 Villlain %",markup=True, classes="alistlabels")
                 yield Label("Best 3 Teams %",markup=True, classes="alistlabels")
             with Horizontal(id="best_lists"):
                 yield OptionList("Bad", "Good",id="best_hero_overall", classes="olists")
-                yield OptionList("Bad", "Good",id="best_villain_overall", classes="olists")
+                yield OptionList("Bad", "Good",id="hardest_villain_overall", classes="olists")
                 yield OptionList("Bad", "Good",id="best_team_overall", classes="olists")
             with Horizontal(id="worst_lists_labels"):
                 yield Label("Worst 10 Heroes %", markup=True, classes="alistlabels")
-                yield Label("Worst 10 Villlain %",markup=True, classes="alistlabels")
+                yield Label("Easiest 10 Villlain %",markup=True, classes="alistlabels")
                 yield Label("Worst 3 Teams %",markup=True, classes="alistlabels")
             with Horizontal(id="worst_lists"):
                 yield OptionList("Bad", "Good",id="worst_hero_overall", classes="olists")
-                yield OptionList("Bad", "Good",id="worst_villain_overall", classes="olists")
+                yield OptionList("Bad", "Good",id="easiest_villain_overall", classes="olists")
                 yield OptionList("Bad", "Good",id="worst_team_overall", classes="olists")
             with Horizontal(id="most_lists_labels"):
                 yield Label("10 Most Played Heroes", markup=True, classes="alistlabels")
@@ -276,7 +276,7 @@ class OverallResults(Static):
         hlist.add_options(hero_data)
         hlist.highlighted = None
 
-        vlist = self.query_one("#best_villain_overall", OptionList)
+        vlist = self.query_one("#hardest_villain_overall", OptionList)
         vlist.clear_options()
         villain_data = [f"{x["name"]} - {round(x["percent"]*100)}%" for x in self.overall_data.overall_specific_stats.get_best_x_villains(10)]
         vlist.add_options(villain_data)
@@ -294,7 +294,7 @@ class OverallResults(Static):
         hwlist.add_options(whero_data)
         hwlist.highlighted = None
 
-        vwlist = self.query_one("#worst_villain_overall", OptionList)
+        vwlist = self.query_one("#easiest_villain_overall", OptionList)
         vwlist.clear_options()
         wvillain_data = [f"{x["name"]} - {round(x["percent"]*100)}%" for x in self.overall_data.overall_specific_stats.get_worst_x_villains(10)]
         vwlist.add_options(wvillain_data)

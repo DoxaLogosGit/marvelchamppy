@@ -1,8 +1,9 @@
 import simplejson as json
 from textual.app import App, ComposeResult
-from textual.containers import Horizontal
+from textual.containers import Horizontal, Vertical
 from textual.reactive import reactive
-from textual.widgets import Header, Footer, Tree, ContentSwitcher
+from textual.screen import ModalScreen
+from textual.widgets import Header, Footer, Tree, ContentSwitcher, LoadingIndicator, Label
 from analyze_data import Statistics, HeroData, VillainData, OverallData, TeamData, ExpansionData, PlaySpecificStats
 from widgets.results import HeroBaseResults, VillainBaseResults, OverallResults, AspectSpecificResults
 from retrieve_data import retrieve_play_data_from_bgg
@@ -35,6 +36,19 @@ def read_data():
     return statistics
 
 
+class Download(ModalScreen[Statistics]):
+
+    def compose(self) -> ComposeResult:
+        with Vertical(): 
+                yield Label("Downloading Data")
+                yield LoadingIndicator(id="load")
+    
+    def on_show(self) -> None:
+        download_data()
+        parsed_data = read_data()
+        self.dismiss(parsed_data)
+        
+
 class MCStatApp(App):
     """ A Textual app for my Marvel Champions stat tracking"""
 
@@ -43,7 +57,7 @@ class MCStatApp(App):
                 ("r", "reload_data", "Reload data")]
     CSS_PATH = "mc_stat_gui.tcss"
 
-    statistics: reactive[Statistics] = reactive(read_data())
+    statistics: reactive[Statistics] = reactive(read_data(), always_update=True)
     current_hero : reactive[HeroData] = reactive(HeroData("Gamora", "Guardian"))
     current_villain: reactive[VillainData] = reactive(VillainData("Rhino", "core"))
     overall_data : reactive[OverallData] = reactive(OverallData(""))
@@ -51,6 +65,8 @@ class MCStatApp(App):
     current_bigbox : reactive[ExpansionData] = reactive(ExpansionData("Junker"))
     current_pack : reactive[ExpansionData] = reactive(ExpansionData("Junker"))
     current_aspect : reactive[PlaySpecificStats] = reactive(PlaySpecificStats("Justice"))
+    downloading : reactive[bool] = reactive(False)
+
 
     def compose(self) -> ComposeResult:
         yield Header()
@@ -139,12 +155,13 @@ class MCStatApp(App):
     def action_toggle_dark(self) -> None:
         self.dark = not self.dark
         
-    def action_reload_data(self) -> None:
-        self.statistics = read_data()
-
     def action_download_stats(self) -> None:
-        download_data()
-        self.statistics = read_data()
+
+    #    def check_stats(stats: Statistics) -> None:
+    #        self.statistics = stats
+
+    #    self.push_screen(Download(), check_stats)
+        
 
 if __name__ == "__main__":
     app = MCStatApp()
