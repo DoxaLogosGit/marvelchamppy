@@ -53,8 +53,8 @@ class MCStatApp(App):
     """ A Textual app for my Marvel Champions stat tracking"""
 
     BINDINGS = [("t", "toggle_dark", "Toggle Dark Mode"), 
-                ("d", "download_stats", "Download Stats"), 
-                ("r", "reload_data", "Reload data")]
+                ("d", "download_stats", "Download Stats")] 
+    #            ("r", "reload_data", "Reload data")]
     CSS_PATH = "mc_stat_gui.tcss"
 
     statistics: reactive[Statistics] = reactive(read_data(), always_update=True)
@@ -161,7 +161,7 @@ class MCStatApp(App):
     #        self.statistics = stats
 
     #    self.push_screen(Download(), check_stats)
-        
+        pass
 
 if __name__ == "__main__":
     app = MCStatApp()
