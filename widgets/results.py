@@ -3,7 +3,7 @@ from textual.reactive import reactive
 from textual.containers import Vertical, Horizontal
 from textual.widgets import Label, OptionList, Static
 from analyze_data import OverallData, AspectData, DifficultyStats, HeroBase, VillainBase, PlaySpecificStats
-from widgets.stats import SpecialPlays, AspectStats, DifficultyStatistics, TotalStats
+from widgets.stats import SpecialPlays, AspectStats, DifficultyStatistics, TotalStats, HIndexStats
 
 class Name(Static):
      who = reactive("Name")
@@ -216,6 +216,8 @@ class OverallResults(Static):
     solo_plays : reactive[int] = reactive(0)
     multiplayer_plays : reactive[int] = reactive(0)
     multihanded_solo_plays : reactive[int] = reactive(0)
+    hero_h_index : reactive[int] = reactive(0)
+    villain_h_index : reactive[int] = reactive(0)
 
     def compose(self) -> ComposeResult:
         with Vertical(id="overall_results"):
@@ -227,6 +229,8 @@ class OverallResults(Static):
                 yield SpecialPlays(id="special_plays").data_bind(solo_plays=OverallResults.solo_plays,
                                                                  multiplayer_plays=OverallResults.multiplayer_plays,
                                                                  multihanded_solo_plays=OverallResults.multihanded_solo_plays)
+                yield HIndexStats(id="hindices").data_bind(hero_h_index=OverallResults.hero_h_index,
+                                                           villain_h_index=OverallResults.villain_h_index)
             yield AspectStats(id='overall_aspect').data_bind(aspect_data=OverallResults.aspect_data)
             yield DifficultyStatistics(id='overall_diff').data_bind(difficulty_data=OverallResults.difficulty_data)
             with Horizontal(id="best_lists_labels"):
@@ -269,6 +273,8 @@ class OverallResults(Static):
         self.solo_plays = new_overall_data.overall_true_solo_plays
         self.multihanded_solo_plays = new_overall_data.overall_solo_plays
         self.multiplayer_plays = new_overall_data.overall_multi_plays
+        self.hero_h_index = new_overall_data.hero_h_index
+        self.villain_h_index = new_overall_data.villain_h_index
 
         hlist = self.query_one("#best_hero_overall", OptionList)
         hlist.clear_options()

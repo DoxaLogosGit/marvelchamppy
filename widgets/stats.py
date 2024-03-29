@@ -45,6 +45,37 @@ class SpecialPlays(Static):
         if self.rmsp is not None:
             table.update_cell(self.rmsp,self.ct, self.multihanded_solo_plays)
 
+class HIndexStats(Static):
+    hero_h_index: reactive[int] = reactive(0)
+    villain_h_index: reactive[int] = reactive(0)
+    c1 = None
+    ct = None
+    rh = None
+    rv = None
+
+    def compose(self) -> ComposeResult:
+        yield DataTable(id = "hindex_data_table", show_cursor=False)
+
+    def on_mount(self) -> None:
+        table = self.query_one("#hindex_data_table")
+        self.c1 = table.add_column("H-Index:")
+        self.ct = table.add_column("      ")
+        self.rh = table.add_row("Heroes   -", self.hero_h_index)
+        self.rv = table.add_row("Villains - ", self.villain_h_index)
+
+    def watch_hero_h_index(self, old_hero_h_index, new_hero_h_index):
+        self.hero_h_index = new_hero_h_index
+        table = self.query_one("#hindex_data_table", DataTable)
+        if self.rh is not None:
+            table.update_cell(self.rh,self.ct, self.hero_h_index)
+
+    def watch_villain_h_index(self, old_villain_h_index, new_villain_h_index):
+        self.villain_h_index = new_villain_h_index
+        table = self.query_one("#hindex_data_table", DataTable)
+        if self.rv is not None:
+            table.update_cell(self.rv,self.ct, self.villain_h_index)
+
+
 
 class TotalStats(Static):
     total_plays: reactive[int] = reactive(0)

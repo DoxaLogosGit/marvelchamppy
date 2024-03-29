@@ -338,6 +338,8 @@ class OverallData:
         self.aspect_data = AspectData()
         self.difficulty_data = DifficultyStats()
         self.overall_specific_stats = PlaySpecificStats("Overall")
+        self.hero_h_index = 0
+        self.villain_h_index = 0
 
     def calculate_percentages(self):
         if self.overall.plays:
@@ -492,6 +494,7 @@ class Statistics:
         for i, h in enumerate(self.sorted_heroes):
             if self.hero_h_index < h[1].total_plays :
                 self.hero_h_index += 1
+        self.overall_data.hero_h_index = self.hero_h_index
 
         self.sorted_villains = sorted(self.villain_data.items(), key=lambda x: x[1].total_plays, reverse=True)
         self.sorted_percent_villains = sorted(self.villain_data.items(), key=lambda x: x[1].win_percentage, reverse=True)
@@ -499,6 +502,7 @@ class Statistics:
             if self.villain_h_index < h[1].total_plays :
                 self.villain_h_index += 1
 
+        self.overall_data.villain_h_index = self.villain_h_index
         return None
 
 

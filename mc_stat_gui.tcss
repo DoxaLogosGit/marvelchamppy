@@ -3,15 +3,21 @@
     height: 100%;
     width: 15%;
 }
-#overall_totals {
-    width: 25%;
-}
-#play_data {
-    height: 10%;
-}
 #hero_lists_labels {
     height: auto;
     background: red;
+}
+#overall_totals {
+    width: 33%;
+}
+#special_plays {
+    width: 33%;
+}
+#hindices {
+    width: 33%;
+}
+#play_data {
+    height: 10%;
 }
 
 .listlabels {
