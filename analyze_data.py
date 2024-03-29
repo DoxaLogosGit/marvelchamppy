@@ -46,7 +46,7 @@ class PlaySpecificStats:
         self.name = name
         self.total_plays = 0
         #this is used to filter out characters who only had 1 or 2 plays
-        self.minimum_play_percentage = 0.03
+        self.minimum_play_percentage = 0.02
         self.heroes = []
         self.villains = []
         self.teams = []
@@ -353,7 +353,7 @@ class OverallData:
         Main function to analyze the overall data
         """
         self.overall_specific_stats.set_total_plays(self.overall.plays)
-        self.overall_specific_stats.set_percent(0.02)
+        self.overall_specific_stats.set_percent(0.01)
         for play in self.all_plays:
             this_was_a_win = play["Heroes"][0]["Win"]
             self.overall.wins += this_was_a_win

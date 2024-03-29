@@ -57,7 +57,7 @@ class MCStatApp(App):
     #            ("r", "reload_data", "Reload data")]
     CSS_PATH = "mc_stat_gui.tcss"
 
-    statistics: reactive[Statistics] = reactive(read_data(), always_update=True)
+    statistics: reactive[Statistics] = reactive([], always_update=True)
     current_hero : reactive[HeroData] = reactive(HeroData("Gamora", "Guardian"))
     current_villain: reactive[VillainData] = reactive(VillainData("Rhino", "core"))
     overall_data : reactive[OverallData] = reactive(OverallData(""))
@@ -68,7 +68,9 @@ class MCStatApp(App):
     downloading : reactive[bool] = reactive(False)
 
 
+
     def compose(self) -> ComposeResult:
+        self.statistics = read_data()
         yield Header()
         with Horizontal(id="menu"):
             #create the tree
@@ -157,10 +159,10 @@ class MCStatApp(App):
         
     def action_download_stats(self) -> None:
 
-    #    def check_stats(stats: Statistics) -> None:
-    #        self.statistics = stats
+        def check_stats(stats: Statistics) -> None:
+            self.statistics = stats
 
-    #    self.push_screen(Download(), check_stats)
+        self.push_screen(Download(), check_stats)
         pass
 
 if __name__ == "__main__":

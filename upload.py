@@ -352,7 +352,11 @@ class UploadData:
                         psheet.update(f"{COLUMNS[column]}1", f"{villain}")
                     if hero_played == hero:
                        #found here, print x
-                        psheet.update(f"{COLUMNS[column]}{index+2}", "X")
+                        psheet.format(f"{COLUMNS[column]}{index+2}", {"backgroundColor": {
+                                                                       "red": 0.0,
+                                                                       "green": 0.0,
+                                                                       "blue": 0.0
+                        }})
                         next(my_progress_track)
         next(my_progress_track, 0)
                     
