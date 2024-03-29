@@ -1,4 +1,16 @@
 ---
+Ultron: 
+  expansion: "Core Set"
+  replacements:
+    - None
+Klaw:
+  replacements:
+      - None
+  expansion: "Core Set"
+Rhino:
+  replacements:
+      - None
+  expansion: "Core Set"
 Venom Goblin:
   replacements:
       - venom-goblin
@@ -37,18 +49,6 @@ Wrecking Crew:
       - wrecking-crew
       - wreckingcrew
   expansion: "Wrecking Crew"
-Ultron: 
-  expansion: "Core Set"
-  replacements:
-    - None
-Klaw:
-  replacements:
-      - None
-  expansion: "Core Set"
-Rhino:
-  replacements:
-      - None
-  expansion: "Core Set"
 Green Goblin - Risky Business:
   replacements:
       - risky business
