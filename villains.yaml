@@ -206,3 +206,40 @@ Stryfe:
   expansion: "Next Evolution"
   replacements:
       - strife 
+Unus: 
+  expansion: "Age of Apocalypse"
+  replacements:
+      - onus 
+      - unos 
+Four Horsemen: 
+  expansion: "Age of Apocalypse"
+  replacements:
+      - four horseman 
+      - four-horseman 
+      - four-horsemen 
+      - for horsemen 
+      - for horseman 
+      - fore horsemen 
+      - fore horseman 
+Apocalypse: 
+  expansion: "Age of Apocalypse"
+  replacements:
+      - apocolypse 
+      - apocalips 
+      - apocolips 
+      - apocolisp 
+      - apocalipse
+Dark Beast: 
+  expansion: "Age of Apocalypse"
+  replacements:
+      - dark-beast 
+      - dark best 
+      - dark-best 
+En Sabah Nur: 
+  expansion: "Age of Apocalypse"
+  replacements:
+      - in sabah nur 
+      - n sabah nur 
+      - en saba nur 
+      - n saba nur 
+      - in saba nur 

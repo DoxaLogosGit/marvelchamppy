@@ -351,4 +351,19 @@
             - Mutant
         replacements:
             - x23
+            - x 23
+    Bishop :
+        traits:
+            - X-Men
+            - Mutant
+            - Temporal
+        replacements:
+            - biship
+    Magik :
+        traits:
+            - X-Men
+            - Mutant
+            - Mystic
+        replacements:
+            - majik
             
