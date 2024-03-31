@@ -9,6 +9,9 @@ BigBoxes = expansions["bigbox"]
 ScenarioPacks = expansions["scenario_packs"]
 CoreSet = ["Core Set"]
 
+HERO_DATA_SET = SortedSet(hero_config_data.keys())
+VILLAIN_DATA_SET = SortedSet(villain_config_data.keys())
+
 def find_diff_data(play_data_new, play_data_old):
 
 
@@ -170,7 +173,7 @@ class HeroBase:
         self.villains_played = SortedSet()
         self.villains_defeated = SortedSet()
         self.villains_not_defeated = SortedSet()
-        self.villains_not_played = SortedSet()
+        self.villains_not_played = VILLAIN_DATA_SET
 
     def add_play(self, hero, full_play):
         """
@@ -288,7 +291,7 @@ class VillainBase:
         self.difficulty_data = DifficultyStats()
         self.aspect_data = AspectData()
         self.heroes_played = SortedSet()
-        self.heroes_not_played = SortedSet()
+        self.heroes_not_played = HERO_DATA_SET
 
     def add_play(self, play):
         self.total_plays += 1
@@ -378,9 +381,7 @@ class OverallData:
 
 
 HERO_INIT_DATA = {x:HeroData(x, hero_config_data[x]["traits"]) for x in hero_config_data.keys()}
-HERO_DATA_SET = SortedSet(HERO_INIT_DATA.keys())
 VILLAIN_INIT_DATA = {x:VillainData(x, villain_config_data[x]['expansion']) for x in villain_config_data.keys()}
-VILLAIN_DATA_SET = SortedSet(VILLAIN_INIT_DATA.keys())
 BIG_BOX_INIT_DATA = {x:ExpansionData(x) for  x in BigBoxes}
 SCENARIO_PACK_INIT_DATA = {x:ExpansionData(x) for  x in ScenarioPacks}
 CORE_SET_INIT_DATA = {x:ExpansionData(x) for  x in CoreSet}

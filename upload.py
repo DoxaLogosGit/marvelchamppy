@@ -158,8 +158,8 @@ class UploadData:
             sheet.update(f"G{i+2}", villain)
         next(my_progress_track)
 
-        sheet.update("H1", f"Villains Defeated - {len(hero.villains_defeated)}")
-        for i, villain in enumerate(sorted(hero.villains_defeated)):
+        sheet.update("H1", f"Villains Not Defeated - {len(hero.villains_not_defeated)}")
+        for i, villain in enumerate(sorted(hero.villains_not_defeated)):
             sheet.update(f"H{i+2}", villain)
         next(my_progress_track)
 
@@ -429,7 +429,7 @@ class UploadData:
         printed_row = 2 #start row
         for hero in self.statistics.sorted_percent_heroes:
             #only upload those with minimum number of plays and opponents
-            if(hero[1].total_plays >= 10 and len(hero[1].villains_played) >= math.floor(len(self.statistics.sorted_villains)/3) - 2):
+            if(hero[1].total_plays >= 10 and len(hero[1].villains_played) >= math.floor(len(self.statistics.sorted_villains)*.19)):
                 osheet.update(f"O{printed_row}", f"{printed_row-1}. {hero[1].name}")
                 osheet.format(f"P{printed_row}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
                 osheet.update(f"P{printed_row}", hero[1].win_percentage)
@@ -442,7 +442,7 @@ class UploadData:
         printed_row = 2 #start row
         for villain in self.statistics.sorted_percent_villains:
             #only upload those with minimum number of plays and opponents
-            if(villain[1].total_plays >= 10 and len(villain[1].heroes_played) >= math.floor(len(self.statistics.sorted_heroes)/3) - 2):
+            if(villain[1].total_plays >= 10 and len(villain[1].heroes_played) >= math.floor(len(self.statistics.sorted_heroes)*.19)):
                 osheet.update(f"Q{printed_row}", f"{printed_row-1}. {villain[1].name}")
                 osheet.format(f"R{printed_row}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
                 osheet.update(f"R{printed_row}", villain[1].win_percentage)
