@@ -1,5 +1,609 @@
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="949" page="1" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="82613488" date="2024-03-16" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="992" page="1" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="83157579" date="2024-03-31" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Ebony Maw
+
+Man, I can not work this deck for SL
+https://marvelcdb.com/decklist/view/14621/avengers-and-guardians-as-one-1.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Star Lord" color="Aggression" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="83158905" date="2024-03-31" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Kang
+
+Rough first shot. Couldn&apos;t get the deck going so Kang schemed out on stage 1.
+https://marvelcdb.com/decklist/view/31020/cable-and-his-amazing-technocolor-dreamcoat-1.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Cable" color="Leadership" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="83158913" date="2024-03-31" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Kang
+
+Won the rematch. Went much smoother.
+
+https://marvelcdb.com/decklist/view/31020/cable-and-his-amazing-technocolor-dreamcoat-1.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Cable" color="Leadership" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="83197061" date="2024-03-31" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Taskmaster
+https://marvelcdb.com/decklist/view/31112/the-ends-justify-the-means-1.0
+
+Ran the Kree Fanatic modular and thankfully big dog didn&apos;t show up.
+
+Still had a ton of control.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Cable" color="Justice" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="83157229" date="2024-03-30" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Mutagen Formula
+
+Star Lord just getting it going this time. Scheme out.
+https://marvelcdb.com/decklist/view/14621/avengers-and-guardians-as-one-1.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Star Lord" color="Aggression" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="83059007" date="2024-03-29" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Absorbing Man
+
+Cable getting work done with this ally heavy aggression deck
+https://marvelcdb.com/decklist/view/34698/cable-s-round-table-1.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Cable" color="Aggression" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="83100383" date="2024-03-29" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Klaw
+
+Cable putting a beat down on the ole one hand.
+
+https://marvelcdb.com/decklist/view/34698/cable-s-round-table-1.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Cable" color="Aggression" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="83101925" date="2024-03-29" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Project Wideawake
+
+Cable just getting work done on those Sentinels with this protection deck
+
+https://marvelcdb.com/decklist/view/36131/true-grit-next-w7-1.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Cable" color="Protection" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="83103397" date="2024-03-29" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Sandman
+
+Sheesh this deck is good for Cable
+
+https://marvelcdb.com/decklist/view/36131/true-grit-next-w7-1.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Cable" color="Protection" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="83055694" date="2024-03-28" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Absorbing Man
+
+https://marvelcdb.com/decklist/view/35214/drax-the-destro-i-mean-the-taunter-4.0
+
+Drax took him down in about 3 turns. Worked well without full setup.  Leading Blows and CITT came in the right times to keep pumping out. Used one Taunt to help build and kill. Mantis was turn 1 who kept Drax alive the first two rounds.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Drax" color="Protection" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="83057158" date="2024-03-28" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1  Drang
+
+Very close. I took one mulligan that would have lead to a win.
+https://marvelcdb.com/decklist/view/35214/drax-the-destro-i-mean-the-taunter-4.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Drax" color="Protection" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="83057563" date="2024-03-28" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Ebony Maw
+
+Wow... down to the wire baby.  Amazing I could win without Dweet Thi Mastery as well.  So handy to have that extra card draw, but got it done.
+https://marvelcdb.com/decklist/view/35214/drax-the-destro-i-mean-the-taunter-4.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Drax" color="Protection" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="83057789" date="2024-03-28" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Sandman
+
+Surging sands did me in.  First time playing old Sandy proved too much for Drax.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Drax" color="Protection" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="82995043" date="2024-03-27" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Klaw
+
+Nova putting the hurt on the vibranium handed one.
+
+https://marvelcdb.com/decklist/view/19421/one-for-the-money-true-solo-nova-vs-expert-ronan-thanos-1.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Nova" color="Leadership" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="83022302" date="2024-03-27" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Ebony Maw
+https://marvelcdb.com/decklist/view/20880/hulk-smashes-his-piggy-bank-1.0
+
+Long battle, but got it done. I&apos;m not crazy about this deck with so many Avengers allies.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Spider Ham" color="Aggression" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="83023926" date="2024-03-27" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Klaw
+
+Spider Ham taking out the trash with this aggression deck that I like better.
+
+https://marvelcdb.com/decklist/view/34976/did-that-feel-like-a-cartoon-1.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Spider Ham" color="Aggression" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="82966392" date="2024-03-26" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Drang
+
+Sp//der is so so good.
+https://marvelcdb.com/decklist/view/20890/sp-dr00-s-n-rf-this-1.0
+
+</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Sp//der" color="Aggression" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="82989513" date="2024-03-26" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Morlock Siege
+
+https://marvelcdb.com/decklist/view/32460/late-stage-capitalism-unleashed-1.0
+
+Just getting work done with Angel.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Angel" color="Leadership" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="82990134" date="2024-03-26" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Collector Escape the Museum
+
+https://marvelcdb.com/decklist/view/32460/late-stage-capitalism-unleashed-1.0
+
+Bad second round.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Angel" color="Leadership" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="82990882" date="2024-03-26" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Collector Escape the Museum
+https://marvelcdb.com/decklist/view/32460/late-stage-capitalism-unleashed-1.0
+
+Got the win this time.  Took a little while especially with a major minion reveal one round.  Came close to losing a couple of times where threat was one away from popping.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Angel" color="Leadership" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="82964267" date="2024-03-25" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Sandman
+
+https://marvelcdb.com/decklist/view/24480/vision-take-your-daughter-to-work-day-1.0
+
+Vision and Vivian getting the work done.  Vivian was great for working down sand counters while Vision was in Dense form.   Vision didn&apos;t take any damage until the last round where the wasn&apos;t much to stop the hero.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Vision" color="Aggression" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="82965423" date="2024-03-25" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Klaw
+
+Sheesh.. got overwhelmed fast and couldn&apos;t get caught up.
+https://marvelcdb.com/decklist/view/31566/champions-academy-1.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="War Machine" color="Aggression" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="82965524" date="2024-03-25" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>https://marvelcdb.com/decklist/view/31566/champions-academy-1.0
+
+
+S1E1 Klaw still putting this WM down</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="War Machine" color="Aggression" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="82927363" date="2024-03-24" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Morlock Siege
+
+First loss on MS.  This is a good protection deck though with Phoenix.  I was about to pivot and burn the villains down, but I got hit with Under Fire that pulled an attachment to boost the villains scheme then right into Advance.
+https://marvelcdb.com/decklist/view/23268/master-of-puppets-1.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Phoenix" color="Protection" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="82932812" date="2024-03-24" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Morlock Siege
+
+Crazy Leaderhip deck for Rogue by VillainTheory.
+https://marvelcdb.com/decklist/view/30644/triple-your-profits-1.0
+
+</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Rogue" color="Leadership" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="82934730" date="2024-03-24" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Morlock Siege
+
+Storm crushing it with another VillainTheory deck.
+https://marvelcdb.com/decklist/view/24256/it-s-raining-multiple-men-1.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Storm" color="Protection" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="82851606" date="2024-03-23" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Mysterio
+
+If any could go wrong it did go wrong in the first 3 turns.  Extra Advance, Shadows of the Past, then a Gang up.
+
+https://marvelcdb.com/decklist/view/19353/tony-starks-a-i-ronheart-turbo-deck-1.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Ironheart" color="Justice" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="82826816" date="2024-03-22" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Thanos
+
+Tough matchup. Got snapped. Saw nemesis.  Pulled through in the end.
+
+https://marvelcdb.com/decklist/view/31072/the-posse-and-the-fantabulous-emancipation-of-one-domino-1.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Domino" color="Leadership" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="82827866" date="2024-03-22" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Ebony Maw
+
+Don&apos;t even need confuse when you got a lot of allies.
+https://marvelcdb.com/decklist/view/31072/the-posse-and-the-fantabulous-emancipation-of-one-domino-1.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Domino" color="Leadership" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="82829450" date="2024-03-22" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Venom Villain
+
+Putting the beat down on Domino.  Could not get her setup in this one.
+
+https://marvelcdb.com/decklist/view/31345/domino-five-ladies-a-dog-and-an-axe-1.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Domino" color="Aggression" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="82829836" date="2024-03-22" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Ultron
+
+Domino does not have good minion control.  Ultron putting the hurt on the girl
+https://marvelcdb.com/decklist/view/31345/domino-five-ladies-a-dog-and-an-axe-1.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Domino" color="Aggression" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="82830804" date="2024-03-22" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Tower Defense
+
+Domino got the work done with a perfect defense deck.
+https://marvelcdb.com/decklist/view/31128/indominoble-a-perfect-defense-super-offense-hybrid-1.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Domino" color="Protection" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="82793637" date="2024-03-21" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Juggernaut
+
+
+Tough fight.  Got attacked in alter ego again with no chump blocker.
+https://marvelcdb.com/decklist/view/35035/move-over-cyclops-psylocke-is-the-new-leader-of-the-x-men-2.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Psylocke" color="Leadership" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="82795939" date="2024-03-21" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Venom Villain
+
+Brutal turn that took me down.  He got the overkill when drawing 7 boosts.  No way I could stop it when he got a second attack.
+
+https://marvelcdb.com/decklist/view/35035/move-over-cyclops-psylocke-is-the-new-leader-of-the-x-men-2.0
+
+I&apos;m confident I could have beaten  him though.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Psylocke" color="Leadership" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="82769138" date="2024-03-20" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Crossbones 
+
+Psylocke putting the hurt on the weapons dude.  Did go to the last main scheme, but she put him down quickly after that.  Shadows of the Past did make an appearance as well as Madame Hydra which is just as bad.
+https://marvelcdb.com/decklist/view/33260/quick-pstryke-1.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Psylocke" color="Aggression" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="82742288" date="2024-03-19" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Morlock Siege
+
+https://marvelcdb.com/decklist/view/33028/risk-management-2.0
+
+Psylocke owning this encounter as well even in protection.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Psylocke" color="Protection" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="82743945" date="2024-03-19" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Klaw
+
+
+https://marvelcdb.com/decklist/view/31027/the-posse-hits-the-jackpot-1.0
+
+Putting the hurt on Domino.. sheesh.  Couldn&apos;t catch up on t threat and minions with this deck.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Domino" color="Protection" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="82716174" date="2024-03-18" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Mutagen Formula
+
+Tough battle.  Push to the end worked.
+
+https://marvelcdb.com/decklist/view/32442/psylocke-finds-tenacious-purpose-again-and-again-1.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Psylocke" color="Protection" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="82634049" date="2024-03-17" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Mansion Attack
+
+Tough battle, but got the work done.   Main Scheme did advance once, but that was good.  The first main scheme made everything steady.
+
+Found how useful Telekinesis and Telepathy are for Psylocke.  Seems to work for her more because she has the option to use her psi knifes to power it.
+
+https://marvelcdb.com/decklist/view/35267/psy-ops-1.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Psylocke" color="Leadership" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="82686959" date="2024-03-17" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Ebony Maw
+https://marvelcdb.com/decklist/view/32180/psylocke-psilent-shinobi-1.0
+
+Good deck, but Shadows of the Past showed up at the wrong time keeping me from finishing off the Maw.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Psylocke" color="Aggression" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="82687384" date="2024-03-17" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Ebony Maw
+
+Revenge tour.  Took &apos;em down.   Still not sure about flurry of blades and honed technique
+
+https://marvelcdb.com/decklist/view/32180/psylocke-psilent-shinobi-1.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Psylocke" color="Aggression" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="82613488" date="2024-03-16" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -57,6 +661,36 @@ Thought the protection would work, but second advance did me in
 https://marvelcdb.com/decklist/view/32096/on-a-wing-and-a-prayer-1.0</comments>
 									<players>
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Angel" color="Protection" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="82627966" date="2024-03-16" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Venom Goblin
+
+Got my butt handed to me. Things got out of control fast
+
+https://marvelcdb.com/decklist/view/33122/psy-spy-with-my-little-eye-1.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Psylocke" color="Justice" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="82631641" date="2024-03-16" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Sandman
+
+Wow! Tough battle with Angel Leadership.   Went to two acceleration tokens and close to scheming out at one point.  Somehow I fought back and got it under control.  Had 3 sandman clones at one point.  Vivian helped eliminate one of them to prevent surging sands.  Also the sands got all the way to 8 counters one time!!
+
+https://marvelcdb.com/decklist/view/32460/late-stage-capitalism-unleashed-1.0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Angel" color="Leadership" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
 	<play id="82579920" date="2024-03-15" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
@@ -813,7 +1447,9 @@ Cable spanked Mr. Sinister hard.  Cable is uber-powerful especially with Hope in
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Cable" color="Leadership" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	<play id="76955115" date="2023-10-22" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="992" page="2" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="76955115" date="2023-10-22" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -1451,9 +2087,7 @@ Was able to claw my way back to victory.  At that 1 HP level, Sp//der was almost
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Sp//der" color="Justice" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="949" page="2" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="72334643" date="2023-05-27" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="72334643" date="2023-05-27" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -2411,7 +3045,9 @@ Really, shadows of the past hurt me both times.</comments>
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Wolverine" color="Justice" score="" new="0" rating="0" win="0" />
 						</players>
 					</play>
-	<play id="71041681" date="2023-04-14" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="992" page="3" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="71041681" date="2023-04-14" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -3090,9 +3726,7 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Spider Ham" color="Justice" score="" new="0" rating="0" win="0" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="949" page="3" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="62326430" date="2022-07-15" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="62326430" date="2022-07-15" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -4152,7 +4786,9 @@ Total Health 15</comments>
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Dr. Strange" color="Justice" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	<play id="60411517" date="2022-05-01" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="992" page="4" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="60411517" date="2022-05-01" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -4873,9 +5509,7 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Wasp" color="Justice" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="949" page="4" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="58845567" date="2022-03-03" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="58845567" date="2022-03-03" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -5876,7 +6510,9 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Vision" color="Justice" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	<play id="57803841" date="2022-01-25" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="992" page="5" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="57803841" date="2022-01-25" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -6625,9 +7261,7 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Black Widow" color="Protection" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="949" page="5" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="56416293" date="2021-12-16" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="56416293" date="2021-12-16" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -7479,7 +8113,9 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Scarlet Witch" color="Aggression" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	<play id="55219871" date="2021-10-26" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="992" page="6" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="55219871" date="2021-10-26" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -8112,9 +8748,7 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Star Lord" color="Basic" score="" new="0" rating="0" win="0" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="949" page="6" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="53172215" date="2021-07-29" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="53172215" date="2021-07-29" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -8924,7 +9558,9 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Gamora" color="Aggression" score="" new="0" rating="0" win="0" />
 						</players>
 					</play>
-	<play id="51578279" date="2021-05-23" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="992" page="7" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="51578279" date="2021-05-23" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -9503,9 +10139,7 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Rocket Raccoon" color="Aggression" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="949" page="7" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="50701340" date="2021-04-14" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="50701340" date="2021-04-14" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -10291,7 +10925,9 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Spiderman" color="Justice" score="" new="0" rating="0" win="0" />
 						</players>
 					</play>
-	<play id="49907774" date="2021-03-12" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="992" page="8" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="49907774" date="2021-03-12" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -10905,9 +11541,7 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Doctor Strange" color="Protection" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="949" page="8" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="49325097" date="2021-02-15" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="49325097" date="2021-02-15" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -11605,7 +12239,9 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Thor" color="Aggression" score="" new="0" rating="0" win="0" />
 						</players>
 					</play>
-	<play id="46376990" date="2020-10-21" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="992" page="9" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="46376990" date="2020-10-21" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -12078,9 +12714,7 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Iron Man" color="Justice" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="949" page="9" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="45745544" date="2020-09-19" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="45745544" date="2020-09-19" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -12731,7 +13365,9 @@ Turn 3 scheme out.  It was rough because I took too long getting Breakin&apos; a
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Doctor Strange" color="Protection" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	<play id="45095816" date="2020-08-18" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="992" page="10" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="45095816" date="2020-08-18" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -13218,9 +13854,7 @@ Good win.  I would have had Rhino in 6 if it wasn&apos;t for the tough status sh
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition=" Ms. Marvel" color="Protection" score="" new="0" rating="0" win="0" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="949" page="10" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="44235378" date="2020-07-10" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="44235378" date="2020-07-10" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />

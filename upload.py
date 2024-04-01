@@ -343,13 +343,12 @@ class UploadData:
         #walk the villains
         villains = sorted(self.statistics.villain_data.keys())
         for column, villain in enumerate(villains):
+            #print the name on first row
+            psheet.update(f"{COLUMNS[column]}1", f"{villain}")
             #walk heroes played
             for hero_played in self.statistics.villain_data[villain].heroes_played:
                 #see where in the list the hero played is in there
                 for index, hero in enumerate(heroes):
-                    if index == 0:
-                        #print the name on first row
-                        psheet.update(f"{COLUMNS[column]}1", f"{villain}")
                     if hero_played == hero:
                        #found here, print x
                         psheet.format(f"{COLUMNS[column]}{index+2}", {"backgroundColor": {
@@ -424,7 +423,7 @@ class UploadData:
 
         next(my_progress_track)
         #hero win percentage (O-P)
-        osheet.update("O1", "Hero")
+        osheet.update("O1", "Best Heroes")
         osheet.update("P1", " Winning Percent")
         printed_row = 2 #start row
         for hero in self.statistics.sorted_percent_heroes:
@@ -437,7 +436,7 @@ class UploadData:
         next(my_progress_track)
 
         #villain win percentage (Q-R)
-        osheet.update("Q1", "Villain")
+        osheet.update("Q1", "Easiest Villains")
         osheet.update("R1", "Losing Percent")
         printed_row = 2 #start row
         for villain in self.statistics.sorted_percent_villains:
@@ -447,6 +446,7 @@ class UploadData:
                 osheet.format(f"R{printed_row}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
                 osheet.update(f"R{printed_row}", villain[1].win_percentage)
                 printed_row += 1
+
         next(my_progress_track)
         next(my_progress_track, 0)
 

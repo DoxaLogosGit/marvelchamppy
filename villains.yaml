@@ -1,4 +1,8 @@
 ---
+Ronan:
+  replacements:
+      - None
+  expansion: "The Galaxy's Most Wanted"
 Ultron: 
   expansion: "Core Set"
   replacements:
@@ -17,10 +21,6 @@ Venom Goblin:
       - venomgoblin
       - vengoblin
   expansion: "Sinister Motives"
-Ronan:
-  replacements:
-      - None
-  expansion: "The Galaxy's Most Wanted"
 Absorbing Man:
   replacements:
       - absorbing-man
