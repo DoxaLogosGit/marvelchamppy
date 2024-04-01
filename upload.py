@@ -72,6 +72,30 @@ class UploadData:
             sheet.update(f"D{start_row + increment}", data.difficulty_data.expert4_win_percentage)
             increment += 1
 
+        if data.difficulty_data.expert5_plays > 0:
+            sheet.update(f"C{start_row + increment}", "S3E1 Plays")
+            sheet.update(f"D{start_row + increment}", data.difficulty_data.expert5_plays)
+            increment += 1
+            sheet.update(f"C{start_row + increment}", "S3E1 Wins")
+            sheet.update(f"D{start_row + increment}", data.difficulty_data.expert5_wins)
+            increment += 1
+            sheet.update(f"C{start_row + increment}", "S3E1 Win %")
+            sheet.format(f"D{start_row + increment}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
+            sheet.update(f"D{start_row + increment}", data.difficulty_data.expert5_win_percentage)
+            increment += 1
+
+        if data.difficulty_data.expert6_plays > 0:
+            sheet.update(f"C{start_row + increment}", "S3E2 Plays")
+            sheet.update(f"D{start_row + increment}", data.difficulty_data.expert6_plays)
+            increment += 1
+            sheet.update(f"C{start_row + increment}", "S3E2 Wins")
+            sheet.update(f"D{start_row + increment}", data.difficulty_data.expert6_wins)
+            increment += 1
+            sheet.update(f"C{start_row + increment}", "S3E2 Win %")
+            sheet.format(f"D{start_row + increment}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
+            sheet.update(f"D{start_row + increment}", data.difficulty_data.expert6_win_percentage)
+            increment += 1
+
         if data.difficulty_data.standard1_plays > 0:
             sheet.update(f"C{start_row + increment}", "S1 Plays")
             sheet.update(f"D{start_row + increment}", data.difficulty_data.standard1_plays)
@@ -94,6 +118,18 @@ class UploadData:
             sheet.update(f"C{start_row + increment}", "S2 Win %")
             sheet.format(f"D{start_row + increment}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
             sheet.update(f"D{start_row + increment}", data.difficulty_data.standard2_win_percentage)
+            increment += 1
+
+        if data.difficulty_data.standard3_plays > 0:
+            sheet.update(f"C{start_row + increment}", "S3 Plays")
+            sheet.update(f"D{start_row + increment}", data.difficulty_data.standard3_plays)
+            increment += 1
+            sheet.update(f"C{start_row + increment}", "S3 Wins")
+            sheet.update(f"D{start_row + increment}", data.difficulty_data.standard3_wins)
+            increment += 1
+            sheet.update(f"C{start_row + increment}", "S3 Win %")
+            sheet.format(f"D{start_row + increment}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
+            sheet.update(f"D{start_row + increment}", data.difficulty_data.standard3_win_percentage)
             increment += 1
 
         if data.difficulty_data.heroic_plays > 0:

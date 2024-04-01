@@ -232,12 +232,21 @@ class DifficultyStats:
         self.expert4_plays = 0
         self.expert4_wins = 0
         self.expert4_win_percentage = 0
+        self.expert5_plays = 0
+        self.expert5_wins = 0
+        self.expert5_win_percentage = 0
+        self.expert6_plays = 0
+        self.expert6_wins = 0
+        self.expert6_win_percentage = 0
         self.standard1_plays = 0
         self.standard1_wins = 0
         self.standard1_win_percentage = 0
         self.standard2_plays = 0
         self.standard2_wins = 0
         self.standard2_win_percentage = 0
+        self.standard3_plays = 0
+        self.standard3_wins = 0
+        self.standard3_win_percentage = 0
         self.heroic_plays = 0
         self.heroic_wins = 0
         self.heroic_win_percentage = 0
@@ -249,12 +258,21 @@ class DifficultyStats:
         elif play["Difficulty"] == "S2E1":
             self.expert3_plays += 1
             self.expert3_wins += this_was_a_win
+        elif play["Difficulty"] == "S3E1":
+            self.expert5_plays += 1
+            self.expert5_wins += this_was_a_win
+        elif play["Difficulty"] == "S3E2":
+            self.expert6_plays += 1
+            self.expert6_wins += this_was_a_win
         elif play["Difficulty"] == "S1E2":
             self.expert2_plays += 1
             self.expert2_wins += this_was_a_win
         elif play["Difficulty"] == "S1E1":
             self.expert1_plays += 1
             self.expert1_wins += this_was_a_win
+        elif play["Difficulty"] == "S3":
+            self.standard3_plays += 1
+            self.standard3_wins += this_was_a_win
         elif play["Difficulty"] == "S2":
             self.standard2_plays += 1
             self.standard2_wins += this_was_a_win
@@ -274,10 +292,16 @@ class DifficultyStats:
             self.expert3_win_percentage = self.expert3_wins/self.expert3_plays
         if self.expert4_plays:
             self.expert4_win_percentage = self.expert4_wins/self.expert4_plays
+        if self.expert5_plays:
+            self.expert5_win_percentage = self.expert5_wins/self.expert5_plays
+        if self.expert6_plays:
+            self.expert6_win_percentage = self.expert6_wins/self.expert6_plays
         if self.standard1_plays:
             self.standard1_win_percentage = self.standard1_wins/self.standard1_plays
         if self.standard2_plays:
             self.standard2_win_percentage = self.standard2_wins/self.standard2_plays
+        if self.standard3_plays:
+            self.standard3_win_percentage = self.standard3_wins/self.standard3_plays
         if self.heroic_plays:
             self.heroic_win_percentage = self.heroic_wins/self.heroic_plays
 

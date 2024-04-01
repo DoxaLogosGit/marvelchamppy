@@ -188,6 +188,9 @@ class DifficultyStatistics(Static):
     cs2 = None
     cs2e1 = None
     cs2e2 = None
+    cs3 = None
+    cs3e1 = None
+    cs3e2 = None
     ch = None
     rp = None
     rw = None
@@ -205,6 +208,9 @@ class DifficultyStatistics(Static):
         self.cs2 = table.add_column(Text("  S2", justify='right'))
         self.cs2e1 = table.add_column(Text("S2E1", justify='right'))
         self.cs2e2 = table.add_column(Text("S2E2", justify='right'))
+        self.cs3 = table.add_column(Text("  S3", justify='right'))
+        self.cs3e1 = table.add_column(Text("S3E1", justify='right'))
+        self.cs3e2 = table.add_column(Text("S3E2", justify='right'))
         self.ch = table.add_column(Text("Heroic", justify='right'))
         self.rp = table.add_row("Plays", self.difficulty_data.standard1_plays,
                       self.difficulty_data.expert1_plays,
@@ -212,6 +218,9 @@ class DifficultyStatistics(Static):
                       self.difficulty_data.standard2_plays,
                       self.difficulty_data.expert3_plays,
                       self.difficulty_data.expert4_plays,
+                      self.difficulty_data.standard3_plays,
+                      self.difficulty_data.expert5_plays,
+                      self.difficulty_data.expert6_plays,
                       self.difficulty_data.heroic_plays)
         self.rw = table.add_row("Wins", self.difficulty_data.standard1_wins,
                       self.difficulty_data.expert1_wins,
@@ -219,12 +228,18 @@ class DifficultyStatistics(Static):
                       self.difficulty_data.standard2_wins,
                       self.difficulty_data.expert3_wins,
                       self.difficulty_data.expert4_wins,
+                      self.difficulty_data.standard3_wins,
+                      self.difficulty_data.expert5_wins,
+                      self.difficulty_data.expert6_wins,
                       self.difficulty_data.heroic_wins)
         self.rwp = table.add_row("Win %", round(self.difficulty_data.standard1_win_percentage * 100),
                       round(self.difficulty_data.expert1_win_percentage * 100),
                       round(self.difficulty_data.expert2_win_percentage * 100),
                       round(self.difficulty_data.standard2_win_percentage * 100),
                       round(self.difficulty_data.expert3_win_percentage * 100),
+                      round(self.difficulty_data.expert4_win_percentage * 100),
+                      round(self.difficulty_data.standard3_win_percentage * 100),
+                      round(self.difficulty_data.expert5_win_percentage * 100),
                       round(self.difficulty_data.expert4_win_percentage * 100),
                       round(self.difficulty_data.heroic_win_percentage * 100))
 
@@ -238,6 +253,9 @@ class DifficultyStatistics(Static):
             table.update_cell(self.rp,self.cs2, Text(str(self.difficulty_data.standard2_plays), justify='right'))
             table.update_cell(self.rp,self.cs2e1, Text(str(self.difficulty_data.expert3_plays), justify='right'))
             table.update_cell(self.rp,self.cs2e2, Text(str(self.difficulty_data.expert4_plays), justify='right'))
+            table.update_cell(self.rp,self.cs3, Text(str(self.difficulty_data.standard3_plays), justify='right'))
+            table.update_cell(self.rp,self.cs3e1, Text(str(self.difficulty_data.expert5_plays), justify='right'))
+            table.update_cell(self.rp,self.cs3e2, Text(str(self.difficulty_data.expert6_plays), justify='right'))
             table.update_cell(self.rp,self.ch, Text(str(self.difficulty_data.heroic_plays), justify='right'))
         if self.rw is not None:
             table.update_cell(self.rw,self.cs1, Text(str(self.difficulty_data.standard1_wins), justify='right'))
@@ -246,6 +264,9 @@ class DifficultyStatistics(Static):
             table.update_cell(self.rw,self.cs2, Text(str(self.difficulty_data.standard2_wins), justify='right'))
             table.update_cell(self.rw,self.cs2e1, Text(str(self.difficulty_data.expert3_wins), justify='right'))
             table.update_cell(self.rw,self.cs2e2, Text(str(self.difficulty_data.expert4_wins), justify='right'))
+            table.update_cell(self.rw,self.cs3, Text(str(self.difficulty_data.standard3_wins), justify='right'))
+            table.update_cell(self.rw,self.cs3e1, Text(str(self.difficulty_data.expert5_wins), justify='right'))
+            table.update_cell(self.rw,self.cs3e2, Text(str(self.difficulty_data.expert6_wins), justify='right'))
             table.update_cell(self.rw,self.ch, Text(str(self.difficulty_data.heroic_wins), justify='right'))
         if self.rwp is not None:
             table.update_cell(self.rwp,self.cs1, Text(str(round(self.difficulty_data.standard1_win_percentage * 100)), justify='right'))
@@ -254,5 +275,8 @@ class DifficultyStatistics(Static):
             table.update_cell(self.rwp,self.cs2, Text(str(round(self.difficulty_data.standard2_win_percentage * 100)), justify='right'))
             table.update_cell(self.rwp,self.cs2e1, Text(str(round(self.difficulty_data.expert3_win_percentage * 100)), justify='right'))
             table.update_cell(self.rwp,self.cs2e2, Text(str(round(self.difficulty_data.expert4_win_percentage * 100)), justify='right'))
+            table.update_cell(self.rwp,self.cs3, Text(str(round(self.difficulty_data.standard3_win_percentage * 100)), justify='right'))
+            table.update_cell(self.rwp,self.cs3e1, Text(str(round(self.difficulty_data.expert5_win_percentage * 100)), justify='right'))
+            table.update_cell(self.rwp,self.cs3e2, Text(str(round(self.difficulty_data.expert6_win_percentage * 100)), justify='right'))
             table.update_cell(self.rwp,self.ch, Text(str(round(self.difficulty_data.heroic_win_percentage * 100)), justify='right'))
 

@@ -33,19 +33,27 @@ def extract_villain(play_comment):
 def which_standard(play_comment):
     if("standard 2" in play_comment.lower() or "standard ii" in play_comment.lower()):
         return "S2"
+    elif("standard 3" in play_comment.lower() or "standard iii" in play_comment.lower()):
+        return "S3"
     return "S1"
 
 def extract_difficulty(play_comment):
     if("s1e1" in play_comment.lower()):
         return "S1E1"
+    if("s1e2" in play_comment.lower()):
+        return "S1E2"
     if("s2e1" in play_comment.lower()):
         return "S2E1"
     if("s2e2" in play_comment.lower()):
         return "S2E2"
-    if("s1e2" in play_comment.lower()):
-        return "S1E2"
+    if("s3e1" in play_comment.lower()):
+        return "S3E1"
+    if("s3e2" in play_comment.lower()):
+        return "S3E2"
     if("s2" in play_comment.lower()):
         return "S2"
+    if("s3" in play_comment.lower()):
+        return "S3"
     if("expert" in play_comment.lower()):
         if("expert 2" in play_comment.lower() or "expert ii" in play_comment.lower()):
             return (which_standard(play_comment) + "E2")
