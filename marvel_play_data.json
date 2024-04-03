@@ -15048,5 +15048,80 @@
     "Multiplayer": false,
     "True_Solo": true,
     "Villain": "Taskmaster"
+  },
+  {
+    "Date": "2024-03-31",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Cable",
+        "Win": 1
+      }
+    ],
+    "Id": "83211563",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mysterio"
+  },
+  {
+    "Date": "2024-04-01",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Ant Man",
+        "Win": 1
+      }
+    ],
+    "Id": "83255462",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Ebony Maw"
+  },
+  {
+    "Date": "2024-04-02",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Spider Man",
+        "Win": 0
+      }
+    ],
+    "Id": "83256956",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Sinister Six"
+  },
+  {
+    "Date": "2024-04-02",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Spider Man",
+        "Win": 0
+      }
+    ],
+    "Id": "83286745",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mysterio"
+  },
+  {
+    "Date": "2024-04-02",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Spider Man",
+        "Win": 0
+      }
+    ],
+    "Id": "83287441",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Thanos"
   }
 ]

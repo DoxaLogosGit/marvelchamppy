@@ -116,6 +116,7 @@ class PlaySpecificStats:
     def get_most_x_villains(self, num):
            self.villains.sort(reverse=True, key=self.check_plays)
            return self.villains[:num]
+
 class AspectData:
     def __init__(self):
         self.aspect_plays = { x:PlayData() for x in aspects}
