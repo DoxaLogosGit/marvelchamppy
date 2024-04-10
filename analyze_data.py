@@ -403,35 +403,25 @@ class OverallData:
         self.calculate_percentages()
 
 
-
-
-HERO_INIT_DATA = {x:HeroData(x, hero_config_data[x]["traits"]) for x in hero_config_data.keys()}
-VILLAIN_INIT_DATA = {x:VillainData(x, villain_config_data[x]['expansion']) for x in villain_config_data.keys()}
-BIG_BOX_INIT_DATA = {x:ExpansionData(x) for  x in BigBoxes}
-SCENARIO_PACK_INIT_DATA = {x:ExpansionData(x) for  x in ScenarioPacks}
-CORE_SET_INIT_DATA = {x:ExpansionData(x) for  x in CoreSet}
-TEAM_INIT_DATA = {x:TeamData(x) for  x in TeamTraits}
-ASPECT_SPECIFIC_INIT_DATA = {x:PlaySpecificStats(x) for x in aspects}
-
 class Statistics:
     def __init__(self, all_plays, bgg_format=True):
         self.all_plays = all_plays
         self.overall_data = OverallData(all_plays)
-        self.hero_data = HERO_INIT_DATA
-        self.villain_data = VILLAIN_INIT_DATA
+        self.hero_data = {x:HeroData(x, hero_config_data[x]["traits"]) for x in hero_config_data.keys()}
+        self.villain_data = {x:VillainData(x, villain_config_data[x]['expansion']) for x in villain_config_data.keys()}
         self.villain_h_index = 0
         self.hero_h_index = 0
-        self.aspect_specific_data = ASPECT_SPECIFIC_INIT_DATA
+        self.aspect_specific_data = {x:PlaySpecificStats(x) for x in aspects}
         self.bgg_format=bgg_format
         self.sorted_team_list = []
         self.sorted_heroes = None
         self.sorted_percent_heroes = None
         self.sorted_villains = None
         self.sorted_percent_villains = None
-        self.team_data = TEAM_INIT_DATA
-        self.big_box_data = BIG_BOX_INIT_DATA
-        self.core_set_data = CORE_SET_INIT_DATA
-        self.scenario_pack_data = SCENARIO_PACK_INIT_DATA
+        self.team_data = {x:TeamData(x) for  x in TeamTraits}
+        self.big_box_data = {x:ExpansionData(x) for  x in BigBoxes}
+        self.core_set_data = {x:ExpansionData(x) for  x in CoreSet}
+        self.scenario_pack_data = {x:ExpansionData(x) for  x in ScenarioPacks}
         #setup big boxes in villains
         for villain in self.villain_data.keys():
             expansion_found = False

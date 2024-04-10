@@ -4,7 +4,7 @@
     width: 15%;
 }
 #play_data {
-    height: 10%;
+    height: 11%;
 }
 #overall_totals {
     width: 33%;

@@ -26,10 +26,10 @@ def download_data():
         play_data.write(json.dumps(marvel_plays, sort_keys=True, indent=2 * ' '))
     return marvel_plays
 
-def read_data():
-    marvel_plays = None
-    with open("marvel_play_data.json") as play_data:
-        marvel_plays = json.loads(play_data.read())
+def read_data(marvel_plays=None):
+    if marvel_plays is None:
+        with open("marvel_play_data.json") as play_data:
+            marvel_plays = json.loads(play_data.read())
 
     statistics = Statistics(marvel_plays)
     statistics.analyze_play_data()
@@ -44,8 +44,8 @@ class Download(ModalScreen[Statistics]):
                 yield LoadingIndicator(id="load")
     
     def on_show(self) -> None:
-        download_data()
-        parsed_data = read_data()
+        plays = download_data()
+        parsed_data = read_data(plays)
         self.dismiss(parsed_data)
         
 
@@ -57,7 +57,7 @@ class MCStatApp(App):
     #            ("r", "reload_data", "Reload data")]
     CSS_PATH = "mc_stat_gui.tcss"
 
-    statistics: reactive[Statistics] = reactive([], always_update=True)
+    statistics: reactive[Statistics] = reactive([])
     current_hero : reactive[HeroData] = reactive(HeroData("Gamora", "Guardian"))
     current_villain: reactive[VillainData] = reactive(VillainData("Rhino", "core"))
     overall_data : reactive[OverallData] = reactive(OverallData(""))
@@ -161,9 +161,10 @@ class MCStatApp(App):
 
         def check_stats(stats: Statistics) -> None:
             self.statistics = stats
+            pass
 
         self.push_screen(Download(), check_stats)
-        pass
+    #    pass
 
 if __name__ == "__main__":
     app = MCStatApp()

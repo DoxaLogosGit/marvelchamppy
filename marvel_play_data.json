@@ -15123,5 +15123,335 @@
     "Multiplayer": false,
     "True_Solo": true,
     "Villain": "Thanos"
+  },
+  {
+    "Date": "2024-04-03",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Bishop",
+        "Win": 1
+      }
+    ],
+    "Id": "83322952",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Juggernaut"
+  },
+  {
+    "Date": "2024-04-04",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Magik",
+        "Win": 0
+      }
+    ],
+    "Id": "83335271",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Juggernaut"
+  },
+  {
+    "Date": "2024-04-04",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Magik",
+        "Win": 1
+      }
+    ],
+    "Id": "83352225",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Juggernaut"
+  },
+  {
+    "Date": "2024-04-04",
+    "Difficulty": "S3",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Bishop",
+        "Win": 1
+      }
+    ],
+    "Id": "83352250",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Unus"
+  },
+  {
+    "Date": "2024-04-05",
+    "Difficulty": "S3",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Bishop",
+        "Win": 1
+      }
+    ],
+    "Id": "83387244",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Unus"
+  },
+  {
+    "Date": "2024-04-06",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Wasp",
+        "Win": 1
+      }
+    ],
+    "Id": "83388982",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Drang"
+  },
+  {
+    "Date": "2024-04-06",
+    "Difficulty": "S3",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Bishop",
+        "Win": 0
+      }
+    ],
+    "Id": "83429919",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Four Horsemen"
+  },
+  {
+    "Date": "2024-04-06",
+    "Difficulty": "S3",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Bishop",
+        "Win": 1
+      }
+    ],
+    "Id": "83429953",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Four Horsemen"
+  },
+  {
+    "Date": "2024-04-06",
+    "Difficulty": "S3",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Bishop",
+        "Win": 0
+      }
+    ],
+    "Id": "83429973",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Apocalypse"
+  },
+  {
+    "Date": "2024-04-07",
+    "Difficulty": "S3",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Bishop",
+        "Win": 1
+      }
+    ],
+    "Id": "83475003",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Dark Beast"
+  },
+  {
+    "Date": "2024-04-07",
+    "Difficulty": "S3",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Bishop",
+        "Win": 1
+      }
+    ],
+    "Id": "83475015",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Dark Beast"
+  },
+  {
+    "Date": "2024-04-07",
+    "Difficulty": "S3",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Bishop",
+        "Win": 1
+      }
+    ],
+    "Id": "83475036",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "En Sabah Nur"
+  },
+  {
+    "Date": "2024-04-07",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Bishop",
+        "Win": 1
+      }
+    ],
+    "Id": "83478128",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Unus"
+  },
+  {
+    "Date": "2024-04-07",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Bishop",
+        "Win": 0
+      }
+    ],
+    "Id": "83480812",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2024-04-07",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Bishop",
+        "Win": 1
+      }
+    ],
+    "Id": "83481187",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2024-04-07",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Bishop",
+        "Win": 1
+      }
+    ],
+    "Id": "83481972",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Green Goblin - Mutagen Formula"
+  },
+  {
+    "Date": "2024-04-07",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Bishop",
+        "Win": 1
+      }
+    ],
+    "Id": "83482353",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Absorbing Man"
+  },
+  {
+    "Date": "2024-04-08",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Magik",
+        "Win": 1
+      }
+    ],
+    "Id": "83506754",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Green Goblin - Mutagen Formula"
+  },
+  {
+    "Date": "2024-04-08",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Magik",
+        "Win": 1
+      }
+    ],
+    "Id": "83510038",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Drang"
+  },
+  {
+    "Date": "2024-04-09",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Magik",
+        "Win": 1
+      }
+    ],
+    "Id": "83511153",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Loki"
+  },
+  {
+    "Date": "2024-04-09",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Magik",
+        "Win": 0
+      }
+    ],
+    "Id": "83531190",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Dark Beast"
+  },
+  {
+    "Date": "2024-04-09",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Magik",
+        "Win": 1
+      }
+    ],
+    "Id": "83535538",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
   }
 ]
