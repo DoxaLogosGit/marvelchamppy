@@ -349,6 +349,7 @@ class UploadData:
         #remove the repeat scenarios that only include one villain (already uploaded when villains uploaded)
         scenario_pack_list.remove("Wrecking Crew")
         scenario_pack_list.remove("The Hood")
+        scenario_pack_list.remove("Once and Future Kang")
                 
         print("Uploading Scenario Pack statistics: ")
         for scenario_pack in sorted(scenario_pack_list):
