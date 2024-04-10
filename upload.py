@@ -344,6 +344,11 @@ class UploadData:
             for villain in list(self.diff_data[0]):
                 if self.statistics.villain_data[villain].expansion in self.statistics.scenario_pack_data.keys():
                     scenario_pack_list.append(self.statistics.villain_data[villain].expansion)
+
+
+        #remove the repeat scenarios that only include one villain (already uploaded when villains uploaded)
+        scenario_pack_list.remove("Wrecking Crew")
+        scenario_pack_list.remove("The Hood")
                 
         print("Uploading Scenario Pack statistics: ")
         for scenario_pack in sorted(scenario_pack_list):
