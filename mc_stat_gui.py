@@ -5,7 +5,7 @@ from textual.reactive import reactive
 from textual.screen import ModalScreen
 from textual.widgets import Header, Footer, Tree, ContentSwitcher, LoadingIndicator, Label
 from analyze_data import Statistics, HeroData, VillainData, OverallData, TeamData, ExpansionData, PlaySpecificStats
-from widgets.results import HeroBaseResults, VillainBaseResults, OverallResults, AspectSpecificResults
+from widgets.results import HeroBaseResults, VillainBaseResults, OverallResults, AspectSpecificResults, Heroes, Villains
 from retrieve_data import retrieve_play_data_from_bgg
 from extract_data import find_the_marvel_champion_plays
 
@@ -58,6 +58,8 @@ class MCStatApp(App):
     CSS_PATH = "mc_stat_gui.tcss"
 
     statistics: reactive[Statistics] = reactive([])
+    heroes: reactive[list]=reactive([])
+    villains: reactive[list]=reactive([])
     current_hero : reactive[HeroData] = reactive(HeroData("Gamora", "Guardian"))
     current_villain: reactive[VillainData] = reactive(VillainData("Rhino", "core"))
     overall_data : reactive[OverallData] = reactive(OverallData(""))
@@ -104,6 +106,8 @@ class MCStatApp(App):
                 yield HeroBaseResults(id="hresults").data_bind(current_base=MCStatApp.current_hero)
                 yield VillainBaseResults(id="vresults").data_bind(current_base=MCStatApp.current_villain)
                 yield HeroBaseResults(id="tresults").data_bind(current_base=MCStatApp.current_team)
+                yield Heroes(id="hero_plays").data_bind(heroes=MCStatApp.heroes)
+                yield Villains(id="villain_plays").data_bind(villains=MCStatApp.villains)
                 yield VillainBaseResults(id="presults").data_bind(current_base=MCStatApp.current_pack)
                 yield VillainBaseResults(id="bresults").data_bind(current_base=MCStatApp.current_bigbox)
                 yield AspectSpecificResults(id="aresults").data_bind(aspect_specific_stats=MCStatApp.current_aspect)
@@ -118,6 +122,8 @@ class MCStatApp(App):
         self.current_aspect = self.statistics.aspect_specific_data["Justice"]
         self.overall_data = self.statistics.overall_data
         self.query_one("#oresults").overall_data = self.overall_data
+        self.query_one("#hero_plays").heroes = self.statistics.sorted_heroes
+        self.query_one("#villain_plays").villains = self.statistics.sorted_villains
         self.query_one("#hresults").current_base = self.current_hero
         self.query_one("#vresults").current_base = self.current_villain
         self.query_one("#tresults").current_base = self.current_team
@@ -130,6 +136,12 @@ class MCStatApp(App):
         if(event.node.label.plain in self.statistics.hero_data.keys()):
             self.current_hero = self.statistics.hero_data[event.node.label.plain]
             self.query_one(ContentSwitcher).current = "hresults"
+        elif(event.node.label.plain == "Heroes"):
+            self.heroes = self.statistics.sorted_heroes
+            self.query_one(ContentSwitcher).current = "hero_plays"
+        elif(event.node.label.plain == "Villains"):
+            self.villains = self.statistics.sorted_villains
+            self.query_one(ContentSwitcher).current = "villain_plays"
         elif(event.node.label.plain in self.statistics.villain_data.keys()):
             self.current_villain = self.statistics.villain_data[event.node.label.plain]
             self.query_one(ContentSwitcher).current = "vresults"

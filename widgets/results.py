@@ -2,7 +2,7 @@ from textual.app import ComposeResult
 from textual.reactive import reactive
 from textual.containers import Vertical, Horizontal
 from textual.widgets import Label, OptionList, Static
-from analyze_data import OverallData, AspectData, DifficultyStats, HeroBase, VillainBase, PlaySpecificStats
+from analyze_data import OverallData, AspectData, DifficultyStats, HeroBase, VillainBase, PlaySpecificStats, Statistics
 from widgets.stats import SpecialPlays, AspectStats, DifficultyStatistics, TotalStats, HIndexStats
 
 class Name(Static):
@@ -205,6 +205,42 @@ class AspectSpecificResults(Static):
         tmlist.add_options(mteam_data)
         tmlist.highlighted = None
 
+
+class Heroes(Static):
+    heroes : reactive[list] = reactive([])
+
+    def compose(self) -> ComposeResult:
+        with Vertical(id="HeroesPlays"):
+            yield Label("Heroes Plays")
+            with Horizontal(id="hplays"):
+                yield OptionList("Bad", "Good",id="hplays_list", classes="olists")
+
+    def watch_heroes(self, old_heroes, new_heroes):
+        self.heroes = new_heroes
+        hlist = self.query_one("#hplays_list", OptionList)
+        hlist.clear_options()
+        hero_data = [f"{i+1}. {x[0]} - {x[1].total_plays}" for i, x in enumerate(self.heroes)]
+        hlist.add_options(hero_data)
+        hlist.highlighted = None
+    
+class Villains(Static):
+    villains : reactive[list] = reactive([])
+
+    def compose(self) -> ComposeResult:
+        with Vertical(id="VillainPlays"):
+            yield Label("Villain Plays")
+            with Horizontal(id="vplays"):
+                yield OptionList("Bad", "Good",id="vplays_list", classes="olists")
+
+    def watch_villains(self, old_villains, new_villains):
+        self.villains = new_villains
+        vlist = self.query_one("#vplays_list", OptionList)
+        vlist.clear_options()
+        villain_data = [f"{i+1}. {x[0]} - {x[1].total_plays}" for i, x in enumerate(self.villains)]
+        vlist.add_options(villain_data)
+        vlist.highlighted = None
+    
+    
 class OverallResults(Static):
 
     overall_data: reactive[OverallData] = reactive(OverallData(""))
