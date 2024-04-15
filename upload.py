@@ -337,7 +337,7 @@ class UploadData:
 
     def upload_scenario_packs(self, worksheets):
         if(self.diff_data is None):
-            scenario_pack_list = self.statistics.scenario_pack_data.keys()
+            scenario_pack_list = list(self.statistics.scenario_pack_data.keys())
         else:
             #grab expansion data out of villain
             scenario_pack_list = []
