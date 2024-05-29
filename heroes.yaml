@@ -366,4 +366,13 @@
             - Mystic
         replacements:
             - majik
+    Iceman :
+        traits:
+            - X-Men
+            - Mutant
+            - Ice
+        replacements:
+            - ice-man
+            - ice man
+            
             
