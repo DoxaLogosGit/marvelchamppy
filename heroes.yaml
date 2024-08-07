@@ -374,5 +374,25 @@
         replacements:
             - ice-man
             - ice man
+    Jubilee :
+        traits:
+            - X-Men
+            - Mutant
+        replacements:
+            - jublee
+            - jubliee
+    Nightcrawler :
+        traits:
+            - X-Men
+            - Mutant
+        replacements:
+            - night crawler
+            - night-crawler
+    Magneto :
+        traits:
+            - X-Men
+            - Mutant
+        replacements:
+            - magento
             
             

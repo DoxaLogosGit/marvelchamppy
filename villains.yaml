@@ -189,17 +189,19 @@ Hood:
   replacements:
       - None
   expansion: "The Hood"
-Magneto: 
+Magneto Villain: 
   traits:
       - Brotherhood of Mutants
   replacements:
-      - magento
+      - magento villain
   expansion: "Mutant Genesis"
 Sabretooth: 
   traits:
       - Brotherhood of Mutants
   replacements:
-      - None
+      - sabertooth
+      - saber tooth
+      - sabre tooth
   expansion: "Mutant Genesis"
 Master Mold: 
   traits:

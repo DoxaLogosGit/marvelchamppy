@@ -17,7 +17,7 @@ class UploadData:
 
     def login(self):
         gc = gspread.service_account(client_factory=gspread.client.BackoffClient)
-        self.sheet = gc.open("Marvel Champions Data")
+        self.sheet = gc.open("Marvel Champions Personal Play Data")
 
 
     def update_difficulty(self, data, sheet):
