@@ -16,150 +16,150 @@ class UploadData:
 
 
     def login(self):
-        gc = gspread.service_account(client_factory=gspread.client.BackoffClient)
+        gc = gspread.service_account(http_client=gspread.BackOffHTTPClient)
         self.sheet = gc.open("Marvel Champions Personal Play Data")
 
 
     def update_difficulty(self, data, sheet):
-        sheet.update("C1", "Difficulty Data")
+        sheet.update([["Difficulty Data"]],"C1")
         start_row = 2
         increment = 0
         if data.difficulty_data.expert1_plays > 0:
-            sheet.update(f"C{start_row + increment}", "S1E1 Plays")
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.expert1_plays)
+            sheet.update([["S1E1 Plays"]],f"C{start_row + increment}")
+            sheet.update([[data.difficulty_data.expert1_plays]],f"D{start_row + increment}")
             increment += 1
-            sheet.update(f"C{start_row + increment}", "S1E1 Wins")
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.expert1_wins)
+            sheet.update([["S1E1 Wins"]],f"C{start_row + increment}")
+            sheet.update([[data.difficulty_data.expert1_wins]],f"D{start_row + increment}")
             increment += 1
-            sheet.update(f"C{start_row + increment}", "S1E1 Win %")
+            sheet.update([["S1E1 Win %"]],f"C{start_row + increment}")
             sheet.format( f"D{start_row + increment}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.expert1_win_percentage)
+            sheet.update([[data.difficulty_data.expert1_win_percentage]],f"D{start_row + increment}")
             increment += 1
 
         if data.difficulty_data.expert2_plays > 0:
-            sheet.update(f"C{start_row + increment}", "S1E2 Plays")
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.expert2_plays)
+            sheet.update([["S1E2 Plays"]],f"C{start_row + increment}")
+            sheet.update([[data.difficulty_data.expert2_plays]],f"D{start_row + increment}")
             increment += 1
-            sheet.update(f"C{start_row + increment}", "S1E2 Wins")
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.expert2_wins)
+            sheet.update([["S1E2 Wins"]],f"C{start_row + increment}")
+            sheet.update([[data.difficulty_data.expert2_wins]],f"D{start_row + increment}")
             increment += 1
-            sheet.update(f"C{start_row + increment}", "S1E2 Win %")
+            sheet.update([["S1E2 Win %"]],f"C{start_row + increment}")
             sheet.format(f"D{start_row + increment}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.expert2_win_percentage)
+            sheet.update([[data.difficulty_data.expert2_win_percentage]],f"D{start_row + increment}")
             increment += 1
 
         if data.difficulty_data.expert3_plays > 0:
-            sheet.update(f"C{start_row + increment}", "S2E1 Plays")
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.expert3_plays)
+            sheet.update([["S2E1 Plays"]],f"C{start_row + increment}")
+            sheet.update([[data.difficulty_data.expert3_plays]],f"D{start_row + increment}")
             increment += 1
-            sheet.update(f"C{start_row + increment}", "S2E1 Wins")
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.expert3_wins)
+            sheet.update([["S2E1 Wins"]],f"C{start_row + increment}")
+            sheet.update([[data.difficulty_data.expert3_wins]],f"D{start_row + increment}")
             increment += 1
-            sheet.update(f"C{start_row + increment}", "S2E1 Win %")
+            sheet.update([["S2E1 Win %"]],f"C{start_row + increment}")
             sheet.format(f"D{start_row + increment}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.expert3_win_percentage)
+            sheet.update([[data.difficulty_data.expert3_win_percentage]],f"D{start_row + increment}")
             increment += 1
 
         if data.difficulty_data.expert4_plays > 0:
-            sheet.update(f"C{start_row + increment}", "S2E2 Plays")
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.expert4_plays)
+            sheet.update([["S2E2 Plays"]],f"C{start_row + increment}")
+            sheet.update([[data.difficulty_data.expert4_plays]],f"D{start_row + increment}")
             increment += 1
-            sheet.update(f"C{start_row + increment}", "S2E2 Wins")
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.expert4_wins)
+            sheet.update([["S2E2 Wins"]],f"C{start_row + increment}")
+            sheet.update([[data.difficulty_data.expert4_wins]],f"D{start_row + increment}")
             increment += 1
-            sheet.update(f"C{start_row + increment}", "S2E2 Win %")
+            sheet.update([["S2E2 Win %"]],f"C{start_row + increment}")
             sheet.format(f"D{start_row + increment}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.expert4_win_percentage)
+            sheet.update([[data.difficulty_data.expert4_win_percentage]],f"D{start_row + increment}")
             increment += 1
 
         if data.difficulty_data.expert5_plays > 0:
-            sheet.update(f"C{start_row + increment}", "S3E1 Plays")
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.expert5_plays)
+            sheet.update([["S3E1 Plays"]],f"C{start_row + increment}")
+            sheet.update([[data.difficulty_data.expert5_plays]],f"D{start_row + increment}")
             increment += 1
-            sheet.update(f"C{start_row + increment}", "S3E1 Wins")
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.expert5_wins)
+            sheet.update([["S3E1 Wins"]],f"C{start_row + increment}")
+            sheet.update([[data.difficulty_data.expert5_wins]],f"D{start_row + increment}")
             increment += 1
-            sheet.update(f"C{start_row + increment}", "S3E1 Win %")
+            sheet.update([["S3E1 Win %"]],f"C{start_row + increment}")
             sheet.format(f"D{start_row + increment}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.expert5_win_percentage)
+            sheet.update([[data.difficulty_data.expert5_win_percentage]],f"D{start_row + increment}")
             increment += 1
 
         if data.difficulty_data.expert6_plays > 0:
-            sheet.update(f"C{start_row + increment}", "S3E2 Plays")
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.expert6_plays)
+            sheet.update([["S3E2 Plays"]],f"C{start_row + increment}")
+            sheet.update([[data.difficulty_data.expert6_plays]],f"D{start_row + increment}")
             increment += 1
-            sheet.update(f"C{start_row + increment}", "S3E2 Wins")
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.expert6_wins)
+            sheet.update([["S3E2 Wins"]],f"C{start_row + increment}")
+            sheet.update([[data.difficulty_data.expert6_wins]],f"D{start_row + increment}")
             increment += 1
-            sheet.update(f"C{start_row + increment}", "S3E2 Win %")
+            sheet.update([["S3E2 Win %"]],f"C{start_row + increment}")
             sheet.format(f"D{start_row + increment}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.expert6_win_percentage)
+            sheet.update([[data.difficulty_data.expert6_win_percentage]],f"D{start_row + increment}")
             increment += 1
 
         if data.difficulty_data.standard1_plays > 0:
-            sheet.update(f"C{start_row + increment}", "S1 Plays")
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.standard1_plays)
+            sheet.update([["S1 Plays"]],f"C{start_row + increment}")
+            sheet.update([[data.difficulty_data.standard1_plays]],f"D{start_row + increment}")
             increment += 1
-            sheet.update(f"C{start_row + increment}", "S1 Wins")
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.standard1_wins)
+            sheet.update([["S1 Wins"]],f"C{start_row + increment}")
+            sheet.update([[data.difficulty_data.standard1_wins]],f"D{start_row + increment}")
             increment += 1
-            sheet.update(f"C{start_row + increment}", "S1 Win %")
+            sheet.update([["S1 Win %"]],f"C{start_row + increment}")
             sheet.format(f"D{start_row + increment}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.standard1_win_percentage)
+            sheet.update([[data.difficulty_data.standard1_win_percentage]],f"D{start_row + increment}")
             increment += 1
 
         if data.difficulty_data.standard2_plays > 0:
-            sheet.update(f"C{start_row + increment}", "S2 Plays")
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.standard2_plays)
+            sheet.update([["S2 Plays"]],f"C{start_row + increment}")
+            sheet.update([[data.difficulty_data.standard2_plays]],f"D{start_row + increment}")
             increment += 1
-            sheet.update(f"C{start_row + increment}", "S2 Wins")
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.standard2_wins)
+            sheet.update([["S2 Wins"]],f"C{start_row + increment}")
+            sheet.update([[data.difficulty_data.standard2_wins]],f"D{start_row + increment}")
             increment += 1
-            sheet.update(f"C{start_row + increment}", "S2 Win %")
+            sheet.update([["S2 Win %"]],f"C{start_row + increment}")
             sheet.format(f"D{start_row + increment}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.standard2_win_percentage)
+            sheet.update([[data.difficulty_data.standard2_win_percentage]],f"D{start_row + increment}")
             increment += 1
 
         if data.difficulty_data.standard3_plays > 0:
-            sheet.update(f"C{start_row + increment}", "S3 Plays")
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.standard3_plays)
+            sheet.update([["S3 Plays"]],f"C{start_row + increment}")
+            sheet.update([[data.difficulty_data.standard3_plays]],f"D{start_row + increment}")
             increment += 1
-            sheet.update(f"C{start_row + increment}", "S3 Wins")
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.standard3_wins)
+            sheet.update([[ "S3 Wins"]],f"C{start_row + increment}")
+            sheet.update([[data.difficulty_data.standard3_wins]],f"D{start_row + increment}")
             increment += 1
-            sheet.update(f"C{start_row + increment}", "S3 Win %")
+            sheet.update([["S3 Win %"]],f"C{start_row + increment}")
             sheet.format(f"D{start_row + increment}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.standard3_win_percentage)
+            sheet.update([[data.difficulty_data.standard3_win_percentage]],f"D{start_row + increment}")
             increment += 1
 
         if data.difficulty_data.heroic_plays > 0:
-            sheet.update(f"C{start_row + increment}", "Heroic Plays")
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.heroic_plays)
+            sheet.update([["Heroic Plays"]],f"C{start_row + increment}")
+            sheet.update([[data.difficulty_data.heroic_plays]],f"D{start_row + increment}")
             increment += 1
-            sheet.update(f"C{start_row + increment}", "Heroic Wins")
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.heroic_wins)
+            sheet.update([["Heroic Wins"]],f"C{start_row + increment}")
+            sheet.update([[data.difficulty_data.heroic_wins]],f"D{start_row + increment}")
             increment += 1
-            sheet.update(f"C{start_row + increment}", "Heroic Win %")
+            sheet.update([["Heroic Win %"]],f"C{start_row + increment}")
             sheet.format(f"D{start_row + increment}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
-            sheet.update(f"D{start_row + increment}", data.difficulty_data.heroic_win_percentage)
+            sheet.update([[data.difficulty_data.heroic_win_percentage]],f"D{start_row + increment}")
             increment += 1
 
 
     def update_aspects(self, data, sheet):
-        sheet.update("E1", "Aspect Data")
+        sheet.update([["Aspect Data"]],"E1")
         start_row = 2
         increment = 0
         for aspect in data.aspect_data.aspect_plays.keys():
             if data.aspect_data.aspect_plays[aspect].plays > 0:
-                sheet.update(f"E{start_row + increment}", f"{aspect} Plays")
-                sheet.update(f"F{start_row + increment}", data.aspect_data.aspect_plays[aspect].plays)
+                sheet.update([[f"{aspect} Plays"]],f"E{start_row + increment}")
+                sheet.update([[data.aspect_data.aspect_plays[aspect].plays]],f"F{start_row + increment}")
                 increment += 1
-                sheet.update(f"E{start_row + increment}", f"{aspect} Wins")
-                sheet.update(f"F{start_row + increment}", data.aspect_data.aspect_plays[aspect].wins)
+                sheet.update([[f"{aspect} Wins"]],f"E{start_row + increment}")
+                sheet.update([[data.aspect_data.aspect_plays[aspect].wins]],f"F{start_row + increment}")
                 increment += 1
-                sheet.update(f"E{start_row + increment}", f"{aspect} Win %")
+                sheet.update([[f"{aspect} Win %"]],f"E{start_row + increment}")
                 sheet.format(f"F{start_row + increment}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
-                sheet.update(f"F{start_row + increment}", data.aspect_data.aspect_plays[aspect].win_percentage)
+                sheet.update([[data.aspect_data.aspect_plays[aspect].win_percentage]],f"F{start_row + increment}")
                 increment += 1
 
 
@@ -172,14 +172,14 @@ class UploadData:
         next(my_progress_track)
         #overall data
         sheet.format("A1:Z1", {'textFormat': {'bold':True}, 'horizontalAlignment': "CENTER"})
-        sheet.update("A1", "Overall")
-        sheet.update("A2", "Total Plays")
-        sheet.update("B2", hero.total_plays)
-        sheet.update("A3", "Total Wins")
-        sheet.update("B3", hero.total_wins)
+        sheet.update([["Overall"]],"A1")
+        sheet.update([["Total Plays"]],"A2")
+        sheet.update([[hero.total_plays]],"B2")
+        sheet.update([["Total Wins"]],"A3")
+        sheet.update([[ hero.total_wins]],"B3")
         sheet.format("B4", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
-        sheet.update("A4", "Win %")
-        sheet.update("B4", hero.win_percentage)
+        sheet.update([["Win %"]],"A4")
+        sheet.update([[hero.win_percentage]],"B4")
         next(my_progress_track)
         #difficulty data (C-D)
         self.update_difficulty(hero, sheet)
@@ -189,19 +189,19 @@ class UploadData:
         next(my_progress_track)
         
         #villain data G,H,I
-        sheet.update("G1", f"Villains Fought - {len(hero.villains_played)}")
+        sheet.update([[f"Villains Fought - {len(hero.villains_played)}"]],"G1")
         for i, villain in enumerate(sorted(hero.villains_played)):
-            sheet.update(f"G{i+2}", villain)
+            sheet.update([[villain]],f"G{i+2}")
         next(my_progress_track)
 
-        sheet.update("H1", f"Villains Not Defeated - {len(hero.villains_not_defeated)}")
+        sheet.update([[f"Villains Not Defeated - {len(hero.villains_not_defeated)}"]],"H1")
         for i, villain in enumerate(sorted(hero.villains_not_defeated)):
-            sheet.update(f"H{i+2}", villain)
+            sheet.update([[villain]],f"H{i+2}")
         next(my_progress_track)
 
-        sheet.update("I1", f"Villains Unplayed - {len(hero.villains_not_played)}")
+        sheet.update([[f"Villains Unplayed - {len(hero.villains_not_played)}"]],"I1")
         for i, villain in enumerate(sorted(hero.villains_not_played)):
-            sheet.update(f"I{i+2}", villain)
+            sheet.update([[villain]],f"I{i+2}")
         next(my_progress_track)
         next(my_progress_track, 0)
 
@@ -258,14 +258,14 @@ class UploadData:
         next(my_progress_track)
         #overall data
         sheet.format("A1:Z1", {'textFormat': {'bold':True}, 'horizontalAlignment': "CENTER"})
-        sheet.update("A1", "Overall")
-        sheet.update("A2", "Total Plays")
-        sheet.update("B2", villain.total_plays)
-        sheet.update("A3", "Total Wins")
-        sheet.update("B3", villain.total_wins)
+        sheet.update([["Overall"]],"A1")
+        sheet.update([["Total Plays"]],"A2")
+        sheet.update([[villain.total_plays]],"B2")
+        sheet.update([["Total Wins"]],"A3")
+        sheet.update([[villain.total_wins]],"B3")
         sheet.format("B4", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
-        sheet.update("A4", "Win %")
-        sheet.update("B4", villain.win_percentage)
+        sheet.update([[ "Win %"]],"A4")
+        sheet.update([[villain.win_percentage]],"B4")
         next(my_progress_track)
         #difficulty data (C-D)
         self.update_difficulty(villain, sheet)
@@ -275,18 +275,18 @@ class UploadData:
         next(my_progress_track)
         
         #villain data G,H
-        sheet.update("G1", f"Heroes Fought - {len(villain.heroes_played)}")
+        sheet.update([[f"Heroes Fought - {len(villain.heroes_played)}"]],"G1")
         for i, hero in enumerate(sorted(villain.heroes_played)):
-            sheet.update(f"G{i+2}", hero)
+            sheet.update([[hero]],f"G{i+2}")
         next(my_progress_track)
 
         #clear the unplayed before publishing unplayed (the list will shrink over time)
         vrange = f"H1:H{len(villain.heroes_played)+len(villain.heroes_not_played)+3}"
         sheet.batch_clear([vrange])
-        sheet.update("H1", f"Heroes Unplayed - {len(villain.heroes_not_played)}")
+        sheet.update([[f"Heroes Unplayed - {len(villain.heroes_not_played)}"]],"H1")
         next(my_progress_track)
         for i, hero in enumerate(sorted(villain.heroes_not_played)):
-            sheet.update(f"H{i+2}", hero)
+            sheet.update([[hero]],f"H{i+2}")
         next(my_progress_track)
         next(my_progress_track, 0)
 
@@ -383,13 +383,13 @@ class UploadData:
         #print the hero names
         heroes = sorted(self.statistics.hero_data.keys())
         for n, hero in enumerate(heroes):
-            psheet.update(f"A{n+2}", f"{hero}")
+            psheet.update([[f"{hero}"]],f"A{n+2}")
 
         #walk the villains
         villains = sorted(self.statistics.villain_data.keys())
         for column, villain in enumerate(villains):
             #print the name on first row
-            psheet.update(f"{COLUMNS[column]}1", f"{villain}")
+            psheet.update([[f"{villain}"]],f"{COLUMNS[column]}1")
             #walk heroes played
             for hero_played in self.statistics.villain_data[villain].heroes_played:
                 #see where in the list the hero played is in there
@@ -416,20 +416,20 @@ class UploadData:
         osheet.batch_clear(["A1:Z100"])
         next(my_progress_track)
         osheet.format("A1:Z1", {'textFormat': {'bold':True}, 'horizontalAlignment': "CENTER"})
-        osheet.update("A1", "Overall")
-        osheet.update("A2", "Total Plays")
-        osheet.update("B2", self.statistics.overall_data.overall.plays)
-        osheet.update("A3", "Total Wins")
-        osheet.update("B3", self.statistics.overall_data.overall.wins)
+        osheet.update([["Overall"]], "A1")
+        osheet.update([["Total Plays"]], "A2")
+        osheet.update([[self.statistics.overall_data.overall.plays]], "B2")
+        osheet.update([["Total Wins"]], "A3")
+        osheet.update([[self.statistics.overall_data.overall.wins]], "B3")
         osheet.format("B4", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
-        osheet.update("A4", "Win %")
-        osheet.update("B4", self.statistics.overall_data.overall.win_percentage)
-        osheet.update("A5", "Total True Solo Plays")
-        osheet.update("B5", self.statistics.overall_data.overall_true_solo_plays)
-        osheet.update("A6", "Total Multihanded Solo Plays")
-        osheet.update("B6", self.statistics.overall_data.overall_solo_plays)
-        osheet.update("A7", "Total Multiplayer Plays")
-        osheet.update("B7", self.statistics.overall_data.overall_multi_plays)
+        osheet.update([["Win %"]], "A4")
+        osheet.update([[self.statistics.overall_data.overall.win_percentage]], "B4")
+        osheet.update([["Total True Solo Plays"]],"A5")
+        osheet.update([[self.statistics.overall_data.overall_true_solo_plays]],"B5")
+        osheet.update([["Total Multihanded Solo Plays"]],"A6")
+        osheet.update([[self.statistics.overall_data.overall_solo_plays]],"B6")
+        osheet.update([["Total Multiplayer Plays"]],"A7")
+        osheet.update([[self.statistics.overall_data.overall_multi_plays]],"B7")
         next(my_progress_track)
         #difficulty data (C-D)
         self.update_difficulty(self.statistics.overall_data, osheet)
@@ -439,57 +439,57 @@ class UploadData:
         next(my_progress_track)
 
         #team data (G-J)
-        osheet.update("G1", "Team")
-        osheet.update("H1", "Plays")
-        osheet.update("I1", "Wins")
-        osheet.update("J1", "Percentage")
+        osheet.update([["Team"]],"G1")
+        osheet.update([["Plays"]],"H1")
+        osheet.update([["Wins"]],"I1")
+        osheet.update([["Percentage"]],"J1")
         next(my_progress_track)
         for n, data in enumerate(self.statistics.sorted_team_list):
-            osheet.update(f"G{n+2}", data[0])
-            osheet.update(f"H{n+2}", data[1])
-            osheet.update(f"I{n+2}", self.statistics.team_data[data[0]].total_wins)
+            osheet.update([[data[0]]],f"G{n+2}")
+            osheet.update([[data[1]]],f"H{n+2}")
+            osheet.update([[self.statistics.team_data[data[0]].total_wins]],f"I{n+2}")
             osheet.format(f"J{n+2}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
-            osheet.update(f"J{n+2}", self.statistics.team_data[data[0]].win_percentage)
+            osheet.update([[self.statistics.team_data[data[0]].win_percentage]],f"J{n+2}")
         next(my_progress_track)
 
         #hero H-Index (K-L)
-        osheet.update("K1", f"Hero H-Index: {self.statistics.hero_h_index}")
-        osheet.update("L1", "Plays")
+        osheet.update([[f"Hero H-Index: {self.statistics.hero_h_index}"]],"K1")
+        osheet.update([["Plays"]],"L1")
         for n, hero in enumerate(self.statistics.sorted_heroes):
-            osheet.update(f"K{n+2}", f"{n+1}. {hero[1].name}")
-            osheet.update(f"L{n+2}", hero[1].total_plays)
+            osheet.update([[f"{n+1}. {hero[1].name}"]],f"K{n+2}")
+            osheet.update([[hero[1].total_plays]],f"L{n+2}")
         next(my_progress_track)
         #villain H-Index (M-N)
-        osheet.update("M1", f"Villain H-Index: {self.statistics.villain_h_index}")
-        osheet.update("N1", "Plays")
+        osheet.update([[f"Villain H-Index: {self.statistics.villain_h_index}"]],"M1")
+        osheet.update([["Plays"]],"N1")
         for n, villain in enumerate(self.statistics.sorted_villains):
-            osheet.update(f"M{n+2}", f"{n+1}. {villain[1].name}")
-            osheet.update(f"N{n+2}", villain[1].total_plays)
+            osheet.update([[ f"{n+1}. {villain[1].name}"]],f"M{n+2}")
+            osheet.update([[villain[1].total_plays]],f"N{n+2}")
 
         next(my_progress_track)
         #hero win percentage (O-P)
-        osheet.update("O1", "Best Heroes")
-        osheet.update("P1", " Winning Percent")
+        osheet.update([["Best Heroes"]],"O1")
+        osheet.update([[" Winning Percent"]],"P1")
         printed_row = 2 #start row
         for hero in self.statistics.sorted_percent_heroes:
             #only upload those with minimum number of plays and opponents
             if(hero[1].total_plays >= 10 and len(hero[1].villains_played) >= math.floor(len(self.statistics.sorted_villains)*.19)):
-                osheet.update(f"O{printed_row}", f"{printed_row-1}. {hero[1].name}")
+                osheet.update([[f"{printed_row-1}. {hero[1].name}"]],f"O{printed_row}")
                 osheet.format(f"P{printed_row}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
-                osheet.update(f"P{printed_row}", hero[1].win_percentage)
+                osheet.update([[hero[1].win_percentage]],f"P{printed_row}")
                 printed_row += 1
         next(my_progress_track)
 
         #villain win percentage (Q-R)
-        osheet.update("Q1", "Easiest Villains")
-        osheet.update("R1", "Losing Percent")
+        osheet.update([["Easiest Villains"]],"Q1")
+        osheet.update([["Losing Percent"]],"R1")
         printed_row = 2 #start row
         for villain in self.statistics.sorted_percent_villains:
             #only upload those with minimum number of plays and opponents
             if(villain[1].total_plays >= 10 and len(villain[1].heroes_played) >= math.floor(len(self.statistics.sorted_heroes)*.19)):
-                osheet.update(f"Q{printed_row}", f"{printed_row-1}. {villain[1].name}")
+                osheet.update([[f"{printed_row-1}. {villain[1].name}"]],f"Q{printed_row}")
                 osheet.format(f"R{printed_row}", {'numberFormat': {'type':'PERCENT', 'pattern': '0%'}})
-                osheet.update(f"R{printed_row}", villain[1].win_percentage)
+                osheet.update([[villain[1].win_percentage]],f"R{printed_row}")
                 printed_row += 1
 
         next(my_progress_track)
