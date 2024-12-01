@@ -497,7 +497,6 @@ class UploadData:
 
     def perform_upload(self):
         self.login()
-        self.upload_overall()
         worksheets = [x.title for x in self.sheet.worksheets()]
         sleep(5)
         self.upload_heroes(worksheets)
@@ -509,6 +508,8 @@ class UploadData:
         self.upload_big_box_expansions(worksheets)
         sleep(30)
         self.upload_scenario_packs(worksheets)
+        sleep(30)
+        self.upload_overall()
         sleep(30)
         self.upload_play_matrix()
         
