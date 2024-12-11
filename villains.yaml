@@ -183,12 +183,6 @@ Hela:
       - Mystic
       - Asgard
   expansion: "Mad Titan's Shadow"
-Hood: 
-  traits:
-      - Criminal
-  replacements:
-      - None
-  expansion: "The Hood"
 Magneto Villain: 
   traits:
       - Brotherhood of Mutants
@@ -366,3 +360,10 @@ En Sabah Nur:
       - en saba nur 
       - n saba nur 
       - in saba nur 
+The Hood Villain: 
+  traits:
+      - Criminal
+  replacements:
+      - hood villain
+      - the hood
+  expansion: "The Hood"

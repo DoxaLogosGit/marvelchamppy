@@ -7,7 +7,7 @@ decorator==5.1.1
 executing==1.2.0
 google-auth==2.18.0
 google-auth-oauthlib==1.0.0
-gspread==5.9.0
+gspread==6.1.2
 idna==3.4
 ipython==8.13.2
 jedi==0.18.2

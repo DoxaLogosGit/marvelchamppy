@@ -7877,7 +7877,7 @@
     "Id": "55974769",
     "Multiplayer": false,
     "True_Solo": true,
-    "Villain": "Hood"
+    "Villain": "The Hood Villain"
   },
   {
     "Date": "2021-11-27",
@@ -7892,7 +7892,7 @@
     "Id": "55980685",
     "Multiplayer": false,
     "True_Solo": true,
-    "Villain": "Hood"
+    "Villain": "The Hood Villain"
   },
   {
     "Date": "2021-11-27",
@@ -7907,7 +7907,7 @@
     "Id": "55980701",
     "Multiplayer": false,
     "True_Solo": true,
-    "Villain": "Hood"
+    "Villain": "The Hood Villain"
   },
   {
     "Date": "2021-11-28",
@@ -12872,7 +12872,7 @@
     "Id": "72346054",
     "Multiplayer": false,
     "True_Solo": true,
-    "Villain": "Hood"
+    "Villain": "The Hood Villain"
   },
   {
     "Date": "2023-05-27",
@@ -14192,7 +14192,7 @@
     "Id": "82463039",
     "Multiplayer": false,
     "True_Solo": true,
-    "Villain": "Hood"
+    "Villain": "The Hood Villain"
   },
   {
     "Date": "2024-03-12",
@@ -16543,5 +16543,395 @@
     "Multiplayer": false,
     "True_Solo": true,
     "Villain": "Project Wideawake"
+  },
+  {
+    "Date": "2024-08-13",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Iron Heart",
+        "Win": 1
+      }
+    ],
+    "Id": "87967165",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Project Wideawake"
+  },
+  {
+    "Date": "2024-08-19",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Iron Heart",
+        "Win": 1
+      }
+    ],
+    "Id": "88195475",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Project Wideawake"
+  },
+  {
+    "Date": "2024-08-20",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Iron Heart",
+        "Win": 1
+      }
+    ],
+    "Id": "88228613",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Project Wideawake"
+  },
+  {
+    "Date": "2024-08-26",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Iron Heart",
+        "Win": 1
+      }
+    ],
+    "Id": "88447836",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Project Wideawake"
+  },
+  {
+    "Date": "2024-08-26",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Iron Heart",
+        "Win": 1
+      }
+    ],
+    "Id": "88449368",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Project Wideawake"
+  },
+  {
+    "Date": "2024-09-21",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Spider Ham",
+        "Win": 0
+      }
+    ],
+    "Id": "89305160",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Magneto Villain"
+  },
+  {
+    "Date": "2024-09-23",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Jubilee",
+        "Win": 0
+      }
+    ],
+    "Id": "89377412",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Magneto Villain"
+  },
+  {
+    "Date": "2024-09-26",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Spider Ham",
+        "Win": 0
+      }
+    ],
+    "Id": "89450536",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Magneto Villain"
+  },
+  {
+    "Date": "2024-09-27",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Spider Ham",
+        "Win": 1
+      }
+    ],
+    "Id": "89481383",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Magneto Villain"
+  },
+  {
+    "Date": "2024-09-28",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Spider Ham",
+        "Win": 1
+      }
+    ],
+    "Id": "89510258",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Magneto Villain"
+  },
+  {
+    "Date": "2024-09-28",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Spider Ham",
+        "Win": 1
+      }
+    ],
+    "Id": "89519348",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Magneto Villain"
+  },
+  {
+    "Date": "2024-10-06",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Jubilee",
+        "Win": 0
+      }
+    ],
+    "Id": "89830623",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2024-11-01",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Basic",
+        "Hero": "Star Lord",
+        "Win": 0
+      }
+    ],
+    "Id": "90735024",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Venom Villain"
+  },
+  {
+    "Date": "2024-11-01",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Basic",
+        "Hero": "Star Lord",
+        "Win": 0
+      }
+    ],
+    "Id": "90772472",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Venom Villain"
+  },
+  {
+    "Date": "2024-11-01",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Basic",
+        "Hero": "Shadowcat",
+        "Win": 1
+      }
+    ],
+    "Id": "90773972",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Venom Villain"
+  },
+  {
+    "Date": "2024-11-02",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Basic",
+        "Hero": "Shadowcat",
+        "Win": 0
+      }
+    ],
+    "Id": "90792736",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Venom Villain"
+  },
+  {
+    "Date": "2024-11-02",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Basic",
+        "Hero": "Shadowcat",
+        "Win": 0
+      }
+    ],
+    "Id": "90795067",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Venom Villain"
+  },
+  {
+    "Date": "2024-11-07",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Nightcrawler",
+        "Win": 1
+      }
+    ],
+    "Id": "90999491",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2024-11-08",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Jubilee",
+        "Win": 0
+      }
+    ],
+    "Id": "91034334",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2024-11-08",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Jubilee",
+        "Win": 0
+      }
+    ],
+    "Id": "91037474",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Ebony Maw"
+  },
+  {
+    "Date": "2024-11-13",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Rogue",
+        "Win": 0
+      }
+    ],
+    "Id": "91225221",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mansion Attack"
+  },
+  {
+    "Date": "2024-11-16",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Magneto",
+        "Win": 1
+      }
+    ],
+    "Id": "91344892",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2024-11-17",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Jubilee",
+        "Win": 0
+      }
+    ],
+    "Id": "91382192",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2024-11-18",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Rogue",
+        "Win": 0
+      }
+    ],
+    "Id": "91423811",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mansion Attack"
+  },
+  {
+    "Date": "2024-11-18",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Rogue",
+        "Win": 1
+      }
+    ],
+    "Id": "91425445",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mansion Attack"
+  },
+  {
+    "Date": "2024-11-19",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Rogue",
+        "Win": 1
+      }
+    ],
+    "Id": "91450660",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mansion Attack"
   }
 ]

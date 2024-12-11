@@ -11627,7 +11627,7 @@
     "Id": "64591184",
     "Multiplayer": false,
     "True_Solo": true,
-    "Villain": "Magneto"
+    "Villain": "Magneto Villain"
   },
   {
     "Date": "2022-10-04",
@@ -11642,7 +11642,7 @@
     "Id": "64641504",
     "Multiplayer": false,
     "True_Solo": true,
-    "Villain": "Magneto"
+    "Villain": "Magneto Villain"
   },
   {
     "Date": "2022-10-22",
@@ -12362,7 +12362,7 @@
     "Id": "71423308",
     "Multiplayer": false,
     "True_Solo": true,
-    "Villain": "Magneto"
+    "Villain": "Magneto Villain"
   },
   {
     "Date": "2023-04-28",
@@ -12542,7 +12542,7 @@
     "Id": "71772744",
     "Multiplayer": false,
     "True_Solo": true,
-    "Villain": "Magneto"
+    "Villain": "Magneto Villain"
   },
   {
     "Date": "2023-05-08",
@@ -12557,7 +12557,7 @@
     "Id": "71801142",
     "Multiplayer": false,
     "True_Solo": true,
-    "Villain": "Magneto"
+    "Villain": "Magneto Villain"
   },
   {
     "Date": "2023-05-11",
@@ -13082,7 +13082,7 @@
     "Id": "72828359",
     "Multiplayer": false,
     "True_Solo": true,
-    "Villain": "Magneto"
+    "Villain": "Master Mold"
   },
   {
     "Date": "2023-06-12",
@@ -13127,7 +13127,7 @@
     "Id": "72889649",
     "Multiplayer": false,
     "True_Solo": true,
-    "Villain": "Magneto"
+    "Villain": "Master Mold"
   },
   {
     "Date": "2023-06-15",
@@ -13432,7 +13432,7 @@
     "Id": "76295431",
     "Multiplayer": false,
     "True_Solo": true,
-    "Villain": "Magneto"
+    "Villain": "Magneto Villain"
   },
   {
     "Date": "2023-10-13",
@@ -13447,7 +13447,7 @@
     "Id": "76651696",
     "Multiplayer": false,
     "True_Solo": true,
-    "Villain": "Magneto"
+    "Villain": "Magneto Villain"
   },
   {
     "Date": "2023-10-19",
@@ -13692,7 +13692,7 @@
     "Id": "78848078",
     "Multiplayer": false,
     "True_Solo": true,
-    "Villain": "Magneto"
+    "Villain": "Magneto Villain"
   },
   {
     "Date": "2023-12-17",
@@ -13707,7 +13707,7 @@
     "Id": "78854687",
     "Multiplayer": false,
     "True_Solo": true,
-    "Villain": "Magneto"
+    "Villain": "Magneto Villain"
   },
   {
     "Date": "2023-12-19",
@@ -15423,5 +15423,1470 @@
     "Multiplayer": false,
     "True_Solo": true,
     "Villain": "Loki"
+  },
+  {
+    "Date": "2024-04-09",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Magik",
+        "Win": 0
+      }
+    ],
+    "Id": "83531190",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Dark Beast"
+  },
+  {
+    "Date": "2024-04-09",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Magik",
+        "Win": 1
+      }
+    ],
+    "Id": "83535538",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2024-04-10",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Magik",
+        "Win": 0
+      }
+    ],
+    "Id": "83555518",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Stryfe"
+  },
+  {
+    "Date": "2024-04-10",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Magik",
+        "Win": 1
+      }
+    ],
+    "Id": "83555879",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Ebony Maw"
+  },
+  {
+    "Date": "2024-04-10",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Magik",
+        "Win": 1
+      }
+    ],
+    "Id": "83557108",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Hela"
+  },
+  {
+    "Date": "2024-04-10",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Magik",
+        "Win": 1
+      }
+    ],
+    "Id": "83559750",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Crossbones"
+  },
+  {
+    "Date": "2024-04-11",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Bishop",
+        "Win": 1
+      }
+    ],
+    "Id": "83586568",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Project Wideawake"
+  },
+  {
+    "Date": "2024-04-11",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Bishop",
+        "Win": 1
+      }
+    ],
+    "Id": "83586569",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Project Wideawake"
+  },
+  {
+    "Date": "2024-04-12",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Cable",
+        "Win": 1
+      }
+    ],
+    "Id": "83616566",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Red Skull"
+  },
+  {
+    "Date": "2024-04-12",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Iron Heart",
+        "Win": 1
+      }
+    ],
+    "Id": "83617772",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2024-04-13",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Bishop",
+        "Win": 1
+      }
+    ],
+    "Id": "83638898",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Morlock Siege"
+  },
+  {
+    "Date": "2024-04-13",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Cable",
+        "Win": 0
+      }
+    ],
+    "Id": "83657359",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Dark Beast"
+  },
+  {
+    "Date": "2024-04-13",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Cable",
+        "Win": 0
+      }
+    ],
+    "Id": "83659178",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Dark Beast"
+  },
+  {
+    "Date": "2024-04-13",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Cable",
+        "Win": 1
+      }
+    ],
+    "Id": "83660040",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Dark Beast"
+  },
+  {
+    "Date": "2024-04-14",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Sp//der",
+        "Win": 1
+      }
+    ],
+    "Id": "83700422",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "En Sabah Nur"
+  },
+  {
+    "Date": "2024-04-14",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Bishop",
+        "Win": 1
+      }
+    ],
+    "Id": "83707475",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Taskmaster"
+  },
+  {
+    "Date": "2024-04-15",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Bishop",
+        "Win": 1
+      },
+      {
+        "Aspect": "Justice",
+        "Hero": "Cable",
+        "Win": 1
+      }
+    ],
+    "Id": "83738675",
+    "Multiplayer": false,
+    "True_Solo": false,
+    "Villain": "Kang"
+  },
+  {
+    "Date": "2024-04-16",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Miles Morales",
+        "Win": 1
+      }
+    ],
+    "Id": "83764866",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "En Sabah Nur"
+  },
+  {
+    "Date": "2024-04-16",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Miles Morales",
+        "Win": 0
+      }
+    ],
+    "Id": "83766120",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Magog"
+  },
+  {
+    "Date": "2024-04-16",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Miles Morales",
+        "Win": 0
+      }
+    ],
+    "Id": "83766471",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "On the Run"
+  },
+  {
+    "Date": "2024-04-16",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Miles Morales",
+        "Win": 1
+      }
+    ],
+    "Id": "83767165",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Taskmaster"
+  },
+  {
+    "Date": "2024-04-17",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Magik",
+        "Win": 0
+      }
+    ],
+    "Id": "83794100",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "En Sabah Nur"
+  },
+  {
+    "Date": "2024-04-18",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Gamora",
+        "Win": 1
+      }
+    ],
+    "Id": "83822121",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Crossbones"
+  },
+  {
+    "Date": "2024-04-19",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Thor",
+        "Win": 1
+      }
+    ],
+    "Id": "83853456",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Morlock Siege"
+  },
+  {
+    "Date": "2024-04-19",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Bishop",
+        "Win": 1
+      }
+    ],
+    "Id": "83853856",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "On the Run"
+  },
+  {
+    "Date": "2024-04-19",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Nova",
+        "Win": 0
+      }
+    ],
+    "Id": "83856116",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "On the Run"
+  },
+  {
+    "Date": "2024-04-19",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Wolverine",
+        "Win": 1
+      }
+    ],
+    "Id": "83859762",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "On the Run"
+  },
+  {
+    "Date": "2024-04-20",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Wolverine",
+        "Win": 1
+      }
+    ],
+    "Id": "83861118",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Stryfe"
+  },
+  {
+    "Date": "2024-04-20",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "X-23",
+        "Win": 0
+      }
+    ],
+    "Id": "83898597",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mister Sinister"
+  },
+  {
+    "Date": "2024-04-20",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "X-23",
+        "Win": 0
+      }
+    ],
+    "Id": "83898610",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mister Sinister"
+  },
+  {
+    "Date": "2024-04-20",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Wolverine",
+        "Win": 0
+      }
+    ],
+    "Id": "83904863",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mister Sinister"
+  },
+  {
+    "Date": "2024-04-21",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Angel",
+        "Win": 1
+      }
+    ],
+    "Id": "83954202",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Wrecking Crew"
+  },
+  {
+    "Date": "2024-04-21",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Bishop",
+        "Win": 1
+      }
+    ],
+    "Id": "83956789",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mister Sinister"
+  },
+  {
+    "Date": "2024-04-22",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Spider Man",
+        "Win": 1
+      }
+    ],
+    "Id": "83985754",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Stryfe"
+  },
+  {
+    "Date": "2024-04-23",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Bishop",
+        "Win": 1
+      }
+    ],
+    "Id": "84011777",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Stryfe"
+  },
+  {
+    "Date": "2024-04-24",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Sp//der",
+        "Win": 0
+      }
+    ],
+    "Id": "84038254",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Stryfe"
+  },
+  {
+    "Date": "2024-04-25",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Sp//der",
+        "Win": 0
+      }
+    ],
+    "Id": "84065426",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Unus"
+  },
+  {
+    "Date": "2024-04-26",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Shadowcat",
+        "Win": 0
+      }
+    ],
+    "Id": "84098329",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Dark Beast"
+  },
+  {
+    "Date": "2024-04-27",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Bishop",
+        "Win": 1
+      }
+    ],
+    "Id": "84147579",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Venom Villain"
+  },
+  {
+    "Date": "2024-04-28",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Storm",
+        "Win": 1
+      }
+    ],
+    "Id": "84193885",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Green Goblin - Mutagen Formula"
+  },
+  {
+    "Date": "2024-04-28",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Storm",
+        "Win": 1
+      }
+    ],
+    "Id": "84196574",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Unus"
+  },
+  {
+    "Date": "2024-04-29",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Bishop",
+        "Win": 0
+      }
+    ],
+    "Id": "84196982",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Ultron"
+  },
+  {
+    "Date": "2024-04-29",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Bishop",
+        "Win": 1
+      }
+    ],
+    "Id": "84221599",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Ebony Maw"
+  },
+  {
+    "Date": "2024-04-29",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Storm",
+        "Win": 1
+      }
+    ],
+    "Id": "84222982",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Dark Beast"
+  },
+  {
+    "Date": "2024-04-29",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Storm",
+        "Win": 0
+      }
+    ],
+    "Id": "84225068",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "En Sabah Nur"
+  },
+  {
+    "Date": "2024-04-30",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Basic",
+        "Hero": "Bishop",
+        "Win": 1
+      }
+    ],
+    "Id": "84226318",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Kang"
+  },
+  {
+    "Date": "2024-04-30",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Basic",
+        "Hero": "Bishop",
+        "Win": 1
+      }
+    ],
+    "Id": "84254174",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mysterio"
+  },
+  {
+    "Date": "2024-05-01",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Basic",
+        "Hero": "Bishop",
+        "Win": 0
+      }
+    ],
+    "Id": "84260179",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Crossbones"
+  },
+  {
+    "Date": "2024-05-01",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Basic",
+        "Hero": "Bishop",
+        "Win": 1
+      }
+    ],
+    "Id": "84260197",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Crossbones"
+  },
+  {
+    "Date": "2024-05-01",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Basic",
+        "Hero": "Bishop",
+        "Win": 0
+      }
+    ],
+    "Id": "84297459",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Red Skull"
+  },
+  {
+    "Date": "2024-05-01",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Bishop",
+        "Win": 1
+      }
+    ],
+    "Id": "84297932",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Red Skull"
+  },
+  {
+    "Date": "2024-05-05",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Wolverine",
+        "Win": 0
+      }
+    ],
+    "Id": "84450470",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Apocalypse"
+  },
+  {
+    "Date": "2024-05-07",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Wolverine",
+        "Win": 0
+      }
+    ],
+    "Id": "84491583",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Apocalypse"
+  },
+  {
+    "Date": "2024-05-07",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Venom",
+        "Win": 0
+      }
+    ],
+    "Id": "84517917",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Apocalypse"
+  },
+  {
+    "Date": "2024-05-09",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Bishop",
+        "Win": 1
+      }
+    ],
+    "Id": "84578378",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Apocalypse"
+  },
+  {
+    "Date": "2024-05-19",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Spider Man",
+        "Win": 1
+      }
+    ],
+    "Id": "84930419",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Dark Beast"
+  },
+  {
+    "Date": "2024-05-20",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Wasp",
+        "Win": 1
+      }
+    ],
+    "Id": "84965927",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Unus"
+  },
+  {
+    "Date": "2024-05-21",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Miles Morales",
+        "Win": 1
+      }
+    ],
+    "Id": "84991306",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Four Horsemen"
+  },
+  {
+    "Date": "2024-05-28",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Iceman",
+        "Win": 1
+      }
+    ],
+    "Id": "85242045",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Morlock Siege"
+  },
+  {
+    "Date": "2024-05-31",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Iceman",
+        "Win": 0
+      }
+    ],
+    "Id": "85337665",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Four Horsemen"
+  },
+  {
+    "Date": "2024-06-01",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Iceman",
+        "Win": 0
+      },
+      {
+        "Aspect": "Leadership",
+        "Hero": "Bishop",
+        "Win": 0
+      }
+    ],
+    "Id": "85388803",
+    "Multiplayer": false,
+    "True_Solo": false,
+    "Villain": "Dark Beast"
+  },
+  {
+    "Date": "2024-06-08",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Iceman",
+        "Win": 0
+      }
+    ],
+    "Id": "85620743",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2024-06-09",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Iceman",
+        "Win": 1
+      }
+    ],
+    "Id": "85654506",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mojo"
+  },
+  {
+    "Date": "2024-06-22",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Iceman",
+        "Win": 0
+      }
+    ],
+    "Id": "86102640",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Four Horsemen"
+  },
+  {
+    "Date": "2024-06-29",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Bishop",
+        "Win": 1
+      }
+    ],
+    "Id": "86330708",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Four Horsemen"
+  },
+  {
+    "Date": "2024-07-06",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Phoenix",
+        "Win": 1
+      }
+    ],
+    "Id": "86640673",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Sabretooth"
+  },
+  {
+    "Date": "2024-07-06",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Phoenix",
+        "Win": 0
+      }
+    ],
+    "Id": "86640738",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Sabretooth"
+  },
+  {
+    "Date": "2024-07-07",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Phoenix",
+        "Win": 0
+      }
+    ],
+    "Id": "86645038",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Sabretooth"
+  },
+  {
+    "Date": "2024-07-08",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Phoenix",
+        "Win": 0
+      }
+    ],
+    "Id": "86677361",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Sabretooth"
+  },
+  {
+    "Date": "2024-07-09",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Phoenix",
+        "Win": 1
+      }
+    ],
+    "Id": "86703798",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Sabretooth"
+  },
+  {
+    "Date": "2024-07-20",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Phoenix",
+        "Win": 0
+      }
+    ],
+    "Id": "87081300",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Sabretooth"
+  },
+  {
+    "Date": "2024-07-25",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Phoenix",
+        "Win": 1
+      }
+    ],
+    "Id": "87267336",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Sabretooth"
+  },
+  {
+    "Date": "2024-07-26",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Phoenix",
+        "Win": 1
+      }
+    ],
+    "Id": "87300082",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Sabretooth"
+  },
+  {
+    "Date": "2024-08-04",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Iron Heart",
+        "Win": 0
+      }
+    ],
+    "Id": "87651935",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Project Wideawake"
+  },
+  {
+    "Date": "2024-08-13",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Iron Heart",
+        "Win": 1
+      }
+    ],
+    "Id": "87967165",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Project Wideawake"
+  },
+  {
+    "Date": "2024-08-19",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Iron Heart",
+        "Win": 1
+      }
+    ],
+    "Id": "88195475",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Project Wideawake"
+  },
+  {
+    "Date": "2024-08-20",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Iron Heart",
+        "Win": 1
+      }
+    ],
+    "Id": "88228613",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Project Wideawake"
+  },
+  {
+    "Date": "2024-08-26",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Iron Heart",
+        "Win": 1
+      }
+    ],
+    "Id": "88447836",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Project Wideawake"
+  },
+  {
+    "Date": "2024-08-26",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Iron Heart",
+        "Win": 1
+      }
+    ],
+    "Id": "88449368",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Project Wideawake"
+  },
+  {
+    "Date": "2024-09-21",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Spider Ham",
+        "Win": 0
+      }
+    ],
+    "Id": "89305160",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Magneto Villain"
+  },
+  {
+    "Date": "2024-09-23",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Jubilee",
+        "Win": 0
+      }
+    ],
+    "Id": "89377412",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Magneto Villain"
+  },
+  {
+    "Date": "2024-09-26",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Spider Ham",
+        "Win": 0
+      }
+    ],
+    "Id": "89450536",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Magneto Villain"
+  },
+  {
+    "Date": "2024-09-27",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Spider Ham",
+        "Win": 1
+      }
+    ],
+    "Id": "89481383",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Magneto Villain"
+  },
+  {
+    "Date": "2024-09-28",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Spider Ham",
+        "Win": 1
+      }
+    ],
+    "Id": "89510258",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Magneto Villain"
+  },
+  {
+    "Date": "2024-09-28",
+    "Difficulty": "S1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Spider Ham",
+        "Win": 1
+      }
+    ],
+    "Id": "89519348",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Magneto Villain"
+  },
+  {
+    "Date": "2024-10-06",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Jubilee",
+        "Win": 0
+      }
+    ],
+    "Id": "89830623",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2024-11-01",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Basic",
+        "Hero": "Star Lord",
+        "Win": 0
+      }
+    ],
+    "Id": "90735024",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Venom Villain"
+  },
+  {
+    "Date": "2024-11-01",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Basic",
+        "Hero": "Star Lord",
+        "Win": 0
+      }
+    ],
+    "Id": "90772472",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Venom Villain"
+  },
+  {
+    "Date": "2024-11-01",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Basic",
+        "Hero": "Shadowcat",
+        "Win": 1
+      }
+    ],
+    "Id": "90773972",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Venom Villain"
+  },
+  {
+    "Date": "2024-11-02",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Basic",
+        "Hero": "Shadowcat",
+        "Win": 0
+      }
+    ],
+    "Id": "90792736",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Venom Villain"
+  },
+  {
+    "Date": "2024-11-02",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Basic",
+        "Hero": "Shadowcat",
+        "Win": 0
+      }
+    ],
+    "Id": "90795067",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Venom Villain"
+  },
+  {
+    "Date": "2024-11-07",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Nightcrawler",
+        "Win": 1
+      }
+    ],
+    "Id": "90999491",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2024-11-08",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Jubilee",
+        "Win": 0
+      }
+    ],
+    "Id": "91034334",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2024-11-08",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Jubilee",
+        "Win": 0
+      }
+    ],
+    "Id": "91037474",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Ebony Maw"
+  },
+  {
+    "Date": "2024-11-13",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Rogue",
+        "Win": 0
+      }
+    ],
+    "Id": "91225221",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Hood"
+  },
+  {
+    "Date": "2024-11-16",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Magneto",
+        "Win": 1
+      }
+    ],
+    "Id": "91344892",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
+  },
+  {
+    "Date": "2024-11-17",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Jubilee",
+        "Win": 0
+      }
+    ],
+    "Id": "91382192",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Klaw"
   }
 ]
