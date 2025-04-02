@@ -1,3 +1,13 @@
+"""
+Data to extract:
+
+    Villain:
+    Difficulty:
+    Heroes: [(Hero, Aspect, Win)] (it's a list because i could play more than one hero solo)
+    Date:  this is for debugging
+    ID:  this is for debugging and sorting
+
+"""
 from xml.etree import ElementTree
 from config import hero_config_data, villain_config_data
 MARVEL_CHAMPIONS_ID="285774"
@@ -12,16 +22,7 @@ def create_string_replacements(config_data):
                 replace_data[replace.lower()] = hero_villain
         
     return replace_data
-"""
-Data to extract:
 
-    Villain:
-    Difficulty:
-    Heroes: [(Hero, Aspect, Win)] (it's a list because i could play more than one hero solo)
-    Date:  this is for debugging
-    ID:  this is for debugging and sorting
-
-"""
 
 def extract_villain(play_comment):
     replace_check = create_string_replacements(villain_config_data)

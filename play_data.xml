@@ -1,5 +1,70 @@
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="1117" page="1" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="91450660" date="2024-11-19" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="1121" page="1" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="93048942" date="2024-12-29" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Venom Goblin + Symbiotic Strength + Goblin Gimmicks
+
+Magneto got overwhelmed.  Not sure I had enough thwart potential for this one plus the cape didn&apos;t come out soon enough.</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Magneto" color="Justice" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="93022609" date="2024-12-29" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Magneto Villain + Crazy Gang
+
+
+Multiverse match as Magneto takes down Magneto!</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Magneto" color="Leadership" score="" new="0" rating="0" win="1" />
+						</players>
+					</play>
+	<play id="92078593" date="2024-12-07" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Mansion Attack + Brotherhood + Reavers
+
+Turn 4: loss
+
+Total threat: 6
+Total Villain Health: 13
+Villain Stage 1
+Main Scheme 2a
+Total Hero Health: 0</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Rogue" color="Aggression" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="92077224" date="2024-12-07" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+						<comments>S1E1 Mansion Attack + Brotherhood + Reavers
+
+Turn 10
+Loss
+Total Threat 12
+Main Scheme :2
+Total Villain Health: 44
+Villain Stage: 2
+Total Health: 5</comments>
+									<players>
+									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Rogue" color="Aggression" score="" new="0" rating="0" win="0" />
+						</players>
+					</play>
+	<play id="91450660" date="2024-11-19" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -1474,7 +1539,9 @@ https://marvelcdb.com/decklist/view/37367/choose-your-hand-1.0</comments>
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Magik" color="Justice" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	<play id="83555879" date="2024-04-10" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="1121" page="2" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="83555879" date="2024-04-10" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -1532,9 +1599,7 @@ https://marvelcdb.com/deck/view/695682</comments>
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Magik" color="Justice" score="" new="0" rating="0" win="0" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="1117" page="2" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="83511153" date="2024-04-09" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="83511153" date="2024-04-09" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -2934,7 +2999,9 @@ https://marvelcdb.com/decklist/view/23033/solo-colo-1.0</comments>
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Colossus" color="Justice" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	<play id="82166575" date="2024-03-03" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="1121" page="3" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="82166575" date="2024-03-03" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -2990,9 +3057,7 @@ Much better. Took 15 rounds, but we got gg taken out.</comments>
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Black Widow" color="Justice" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="1117" page="3" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="82073865" date="2024-03-01" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="82073865" date="2024-03-01" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -4406,7 +4471,9 @@ Flip at the wrong time with partnership in pain and many villains is bad idea.</
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Rogue" color="Aggression" score="" new="0" rating="0" win="0" />
 						</players>
 					</play>
-	<play id="71672344" date="2023-05-05" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="1121" page="4" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="71672344" date="2023-05-05" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -4465,9 +4532,7 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Rogue" color="Justice" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="1117" page="4" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="71466785" date="2023-04-29" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="71466785" date="2023-04-29" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -6152,7 +6217,9 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Spectrum" color="Aggression" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	<play id="61488032" date="2022-06-13" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="1121" page="5" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="61488032" date="2022-06-13" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -6242,9 +6309,7 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Spectrum" color="Aggression" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="1117" page="5" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="61410464" date="2022-06-10" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="61410464" date="2022-06-10" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -7886,7 +7951,9 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Black Panther" color="Basic" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	<play id="58149669" date="2022-02-06" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="1121" page="6" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="58149669" date="2022-02-06" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -7955,9 +8022,7 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Drax" color="Basic" score="" new="0" rating="0" win="0" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="1117" page="6" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="58104783" date="2022-02-05" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="58104783" date="2022-02-05" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -9574,7 +9639,9 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Spectrum" color="Aggression" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	<play id="56010026" date="2021-11-28" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="1121" page="7" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="56010026" date="2021-11-28" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -9632,9 +9699,7 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="War Machine" color="Justice" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="1117" page="7" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="55893628" date="2021-11-24" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="55893628" date="2021-11-24" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -11033,7 +11098,9 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Drax" color="Leadership" score="" new="0" rating="0" win="0" />
 						</players>
 					</play>
-	<play id="52327484" date="2021-06-21" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="1121" page="8" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="52327484" date="2021-06-21" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -11089,9 +11156,7 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Drax" color="Justice" score="" new="0" rating="0" win="0" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="1117" page="8" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="52274259" date="2021-06-19" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="52274259" date="2021-06-19" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -12409,7 +12474,9 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Hawkeye" color="Aggression" score="" new="0" rating="0" win="0" />
 						</players>
 					</play>
-	<play id="50172315" date="2021-03-23" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="1121" page="9" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="50172315" date="2021-03-23" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -12468,9 +12535,7 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Scarlet Witch" color="Justice" score="" new="0" rating="0" win="0" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="1117" page="9" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="50134984" date="2021-03-21" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="50134984" date="2021-03-21" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -13807,7 +13872,9 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Captain Marvel" color="Leadership" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	<play id="47149278" date="2020-11-26" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="1121" page="10" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="47149278" date="2020-11-26" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -13851,9 +13918,7 @@ Played with the following expansions:
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="Captain Marvel" color="Aggression" score="" new="0" rating="0" win="0" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="1117" page="10" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="47107257" date="2020-11-24" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="47107257" date="2020-11-24" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -14919,7 +14984,9 @@ Oof.. tough - threat out.</comments>
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="She-Hulk" color="Protection" score="" new="0" rating="0" win="0" />
 						</players>
 					</play>
-	<play id="45535284" date="2020-09-08" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="1121" page="11" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="45535284" date="2020-09-08" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -14965,9 +15032,7 @@ Expert Rhino</comments>
 									<player username="DoxaLogos" userid="266254" name="Jay Atkinson" startposition="She-hulk" color="Protection" score="" new="0" rating="0" win="1" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="1117" page="11" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="45519508" date="2020-09-07" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="45519508" date="2020-09-07" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -16065,7 +16130,9 @@ Logged in MC logger form.</comments>
 						<player username="snoweel" userid="781" name="Clay Blankenship" startposition="Black Panther" color="Leadership" score="" new="1" rating="0" win="1" />
 						</players>
 					</play>
-	<play id="39817012" date="2019-12-29" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	</plays>
+<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="1121" page="12" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="39817012" date="2019-12-29" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />
@@ -16111,9 +16178,7 @@ Logged in MC logger form.</comments>
 						<player username="" userid="0" name="Kevin Kunze" startposition="Spiderman" color="Justice" score="" new="1" rating="0" win="1" />
 						</players>
 					</play>
-	</plays>
-<?xml version="1.0" encoding="utf-8"?><plays username="DoxaLogos" userid="266254" total="1117" page="12" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
-<play id="39150814" date="2019-11-29" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+	<play id="39150814" date="2019-11-29" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
 			<item name="Marvel Champions: The Card Game" objecttype="thing" objectid="285774">
 				<subtypes>
 										<subtype value="boardgame" />

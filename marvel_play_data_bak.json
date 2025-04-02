@@ -7877,7 +7877,7 @@
     "Id": "55974769",
     "Multiplayer": false,
     "True_Solo": true,
-    "Villain": "Hood"
+    "Villain": "The Hood Villain"
   },
   {
     "Date": "2021-11-27",
@@ -7892,7 +7892,7 @@
     "Id": "55980685",
     "Multiplayer": false,
     "True_Solo": true,
-    "Villain": "Hood"
+    "Villain": "The Hood Villain"
   },
   {
     "Date": "2021-11-27",
@@ -7907,7 +7907,7 @@
     "Id": "55980701",
     "Multiplayer": false,
     "True_Solo": true,
-    "Villain": "Hood"
+    "Villain": "The Hood Villain"
   },
   {
     "Date": "2021-11-28",
@@ -12872,7 +12872,7 @@
     "Id": "72346054",
     "Multiplayer": false,
     "True_Solo": true,
-    "Villain": "Hood"
+    "Villain": "The Hood Villain"
   },
   {
     "Date": "2023-05-27",
@@ -14192,7 +14192,7 @@
     "Id": "82463039",
     "Multiplayer": false,
     "True_Solo": true,
-    "Villain": "Hood"
+    "Villain": "The Hood Villain"
   },
   {
     "Date": "2024-03-12",
@@ -16857,7 +16857,7 @@
     "Id": "91225221",
     "Multiplayer": false,
     "True_Solo": true,
-    "Villain": "Hood"
+    "Villain": "Mansion Attack"
   },
   {
     "Date": "2024-11-16",
@@ -16888,5 +16888,95 @@
     "Multiplayer": false,
     "True_Solo": true,
     "Villain": "Klaw"
+  },
+  {
+    "Date": "2024-11-18",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Protection",
+        "Hero": "Rogue",
+        "Win": 0
+      }
+    ],
+    "Id": "91423811",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mansion Attack"
+  },
+  {
+    "Date": "2024-11-18",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Rogue",
+        "Win": 1
+      }
+    ],
+    "Id": "91425445",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mansion Attack"
+  },
+  {
+    "Date": "2024-11-19",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Rogue",
+        "Win": 1
+      }
+    ],
+    "Id": "91450660",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mansion Attack"
+  },
+  {
+    "Date": "2024-12-07",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Rogue",
+        "Win": 0
+      }
+    ],
+    "Id": "92077224",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mansion Attack"
+  },
+  {
+    "Date": "2024-12-07",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Rogue",
+        "Win": 0
+      }
+    ],
+    "Id": "92078593",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mansion Attack"
+  },
+  {
+    "Date": "2024-12-29",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Magneto",
+        "Win": 1
+      }
+    ],
+    "Id": "93022609",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Magneto Villain"
   }
 ]

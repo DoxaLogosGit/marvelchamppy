@@ -16933,5 +16933,65 @@
     "Multiplayer": false,
     "True_Solo": true,
     "Villain": "Mansion Attack"
+  },
+  {
+    "Date": "2024-12-07",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Rogue",
+        "Win": 0
+      }
+    ],
+    "Id": "92077224",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mansion Attack"
+  },
+  {
+    "Date": "2024-12-07",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Rogue",
+        "Win": 0
+      }
+    ],
+    "Id": "92078593",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Mansion Attack"
+  },
+  {
+    "Date": "2024-12-29",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Leadership",
+        "Hero": "Magneto",
+        "Win": 1
+      }
+    ],
+    "Id": "93022609",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Magneto Villain"
+  },
+  {
+    "Date": "2024-12-29",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Justice",
+        "Hero": "Magneto",
+        "Win": 0
+      }
+    ],
+    "Id": "93048942",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Venom Goblin"
   }
 ]
