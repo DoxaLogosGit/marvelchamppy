@@ -20,7 +20,7 @@ aspects are listed in the "Team Color" box spelled out completely and not abbrev
 played "Justice and Leadership", you could say the following: "Justice/Leadership", "Justice&Leadership",
 "Leadership Justice", etc.  
 
-Last but no list, mark the win box so the script can count your wins :)
+Last but no least, mark the win box so the script can count your wins :)
 
 This script is somewhat forgiving with the hero names, but do your best to spell them correctly.
 
