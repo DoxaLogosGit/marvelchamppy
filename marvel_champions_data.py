@@ -81,10 +81,10 @@ def main():
     else:
         diff_data = None
 
+    statistics = Statistics(marvel_plays)
+    statistics.analyze_play_data()
 
     if(args.upload_data):
-        statistics = Statistics(marvel_plays)
-        statistics.analyze_play_data()
         data = UploadData(statistics, args.skip_found, diff_data)
         data.perform_upload()
 
