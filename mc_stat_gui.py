@@ -1,53 +1,11 @@
-import simplejson as json
-from textual.app import App, ComposeResult
-from textual.containers import Horizontal, Vertical
-from textual.reactive import reactive
-from textual.screen import ModalScreen
-from textual.widgets import Header, Footer, Tree, ContentSwitcher, LoadingIndicator, Label
-from analyze_data import Statistics, HeroData, VillainData, OverallData, TeamData, ExpansionData, PlaySpecificStats
+from widgets.download import DownloadScreen
 from widgets.results import HeroBaseResults, VillainBaseResults, OverallResults, AspectSpecificResults, Heroes, Villains
-from retrieve_data import retrieve_play_data_from_bgg
-from extract_data import find_the_marvel_champion_plays
-
-USER='DoxaLogos'
-
-def download_data():
-    print("Begin collecting data")
-    xml_data = retrieve_play_data_from_bgg(USER)
-    print("Done collecting data")
-
-    xml_string = "".join(xml_data)
-    with open("play_data.xml","w") as xml_play_data:
-        xml_play_data.write(xml_string)
-    print("Extracting data")
-    marvel_plays = find_the_marvel_champion_plays(xml_data, USER)
-
-    with open("marvel_play_data.json","w") as play_data:
-        play_data.write(json.dumps(marvel_plays, sort_keys=True, indent=2 * ' '))
-    return marvel_plays
-
-def read_data(marvel_plays=None):
-    #if marvel_plays is None:
-    #    with open("marvel_play_data.json") as play_data:
-    #        marvel_plays = json.load(play_data)
-
-    statistics = Statistics(marvel_plays)
-    statistics.analyze_play_data()
-    return statistics
-
-
-class Download(ModalScreen[Statistics]):
-
-    def compose(self) -> ComposeResult:
-        with Vertical(): 
-                yield Label("Downloading Data")
-                yield LoadingIndicator(id="load")
-    
-    def on_show(self) -> None:
-        plays = download_data()
-        parsed_data = read_data(plays)
-        self.dismiss(parsed_data)
-        
+from textual.app import App, ComposeResult
+from textual.containers import Horizontal
+from textual.reactive import reactive
+from textual.widgets import Header, Footer, Tree, ContentSwitcher
+from analyze_data import Statistics, HeroData, VillainData, OverallData, TeamData, ExpansionData, PlaySpecificStats
+from gui_utils import read_data
 
 class MCStatApp(App):
     """ A Textual app for my Marvel Champions stat tracking"""
@@ -175,7 +133,7 @@ class MCStatApp(App):
             self.statistics = stats
             pass
 
-        self.push_screen(Download(), check_stats)
+        self.push_screen(DownloadScreen(), check_stats)
     #    pass
 
 if __name__ == "__main__":

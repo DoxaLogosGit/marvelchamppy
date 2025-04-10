@@ -16993,5 +16993,20 @@
     "Multiplayer": false,
     "True_Solo": true,
     "Villain": "Venom Goblin"
+  },
+  {
+    "Date": "2025-01-31",
+    "Difficulty": "S1E1",
+    "Heroes": [
+      {
+        "Aspect": "Aggression",
+        "Hero": "Nightcrawler",
+        "Win": 0
+      }
+    ],
+    "Id": "94783783",
+    "Multiplayer": false,
+    "True_Solo": true,
+    "Villain": "Green Goblin - Mutagen Formula"
   }
 ]
