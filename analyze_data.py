@@ -1,5 +1,6 @@
 from config import hero_config_data, villain_config_data, Traits, expansions, aspects
 import sys
+import json
 from sortedcontainers import SortedSet
 
 #load up traits from config file
@@ -404,7 +405,9 @@ class OverallData:
 
 
 class Statistics:
-    def __init__(self, all_plays, bgg_format=True):
+    def __init__(self, all_plays=None, bgg_format=True):
+        if all_plays is None:
+            all_plays = self.load_play_data()
         self.all_plays = all_plays
         self.overall_data = OverallData(all_plays)
         self.hero_data = {x:HeroData(x, hero_config_data[x]["traits"]) for x in hero_config_data.keys()}
@@ -448,6 +451,10 @@ class Statistics:
             for hero in self.hero_data.keys():
                 if team in self.hero_data[hero].traits:
                     self.hero_data[hero].add_team(self.team_data[team])
+
+    def load_play_data(self):
+        with open('marvel_play_data.json', 'r') as file:
+            return json.load(file)
 
     def analyze_hero_data(self):
         for play in self.all_plays:

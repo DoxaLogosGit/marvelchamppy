@@ -27,9 +27,9 @@ def download_data():
     return marvel_plays
 
 def read_data(marvel_plays=None):
-    if marvel_plays is None:
-        with open("marvel_play_data.json") as play_data:
-            marvel_plays = json.loads(play_data.read())
+    #if marvel_plays is None:
+    #    with open("marvel_play_data.json") as play_data:
+    #        marvel_plays = json.load(play_data)
 
     statistics = Statistics(marvel_plays)
     statistics.analyze_play_data()
