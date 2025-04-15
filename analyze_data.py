@@ -1,5 +1,4 @@
 from config import hero_config_data, villain_config_data, Traits, expansions, aspects
-import sys
 import json
 from sortedcontainers import SortedSet
 

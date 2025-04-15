@@ -1,5 +1,4 @@
 import xlsxwriter
-from datetime import datetime, timedelta
 from config import COLUMNS
 import math
 from rich.progress import track
@@ -162,7 +161,7 @@ class ExcelData:
     
 
     def update_hero_sheet(self, hero, sheet):
-        my_progress_track = track(range(7), f"Uploading {hero.name} statistics: ")
+        my_progress_track = track(range(7), f"Writing {hero.name} statistics: ")
         next(my_progress_track)
         #overall data
         sheet.set_row(0,26, self.bold_format)
@@ -204,7 +203,7 @@ class ExcelData:
         else:
             hero_list = list(self.diff_data[1])
 
-        print("Uploading Hero statistics...")
+        print("Writing Hero statistics...")
         for hero in sorted(hero_list):
             if any(char in hero for char in self.invalid_excel):
                 print(f"skipping {hero} due to invalid characters")
@@ -232,7 +231,7 @@ class ExcelData:
                         team_list.append(trait)
                 
 
-        print("Uploading Team statistics...")
+        print("Writing Team statistics...")
         for team in sorted(team_list):
             skip = False
             if team not in worksheets:
@@ -248,7 +247,7 @@ class ExcelData:
             
 
     def update_villain_sheet(self, villain, sheet):
-        my_progress_track = track(range(7), f"Uploading {villain.name} statistics: ")
+        my_progress_track = track(range(7), f"Writing {villain.name} statistics: ")
         next(my_progress_track)
         #overall data
         sheet.set_row(0,26, self.bold_format)
@@ -286,7 +285,7 @@ class ExcelData:
         else:
             villain_list = list(self.diff_data[0])
 
-        print("Uploading Villain statistics: ")
+        print("Writing Villain statistics: ")
         for villain in sorted(villain_list):
             if len(villain) > self.max_worksheet_name_length:
                 print(f"skipping {villain} due to name too long for worksheet name")
@@ -314,7 +313,7 @@ class ExcelData:
                 if self.statistics.villain_data[villain].expansion in self.statistics.big_box_data.keys():
                     big_box_list.append(self.statistics.villain_data[villain].expansion)
                 
-        print("Uploading Big Box statistics: ")
+        print("Writing Big Box statistics: ")
         for big_box in sorted(big_box_list):
             skip = False
             if big_box not in worksheets:
@@ -347,7 +346,7 @@ class ExcelData:
         if "Once and Future Kang" in scenario_pack_list:
             scenario_pack_list.remove("Once and Future Kang")
                 
-        print("Uploading Scenario Pack statistics: ")
+        print("Writing Scenario Pack statistics: ")
         for scenario_pack in sorted(scenario_pack_list):
             skip = False
             if scenario_pack not in worksheets:
@@ -368,7 +367,7 @@ class ExcelData:
         for villain in self.statistics.villain_data.values():
             total += len(villain.heroes_played)
 
-        my_progress_track = track(range(total), "Uploading Play Matrix statistics: ")
+        my_progress_track = track(range(total), "Writing Play Matrix statistics: ")
         if self.sheet.get_worksheet_by_name("Play Matrix") is None:
             psheet = self.sheet.add_worksheet("Play Matrix")
         else:
@@ -395,7 +394,7 @@ class ExcelData:
                     
 
     def upload_overall(self):
-        my_progress_track = track(range(10), "Uploading Overall statistics...", show_speed=False)
+        my_progress_track = track(range(10), "Writing Overall statistics...", show_speed=False)
         osheet = self.sheet.get_worksheet_by_name("Overall")
         if osheet is None:
             osheet = self.sheet.add_worksheet("Overall")
