@@ -9,6 +9,7 @@ from extract_data import find_the_marvel_champion_plays
 from analyze_data import Statistics, find_diff_data
 from argparse import ArgumentParser
 from upload import UploadData
+from excel import ExcelData
 from os import path
 import shutil
 
@@ -46,6 +47,9 @@ def main():
 
     parser.add_argument("-n", "--newest_data", action="store_true",
                         help="do an upload of just the newest plays")
+
+    parser.add_argument("-x", "--excel_data", action="store_true",
+                        help="write the data to an excel spreadsheet: statistics.xlsx")
 
     args = parser.parse_args()
 
@@ -87,6 +91,10 @@ def main():
     if(args.upload_data):
         data = UploadData(statistics, args.skip_found, diff_data)
         data.perform_upload()
+
+    if(args.excel_data):
+        data = ExcelData(statistics, args.skip_found, diff_data)
+        data.perform_write()
 
 
 
