@@ -1,5 +1,4 @@
 import json
-from xml.etree import ElementTree
 from retrieve_data import retrieve_play_data_from_bgg
 from extract_data import find_the_marvel_champion_plays
 from analyze_data import Statistics
