@@ -32,10 +32,19 @@ def extract_villain(play_comment):
     return "UNKNOWN"
 
 def which_standard(play_comment):
-    if("standard 2" in play_comment.lower() or "standard ii" in play_comment.lower()):
-        return "S2"
-    elif("standard 3" in play_comment.lower() or "standard iii" in play_comment.lower()):
+    """
+    Determine the standard difficulty (S1, S2, S3) based on play comment text.
+    """
+    # Convert to lowercase once for efficiency
+    play_comment_lower = play_comment.lower()
+    
+    # Check for Standard 3/III first
+    if "standard 3" in play_comment_lower or "standard iii" in play_comment_lower:
         return "S3"
+    # Then check for Standard 2/II
+    elif "standard 2" in play_comment_lower or "standard ii" in play_comment_lower:
+        return "S2"
+    # Default to S1
     return "S1"
 
 def extract_difficulty(play_comment):
