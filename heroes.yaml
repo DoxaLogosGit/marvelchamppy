@@ -394,5 +394,24 @@
             - Mutant
         replacements:
             - magento
-            
-            
+    Silk :
+        traits:
+            - Web Warrior
+            - Genius
+        replacements:
+            - slik
+    Winter Soldier :
+        traits:
+            - Shield
+            - Soldier
+        replacements:
+            - wintersoldier
+            - winter-soldier
+            - winter solder
+    Falcon :
+        traits:
+            - Aerial
+            - Avenger
+            - Shield
+        replacements:
+            - faclon
